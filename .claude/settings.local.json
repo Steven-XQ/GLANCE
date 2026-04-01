@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(du:*)",
+      "Bash(unzip -l Action_Annotations/action_annotation.zip)",
+      "Bash(unzip -q action_annotation.zip)",
+      "Bash(unzip -q gaze_data.zip)",
+      "Bash(wc -l gaze_data/gaze_data/*.txt)",
+      "Bash(unzip -l GTEA_Labels_61/gtea_labels_61.zip)",
+      "Bash(unzip -q Hand_Masks_14K/hand14k.zip -d Hand_Masks_14K/)",
+      "Bash(xargs cat:*)",
+      "WebFetch(domain:drive.google.com)",
+      "Bash(wc:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(cat:*)",
+      "Bash(unzip -l raw_egtea/raw_egtea.zip)",
+      "Bash(unzip -l processed/data_common.zip)",
+      "Bash(unzip:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}

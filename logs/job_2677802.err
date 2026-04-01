@@ -1,0 +1,201 @@
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/24148 [00:00<?, ?it/s]Loading train samples:   5%|▌         | 1291/24148 [00:00<00:01, 11607.44it/s]Loading train samples:  10%|█         | 2499/24148 [00:00<00:01, 11764.31it/s]Loading train samples:  15%|█▌        | 3683/24148 [00:00<00:01, 11344.29it/s]Loading train samples:  20%|██        | 4839/24148 [00:00<00:01, 11077.88it/s]Loading train samples:  25%|██▍       | 6013/24148 [00:00<00:01, 10360.70it/s]Loading train samples:  30%|███       | 7267/24148 [00:00<00:01, 10972.27it/s]Loading train samples:  35%|███▍      | 8408/24148 [00:00<00:01, 10688.23it/s]Loading train samples:  39%|███▉      | 9506/24148 [00:00<00:01, 7939.93it/s] Loading train samples:  43%|████▎     | 10462/24148 [00:01<00:01, 8296.84it/s]Loading train samples:  47%|████▋     | 11384/24148 [00:01<00:01, 8515.19it/s]Loading train samples:  51%|█████     | 12366/24148 [00:01<00:01, 8767.54it/s]Loading train samples:  57%|█████▋    | 13658/24148 [00:01<00:01, 9587.54it/s]Loading train samples:  62%|██████▏   | 15041/24148 [00:01<00:00, 10409.28it/s]Loading train samples:  68%|██████▊   | 16371/24148 [00:01<00:00, 10987.80it/s]Loading train samples:  73%|███████▎  | 17581/24148 [00:01<00:00, 11228.91it/s]Loading train samples:  78%|███████▊  | 18739/24148 [00:01<00:00, 11224.59it/s]Loading train samples:  82%|████████▏ | 19877/24148 [00:01<00:00, 10265.88it/s]Loading train samples:  87%|████████▋ | 21040/24148 [00:02<00:00, 10298.61it/s]Loading train samples:  92%|█████████▏| 22291/24148 [00:02<00:00, 10750.22it/s]Loading train samples:  97%|█████████▋| 23385/24148 [00:02<00:00, 10682.48it/s]Loading train samples: 100%|██████████| 24148/24148 [00:02<00:00, 10269.49it/s]
+Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  31%|███▏      | 1105/3513 [00:00<00:00, 10911.94it/s]Loading validation samples:  64%|██████▍   | 2254/3513 [00:00<00:00, 11143.87it/s]Loading validation samples:  98%|█████████▊| 3430/3513 [00:00<00:00, 11384.82it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11166.04it/s]
+Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 6332.73it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 160, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 142, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 281, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 306, in epoch_pass
+[rank0]:     for batch_idx, sample in enumerate(self.loader):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+[rank0]:     raise exception
+[rank0]: RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P01_109 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P02_06 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P22_10 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P02_129 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P02_123 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P02_123 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P22_106 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P11_109 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P10_02 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P04_107 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 393, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 195, in __call__
+[rank0]:     raise RuntimeError(f"CRITICAL: Entire video clip {action.video_id} is missing!")
+[rank0]: RuntimeError: CRITICAL: Entire video clip P01_109 is missing!
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 429, in __getitem__
+[rank0]:     return self.__getitem__(new_idx, retries + 1)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 429, in __getitem__
+[rank0]:     return self.__getitem__(new_idx, retries + 1)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 429, in __getitem__
+[rank0]:     return self.__getitem__(new_idx, retries + 1)
+[rank0]:   [Previous line repeated 8 more times]
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 388, in __getitem__
+[rank0]:     raise RuntimeError("Exceeded 10 retries! The database might be completely empty/corrupted.")
+[rank0]: RuntimeError: Exceeded 10 retries! The database might be completely empty/corrupted.
+
+[rank0]:[W309 03:58:22.116251934 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

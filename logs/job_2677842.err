@@ -1,0 +1,1674 @@
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/24148 [00:00<?, ?it/s]Loading train samples:   5%|▌         | 1291/24148 [00:00<00:01, 11571.12it/s]Loading train samples:  11%|█         | 2552/24148 [00:00<00:01, 11855.75it/s]Loading train samples:  16%|█▌        | 3781/24148 [00:00<00:01, 11401.09it/s]Loading train samples:  21%|██        | 5017/24148 [00:00<00:01, 11136.00it/s]Loading train samples:  27%|██▋       | 6466/24148 [00:00<00:01, 10737.59it/s]Loading train samples:  32%|███▏      | 7721/24148 [00:00<00:01, 11163.75it/s]Loading train samples:  37%|███▋      | 8853/24148 [00:00<00:01, 8237.45it/s] Loading train samples:  40%|████      | 9778/24148 [00:01<00:01, 8385.97it/s]Loading train samples:  45%|████▌     | 10878/24148 [00:01<00:01, 8796.12it/s]Loading train samples:  49%|████▉     | 11882/24148 [00:01<00:01, 9077.66it/s]Loading train samples:  54%|█████▎    | 12922/24148 [00:01<00:01, 9141.46it/s]Loading train samples:  59%|█████▉    | 14223/24148 [00:01<00:00, 10064.76it/s]Loading train samples:  64%|██████▍   | 15517/24148 [00:01<00:00, 10826.08it/s]Loading train samples:  70%|██████▉   | 16822/24148 [00:01<00:00, 11363.50it/s]Loading train samples:  75%|███████▍  | 18008/24148 [00:01<00:00, 11453.11it/s]Loading train samples:  80%|███████▉  | 19202/24148 [00:01<00:00, 10900.72it/s]Loading train samples:  84%|████████▍ | 20320/24148 [00:01<00:00, 10549.32it/s]Loading train samples:  89%|████████▉ | 21524/24148 [00:02<00:00, 10602.84it/s]Loading train samples:  94%|█████████▍| 22738/24148 [00:02<00:00, 10971.97it/s]Loading train samples: 100%|█████████▉| 24034/24148 [00:02<00:00, 11142.67it/s]Loading train samples: 100%|██████████| 24148/24148 [00:02<00:00, 10387.54it/s]
+Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  31%|███▏      | 1105/3513 [00:00<00:00, 10993.58it/s]Loading validation samples:  64%|██████▍   | 2254/3513 [00:00<00:00, 11151.36it/s]Loading validation samples:  98%|█████████▊| 3449/3513 [00:00<00:00, 11454.78it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11245.13it/s]
+Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 6215.28it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 160, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 142, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 281, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 306, in epoch_pass
+[rank0]:     for batch_idx, sample in enumerate(self.loader):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+[rank0]:     raise exception
+[rank0]: RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 423, in __getitem__
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index, label_valid = self._load_labels(a.uid)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 368, in _load_labels
+[rank0]:     future_hands, contact_point, future_valid, last_frame_index = process_video_info(video_info, fps=self.fps,
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/ho_utils.py", line 76, in process_video_info
+[rank0]:     future_valid = np.array(valid_mask, dtype=np.int)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/numpy/__init__.py", line 397, in __getattr__
+[rank0]:     raise AttributeError(__former_attrs__[attr], name=None)
+[rank0]: AttributeError: module 'numpy' has no attribute 'int'.
+[rank0]: `np.int` was a deprecated alias for the builtin `int`. To avoid this error in existing code, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+[rank0]: The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+[rank0]:     https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 453, in __getitem__
+[rank0]:     return self.__getitem__(new_idx, retries + 1)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 453, in __getitem__
+[rank0]:     return self.__getitem__(new_idx, retries + 1)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 453, in __getitem__
+[rank0]:     return self.__getitem__(new_idx, retries + 1)
+[rank0]:   [Previous line repeated 98 more times]
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 412, in __getitem__
+[rank0]:     raise RuntimeError("Exceeded 100 retries! The database is too sparse.")
+[rank0]: RuntimeError: Exceeded 100 retries! The database is too sparse.
+
+[rank0]:[W309 04:36:03.949655626 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

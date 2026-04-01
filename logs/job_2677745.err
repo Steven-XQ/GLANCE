@@ -1,0 +1,75 @@
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/24148 [00:00<?, ?it/s]Loading train samples:   5%|▌         | 1291/24148 [00:00<00:01, 11768.64it/s]Loading train samples:  11%|█         | 2552/24148 [00:00<00:01, 11948.61it/s]Loading train samples:  16%|█▌        | 3781/24148 [00:00<00:01, 11499.07it/s]Loading train samples:  21%|██        | 5017/24148 [00:00<00:01, 11161.37it/s]Loading train samples:  27%|██▋       | 6466/24148 [00:00<00:01, 10723.08it/s]Loading train samples:  32%|███▏      | 7721/24148 [00:00<00:01, 11137.89it/s]Loading train samples:  37%|███▋      | 8853/24148 [00:00<00:01, 8091.88it/s] Loading train samples:  40%|████      | 9778/24148 [00:01<00:01, 8333.53it/s]Loading train samples:  45%|████▌     | 10878/24148 [00:01<00:01, 8779.73it/s]Loading train samples:  49%|████▉     | 11882/24148 [00:01<00:01, 9061.75it/s]Loading train samples:  54%|█████▎    | 12922/24148 [00:01<00:01, 9134.02it/s]Loading train samples:  59%|█████▉    | 14223/24148 [00:01<00:00, 10055.73it/s]Loading train samples:  64%|██████▍   | 15517/24148 [00:01<00:00, 10808.14it/s]Loading train samples:  70%|██████▉   | 16822/24148 [00:01<00:00, 11339.32it/s]Loading train samples:  75%|███████▍  | 18008/24148 [00:01<00:00, 11415.29it/s]Loading train samples:  79%|███████▉  | 19167/24148 [00:01<00:00, 10873.93it/s]Loading train samples:  84%|████████▍ | 20303/24148 [00:01<00:00, 10580.95it/s]Loading train samples:  89%|████████▉ | 21524/24148 [00:02<00:00, 10605.42it/s]Loading train samples:  94%|█████████▍| 22738/24148 [00:02<00:00, 10986.99it/s]Loading train samples: 100%|█████████▉| 24034/24148 [00:02<00:00, 11155.08it/s]Loading train samples: 100%|██████████| 24148/24148 [00:02<00:00, 10376.47it/s]
+Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  32%|███▏      | 1138/3513 [00:00<00:00, 11127.68it/s]Loading validation samples:  71%|███████▏  | 2510/3513 [00:00<00:00, 11532.19it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11337.54it/s]
+Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 6312.74it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 160, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 142, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 281, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 306, in epoch_pass
+[rank0]:     for batch_idx, sample in enumerate(self.loader):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+[rank0]:     raise exception
+[rank0]: RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 147, in __call__
+[rank0]:     f_dict = self.env1[key_enc]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/lmdbdict/lmdbdict.py", line 148, in __getitem__
+[rank0]:     raise KeyError
+[rank0]: KeyError
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 151, in __call__
+[rank0]:     f_dict = self.env2[key_enc]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/lmdbdict/lmdbdict.py", line 145, in __getitem__
+[rank0]:     raise KeyError
+[rank0]: KeyError
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 351, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 166, in __call__
+[rank0]:     raise RuntimeError(f"First frame {key_enc} missing, cannot create template!")
+[rank0]: RuntimeError: First frame b'P01/rgb_frames/P01_109/frame_0000023010.jpg' missing, cannot create template!
+
+[rank0]:[W309 02:50:10.439789922 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

@@ -1,0 +1,59 @@
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 32
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/1880 [00:00<?, ?it/s]Loading train samples:  58%|█████▊    | 1099/1880 [00:00<00:00, 10936.53it/s]Loading train samples: 100%|██████████| 1880/1880 [00:00<00:00, 11385.17it/s]
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 9152.90it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4960.78it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 160, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 142, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 281, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 306, in epoch_pass
+[rank0]:     for batch_idx, sample in enumerate(self.loader):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+[rank0]:     raise exception
+[rank0]: KeyError: Caught KeyError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 396, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 216, in __call__
+[rank0]:     f_dict = self._get_feat_dict(key_enc)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/datasets/holoaders.py", line 128, in _get_feat_dict
+[rank0]:     raise KeyError(f"Key {key_enc} missing from EGTEA LMDB at {self.lmdb_path}")
+[rank0]: KeyError: "Key b'P15-R01-PastaSalad/frame_0000023691.jpg' missing from EGTEA LMDB at ./data/egtea/feats_train/data.lmdb"
+
+[rank0]:[W324 10:04:20.102007586 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
