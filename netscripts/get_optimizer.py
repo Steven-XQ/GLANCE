@@ -33,7 +33,7 @@ class Warmup(torch.optim.lr_scheduler._LRScheduler):
             self.base_scheduler.step(*args, **kwargs)
 
 
-def get_optimizer(args, sf_encoder, model_denoise, traj_decoder, train_loader, model_hoi=None, motion_encoder=None, obj_head=None):
+def get_optimizer(args, sf_encoder, model_denoise, traj_decoder, train_loader, model_hoi=None, motion_encoder=None, obj_head=None, gaze_encoder=None):
     assert train_loader is not None, "train_loader is None, " \
                                      "warmup or cosine learning rate need number of iterations in dataloader"
     iters_per_epoch = len(train_loader)
@@ -43,6 +43,7 @@ def get_optimizer(args, sf_encoder, model_denoise, traj_decoder, train_loader, m
     model_hoi_params = [p for p_name, p in model_hoi.named_parameters() if  p.requires_grad]
     motion_encoder_params = [p for p_name, p in motion_encoder.named_parameters() if  p.requires_grad]
     obj_head_params = [p for p_name, p in obj_head.named_parameters() if  p.requires_grad]
+    gaze_encoder_params = [p for p_name, p in gaze_encoder.named_parameters() if p.requires_grad] if gaze_encoder is not None else []
 
     if args.optimizer == "adam":
         optimizer = torch.optim.Adam([{'params': model_denoise_params, 'weight_decay': 0.0}, {'params': sf_encoder_params}, {'params': traj_decoder_params}, {'params': model_hoi_params}],
@@ -54,9 +55,11 @@ def get_optimizer(args, sf_encoder, model_denoise, traj_decoder, train_loader, m
         optimizer = torch.optim.SGD([{'params': model_denoise_params, 'weight_decay': 0.0}, {'params': sf_encoder_params}, {'params': traj_decoder_params}, {'params': model_hoi_params}],
                                     lr=args.lr, momentum=args.momentum, weight_decay=args.weight_decay)
     elif args.optimizer == 'adamw':
-        optimizer = torch.optim.AdamW([{'params': model_denoise_params, 'weight_decay': 0.0}, {'params': sf_encoder_params}, 
-                                       {'params': traj_decoder_params}, {'params': model_hoi_params}, {'params': motion_encoder_params}, {'params': obj_head_params}], 
-                                       lr=args.lr)
+        param_groups = [{'params': model_denoise_params, 'weight_decay': 0.0}, {'params': sf_encoder_params},
+                        {'params': traj_decoder_params}, {'params': model_hoi_params}, {'params': motion_encoder_params}, {'params': obj_head_params}]
+        if gaze_encoder_params:
+            param_groups.append({'params': gaze_encoder_params})
+        optimizer = torch.optim.AdamW(param_groups, lr=args.lr)
     else:
         raise ValueError("unsupported optimizer type")
 

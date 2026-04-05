@@ -67,6 +67,12 @@ class DatasetArgs(object):
         self.ek_version = ek_version
         self.mode = mode
 
+        # Gaze defaults (can be overridden by add_attr)
+        self.use_gaze = False
+        self.gaze_data_base = None
+        self.gaze_heatmap_size = 32
+        self.gaze_sigma = 2.0
+
     def add_attr(self, attr_name, attr_value):
         setattr(self, attr_name, attr_value)
 

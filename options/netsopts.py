@@ -46,6 +46,10 @@ def add_nets_opts(parser):
     parser.add_argument("--test_start_idx", default=0, type=int, help="start index for test seq")
 
 
+    parser.add_argument("--use_gaze", action="store_true", help="Use EGTEA gaze data for gaze-guided prediction")
+    parser.add_argument("--gaze_sigma", default=2.0, type=float, help="Gaze heatmap Gaussian sigma")
+    parser.add_argument("--gaze_heatmap_size", default=32, type=int, help="Gaze heatmap spatial resolution")
+
     parser.add_argument("--lambda_obj", default=1e-1, type=float, help="Weight to supervise object affordance")
     parser.add_argument("--lambda_traj", default=1., type=float, help="Weight to supervise hand traj")
     parser.add_argument("--lambda_obj_kl", default=1e-3, type=float, help="Weight to supervise object affordance KLD")

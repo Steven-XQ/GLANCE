@@ -59,7 +59,9 @@ class FeaturesHOLoader(object):
     def __init__(self, sampler, feature_base_path, fps=4.0, input_name='rgb',
                  frame_tmpl='frame_{:010d}.jpg',
                  transform_feat=None, transform_video=None,
-                 t_observe=2.5, mode="train", ek_version="ek100"):
+                 t_observe=2.5, mode="train", ek_version="ek100",
+                 use_gaze=False, gaze_data_base=None,
+                 gaze_heatmap_size=32, gaze_sigma=2.0):
 
         self.feature_base_path = feature_base_path
         self.ek_version = ek_version
@@ -98,6 +100,58 @@ class FeaturesHOLoader(object):
             uid2future_path = "./data/uid2future_file_name.pickle"
         with open(uid2future_path, 'rb') as f:
             self.uid2future_file_name = pickle.load(f)
+
+        self.use_gaze = use_gaze and (ek_version == 'egtea')
+        self.gaze_heatmap_size = gaze_heatmap_size
+        self.gaze_sigma = gaze_sigma
+        if self.use_gaze:
+            self.gaze_data_base = gaze_data_base or "/scratch/u6x/sx2022.u6x/datasets/EGTEA_Gaze_Plus/EGTEA/Gaze_Data/gaze_data/gaze_data"
+            self._gaze_cache = {}
+
+    def _load_gaze_for_video(self, video_id):
+        """Load and cache per-frame gaze data for a video.
+        Returns dict: frame_number -> (x_norm, y_norm) averaged over samples.
+        """
+        if video_id in self._gaze_cache:
+            return self._gaze_cache[video_id]
+
+        gaze_file = os.path.join(self.gaze_data_base, f"{video_id}.txt")
+        if not os.path.exists(gaze_file):
+            self._gaze_cache[video_id] = None
+            return None
+
+        frame_gaze = {}
+        with open(gaze_file, 'r') as f:
+            for line in f:
+                if line.startswith('#') or line.startswith('Time'):
+                    continue
+                parts = line.strip().split('\t')
+                if len(parts) < 8 or parts[1] != 'SMP':
+                    continue
+                try:
+                    x_px = float(parts[3])
+                    y_px = float(parts[4])
+                    frame_num = int(parts[5])
+                    event_type = parts[7].strip()
+                except (ValueError, IndexError):
+                    continue
+                if event_type == 'Blink':
+                    continue
+                x_norm = max(0.0, min(1.0, x_px / 1280.0))
+                y_norm = max(0.0, min(1.0, y_px / 960.0))
+                if frame_num not in frame_gaze:
+                    frame_gaze[frame_num] = []
+                frame_gaze[frame_num].append((x_norm, y_norm))
+
+        # Average multiple gaze points per frame
+        averaged = {}
+        for fnum, points in frame_gaze.items():
+            xs = [p[0] for p in points]
+            ys = [p[1] for p in points]
+            averaged[fnum] = (sum(xs) / len(xs), sum(ys) / len(ys))
+
+        self._gaze_cache[video_id] = averaged
+        return averaged
 
     def _open_lmdb(self):
         """Lazy LMDB open for multiprocessing safety."""
@@ -323,6 +377,23 @@ class FeaturesHOLoader(object):
             print("saving homo to ", homo_file_path)
 
         out = {"name": full_names, "feat": feats, "bbox_feat": bbox_feats, "valid_mask": valid_masks, 'times': times, 'start_time': action.start_time, 'frames_idxs': frames_idxs, 'future_file_name_list': future_file_name_list, 'homography_stack': homography_stack, }
+
+        if self.use_gaze:
+            from diffip2d.gaze_modules import generate_gaze_heatmap
+            gaze_data = self._load_gaze_for_video(action.video_id)
+            gaze_heatmaps = []
+            # Generate heatmap for each observation frame
+            obs_frame_idxs = frames_idxs[len(frames_idxs) - self.num_observe:]
+            for fidx in obs_frame_idxs:
+                fidx = int(fidx)
+                if gaze_data is not None and fidx in gaze_data:
+                    xy = np.array(gaze_data[fidx], dtype=np.float32)
+                    heatmap = generate_gaze_heatmap(xy, self.gaze_heatmap_size, self.gaze_sigma)
+                else:
+                    heatmap = np.zeros((1, self.gaze_heatmap_size, self.gaze_heatmap_size), dtype=np.float32)
+                gaze_heatmaps.append(heatmap)
+            out['gaze_heatmap'] = np.stack(gaze_heatmaps, axis=0)  # (T, 1, H, W)
+
         return out
 
 

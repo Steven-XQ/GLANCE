@@ -607,7 +607,7 @@ class GaussianDiffusion:
         return {'pred_xprev':pred_prev, 'pred_xstart':pred_xstart}
     
 
-    def training_losses_seq2seq(self, model, post_model, rl_x_start, t, rl_valid_mask, motion_feat_encoded, model_kwargs=None, noise=None):
+    def training_losses_seq2seq(self, model, post_model, rl_x_start, t, rl_valid_mask, motion_feat_encoded, model_kwargs=None, noise=None, gaze_feat_encoded=None):
         x_start_r = rl_x_start[0].to(t.device)
         x_start_l = rl_x_start[1].to(t.device)
 
@@ -643,6 +643,8 @@ class GaussianDiffusion:
         target_r = x_start_r
         target_l = x_start_l
         model_kwargs = {}
+        if gaze_feat_encoded is not None:
+            model_kwargs['gaze_feat_encoded'] = gaze_feat_encoded
 
         model_output_r = model(x_t_r, self._scale_timesteps(t), motion_feat_encoded, valid_mask_r, **model_kwargs)
         model_output_l = model(x_t_l, self._scale_timesteps(t), motion_feat_encoded, valid_mask_l, **model_kwargs)

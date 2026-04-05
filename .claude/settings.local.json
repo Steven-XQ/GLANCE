@@ -17,7 +17,12 @@
       "Bash(unzip -l raw_egtea/raw_egtea.zip)",
       "Bash(unzip -l processed/data_common.zip)",
       "Bash(unzip:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(find /home/u6x/sx2022.u6x/Diff-IP2D-main -name *.py -path *model* -type f)",
+      "Bash(grep:*)",
+      "Bash(find /home/u6x/sx2022.u6x/Diff-IP2D-main -name gaze* -o -name *gaze*)",
+      "Read(//scratch/u6x/sx2022.u6x/datasets/**)",
+      "Read(//scratch/u6x/sx2022.u6x/datasets/EGTEA/**)"
     ]
   }
 }

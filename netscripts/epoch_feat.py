@@ -135,6 +135,8 @@ class TrainValLoop:
             collection_path_aff=None,
             refine_const=1,
             test_start_idx=0,
+            gaze_encoder=None,
+            use_gaze=False,
     ):
         self.sf_encoder = DDP(
             sf_encoder.to(dist_util.dev()) ,
@@ -190,6 +192,19 @@ class TrainValLoop:
             find_unused_parameters=True,
         )
 
+        self.use_gaze = use_gaze
+        if use_gaze and gaze_encoder is not None:
+            self.gaze_encoder = DDP(
+                gaze_encoder.to(dist_util.dev()),
+                device_ids=[dist_util.dev()],
+                output_device=dist_util.dev(),
+                broadcast_buffers=False,
+                bucket_cap_mb=128,
+                find_unused_parameters=True,
+            )
+        else:
+            self.gaze_encoder = None
+
         self.diffusion = diffusion
         self.start_epoch = start_epoch
         self.all_epochs = epochs
@@ -229,6 +244,8 @@ class TrainValLoop:
             self.start_epoch = modelio.load_checkpoint_by_name(self.model_hoi, resume_path=resume[0], state_dict_name="model_hoi_state_dict", strict=False, device=dist_util.dev())
             self.start_epoch = modelio.load_checkpoint_by_name(self.motion_encoder, resume_path=resume[0], state_dict_name="motion_encoder_state_dict", strict=False, device=dist_util.dev())
             self.start_epoch = modelio.load_checkpoint_by_name(self.obj_head, resume_path=resume[0], state_dict_name="obj_head_state_dict", strict=False, device=dist_util.dev())
+            if self.gaze_encoder is not None:
+                modelio.load_checkpoint_by_name(self.gaze_encoder, resume_path=resume[0], state_dict_name="gaze_encoder_state_dict", strict=False, device=dist_util.dev())
             print("finish loading diffusion model from epoch {}".format(self.start_epoch))
 
 
@@ -238,6 +255,8 @@ class TrainValLoop:
         dist_util.sync_params(self.model_hoi.parameters())
         dist_util.sync_params(self.motion_encoder.parameters())
         dist_util.sync_params(self.obj_head.parameters())
+        if self.gaze_encoder is not None:
+            dist_util.sync_params(self.gaze_encoder.parameters())
 
         self.all_epochs, self.start_epoch = (1, 0) if self.evaluate else (self.all_epochs, self.start_epoch)
 
@@ -267,6 +286,8 @@ class TrainValLoop:
                 self.traj_decoder.train()
                 self.motion_encoder.train()
                 self.obj_head.train()
+                if self.gaze_encoder is not None:
+                    self.gaze_encoder.train()
             else:
                 self.model_hoi.eval()
                 self.sf_encoder.eval()
@@ -274,6 +295,8 @@ class TrainValLoop:
                 self.traj_decoder.eval()
                 self.motion_encoder.eval()
                 self.obj_head.eval()
+                if self.gaze_encoder is not None:
+                    self.gaze_encoder.eval()
 
             for epoch in range(self.start_epoch, self.all_epochs):
                 if not self.evaluate:
@@ -320,6 +343,14 @@ class TrainValLoop:
                 homo_transform = homo_transform[:, :self.seq_len_obs, ...].contiguous()
                 homo_transform = homo_transform.view(homo_transform.shape[0], self.seq_len_obs, 3*3)
                 motion_feat_encoded = self.motion_encoder(homo_transform)
+
+                gaze_feat_encoded = None
+                if self.use_gaze and self.gaze_encoder is not None and 'gaze_heatmap' in sample:
+                    gaze_heatmap = sample['gaze_heatmap'].float().to(dist_util.dev())
+                    B_g, T_g = gaze_heatmap.shape[:2]
+                    gaze_feat_encoded = self.gaze_encoder(gaze_heatmap.view(B_g * T_g, 1, gaze_heatmap.shape[3], gaze_heatmap.shape[4]))
+                    gaze_feat_encoded = gaze_feat_encoded.view(B_g, T_g, -1)
+
                 grl_feat = self.model_hoi(input, bbox_feat, valid_mask)
 
                 grl_feat_past = grl_feat[:, 0:self.seq_len_obs,...]
@@ -336,8 +367,12 @@ class TrainValLoop:
                 right_feat = right_feat.view(*right_feat.shape[0:2], -1)
                 left_feat = left_feat.view(*right_feat.shape[0:2], -1)
 
-                right_feat_encoded = self.sf_encoder(right_feat)
-                left_feat_encoded = self.sf_encoder(left_feat)
+                if self.use_gaze and gaze_feat_encoded is not None:
+                    right_feat_encoded = self.sf_encoder(right_feat, gaze_feat=gaze_feat_encoded)
+                    left_feat_encoded = self.sf_encoder(left_feat, gaze_feat=gaze_feat_encoded)
+                else:
+                    right_feat_encoded = self.sf_encoder(right_feat)
+                    left_feat_encoded = self.sf_encoder(left_feat)
 
                 t, weights = self.schedule_sampler.sample(grl_feat.shape[0], dist_util.dev())
 
@@ -349,6 +384,7 @@ class TrainValLoop:
                     t,
                     [None,None],
                     motion_feat_encoded,
+                    gaze_feat_encoded=gaze_feat_encoded,
                 )
 
                 loss_feat_dict = compute_losses()
@@ -476,7 +512,14 @@ class TrainValLoop:
                 with torch.no_grad():
                     homo_transform = homo_transform.view(homo_transform.shape[0], self.seq_len_obs, 3*3)
                     motion_feat_encoded = self.motion_encoder(homo_transform)
-                    
+
+                    gaze_feat_encoded = None
+                    if self.use_gaze and self.gaze_encoder is not None and 'gaze_heatmap' in sample:
+                        gaze_heatmap = sample['gaze_heatmap'].float().to(dist_util.dev())
+                        B_g, T_g = gaze_heatmap.shape[:2]
+                        gaze_feat_encoded = self.gaze_encoder(gaze_heatmap.view(B_g * T_g, 1, gaze_heatmap.shape[3], gaze_heatmap.shape[4]))
+                        gaze_feat_encoded = gaze_feat_encoded.view(B_g, T_g, -1)
+
                     grl_feat = self.model_hoi(input, bbox_feat, valid_mask)
                     bsize = grl_feat.shape[0]
                     grl_feat_past = grl_feat[:, 0:self.seq_len_obs,...]
@@ -492,8 +535,12 @@ class TrainValLoop:
 
                     right_feat = right_feat.view(*right_feat.shape[0:2], -1)
                     left_feat = left_feat.view(*right_feat.shape[0:2], -1)
-                    right_feat_encoded = self.sf_encoder(right_feat)
-                    left_feat_encoded = self.sf_encoder(left_feat)
+                    if self.use_gaze and gaze_feat_encoded is not None:
+                        right_feat_encoded = self.sf_encoder(right_feat, gaze_feat=gaze_feat_encoded)
+                        left_feat_encoded = self.sf_encoder(left_feat, gaze_feat=gaze_feat_encoded)
+                    else:
+                        right_feat_encoded = self.sf_encoder(right_feat)
+                        left_feat_encoded = self.sf_encoder(left_feat)
 
                     for sample_idx in range(self.sample_times):
                         pseudo_future = torch.zeros((bsize, self.seq_len_unobs, self.feat_dim))
@@ -508,6 +555,8 @@ class TrainValLoop:
                         sample_shape = (x_noised_r.shape[0], x_noised_r.shape[1], x_noised_r.shape[2])
 
                         model_kwargs = {}
+                        if gaze_feat_encoded is not None:
+                            model_kwargs['gaze_feat_encoded'] = gaze_feat_encoded
 
                         if int(os.environ['LOCAL_RANK']) == 0:
                             print("========== sample id: "+str(sample_idx) + "/" +str(self.sample_times) +" denoising ==========")
@@ -615,6 +664,7 @@ class TrainValLoop:
                     "model_hoi_state_dict": self.model_hoi.state_dict(),
                     "motion_encoder_state_dict": self.motion_encoder.state_dict(),
                     "obj_head_state_dict": self.obj_head.state_dict(),
+                    **({"gaze_encoder_state_dict": self.gaze_encoder.state_dict()} if self.gaze_encoder is not None else {}),
                     "optimizer": self.optimizer.state_dict(),
                 },
                 checkpoint=self.checkpoint_path,

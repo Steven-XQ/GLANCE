@@ -241,7 +241,8 @@ class TransformerNetModel(nn.Module):
 
 class DecoderBlock(nn.Module):
     def __init__(self, dim, num_heads, mlp_ratio=4., qkv_bias=True, qk_scale=None, drop=0., attn_drop=0.,
-                 drop_path=0.1, act_layer=nn.GELU, norm_layer=nn.LayerNorm):
+                 drop_path=0.1, act_layer=nn.GELU, norm_layer=nn.LayerNorm,
+                 use_gaze=False, T_max=20):
         super().__init__()
         self.norm1 = nn.LayerNorm(dim)
         self.self_attn = MultiHeadAttention(dim, num_heads=num_heads, qkv_bias=qkv_bias,
@@ -253,15 +254,26 @@ class DecoderBlock(nn.Module):
         self.enc_dec_attn = MultiHeadAttention(dim, num_heads=num_heads, qkv_bias=qkv_bias,
                                                qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop)
 
+        self.use_gaze = use_gaze
+        if use_gaze:
+            from .gaze_modules import GazeTemporalCrossAttention
+            self.norm_gaze = nn.LayerNorm(dim)
+            self.gaze_cross_attn = GazeTemporalCrossAttention(
+                dim=dim, num_heads=num_heads, T_max=T_max,
+                attn_drop=attn_drop, proj_drop=drop)
+
         self.norm3 = nn.LayerNorm(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
         self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim, act_layer=act_layer, drop=drop)
 
-    def forward(self, tgt, emb_motion, memory_mask=None, trg_mask=None):
+    def forward(self, tgt, emb_motion, memory_mask=None, trg_mask=None, gaze_feat=None):
         tgt_2 = self.norm1(tgt)
         tgt = tgt + self.drop_path(self.self_attn(q=tgt_2, k=tgt_2, v=tgt_2, mask=trg_mask))
         tgt = tgt + self.drop_path(self.enc_dec_attn(q=self.norm2(tgt), k=emb_motion, v=emb_motion, mask=None))
-        tgt = tgt + self.drop_path(self.mlp(self.norm2(tgt)))
+        if self.use_gaze and gaze_feat is not None:
+            tgt = tgt + self.drop_path(self.gaze_cross_attn(
+                q_hand=self.norm_gaze(tgt), kv_gaze=gaze_feat))
+        tgt = tgt + self.drop_path(self.mlp(self.norm3(tgt)))
         return tgt
 
 class EncoderBlock(nn.Module):
@@ -299,6 +311,8 @@ class MADT(nn.Module):
         dropout=0,
         init_pretrained='no',
         depth=4,
+        use_gaze=False,
+        T_max=20,
     ):
         super().__init__()
 
@@ -307,6 +321,7 @@ class MADT(nn.Module):
         self.output_dims = output_dims
         self.dropout_value = dropout
         self.hidden_size = 512
+        self.use_gaze = use_gaze
 
         time_embed_dim = hidden_t_dim * 2
         self.time_embed = nn.Sequential(
@@ -317,12 +332,12 @@ class MADT(nn.Module):
 
         self.input_up_proj = nn.Sequential(nn.Linear(input_dims,self.hidden_size),
                                               nn.Tanh(), nn.Linear(self.hidden_size, self.hidden_size))
-        
+
 
         self.register_buffer("position_ids", torch.arange(1000).expand((1, -1)))
         self.position_embeddings = nn.Embedding(1000, self.hidden_size)
         self.LayerNorm = nn.LayerNorm(self.hidden_size)
-    
+
         self.dropout = nn.Dropout(self.dropout_value)
 
         if self.output_dims != self.hidden_size:
@@ -333,10 +348,11 @@ class MADT(nn.Module):
         self.depth = depth
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, self.depth)]
         self.denoised_transformer = nn.ModuleList([DecoderBlock(dim=self.hidden_size, num_heads=4, mlp_ratio=4, qkv_bias=False, qk_scale=None,
-        drop=self.dropout_value, attn_drop=0., drop_path=dpr[i])
+        drop=self.dropout_value, attn_drop=0., drop_path=dpr[i],
+        use_gaze=use_gaze, T_max=T_max)
         for i in range(self.depth)])
 
-    def forward(self, x_r, timesteps, motion_feat_encoded, valid_mask=None):
+    def forward(self, x_r, timesteps, motion_feat_encoded, valid_mask=None, gaze_feat_encoded=None):
         emb_t = self.time_embed(timestep_embedding(timesteps, self.hidden_t_dim))
 
         if self.input_dims != self.hidden_size:
@@ -355,8 +371,15 @@ class MADT(nn.Module):
         emb_motion = self.LayerNorm(emb_motion)
 
 
+        emb_gaze = None
+        if self.use_gaze and gaze_feat_encoded is not None:
+            gaze_length = gaze_feat_encoded.size(1)
+            position_ids_gaze = self.position_ids[:, :gaze_length]
+            emb_gaze = self.position_embeddings(position_ids_gaze) + gaze_feat_encoded
+            emb_gaze = self.LayerNorm(emb_gaze)
+
         for blk in self.denoised_transformer:
-            emb_inputs_r = blk(emb_inputs_r, emb_motion, memory_mask=None, trg_mask=None)
+            emb_inputs_r = blk(emb_inputs_r, emb_motion, memory_mask=None, trg_mask=None, gaze_feat=emb_gaze)
 
         emb_inputs_r = self.LayerNorm(emb_inputs_r)
 

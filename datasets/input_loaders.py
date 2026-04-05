@@ -111,7 +111,11 @@ def get_features_loader(args, featuresloader=None):
         'sampler': sampler,
         'mode': args.mode,
         'ek_version': args.ek_version,
-        't_observe': args.t_buffer}
+        't_observe': args.t_buffer,
+        'use_gaze': getattr(args, 'use_gaze', False),
+        'gaze_data_base': getattr(args, 'gaze_data_base', None),
+        'gaze_heatmap_size': getattr(args, 'gaze_heatmap_size', 32),
+        'gaze_sigma': getattr(args, 'gaze_sigma', 2.0)}
     if featuresloader is None:
         featuresloader = FeaturesLoader
     feat_loader_list = []

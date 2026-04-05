@@ -6,7 +6,7 @@
 from diffip2d import gaussian_diffusion as gd
 from diffip2d.gaussian_diffusion import HOIDiffusion, space_timesteps
 from diffip2d.transformer_model import TransformerNetModel, MADT, RL_HOITransformerNetModel
-from diffip2d.pre_encoder import SideFusionEncoder, MotionEncoder
+from diffip2d.pre_encoder import SideFusionEncoder, GazeSideFusionEncoder, MotionEncoder
 from diffip2d.post_decoder import TrajDecoder
 
 def create_network_and_diffusion(
@@ -31,21 +31,36 @@ def create_network_and_diffusion(
     motion_encoder_hidden,
     madt_depth,
     feat_num=3,   # global hand object
-    traj_dim=2,   # 2D traj on egocentric video 
+    traj_dim=2,   # 2D traj on egocentric video
     homo_dim=3,   # homography matrix
+    use_gaze=False,
+    T_max=20,
     **kwargs,
 ):
 
-    # we will support more input params for different structures
-    sf_encoder =  SideFusionEncoder(input_dims=feat_num * hidden_dim, output_dims=hidden_dim, encoder_hidden_dims=sf_encoder_hidden)
-    traj_decoder =  TrajDecoder(input_dims=hidden_dim, output_dims=traj_dim, encoder_hidden_dims1=traj_decoder_hidden1, encoder_hidden_dims2=traj_decoder_hidden2)
-    motion_encoder =  MotionEncoder(input_dims=homo_dim * homo_dim, output_dims=hidden_dim, encoder_hidden_dims=motion_encoder_hidden)
+    if use_gaze:
+        from diffip2d.gaze_modules import GazeEncoder
+        gaze_encoder = GazeEncoder(output_dim=hidden_dim)
+        sf_encoder = GazeSideFusionEncoder(input_dims=feat_num * hidden_dim, output_dims=hidden_dim,
+                                           encoder_hidden_dims=sf_encoder_hidden, gaze_dim=hidden_dim)
+    else:
+        gaze_encoder = None
+        sf_encoder = SideFusionEncoder(input_dims=feat_num * hidden_dim, output_dims=hidden_dim,
+                                       encoder_hidden_dims=sf_encoder_hidden)
+
+    traj_decoder = TrajDecoder(input_dims=hidden_dim, output_dims=traj_dim,
+                               encoder_hidden_dims1=traj_decoder_hidden1,
+                               encoder_hidden_dims2=traj_decoder_hidden2)
+    motion_encoder = MotionEncoder(input_dims=homo_dim * homo_dim, output_dims=hidden_dim,
+                                   encoder_hidden_dims=motion_encoder_hidden)
     denoised_model = MADT(
         input_dims=hidden_dim,
         output_dims=(hidden_dim if not learn_sigma else hidden_dim*2),
         hidden_t_dim=hidden_t_dim,
         dropout=dropout,
         depth=madt_depth,
+        use_gaze=use_gaze,
+        T_max=T_max,
     )
 
     betas = gd.get_named_beta_schedule(noise_schedule, diffusion_steps)
@@ -62,4 +77,4 @@ def create_network_and_diffusion(
         rescale_learned_sigmas=rescale_learned_sigmas
     )
 
-    return sf_encoder, denoised_model, diffusion, traj_decoder, motion_encoder
+    return sf_encoder, denoised_model, diffusion, traj_decoder, motion_encoder, gaze_encoder

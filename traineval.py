@@ -67,10 +67,12 @@ def main(args):
         "traj_decoder_hidden2": args.traj_decoder_hidden2,
         "motion_encoder_hidden": args.motion_encoder_hidden,
         "madt_depth": args.madt_depth,
+        "use_gaze": getattr(args, 'use_gaze', False),
+        "T_max": args.seq_len_obs + args.seq_len_unobs + 5,
     }
     if int(os.environ['LOCAL_RANK']) == 0:
         logging.info("diffusion setups\n================= \n%s \n=================", model_diff_args)
-    sf_encoder, model_denoise, diffusion, traj_decoder, motion_encoder = create_network_and_diffusion(**model_diff_args)
+    sf_encoder, model_denoise, diffusion, traj_decoder, motion_encoder, gaze_encoder = create_network_and_diffusion(**model_diff_args)
     if int(os.environ['LOCAL_RANK']) == 0:
         logging.info("finish building diffusion model!")
 
@@ -91,7 +93,8 @@ def main(args):
         traj_val_loader = dls['validation']
         print("training dataset size: {}".format(len(train_loader.dataset)))
         optimizer, scheduler = get_optimizer(args, sf_encoder=sf_encoder, model_denoise=model_denoise,traj_decoder=traj_decoder,
-                                              train_loader=train_loader,model_hoi=model_hoi, motion_encoder=motion_encoder, obj_head=obj_head)
+                                              train_loader=train_loader,model_hoi=model_hoi, motion_encoder=motion_encoder, obj_head=obj_head,
+                                              gaze_encoder=gaze_encoder)
                                               
     # We follow data structure of OCT to train and test our models 
     if not args.traj_only:
@@ -139,6 +142,8 @@ def main(args):
             checkpoint_path=args.checkpoint_path,
             collection_path_traj=args.collection_path_traj,
             collection_path_aff=args.collection_path_aff,
+            gaze_encoder=gaze_encoder,
+            use_gaze=getattr(args, 'use_gaze', False),
     ).run_loop()
 
 
