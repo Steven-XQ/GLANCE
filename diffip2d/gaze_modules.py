@@ -48,10 +48,15 @@ def generate_gaze_heatmap(gaze_xy, heatmap_size=32, sigma=2.0):
 
 
 class GazeEncoder(nn.Module):
-    """Encode 32x32 gaze heatmaps to feature vectors via CNN.
+    """Encode 32x32 gaze heatmaps to feature vectors via CNN, optionally
+    fused with a raw-coordinate MLP stream.
 
-    Architecture: 4 conv layers (stride 2) + adaptive pool + linear.
-    Input: (B*T, 1, 32, 32) -> Output: (B*T, output_dim)
+    The heatmap CNN captures spatial context (where the gaze cluster is and
+    its shape under blink-zeros), while the coordinate MLP preserves precise
+    sub-pixel location that the CNN's striding/pooling smooths away.
+
+    Input: (B*T, 1, 32, 32) heatmap, optional (B*T, 3) coord = (x, y, valid)
+    Output: (B*T, output_dim) feature vectors
     """
 
     def __init__(self, output_dim=512):
@@ -73,17 +78,28 @@ class GazeEncoder(nn.Module):
         )
         self.fc = nn.Linear(256, output_dim)
 
-    def forward(self, x):
+        # Coordinate stream: (x, y, valid) -> output_dim
+        self.coord_mlp = nn.Sequential(
+            nn.Linear(3, 64),
+            nn.ReLU(inplace=True),
+            nn.Linear(64, output_dim),
+        )
+
+    def forward(self, x, coord=None):
         """
         Args:
             x: (B*T, 1, 32, 32) gaze heatmaps
+            coord: (B*T, 3) optional raw (x, y, valid_flag) — if None, only
+                CNN features are used (backwards compatible).
         Returns:
             (B*T, output_dim) feature vectors
         """
-        x = self.cnn(x)           # (B*T, 256, 1, 1)
-        x = x.view(x.size(0), -1) # (B*T, 256)
-        x = self.fc(x)            # (B*T, output_dim)
-        return x
+        h = self.cnn(x)            # (B*T, 256, 1, 1)
+        h = h.view(h.size(0), -1)  # (B*T, 256)
+        h = self.fc(h)             # (B*T, output_dim)
+        if coord is not None:
+            h = h + self.coord_mlp(coord)
+        return h
 
 
 class GazeTemporalCrossAttention(nn.Module):

@@ -261,6 +261,10 @@ class DecoderBlock(nn.Module):
             self.gaze_cross_attn = GazeTemporalCrossAttention(
                 dim=dim, num_heads=num_heads, T_max=T_max,
                 attn_drop=attn_drop, proj_drop=drop)
+            # LayerScale: zero-initialized learnable scalar so the model
+            # opts in to gaze information gradually instead of being
+            # forced to use it from step 0.
+            self.gaze_alpha = nn.Parameter(torch.zeros(dim))
 
         self.norm3 = nn.LayerNorm(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
@@ -271,8 +275,8 @@ class DecoderBlock(nn.Module):
         tgt = tgt + self.drop_path(self.self_attn(q=tgt_2, k=tgt_2, v=tgt_2, mask=trg_mask))
         tgt = tgt + self.drop_path(self.enc_dec_attn(q=self.norm2(tgt), k=emb_motion, v=emb_motion, mask=None))
         if self.use_gaze and gaze_feat is not None:
-            tgt = tgt + self.drop_path(self.gaze_cross_attn(
-                q_hand=self.norm_gaze(tgt), kv_gaze=gaze_feat))
+            gaze_out = self.gaze_cross_attn(q_hand=self.norm_gaze(tgt), kv_gaze=gaze_feat)
+            tgt = tgt + self.drop_path(self.gaze_alpha * gaze_out)
         tgt = tgt + self.drop_path(self.mlp(self.norm3(tgt)))
         return tgt
 

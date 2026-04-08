@@ -348,8 +348,20 @@ class TrainValLoop:
                 if self.use_gaze and self.gaze_encoder is not None and 'gaze_heatmap' in sample:
                     gaze_heatmap = sample['gaze_heatmap'].float().to(dist_util.dev())
                     B_g, T_g = gaze_heatmap.shape[:2]
-                    gaze_feat_encoded = self.gaze_encoder(gaze_heatmap.view(B_g * T_g, 1, gaze_heatmap.shape[3], gaze_heatmap.shape[4]))
+                    gaze_coord = None
+                    if 'gaze_coord' in sample:
+                        gaze_coord = sample['gaze_coord'].float().to(dist_util.dev())
+                        gaze_coord = gaze_coord.view(B_g * T_g, -1)
+                    gaze_feat_encoded = self.gaze_encoder(
+                        gaze_heatmap.view(B_g * T_g, 1, gaze_heatmap.shape[3], gaze_heatmap.shape[4]),
+                        coord=gaze_coord,
+                    )
                     gaze_feat_encoded = gaze_feat_encoded.view(B_g, T_g, -1)
+                    # CFG-style gaze dropout: drop the entire gaze stream for
+                    # 10% of training samples so the denoiser doesn't over-rely
+                    # on it (regularization).
+                    if torch.rand(1, device=gaze_feat_encoded.device).item() < 0.1:
+                        gaze_feat_encoded = torch.zeros_like(gaze_feat_encoded)
 
                 grl_feat = self.model_hoi(input, bbox_feat, valid_mask)
 
@@ -517,7 +529,14 @@ class TrainValLoop:
                     if self.use_gaze and self.gaze_encoder is not None and 'gaze_heatmap' in sample:
                         gaze_heatmap = sample['gaze_heatmap'].float().to(dist_util.dev())
                         B_g, T_g = gaze_heatmap.shape[:2]
-                        gaze_feat_encoded = self.gaze_encoder(gaze_heatmap.view(B_g * T_g, 1, gaze_heatmap.shape[3], gaze_heatmap.shape[4]))
+                        gaze_coord = None
+                        if 'gaze_coord' in sample:
+                            gaze_coord = sample['gaze_coord'].float().to(dist_util.dev())
+                            gaze_coord = gaze_coord.view(B_g * T_g, -1)
+                        gaze_feat_encoded = self.gaze_encoder(
+                            gaze_heatmap.view(B_g * T_g, 1, gaze_heatmap.shape[3], gaze_heatmap.shape[4]),
+                            coord=gaze_coord,
+                        )
                         gaze_feat_encoded = gaze_feat_encoded.view(B_g, T_g, -1)
 
                     grl_feat = self.model_hoi(input, bbox_feat, valid_mask)

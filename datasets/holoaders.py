@@ -382,6 +382,7 @@ class FeaturesHOLoader(object):
             from diffip2d.gaze_modules import generate_gaze_heatmap
             gaze_data = self._load_gaze_for_video(action.video_id)
             gaze_heatmaps = []
+            gaze_coords = []  # (T, 3): x, y, valid_flag
             # Generate heatmap for each observation frame
             obs_frame_idxs = frames_idxs[len(frames_idxs) - self.num_observe:]
             for fidx in obs_frame_idxs:
@@ -389,10 +390,14 @@ class FeaturesHOLoader(object):
                 if gaze_data is not None and fidx in gaze_data:
                     xy = np.array(gaze_data[fidx], dtype=np.float32)
                     heatmap = generate_gaze_heatmap(xy, self.gaze_heatmap_size, self.gaze_sigma)
+                    coord = np.array([float(xy[0]), float(xy[1]), 1.0], dtype=np.float32)
                 else:
                     heatmap = np.zeros((1, self.gaze_heatmap_size, self.gaze_heatmap_size), dtype=np.float32)
+                    coord = np.array([0.0, 0.0, 0.0], dtype=np.float32)
                 gaze_heatmaps.append(heatmap)
+                gaze_coords.append(coord)
             out['gaze_heatmap'] = np.stack(gaze_heatmaps, axis=0)  # (T, 1, H, W)
+            out['gaze_coord'] = np.stack(gaze_coords, axis=0)       # (T, 3)
 
         return out
 
