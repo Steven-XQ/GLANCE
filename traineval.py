@@ -68,7 +68,7 @@ def main(args):
         "motion_encoder_hidden": args.motion_encoder_hidden,
         "madt_depth": args.madt_depth,
         "use_gaze": getattr(args, 'use_gaze', False),
-        "T_max": args.seq_len_obs + args.seq_len_unobs + 5,
+        "T_max": 64,
     }
     if int(os.environ['LOCAL_RANK']) == 0:
         logging.info("diffusion setups\n================= \n%s \n=================", model_diff_args)

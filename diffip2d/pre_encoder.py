@@ -81,7 +81,9 @@ class GazeSideFusionEncoder(nn.Module):
         """
         Args:
             x: (B, T, 1536) concatenated [global(512), hand(512), object(512)]
-            gaze_feat: (B, T, 512) encoded gaze features, or None
+            gaze_feat: (B, T_gaze, 512) encoded gaze features, or None.
+                T_gaze may be smaller than T (e.g., gaze only for observation frames).
+                Frames beyond T_gaze are not gated.
         Returns:
             (B, T, 512)
         """
@@ -92,11 +94,16 @@ class GazeSideFusionEncoder(nn.Module):
             hand_f = x[:, :, d:2*d]
             obj_f = x[:, :, 2*d:3*d]
 
-            gate = self.gate_net(gaze_feat.reshape(B * T, -1))
-            gate = gate.view(B, T, d)
-            obj_f = obj_f * gate
+            T_gaze = gaze_feat.shape[1]
+            T_use = min(T_gaze, T)
+            gate = self.gate_net(gaze_feat[:, :T_use, :].reshape(B * T_use, -1))
+            gate = gate.view(B, T_use, d)
 
-            x = th.cat([global_f, hand_f, obj_f], dim=2)
+            # Only apply gate to first T_use frames; leave the rest unchanged
+            obj_f_gated = obj_f.clone()
+            obj_f_gated[:, :T_use, :] = obj_f[:, :T_use, :] * gate
+
+            x = th.cat([global_f, hand_f, obj_f_gated], dim=2)
 
         x = x.view(B * T, self.input_dims)
         x = self.feat_embed(x)
