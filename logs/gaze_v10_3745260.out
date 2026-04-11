@@ -1,0 +1,30 @@
+=== v10: Fixed temporal delta = 2 frames (~333ms at 6fps) ===
+=== TRAINING ===
+python traineval.py --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_fixed_delta=2
+training dataset size: 1880
+evaluation dataset size: 69
+=== EVAL TRAJECTORY ===
+python traineval.py --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_fixed_delta=2
+evaluation dataset size: 442
+=> loading sf_encoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading model_denoise_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading traj_decoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading model_hoi_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading motion_encoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading obj_head_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading gaze_encoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+finish loading diffusion model from epoch 30
+========== sample id: 0/10 denoising ==========
+=== EVAL AFFORDANCE ===
+python traineval.py --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_fixed_delta=2
+evaluation dataset size: 69
+=> loading sf_encoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading model_denoise_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading traj_decoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading model_hoi_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading motion_encoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading obj_head_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+=> loading gaze_encoder_state_dict checkpoint './diffip_weights/checkpoint_30.pth.tar'
+finish loading diffusion model from epoch 30
+========== sample id: 0/10 denoising ==========
+=== v10 COMPLETE ===

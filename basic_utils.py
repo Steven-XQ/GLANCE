@@ -35,18 +35,29 @@ def create_network_and_diffusion(
     homo_dim=3,   # homography matrix
     use_gaze=False,
     T_max=20,
+    gaze_coord_only=False,
+    gaze_fusion_only=False,
+    gaze_alpha_clamp=0.0,
+    gaze_last_n_blocks=0,
+    gaze_fixed_delta=0,
+    gaze_bias_init_delta=0,
+    gaze_bias_init_amp=2.0,
     **kwargs,
 ):
 
     if use_gaze:
         from diffip2d.gaze_modules import GazeEncoder
-        gaze_encoder = GazeEncoder(output_dim=hidden_dim)
+        gaze_encoder = GazeEncoder(output_dim=hidden_dim, coord_only=gaze_coord_only)
         sf_encoder = GazeSideFusionEncoder(input_dims=feat_num * hidden_dim, output_dims=hidden_dim,
                                            encoder_hidden_dims=sf_encoder_hidden, gaze_dim=hidden_dim)
     else:
         gaze_encoder = None
         sf_encoder = SideFusionEncoder(input_dims=feat_num * hidden_dim, output_dims=hidden_dim,
                                        encoder_hidden_dims=sf_encoder_hidden)
+
+    # When gaze_fusion_only, gaze is used only in SideFusionEncoder gating,
+    # not in MADT cross-attention (to avoid trajectory regression).
+    use_gaze_in_madt = use_gaze and not gaze_fusion_only
 
     traj_decoder = TrajDecoder(input_dims=hidden_dim, output_dims=traj_dim,
                                encoder_hidden_dims1=traj_decoder_hidden1,
@@ -59,8 +70,13 @@ def create_network_and_diffusion(
         hidden_t_dim=hidden_t_dim,
         dropout=dropout,
         depth=madt_depth,
-        use_gaze=use_gaze,
+        use_gaze=use_gaze_in_madt,
         T_max=T_max,
+        gaze_last_n_blocks=gaze_last_n_blocks,
+        gaze_alpha_clamp=gaze_alpha_clamp,
+        gaze_fixed_delta=gaze_fixed_delta,
+        gaze_bias_init_delta=gaze_bias_init_delta,
+        gaze_bias_init_amp=gaze_bias_init_amp,
     )
 
     betas = gd.get_named_beta_schedule(noise_schedule, diffusion_steps)

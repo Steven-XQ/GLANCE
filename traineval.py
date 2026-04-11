@@ -69,6 +69,13 @@ def main(args):
         "madt_depth": args.madt_depth,
         "use_gaze": getattr(args, 'use_gaze', False),
         "T_max": 64,
+        "gaze_coord_only": getattr(args, 'gaze_coord_only', False),
+        "gaze_fusion_only": getattr(args, 'gaze_fusion_only', False),
+        "gaze_alpha_clamp": getattr(args, 'gaze_alpha_clamp', 0.0),
+        "gaze_last_n_blocks": getattr(args, 'gaze_last_n_blocks', 0),
+        "gaze_fixed_delta": getattr(args, 'gaze_fixed_delta', 0),
+        "gaze_bias_init_delta": getattr(args, 'gaze_bias_init_delta', 0),
+        "gaze_bias_init_amp": getattr(args, 'gaze_bias_init_amp', 2.0),
     }
     if int(os.environ['LOCAL_RANK']) == 0:
         logging.info("diffusion setups\n================= \n%s \n=================", model_diff_args)
@@ -144,6 +151,8 @@ def main(args):
             collection_path_aff=args.collection_path_aff,
             gaze_encoder=gaze_encoder,
             use_gaze=getattr(args, 'use_gaze', False),
+            gaze_fusion_only=getattr(args, 'gaze_fusion_only', False),
+            gaze_detach_diffusion=getattr(args, 'gaze_detach_diffusion', False),
     ).run_loop()
 
 

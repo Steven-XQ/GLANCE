@@ -242,7 +242,7 @@ class TransformerNetModel(nn.Module):
 class DecoderBlock(nn.Module):
     def __init__(self, dim, num_heads, mlp_ratio=4., qkv_bias=True, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0.1, act_layer=nn.GELU, norm_layer=nn.LayerNorm,
-                 use_gaze=False, T_max=20):
+                 use_gaze=False, T_max=20, gaze_alpha_clamp=0.0, gaze_fixed_delta=0, gaze_bias_init_delta=0, gaze_bias_init_amp=2.0):
         super().__init__()
         self.norm1 = nn.LayerNorm(dim)
         self.self_attn = MultiHeadAttention(dim, num_heads=num_heads, qkv_bias=qkv_bias,
@@ -255,12 +255,14 @@ class DecoderBlock(nn.Module):
                                                qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop)
 
         self.use_gaze = use_gaze
+        self.gaze_alpha_clamp = gaze_alpha_clamp
         if use_gaze:
             from .gaze_modules import GazeTemporalCrossAttention
             self.norm_gaze = nn.LayerNorm(dim)
             self.gaze_cross_attn = GazeTemporalCrossAttention(
                 dim=dim, num_heads=num_heads, T_max=T_max,
-                attn_drop=attn_drop, proj_drop=drop)
+                attn_drop=attn_drop, proj_drop=drop, fixed_delta=gaze_fixed_delta,
+                bias_init_delta=gaze_bias_init_delta, bias_init_amp=gaze_bias_init_amp)
             # LayerScale: zero-initialized learnable scalar so the model
             # opts in to gaze information gradually instead of being
             # forced to use it from step 0.
@@ -276,7 +278,8 @@ class DecoderBlock(nn.Module):
         tgt = tgt + self.drop_path(self.enc_dec_attn(q=self.norm2(tgt), k=emb_motion, v=emb_motion, mask=None))
         if self.use_gaze and gaze_feat is not None:
             gaze_out = self.gaze_cross_attn(q_hand=self.norm_gaze(tgt), kv_gaze=gaze_feat)
-            tgt = tgt + self.drop_path(self.gaze_alpha * gaze_out)
+            alpha = self.gaze_alpha.clamp(max=self.gaze_alpha_clamp) if self.gaze_alpha_clamp > 0 else self.gaze_alpha
+            tgt = tgt + self.drop_path(alpha * gaze_out)
         tgt = tgt + self.drop_path(self.mlp(self.norm3(tgt)))
         return tgt
 
@@ -317,6 +320,11 @@ class MADT(nn.Module):
         depth=4,
         use_gaze=False,
         T_max=20,
+        gaze_last_n_blocks=0,
+        gaze_alpha_clamp=0.0,
+        gaze_fixed_delta=0,
+        gaze_bias_init_delta=0,
+        gaze_bias_init_amp=2.0,
     ):
         super().__init__()
 
@@ -351,9 +359,12 @@ class MADT(nn.Module):
         drop_path_rate = 0.1
         self.depth = depth
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, self.depth)]
+        # When gaze_last_n_blocks > 0, only enable gaze in the last N blocks
         self.denoised_transformer = nn.ModuleList([DecoderBlock(dim=self.hidden_size, num_heads=4, mlp_ratio=4, qkv_bias=False, qk_scale=None,
         drop=self.dropout_value, attn_drop=0., drop_path=dpr[i],
-        use_gaze=use_gaze, T_max=T_max)
+        use_gaze=use_gaze if (gaze_last_n_blocks == 0 or i >= depth - gaze_last_n_blocks) else False,
+        T_max=T_max, gaze_alpha_clamp=gaze_alpha_clamp, gaze_fixed_delta=gaze_fixed_delta,
+        gaze_bias_init_delta=gaze_bias_init_delta, gaze_bias_init_amp=gaze_bias_init_amp)
         for i in range(self.depth)])
 
     def forward(self, x_r, timesteps, motion_feat_encoded, valid_mask=None, gaze_feat_encoded=None):

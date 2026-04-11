@@ -59,8 +59,9 @@ class GazeEncoder(nn.Module):
     Output: (B*T, output_dim) feature vectors
     """
 
-    def __init__(self, output_dim=512):
+    def __init__(self, output_dim=512, coord_only=False):
         super().__init__()
+        self.coord_only = coord_only
         self.cnn = nn.Sequential(
             nn.Conv2d(1, 32, 3, stride=2, padding=1),    # 32 -> 16
             nn.BatchNorm2d(32),
@@ -94,6 +95,9 @@ class GazeEncoder(nn.Module):
         Returns:
             (B*T, output_dim) feature vectors
         """
+        if self.coord_only:
+            assert coord is not None, "GazeEncoder(coord_only=True) requires coord input"
+            return self.coord_mlp(coord)
         h = self.cnn(x)            # (B*T, 256, 1, 1)
         h = h.view(h.size(0), -1)  # (B*T, 256)
         h = self.fc(h)             # (B*T, output_dim)
@@ -111,7 +115,7 @@ class GazeTemporalCrossAttention(nn.Module):
     hand by ~200-500ms).
     """
 
-    def __init__(self, dim, num_heads, T_max=20, attn_drop=0., proj_drop=0.):
+    def __init__(self, dim, num_heads, T_max=20, attn_drop=0., proj_drop=0., fixed_delta=0, bias_init_delta=0, bias_init_amp=2.0, bias_init_sigma=1.0):
         super().__init__()
         self.num_heads = num_heads
         self.head_dim = dim // num_heads
@@ -124,10 +128,25 @@ class GazeTemporalCrossAttention(nn.Module):
         self.attn_drop = nn.Dropout(attn_drop)
         self.proj_drop = nn.Dropout(proj_drop)
 
-        # Learnable temporal bias: (1, num_heads, T_max, T_max)
-        # Initialized near zero so attention starts neutral
-        self.temporal_bias = nn.Parameter(torch.zeros(1, num_heads, T_max, T_max))
-        nn.init.trunc_normal_(self.temporal_bias, std=0.02)
+        # When fixed_delta > 0, force hand[t] to attend only to gaze[max(0, t-delta)]
+        # via a hard -inf mask (no learnable bias). This bakes in the biological
+        # prior that gaze leads hand by `delta` frames (~167ms per frame at 6fps).
+        self.fixed_delta = fixed_delta
+        if fixed_delta == 0:
+            if bias_init_delta > 0:
+                # Soft prior: learnable bias initialized with a Gaussian bump
+                # centered at offset (t_h - delta) along the key axis. Lets
+                # the model start with the biological prior and adapt.
+                t_h = torch.arange(T_max).float().unsqueeze(1)  # (T_max, 1)
+                t_g = torch.arange(T_max).float().unsqueeze(0)  # (1, T_max)
+                target = (t_h - bias_init_delta).clamp(min=0)
+                bump = bias_init_amp * torch.exp(-((t_g - target) ** 2) / (2 * bias_init_sigma ** 2))
+                bias_init = bump.unsqueeze(0).unsqueeze(0).expand(1, num_heads, T_max, T_max).contiguous()
+                self.temporal_bias = nn.Parameter(bias_init)
+            else:
+                # Default: zero-init learnable bias
+                self.temporal_bias = nn.Parameter(torch.zeros(1, num_heads, T_max, T_max))
+                nn.init.trunc_normal_(self.temporal_bias, std=0.02)
 
     def forward(self, q_hand, kv_gaze):
         """
@@ -147,8 +166,18 @@ class GazeTemporalCrossAttention(nn.Module):
         # (B, num_heads, T_h, T_g)
         attn = torch.matmul(q, k.transpose(-2, -1)) * self.scale
 
-        # Add learnable temporal bias (slice to actual sequence lengths)
-        attn = attn + self.temporal_bias[:, :, :T_h, :T_g]
+        if self.fixed_delta > 0:
+            # Hard mask: hand[t] only attends to gaze[clamp(t-delta, 0, T_g-1)].
+            # Clamp on both ends because future-frame queries (t >= T_g) would
+            # otherwise index past the available gaze (only obs frames).
+            t_idx = torch.arange(T_h, device=attn.device)
+            target = torch.clamp(t_idx - self.fixed_delta, min=0, max=T_g - 1)  # (T_h,)
+            mask = torch.full((T_h, T_g), float('-inf'), device=attn.device)
+            mask[t_idx, target] = 0.0
+            attn = attn + mask
+        else:
+            # Add learnable temporal bias (slice to actual sequence lengths)
+            attn = attn + self.temporal_bias[:, :, :T_h, :T_g]
 
         attn = F.softmax(attn, dim=-1)
         attn = self.attn_drop(attn)

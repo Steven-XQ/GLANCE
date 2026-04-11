@@ -137,6 +137,8 @@ class TrainValLoop:
             test_start_idx=0,
             gaze_encoder=None,
             use_gaze=False,
+            gaze_fusion_only=False,
+            gaze_detach_diffusion=False,
     ):
         self.sf_encoder = DDP(
             sf_encoder.to(dist_util.dev()) ,
@@ -193,6 +195,8 @@ class TrainValLoop:
         )
 
         self.use_gaze = use_gaze
+        self.gaze_fusion_only = gaze_fusion_only
+        self.gaze_detach_diffusion = gaze_detach_diffusion
         if use_gaze and gaze_encoder is not None:
             self.gaze_encoder = DDP(
                 gaze_encoder.to(dist_util.dev()),
@@ -357,11 +361,6 @@ class TrainValLoop:
                         coord=gaze_coord,
                     )
                     gaze_feat_encoded = gaze_feat_encoded.view(B_g, T_g, -1)
-                    # CFG-style gaze dropout: drop the entire gaze stream for
-                    # 10% of training samples so the denoiser doesn't over-rely
-                    # on it (regularization).
-                    if torch.rand(1, device=gaze_feat_encoded.device).item() < 0.1:
-                        gaze_feat_encoded = torch.zeros_like(gaze_feat_encoded)
 
                 grl_feat = self.model_hoi(input, bbox_feat, valid_mask)
 
@@ -388,6 +387,16 @@ class TrainValLoop:
 
                 t, weights = self.schedule_sampler.sample(grl_feat.shape[0], dist_util.dev())
 
+                # When gaze_fusion_only, gaze is used only in SideFusionEncoder;
+                # don't pass it to diffusion/MADT to avoid trajectory regression.
+                # When gaze_detach_diffusion, detach so GazeEncoder only learns
+                # through SideFusionEncoder, not through diffusion loss.
+                if self.gaze_fusion_only:
+                    diffusion_gaze = None
+                elif self.gaze_detach_diffusion and gaze_feat_encoded is not None:
+                    diffusion_gaze = gaze_feat_encoded.detach()
+                else:
+                    diffusion_gaze = gaze_feat_encoded
                 compute_losses = functools.partial(
                     self.diffusion.training_losses,
                     self.model_denoise,
@@ -396,7 +405,7 @@ class TrainValLoop:
                     t,
                     [None,None],
                     motion_feat_encoded,
-                    gaze_feat_encoded=gaze_feat_encoded,
+                    gaze_feat_encoded=diffusion_gaze,
                 )
 
                 loss_feat_dict = compute_losses()
@@ -574,7 +583,7 @@ class TrainValLoop:
                         sample_shape = (x_noised_r.shape[0], x_noised_r.shape[1], x_noised_r.shape[2])
 
                         model_kwargs = {}
-                        if gaze_feat_encoded is not None:
+                        if gaze_feat_encoded is not None and not self.gaze_fusion_only:
                             model_kwargs['gaze_feat_encoded'] = gaze_feat_encoded
 
                         if int(os.environ['LOCAL_RANK']) == 0:
@@ -689,6 +698,13 @@ class TrainValLoop:
                 checkpoint=self.checkpoint_path,
                 filename = f"checkpoint_{epoch+1}.pth.tar")
                 torch.save(self.optimizer.state_dict(), "optimizer.pt")
+                # Keep only the latest checkpoint to save disk quota
+                for stale in os.listdir(self.checkpoint_path):
+                    if stale.startswith("checkpoint_") and stale.endswith(".pth.tar") and stale != f"checkpoint_{epoch+1}.pth.tar":
+                        try:
+                            os.remove(os.path.join(self.checkpoint_path, stale))
+                        except OSError:
+                            pass
 
                 return loss_meters
         else:

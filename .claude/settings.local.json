@@ -22,7 +22,9 @@
       "Bash(grep:*)",
       "Bash(find /home/u6x/sx2022.u6x/Diff-IP2D-main -name gaze* -o -name *gaze*)",
       "Read(//scratch/u6x/sx2022.u6x/datasets/**)",
-      "Read(//scratch/u6x/sx2022.u6x/datasets/EGTEA/**)"
+      "Read(//scratch/u6x/sx2022.u6x/datasets/EGTEA/**)",
+      "Bash(chmod +x /home/u6x/sx2022.u6x/Diff-IP2D-main/submit_repro.sh)",
+      "Bash(sbatch /home/u6x/sx2022.u6x/Diff-IP2D-main/submit_repro.sh)"
     ]
   }
 }
