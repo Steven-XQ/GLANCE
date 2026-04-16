@@ -139,6 +139,8 @@ class TrainValLoop:
             use_gaze=False,
             gaze_fusion_only=False,
             gaze_detach_diffusion=False,
+            gaze_heatmap_only=False,
+            gaze_cfg_dropout=0.0,
     ):
         self.sf_encoder = DDP(
             sf_encoder.to(dist_util.dev()) ,
@@ -197,6 +199,8 @@ class TrainValLoop:
         self.use_gaze = use_gaze
         self.gaze_fusion_only = gaze_fusion_only
         self.gaze_detach_diffusion = gaze_detach_diffusion
+        self.gaze_heatmap_only = gaze_heatmap_only
+        self.gaze_cfg_dropout = gaze_cfg_dropout
         if use_gaze and gaze_encoder is not None:
             self.gaze_encoder = DDP(
                 gaze_encoder.to(dist_util.dev()),
@@ -353,7 +357,7 @@ class TrainValLoop:
                     gaze_heatmap = sample['gaze_heatmap'].float().to(dist_util.dev())
                     B_g, T_g = gaze_heatmap.shape[:2]
                     gaze_coord = None
-                    if 'gaze_coord' in sample:
+                    if not self.gaze_heatmap_only and 'gaze_coord' in sample:
                         gaze_coord = sample['gaze_coord'].float().to(dist_util.dev())
                         gaze_coord = gaze_coord.view(B_g * T_g, -1)
                     gaze_feat_encoded = self.gaze_encoder(
@@ -361,6 +365,10 @@ class TrainValLoop:
                         coord=gaze_coord,
                     )
                     gaze_feat_encoded = gaze_feat_encoded.view(B_g, T_g, -1)
+                    # CFG-style dropout: zero entire gaze stream for a fraction of batches
+                    if not self.evaluate and self.gaze_cfg_dropout > 0:
+                        if torch.rand(1, device=gaze_feat_encoded.device).item() < self.gaze_cfg_dropout:
+                            gaze_feat_encoded = torch.zeros_like(gaze_feat_encoded)
 
                 grl_feat = self.model_hoi(input, bbox_feat, valid_mask)
 
@@ -539,7 +547,7 @@ class TrainValLoop:
                         gaze_heatmap = sample['gaze_heatmap'].float().to(dist_util.dev())
                         B_g, T_g = gaze_heatmap.shape[:2]
                         gaze_coord = None
-                        if 'gaze_coord' in sample:
+                        if not self.gaze_heatmap_only and 'gaze_coord' in sample:
                             gaze_coord = sample['gaze_coord'].float().to(dist_util.dev())
                             gaze_coord = gaze_coord.view(B_g * T_g, -1)
                         gaze_feat_encoded = self.gaze_encoder(

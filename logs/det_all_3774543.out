@@ -1,0 +1,103 @@
+==========================================
+=== BASELINE ===
+==========================================
+=== BASELINE TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True
+=== BASELINE EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only
+=== BASELINE EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar
+=== BASELINE DONE ===
+==========================================
+=== v2 ===
+==========================================
+=== v2 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze
+=== v2 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze
+=== v2 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze
+=== v2 DONE ===
+==========================================
+=== v4 ===
+==========================================
+=== v4 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_coord_only
+=== v4 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_coord_only
+=== v4 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_coord_only
+=== v4 DONE ===
+==========================================
+=== v6 ===
+==========================================
+=== v6 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_fusion_only
+=== v6 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_fusion_only
+=== v6 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_fusion_only
+=== v6 DONE ===
+==========================================
+=== v7 ===
+==========================================
+=== v7 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_alpha_clamp=0.1
+=== v7 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_alpha_clamp=0.1
+=== v7 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_alpha_clamp=0.1
+=== v7 DONE ===
+==========================================
+=== v8 ===
+==========================================
+=== v8 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_last_n_blocks=2
+=== v8 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_last_n_blocks=2
+=== v8 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_last_n_blocks=2
+=== v8 DONE ===
+==========================================
+=== v9 ===
+==========================================
+=== v9 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_detach_diffusion
+=== v9 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_detach_diffusion
+=== v9 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_detach_diffusion
+=== v9 DONE ===
+==========================================
+=== v10 ===
+==========================================
+=== v10 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_fixed_delta=2
+=== v10 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_fixed_delta=2
+=== v10 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_fixed_delta=2
+=== v10 DONE ===
+==========================================
+=== v11 ===
+==========================================
+=== v11 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_bias_init_delta=2 --gaze_bias_init_amp=2.0
+=== v11 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_bias_init_delta=2 --gaze_bias_init_amp=2.0
+=== v11 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_bias_init_delta=2 --gaze_bias_init_amp=2.0
+=== v11 DONE ===
+==========================================
+=== v12 ===
+==========================================
+=== v12 TRAINING ===
+python traineval.py --master_port=12225 --ek_version=egtea --epochs=30 --batch_size=32 --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --learnable_weight=True --use_gaze --gaze_bias_init_delta=3 --gaze_bias_init_amp=0.5
+=== v12 EVAL TRAJ ===
+python traineval.py --master_port=12226 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only --use_gaze --gaze_bias_init_delta=3 --gaze_bias_init_amp=0.5
+=== v12 EVAL AFF ===
+python traineval.py --master_port=12227 --evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --use_gaze --gaze_bias_init_delta=3 --gaze_bias_init_amp=0.5
+=== v12 DONE ===
+==========================================
+=== ALL EXPERIMENTS COMPLETE           ===
+==========================================

@@ -512,11 +512,15 @@ class EpicHODataset(EpicDataset):
 def get_dataloaders(args, epic_ds=None, featuresloader=None):
     dss = get_datasets(args, epic_ds=epic_ds, featuresloader=featuresloader)
 
+    def _worker_init_fn(worker_id):
+        np.random.seed(1 + worker_id)
+
     dl_args = {
         'batch_size': args.batch_size,
         'pin_memory': True,
         'num_workers': args.num_workers,
-        'drop_last': False
+        'drop_last': False,
+        'worker_init_fn': _worker_init_fn,
     }
     if args.mode in ['train', 'training']:
         sampler_train = DistributedSampler(dss['train'])

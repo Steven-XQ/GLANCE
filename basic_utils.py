@@ -42,6 +42,7 @@ def create_network_and_diffusion(
     gaze_fixed_delta=0,
     gaze_bias_init_delta=0,
     gaze_bias_init_amp=2.0,
+    gaze_before_motion=False,
     **kwargs,
 ):
 
@@ -77,6 +78,7 @@ def create_network_and_diffusion(
         gaze_fixed_delta=gaze_fixed_delta,
         gaze_bias_init_delta=gaze_bias_init_delta,
         gaze_bias_init_amp=gaze_bias_init_amp,
+        gaze_before_motion=gaze_before_motion,
     )
 
     betas = gd.get_named_beta_schedule(noise_schedule, diffusion_steps)

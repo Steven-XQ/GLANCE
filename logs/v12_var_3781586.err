@@ -1,0 +1,1932 @@
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 32
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/1880 [00:00<?, ?it/s]Loading train samples:  58%|█████▊    | 1099/1880 [00:00<00:00, 10884.39it/s]Loading train samples: 100%|██████████| 1880/1880 [00:00<00:00, 11308.97it/s]
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 9297.96it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 5028.01it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]:[W413 09:19:04.529944026 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 182, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 164, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 312, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 369, in epoch_pass
+[rank0]:     if self.training and self.gaze_cfg_dropout > 0:
+[rank0]: AttributeError: 'TrainValLoop' object has no attribute 'training'
+[rank0]:[W413 09:19:08.552056137 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 8638.78it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4965.55it/s]
+/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path, map_location=device)
+[INFO] Start to test!
+[INFO] 0/28 ade ours 0.46015838
+[INFO] 0/28 fde ours 0.24931006
+[INFO] 0/28 ade ours 0.4652097
+[INFO] 0/28 fde ours 0.24555163
+[INFO] 0/28 ade ours 0.439278
+[INFO] 0/28 fde ours 0.22388333
+[INFO] 0/28 ade ours 0.43309805
+[INFO] 0/28 fde ours 0.22149567
+[INFO] 0/28 ade ours 0.46210593
+[INFO] 0/28 fde ours 0.24868087
+[INFO] 0/28 ade ours 0.4761449
+[INFO] 0/28 fde ours 0.25278017
+[INFO] 0/28 ade ours 0.4671907
+[INFO] 0/28 fde ours 0.253178
+[INFO] 0/28 ade ours 0.45919493
+[INFO] 0/28 fde ours 0.23926002
+[INFO] 0/28 ade ours 0.45931804
+[INFO] 0/28 fde ours 0.23778425
+[INFO] 0/28 ade ours 0.4688811
+[INFO] 0/28 fde ours 0.25405493
+[INFO] 1/28 ade ours 0.4573269
+[INFO] 1/28 fde ours 0.23999667
+[INFO] 1/28 ade ours 0.43898
+[INFO] 1/28 fde ours 0.2240838
+[INFO] 1/28 ade ours 0.46363506
+[INFO] 1/28 fde ours 0.24901913
+[INFO] 1/28 ade ours 0.44346067
+[INFO] 1/28 fde ours 0.22274768
+[INFO] 1/28 ade ours 0.4140711
+[INFO] 1/28 fde ours 0.21502753
+[INFO] 1/28 ade ours 0.43147174
+[INFO] 1/28 fde ours 0.22480017
+[INFO] 1/28 ade ours 0.4481578
+[INFO] 1/28 fde ours 0.23034854
+[INFO] 1/28 ade ours 0.42911407
+[INFO] 1/28 fde ours 0.22433549
+[INFO] 1/28 ade ours 0.44004965
+[INFO] 1/28 fde ours 0.2311464
+[INFO] 1/28 ade ours 0.41721246
+[INFO] 1/28 fde ours 0.21414395
+[INFO] 2/28 ade ours 0.418061
+[INFO] 2/28 fde ours 0.219263
+[INFO] 2/28 ade ours 0.44015694
+[INFO] 2/28 fde ours 0.23489207
+[INFO] 2/28 ade ours 0.42759913
+[INFO] 2/28 fde ours 0.22530349
+[INFO] 2/28 ade ours 0.42236182
+[INFO] 2/28 fde ours 0.22345257
+[INFO] 2/28 ade ours 0.4405801
+[INFO] 2/28 fde ours 0.23344222
+[INFO] 2/28 ade ours 0.41195711
+[INFO] 2/28 fde ours 0.22062658
+[INFO] 2/28 ade ours 0.41585273
+[INFO] 2/28 fde ours 0.22967565
+[INFO] 2/28 ade ours 0.39581674
+[INFO] 2/28 fde ours 0.20771842
+[INFO] 2/28 ade ours 0.43869513
+[INFO] 2/28 fde ours 0.22571155
+[INFO] 2/28 ade ours 0.43047714
+[INFO] 2/28 fde ours 0.23137696
+[INFO] 3/28 ade ours 0.4054473
+[INFO] 3/28 fde ours 0.21239059
+[INFO] 3/28 ade ours 0.42653084
+[INFO] 3/28 fde ours 0.22610307
+[INFO] 3/28 ade ours 0.41787243
+[INFO] 3/28 fde ours 0.2230808
+[INFO] 3/28 ade ours 0.4380148
+[INFO] 3/28 fde ours 0.22803652
+[INFO] 3/28 ade ours 0.4151121
+[INFO] 3/28 fde ours 0.22062783
+[INFO] 3/28 ade ours 0.415204
+[INFO] 3/28 fde ours 0.2104195
+[INFO] 3/28 ade ours 0.41332102
+[INFO] 3/28 fde ours 0.22686434
+[INFO] 3/28 ade ours 0.43088466
+[INFO] 3/28 fde ours 0.22438364
+[INFO] 3/28 ade ours 0.39922816
+[INFO] 3/28 fde ours 0.21556601
+[INFO] 3/28 ade ours 0.4374919
+[INFO] 3/28 fde ours 0.23155272
+[INFO] 4/28 ade ours 0.32985455
+[INFO] 4/28 fde ours 0.17542394
+[INFO] 4/28 ade ours 0.34076184
+[INFO] 4/28 fde ours 0.17979494
+[INFO] 4/28 ade ours 0.33292
+[INFO] 4/28 fde ours 0.18050283
+[INFO] 4/28 ade ours 0.3349012
+[INFO] 4/28 fde ours 0.16849765
+[INFO] 4/28 ade ours 0.30331498
+[INFO] 4/28 fde ours 0.15737441
+[INFO] 4/28 ade ours 0.35871133
+[INFO] 4/28 fde ours 0.18024635
+[INFO] 4/28 ade ours 0.3011087
+[INFO] 4/28 fde ours 0.14444256
+[INFO] 4/28 ade ours 0.31949395
+[INFO] 4/28 fde ours 0.16009693
+[INFO] 4/28 ade ours 0.34967226
+[INFO] 4/28 fde ours 0.17318599
+[INFO] 4/28 ade ours 0.30981237
+[INFO] 4/28 fde ours 0.15636238
+[INFO] 5/28 ade ours 0.52755475
+[INFO] 5/28 fde ours 0.2733501
+[INFO] 5/28 ade ours 0.5551429
+[INFO] 5/28 fde ours 0.28005984
+[INFO] 5/28 ade ours 0.5314943
+[INFO] 5/28 fde ours 0.2545963
+[INFO] 5/28 ade ours 0.5312131
+[INFO] 5/28 fde ours 0.26738963
+[INFO] 5/28 ade ours 0.5447608
+[INFO] 5/28 fde ours 0.28227088
+[INFO] 5/28 ade ours 0.5692964
+[INFO] 5/28 fde ours 0.28653067
+[INFO] 5/28 ade ours 0.5484317
+[INFO] 5/28 fde ours 0.28057384
+[INFO] 5/28 ade ours 0.5613928
+[INFO] 5/28 fde ours 0.29684904
+[INFO] 5/28 ade ours 0.56259555
+[INFO] 5/28 fde ours 0.27906176
+[INFO] 5/28 ade ours 0.55916893
+[INFO] 5/28 fde ours 0.28989837
+[INFO] 6/28 ade ours 0.43047968
+[INFO] 6/28 fde ours 0.25546092
+[INFO] 6/28 ade ours 0.42147928
+[INFO] 6/28 fde ours 0.23839508
+[INFO] 6/28 ade ours 0.4468147
+[INFO] 6/28 fde ours 0.27007753
+[INFO] 6/28 ade ours 0.42604145
+[INFO] 6/28 fde ours 0.24817303
+[INFO] 6/28 ade ours 0.4242818
+[INFO] 6/28 fde ours 0.25024787
+[INFO] 6/28 ade ours 0.42878923
+[INFO] 6/28 fde ours 0.25133985
+[INFO] 6/28 ade ours 0.42456627
+[INFO] 6/28 fde ours 0.24747585
+[INFO] 6/28 ade ours 0.39224234
+[INFO] 6/28 fde ours 0.229479
+[INFO] 6/28 ade ours 0.41352352
+[INFO] 6/28 fde ours 0.24760258
+[INFO] 6/28 ade ours 0.419006
+[INFO] 6/28 fde ours 0.24413057
+[INFO] 7/28 ade ours 0.38980752
+[INFO] 7/28 fde ours 0.21915518
+[INFO] 7/28 ade ours 0.38050884
+[INFO] 7/28 fde ours 0.21043795
+[INFO] 7/28 ade ours 0.41332495
+[INFO] 7/28 fde ours 0.23113415
+[INFO] 7/28 ade ours 0.3919931
+[INFO] 7/28 fde ours 0.22358023
+[INFO] 7/28 ade ours 0.3851875
+[INFO] 7/28 fde ours 0.21253173
+[INFO] 7/28 ade ours 0.37198803
+[INFO] 7/28 fde ours 0.21360202
+[INFO] 7/28 ade ours 0.37610108
+[INFO] 7/28 fde ours 0.20789528
+[INFO] 7/28 ade ours 0.4060889
+[INFO] 7/28 fde ours 0.23207982
+[INFO] 7/28 ade ours 0.3934196
+[INFO] 7/28 fde ours 0.22897048
+[INFO] 7/28 ade ours 0.40869766
+[INFO] 7/28 fde ours 0.22407311
+[INFO] 8/28 ade ours 0.43570718
+[INFO] 8/28 fde ours 0.23125677
+[INFO] 8/28 ade ours 0.4217804
+[INFO] 8/28 fde ours 0.21950455
+[INFO] 8/28 ade ours 0.40039778
+[INFO] 8/28 fde ours 0.20480634
+[INFO] 8/28 ade ours 0.42140475
+[INFO] 8/28 fde ours 0.22579175
+[INFO] 8/28 ade ours 0.40874335
+[INFO] 8/28 fde ours 0.21598569
+[INFO] 8/28 ade ours 0.40949467
+[INFO] 8/28 fde ours 0.20798445
+[INFO] 8/28 ade ours 0.4188952
+[INFO] 8/28 fde ours 0.22233976
+[INFO] 8/28 ade ours 0.4259861
+[INFO] 8/28 fde ours 0.2251391
+[INFO] 8/28 ade ours 0.4020377
+[INFO] 8/28 fde ours 0.21718894
+[INFO] 8/28 ade ours 0.40785104
+[INFO] 8/28 fde ours 0.22041759
+[INFO] 9/28 ade ours 0.32489812
+[INFO] 9/28 fde ours 0.17827196
+[INFO] 9/28 ade ours 0.39484003
+[INFO] 9/28 fde ours 0.22868682
+[INFO] 9/28 ade ours 0.396681
+[INFO] 9/28 fde ours 0.23071533
+[INFO] 9/28 ade ours 0.38888988
+[INFO] 9/28 fde ours 0.22583407
+[INFO] 9/28 ade ours 0.3670359
+[INFO] 9/28 fde ours 0.20594692
+[INFO] 9/28 ade ours 0.38933563
+[INFO] 9/28 fde ours 0.22045244
+[INFO] 9/28 ade ours 0.36930904
+[INFO] 9/28 fde ours 0.20353971
+[INFO] 9/28 ade ours 0.39141577
+[INFO] 9/28 fde ours 0.21656866
+[INFO] 9/28 ade ours 0.3773011
+[INFO] 9/28 fde ours 0.21734749
+[INFO] 9/28 ade ours 0.39644164
+[INFO] 9/28 fde ours 0.22596331
+[INFO] 10/28 ade ours 0.31557897
+[INFO] 10/28 fde ours 0.17266384
+[INFO] 10/28 ade ours 0.31930426
+[INFO] 10/28 fde ours 0.16515158
+[INFO] 10/28 ade ours 0.31752926
+[INFO] 10/28 fde ours 0.16576101
+[INFO] 10/28 ade ours 0.3109433
+[INFO] 10/28 fde ours 0.16858639
+[INFO] 10/28 ade ours 0.30913502
+[INFO] 10/28 fde ours 0.1682601
+[INFO] 10/28 ade ours 0.33886212
+[INFO] 10/28 fde ours 0.19437118
+[INFO] 10/28 ade ours 0.3251464
+[INFO] 10/28 fde ours 0.17187814
+[INFO] 10/28 ade ours 0.32844108
+[INFO] 10/28 fde ours 0.17733029
+[INFO] 10/28 ade ours 0.3116973
+[INFO] 10/28 fde ours 0.16204831
+[INFO] 10/28 ade ours 0.3346804
+[INFO] 10/28 fde ours 0.18662177
+[INFO] 11/28 ade ours 0.56216973
+[INFO] 11/28 fde ours 0.30105785
+[INFO] 11/28 ade ours 0.5697125
+[INFO] 11/28 fde ours 0.28698358
+[INFO] 11/28 ade ours 0.57756084
+[INFO] 11/28 fde ours 0.30849466
+[INFO] 11/28 ade ours 0.59271157
+[INFO] 11/28 fde ours 0.30924186
+[INFO] 11/28 ade ours 0.59386367
+[INFO] 11/28 fde ours 0.31312242
+[INFO] 11/28 ade ours 0.56501395
+[INFO] 11/28 fde ours 0.30127195
+[INFO] 11/28 ade ours 0.5884639
+[INFO] 11/28 fde ours 0.31449977
+[INFO] 11/28 ade ours 0.5499065
+[INFO] 11/28 fde ours 0.27600566
+[INFO] 11/28 ade ours 0.5574496
+[INFO] 11/28 fde ours 0.29130495
+[INFO] 11/28 ade ours 0.56772894
+[INFO] 11/28 fde ours 0.29320154
+[INFO] 12/28 ade ours 0.3298679
+[INFO] 12/28 fde ours 0.16751619
+[INFO] 12/28 ade ours 0.3164461
+[INFO] 12/28 fde ours 0.16487302
+[INFO] 12/28 ade ours 0.35453984
+[INFO] 12/28 fde ours 0.19117402
+[INFO] 12/28 ade ours 0.33467308
+[INFO] 12/28 fde ours 0.18302003
+[INFO] 12/28 ade ours 0.33601254
+[INFO] 12/28 fde ours 0.18329382
+[INFO] 12/28 ade ours 0.3385581
+[INFO] 12/28 fde ours 0.17407319
+[INFO] 12/28 ade ours 0.33696115
+[INFO] 12/28 fde ours 0.16726814
+[INFO] 12/28 ade ours 0.33426896
+[INFO] 12/28 fde ours 0.18176022
+[INFO] 12/28 ade ours 0.35652524
+[INFO] 12/28 fde ours 0.19484113
+[INFO] 12/28 ade ours 0.35855806
+[INFO] 12/28 fde ours 0.18904279
+[INFO] 13/28 ade ours 0.4138332
+[INFO] 13/28 fde ours 0.22622748
+[INFO] 13/28 ade ours 0.4057176
+[INFO] 13/28 fde ours 0.21151647
+[INFO] 13/28 ade ours 0.41394383
+[INFO] 13/28 fde ours 0.22404999
+[INFO] 13/28 ade ours 0.4205241
+[INFO] 13/28 fde ours 0.22548331
+[INFO] 13/28 ade ours 0.4444615
+[INFO] 13/28 fde ours 0.23751852
+[INFO] 13/28 ade ours 0.40454516
+[INFO] 13/28 fde ours 0.20696932
+[INFO] 13/28 ade ours 0.41838285
+[INFO] 13/28 fde ours 0.21906292
+[INFO] 13/28 ade ours 0.3909087
+[INFO] 13/28 fde ours 0.20598198
+[INFO] 13/28 ade ours 0.42329088
+[INFO] 13/28 fde ours 0.22805703
+[INFO] 13/28 ade ours 0.4113633
+[INFO] 13/28 fde ours 0.22479777
+[INFO] 14/28 ade ours 0.47977754
+[INFO] 14/28 fde ours 0.24946357
+[INFO] 14/28 ade ours 0.47133264
+[INFO] 14/28 fde ours 0.23620701
+[INFO] 14/28 ade ours 0.45167845
+[INFO] 14/28 fde ours 0.2283037
+[INFO] 14/28 ade ours 0.4588769
+[INFO] 14/28 fde ours 0.23137553
+[INFO] 14/28 ade ours 0.4644125
+[INFO] 14/28 fde ours 0.24187337
+[INFO] 14/28 ade ours 0.44848102
+[INFO] 14/28 fde ours 0.23178042
+[INFO] 14/28 ade ours 0.5002847
+[INFO] 14/28 fde ours 0.25434598
+[INFO] 14/28 ade ours 0.47822654
+[INFO] 14/28 fde ours 0.25070193
+[INFO] 14/28 ade ours 0.4648642
+[INFO] 14/28 fde ours 0.23787089
+[INFO] 14/28 ade ours 0.45590255
+[INFO] 14/28 fde ours 0.2357216
+[INFO] 15/28 ade ours 0.379262
+[INFO] 15/28 fde ours 0.19507907
+[INFO] 15/28 ade ours 0.37698674
+[INFO] 15/28 fde ours 0.19437657
+[INFO] 15/28 ade ours 0.37691203
+[INFO] 15/28 fde ours 0.20921136
+[INFO] 15/28 ade ours 0.36240482
+[INFO] 15/28 fde ours 0.19043212
+[INFO] 15/28 ade ours 0.35075188
+[INFO] 15/28 fde ours 0.18595484
+[INFO] 15/28 ade ours 0.36843508
+[INFO] 15/28 fde ours 0.19237058
+[INFO] 15/28 ade ours 0.37250766
+[INFO] 15/28 fde ours 0.19078211
+[INFO] 15/28 ade ours 0.35269845
+[INFO] 15/28 fde ours 0.17872864
+[INFO] 15/28 ade ours 0.36362788
+[INFO] 15/28 fde ours 0.18379386
+[INFO] 15/28 ade ours 0.33241752
+[INFO] 15/28 fde ours 0.17026804
+[INFO] 16/28 ade ours 0.4354888
+[INFO] 16/28 fde ours 0.22950605
+[INFO] 16/28 ade ours 0.4475609
+[INFO] 16/28 fde ours 0.23056552
+[INFO] 16/28 ade ours 0.41696075
+[INFO] 16/28 fde ours 0.20981757
+[INFO] 16/28 ade ours 0.44853652
+[INFO] 16/28 fde ours 0.24338527
+[INFO] 16/28 ade ours 0.39887977
+[INFO] 16/28 fde ours 0.2155441
+[INFO] 16/28 ade ours 0.42312628
+[INFO] 16/28 fde ours 0.23795886
+[INFO] 16/28 ade ours 0.45155993
+[INFO] 16/28 fde ours 0.24975546
+[INFO] 16/28 ade ours 0.3971681
+[INFO] 16/28 fde ours 0.21950607
+[INFO] 16/28 ade ours 0.42216557
+[INFO] 16/28 fde ours 0.23214194
+[INFO] 16/28 ade ours 0.41897884
+[INFO] 16/28 fde ours 0.23274246
+[INFO] 17/28 ade ours 0.34992406
+[INFO] 17/28 fde ours 0.18963702
+[INFO] 17/28 ade ours 0.33774585
+[INFO] 17/28 fde ours 0.18459983
+[INFO] 17/28 ade ours 0.32889056
+[INFO] 17/28 fde ours 0.17267346
+[INFO] 17/28 ade ours 0.32380974
+[INFO] 17/28 fde ours 0.17428441
+[INFO] 17/28 ade ours 0.3116221
+[INFO] 17/28 fde ours 0.16450553
+[INFO] 17/28 ade ours 0.3442071
+[INFO] 17/28 fde ours 0.18192047
+[INFO] 17/28 ade ours 0.3467834
+[INFO] 17/28 fde ours 0.18819709
+[INFO] 17/28 ade ours 0.31688973
+[INFO] 17/28 fde ours 0.17244205
+[INFO] 17/28 ade ours 0.3210715
+[INFO] 17/28 fde ours 0.17843609
+[INFO] 17/28 ade ours 0.37335685
+[INFO] 17/28 fde ours 0.19838221
+[INFO] 18/28 ade ours 0.35534325
+[INFO] 18/28 fde ours 0.18455309
+[INFO] 18/28 ade ours 0.37593374
+[INFO] 18/28 fde ours 0.20341568
+[INFO] 18/28 ade ours 0.36634603
+[INFO] 18/28 fde ours 0.19677234
+[INFO] 18/28 ade ours 0.35730115
+[INFO] 18/28 fde ours 0.19022186
+[INFO] 18/28 ade ours 0.38700375
+[INFO] 18/28 fde ours 0.20552568
+[INFO] 18/28 ade ours 0.3319575
+[INFO] 18/28 fde ours 0.16986819
+[INFO] 18/28 ade ours 0.3562434
+[INFO] 18/28 fde ours 0.18806636
+[INFO] 18/28 ade ours 0.35751972
+[INFO] 18/28 fde ours 0.18012778
+[INFO] 18/28 ade ours 0.35717085
+[INFO] 18/28 fde ours 0.18420891
+[INFO] 18/28 ade ours 0.35745335
+[INFO] 18/28 fde ours 0.18421365
+[INFO] 19/28 ade ours 0.46119845
+[INFO] 19/28 fde ours 0.24170902
+[INFO] 19/28 ade ours 0.46015114
+[INFO] 19/28 fde ours 0.24942507
+[INFO] 19/28 ade ours 0.44506332
+[INFO] 19/28 fde ours 0.22613388
+[INFO] 19/28 ade ours 0.45282242
+[INFO] 19/28 fde ours 0.2407373
+[INFO] 19/28 ade ours 0.45834473
+[INFO] 19/28 fde ours 0.23862866
+[INFO] 19/28 ade ours 0.4774166
+[INFO] 19/28 fde ours 0.25907847
+[INFO] 19/28 ade ours 0.3955066
+[INFO] 19/28 fde ours 0.20240907
+[INFO] 19/28 ade ours 0.42820302
+[INFO] 19/28 fde ours 0.22694229
+[INFO] 19/28 ade ours 0.43484253
+[INFO] 19/28 fde ours 0.22689511
+[INFO] 19/28 ade ours 0.4551422
+[INFO] 19/28 fde ours 0.23937115
+[INFO] 20/28 ade ours 0.4224017
+[INFO] 20/28 fde ours 0.22677898
+[INFO] 20/28 ade ours 0.4410933
+[INFO] 20/28 fde ours 0.23579814
+[INFO] 20/28 ade ours 0.42877856
+[INFO] 20/28 fde ours 0.22959162
+[INFO] 20/28 ade ours 0.43570563
+[INFO] 20/28 fde ours 0.23874079
+[INFO] 20/28 ade ours 0.4408077
+[INFO] 20/28 fde ours 0.24141271
+[INFO] 20/28 ade ours 0.44870558
+[INFO] 20/28 fde ours 0.23814552
+[INFO] 20/28 ade ours 0.43002674
+[INFO] 20/28 fde ours 0.22172715
+[INFO] 20/28 ade ours 0.41219145
+[INFO] 20/28 fde ours 0.22255673
+[INFO] 20/28 ade ours 0.43197042
+[INFO] 20/28 fde ours 0.23280804
+[INFO] 20/28 ade ours 0.42334878
+[INFO] 20/28 fde ours 0.22493522
+[INFO] 21/28 ade ours 0.42980948
+[INFO] 21/28 fde ours 0.22407673
+[INFO] 21/28 ade ours 0.41025314
+[INFO] 21/28 fde ours 0.21021794
+[INFO] 21/28 ade ours 0.40489045
+[INFO] 21/28 fde ours 0.19951253
+[INFO] 21/28 ade ours 0.39020377
+[INFO] 21/28 fde ours 0.2076729
+[INFO] 21/28 ade ours 0.3979612
+[INFO] 21/28 fde ours 0.19448115
+[INFO] 21/28 ade ours 0.36911553
+[INFO] 21/28 fde ours 0.1912362
+[INFO] 21/28 ade ours 0.40992495
+[INFO] 21/28 fde ours 0.2091645
+[INFO] 21/28 ade ours 0.40897113
+[INFO] 21/28 fde ours 0.19821113
+[INFO] 21/28 ade ours 0.41650388
+[INFO] 21/28 fde ours 0.21182768
+[INFO] 21/28 ade ours 0.43160087
+[INFO] 21/28 fde ours 0.22721584
+[INFO] 22/28 ade ours 0.34599805
+[INFO] 22/28 fde ours 0.1908739
+[INFO] 22/28 ade ours 0.33370522
+[INFO] 22/28 fde ours 0.19727607
+[INFO] 22/28 ade ours 0.3532643
+[INFO] 22/28 fde ours 0.20111902
+[INFO] 22/28 ade ours 0.34688655
+[INFO] 22/28 fde ours 0.20201917
+[INFO] 22/28 ade ours 0.35739836
+[INFO] 22/28 fde ours 0.19654815
+[INFO] 22/28 ade ours 0.34494948
+[INFO] 22/28 fde ours 0.19039237
+[INFO] 22/28 ade ours 0.3295587
+[INFO] 22/28 fde ours 0.18092494
+[INFO] 22/28 ade ours 0.3387493
+[INFO] 22/28 fde ours 0.189219
+[INFO] 22/28 ade ours 0.3431622
+[INFO] 22/28 fde ours 0.18959804
+[INFO] 22/28 ade ours 0.33228073
+[INFO] 22/28 fde ours 0.18979025
+[INFO] 23/28 ade ours 0.35790294
+[INFO] 23/28 fde ours 0.18515342
+[INFO] 23/28 ade ours 0.34419513
+[INFO] 23/28 fde ours 0.17527439
+[INFO] 23/28 ade ours 0.36863008
+[INFO] 23/28 fde ours 0.19407718
+[INFO] 23/28 ade ours 0.35354212
+[INFO] 23/28 fde ours 0.1795272
+[INFO] 23/28 ade ours 0.34637427
+[INFO] 23/28 fde ours 0.1776892
+[INFO] 23/28 ade ours 0.33753678
+[INFO] 23/28 fde ours 0.16530696
+[INFO] 23/28 ade ours 0.32526928
+[INFO] 23/28 fde ours 0.16076548
+[INFO] 23/28 ade ours 0.35157874
+[INFO] 23/28 fde ours 0.18640141
+[INFO] 23/28 ade ours 0.32939819
+[INFO] 23/28 fde ours 0.16522059
+[INFO] 23/28 ade ours 0.34658408
+[INFO] 23/28 fde ours 0.17946139
+[INFO] 24/28 ade ours 0.45987067
+[INFO] 24/28 fde ours 0.2556848
+[INFO] 24/28 ade ours 0.449019
+[INFO] 24/28 fde ours 0.23870823
+[INFO] 24/28 ade ours 0.4715429
+[INFO] 24/28 fde ours 0.24996702
+[INFO] 24/28 ade ours 0.4562325
+[INFO] 24/28 fde ours 0.2471477
+[INFO] 24/28 ade ours 0.49426723
+[INFO] 24/28 fde ours 0.27427432
+[INFO] 24/28 ade ours 0.45438915
+[INFO] 24/28 fde ours 0.24085535
+[INFO] 24/28 ade ours 0.45640895
+[INFO] 24/28 fde ours 0.24694715
+[INFO] 24/28 ade ours 0.48964238
+[INFO] 24/28 fde ours 0.25747743
+[INFO] 24/28 ade ours 0.46371424
+[INFO] 24/28 fde ours 0.25049576
+[INFO] 24/28 ade ours 0.45526642
+[INFO] 24/28 fde ours 0.24880783
+[INFO] 25/28 ade ours 0.3857252
+[INFO] 25/28 fde ours 0.21443202
+[INFO] 25/28 ade ours 0.36468062
+[INFO] 25/28 fde ours 0.20341042
+[INFO] 25/28 ade ours 0.3768081
+[INFO] 25/28 fde ours 0.21824893
+[INFO] 25/28 ade ours 0.400199
+[INFO] 25/28 fde ours 0.21744542
+[INFO] 25/28 ade ours 0.3665203
+[INFO] 25/28 fde ours 0.20346628
+[INFO] 25/28 ade ours 0.36993203
+[INFO] 25/28 fde ours 0.20542291
+[INFO] 25/28 ade ours 0.3774007
+[INFO] 25/28 fde ours 0.21104154
+[INFO] 25/28 ade ours 0.375675
+[INFO] 25/28 fde ours 0.20528948
+[INFO] 25/28 ade ours 0.36196622
+[INFO] 25/28 fde ours 0.20483051
+[INFO] 25/28 ade ours 0.34747955
+[INFO] 25/28 fde ours 0.18207051
+[INFO] 26/28 ade ours 0.40780988
+[INFO] 26/28 fde ours 0.22505124
+[INFO] 26/28 ade ours 0.40386754
+[INFO] 26/28 fde ours 0.21666831
+[INFO] 26/28 ade ours 0.39858288
+[INFO] 26/28 fde ours 0.20733248
+[INFO] 26/28 ade ours 0.4250516
+[INFO] 26/28 fde ours 0.2255778
+[INFO] 26/28 ade ours 0.3866342
+[INFO] 26/28 fde ours 0.20240779
+[INFO] 26/28 ade ours 0.43354487
+[INFO] 26/28 fde ours 0.23781759
+[INFO] 26/28 ade ours 0.4269926
+[INFO] 26/28 fde ours 0.22225888
+[INFO] 26/28 ade ours 0.43131012
+[INFO] 26/28 fde ours 0.2336558
+[INFO] 26/28 ade ours 0.42027268
+[INFO] 26/28 fde ours 0.2101049
+[INFO] 26/28 ade ours 0.40390134
+[INFO] 26/28 fde ours 0.21544597
+[INFO] 27/28 ade ours 0.32392725
+[INFO] 27/28 fde ours 0.17954578
+[INFO] 27/28 ade ours 0.32051843
+[INFO] 27/28 fde ours 0.17049359
+[INFO] 27/28 ade ours 0.3395143
+[INFO] 27/28 fde ours 0.17154405
+[INFO] 27/28 ade ours 0.32483086
+[INFO] 27/28 fde ours 0.16597313
+[INFO] 27/28 ade ours 0.33700514
+[INFO] 27/28 fde ours 0.16961962
+[INFO] 27/28 ade ours 0.30160266
+[INFO] 27/28 fde ours 0.1638541
+[INFO] 27/28 ade ours 0.32457387
+[INFO] 27/28 fde ours 0.16799037
+[INFO] 27/28 ade ours 0.35321906
+[INFO] 27/28 fde ours 0.1981861
+[INFO] 27/28 ade ours 0.34343302
+[INFO] 27/28 fde ours 0.17446794
+[INFO] 27/28 ade ours 0.34089655
+[INFO] 27/28 fde ours 0.1845369
+[INFO] ours wde ---> 0.4066049455532006
+[INFO] ours fde ---> 0.21656015728201186
+[INFO] GPU: 0 Done!
+[rank0]:[W413 09:19:47.868862253 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 8702.90it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4950.26it/s]
+/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path, map_location=device)
+[INFO] Start to test!
+[INFO] ours SIM ---> 0.22332254
+[INFO] ours AUC-J ---> 0.750008513418739
+[INFO] ours NSS ---> 0.9570232
+[INFO] GPU: 0 Done!
+[rank0]:[W413 09:20:11.369435735 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 32
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/1880 [00:00<?, ?it/s]Loading train samples:  58%|█████▊    | 1099/1880 [00:00<00:00, 10888.25it/s]Loading train samples: 100%|██████████| 1880/1880 [00:00<00:00, 11352.51it/s]
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 9420.80it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 5079.63it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]:[W413 09:20:25.843155821 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 182, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 164, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 312, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 369, in epoch_pass
+[rank0]:     if self.training and self.gaze_cfg_dropout > 0:
+[rank0]: AttributeError: 'TrainValLoop' object has no attribute 'training'
+[rank0]:[W413 09:20:28.448531572 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 8448.44it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4909.95it/s]
+/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path, map_location=device)
+[INFO] Start to test!
+[INFO] 0/28 ade ours 0.45778596
+[INFO] 0/28 fde ours 0.24750136
+[INFO] 0/28 ade ours 0.46245965
+[INFO] 0/28 fde ours 0.24433833
+[INFO] 0/28 ade ours 0.43730685
+[INFO] 0/28 fde ours 0.22293597
+[INFO] 0/28 ade ours 0.4316115
+[INFO] 0/28 fde ours 0.22068939
+[INFO] 0/28 ade ours 0.46002266
+[INFO] 0/28 fde ours 0.2471857
+[INFO] 0/28 ade ours 0.47348824
+[INFO] 0/28 fde ours 0.2514818
+[INFO] 0/28 ade ours 0.46401215
+[INFO] 0/28 fde ours 0.25096673
+[INFO] 0/28 ade ours 0.45727512
+[INFO] 0/28 fde ours 0.23795381
+[INFO] 0/28 ade ours 0.45637226
+[INFO] 0/28 fde ours 0.23605195
+[INFO] 0/28 ade ours 0.4661769
+[INFO] 0/28 fde ours 0.2524989
+[INFO] 1/28 ade ours 0.45618334
+[INFO] 1/28 fde ours 0.23897083
+[INFO] 1/28 ade ours 0.43838632
+[INFO] 1/28 fde ours 0.22344212
+[INFO] 1/28 ade ours 0.46180698
+[INFO] 1/28 fde ours 0.24747084
+[INFO] 1/28 ade ours 0.4422934
+[INFO] 1/28 fde ours 0.2220846
+[INFO] 1/28 ade ours 0.414525
+[INFO] 1/28 fde ours 0.21506184
+[INFO] 1/28 ade ours 0.4292667
+[INFO] 1/28 fde ours 0.22286522
+[INFO] 1/28 ade ours 0.44624105
+[INFO] 1/28 fde ours 0.22907154
+[INFO] 1/28 ade ours 0.42939988
+[INFO] 1/28 fde ours 0.22387604
+[INFO] 1/28 ade ours 0.4387162
+[INFO] 1/28 fde ours 0.22999506
+[INFO] 1/28 ade ours 0.41687036
+[INFO] 1/28 fde ours 0.21352841
+[INFO] 2/28 ade ours 0.41602588
+[INFO] 2/28 fde ours 0.21827298
+[INFO] 2/28 ade ours 0.43710577
+[INFO] 2/28 fde ours 0.23319952
+[INFO] 2/28 ade ours 0.42607218
+[INFO] 2/28 fde ours 0.22427818
+[INFO] 2/28 ade ours 0.41881526
+[INFO] 2/28 fde ours 0.22187597
+[INFO] 2/28 ade ours 0.43717316
+[INFO] 2/28 fde ours 0.2317661
+[INFO] 2/28 ade ours 0.4105348
+[INFO] 2/28 fde ours 0.2197821
+[INFO] 2/28 ade ours 0.4138728
+[INFO] 2/28 fde ours 0.22811969
+[INFO] 2/28 ade ours 0.39434814
+[INFO] 2/28 fde ours 0.20677233
+[INFO] 2/28 ade ours 0.43546233
+[INFO] 2/28 fde ours 0.22416002
+[INFO] 2/28 ade ours 0.42650706
+[INFO] 2/28 fde ours 0.228798
+[INFO] 3/28 ade ours 0.40201205
+[INFO] 3/28 fde ours 0.21045744
+[INFO] 3/28 ade ours 0.4235955
+[INFO] 3/28 fde ours 0.22414246
+[INFO] 3/28 ade ours 0.4154009
+[INFO] 3/28 fde ours 0.22141424
+[INFO] 3/28 ade ours 0.43520957
+[INFO] 3/28 fde ours 0.22663057
+[INFO] 3/28 ade ours 0.4119544
+[INFO] 3/28 fde ours 0.21888137
+[INFO] 3/28 ade ours 0.41229934
+[INFO] 3/28 fde ours 0.20959148
+[INFO] 3/28 ade ours 0.41045842
+[INFO] 3/28 fde ours 0.22472453
+[INFO] 3/28 ade ours 0.42870507
+[INFO] 3/28 fde ours 0.22319707
+[INFO] 3/28 ade ours 0.39856896
+[INFO] 3/28 fde ours 0.21462253
+[INFO] 3/28 ade ours 0.43436837
+[INFO] 3/28 fde ours 0.22952008
+[INFO] 4/28 ade ours 0.32988954
+[INFO] 4/28 fde ours 0.17545259
+[INFO] 4/28 ade ours 0.3405625
+[INFO] 4/28 fde ours 0.17925318
+[INFO] 4/28 ade ours 0.33153325
+[INFO] 4/28 fde ours 0.17900498
+[INFO] 4/28 ade ours 0.3346851
+[INFO] 4/28 fde ours 0.16812965
+[INFO] 4/28 ade ours 0.3048548
+[INFO] 4/28 fde ours 0.15872245
+[INFO] 4/28 ade ours 0.35716242
+[INFO] 4/28 fde ours 0.17931
+[INFO] 4/28 ade ours 0.3017922
+[INFO] 4/28 fde ours 0.1447787
+[INFO] 4/28 ade ours 0.3190124
+[INFO] 4/28 fde ours 0.15998006
+[INFO] 4/28 ade ours 0.34861112
+[INFO] 4/28 fde ours 0.17260298
+[INFO] 4/28 ade ours 0.30990157
+[INFO] 4/28 fde ours 0.1561344
+[INFO] 5/28 ade ours 0.5261913
+[INFO] 5/28 fde ours 0.27246082
+[INFO] 5/28 ade ours 0.5527545
+[INFO] 5/28 fde ours 0.27838874
+[INFO] 5/28 ade ours 0.5305189
+[INFO] 5/28 fde ours 0.2543073
+[INFO] 5/28 ade ours 0.5302951
+[INFO] 5/28 fde ours 0.2671049
+[INFO] 5/28 ade ours 0.5425414
+[INFO] 5/28 fde ours 0.2808512
+[INFO] 5/28 ade ours 0.56629294
+[INFO] 5/28 fde ours 0.28461787
+[INFO] 5/28 ade ours 0.5456589
+[INFO] 5/28 fde ours 0.27900535
+[INFO] 5/28 ade ours 0.5584843
+[INFO] 5/28 fde ours 0.29471377
+[INFO] 5/28 ade ours 0.5599473
+[INFO] 5/28 fde ours 0.27786398
+[INFO] 5/28 ade ours 0.5562545
+[INFO] 5/28 fde ours 0.2876298
+[INFO] 6/28 ade ours 0.42894873
+[INFO] 6/28 fde ours 0.25410685
+[INFO] 6/28 ade ours 0.4201141
+[INFO] 6/28 fde ours 0.23803385
+[INFO] 6/28 ade ours 0.44483724
+[INFO] 6/28 fde ours 0.26880828
+[INFO] 6/28 ade ours 0.4246887
+[INFO] 6/28 fde ours 0.24717191
+[INFO] 6/28 ade ours 0.42267329
+[INFO] 6/28 fde ours 0.2491119
+[INFO] 6/28 ade ours 0.42721254
+[INFO] 6/28 fde ours 0.24980302
+[INFO] 6/28 ade ours 0.4235622
+[INFO] 6/28 fde ours 0.2467325
+[INFO] 6/28 ade ours 0.39190274
+[INFO] 6/28 fde ours 0.22909768
+[INFO] 6/28 ade ours 0.41277868
+[INFO] 6/28 fde ours 0.2465428
+[INFO] 6/28 ade ours 0.41819814
+[INFO] 6/28 fde ours 0.2436067
+[INFO] 7/28 ade ours 0.3893013
+[INFO] 7/28 fde ours 0.21898869
+[INFO] 7/28 ade ours 0.378523
+[INFO] 7/28 fde ours 0.20956239
+[INFO] 7/28 ade ours 0.41261545
+[INFO] 7/28 fde ours 0.23074648
+[INFO] 7/28 ade ours 0.39156124
+[INFO] 7/28 fde ours 0.22312646
+[INFO] 7/28 ade ours 0.3849417
+[INFO] 7/28 fde ours 0.2121057
+[INFO] 7/28 ade ours 0.3726183
+[INFO] 7/28 fde ours 0.2140676
+[INFO] 7/28 ade ours 0.37586054
+[INFO] 7/28 fde ours 0.20774834
+[INFO] 7/28 ade ours 0.40337986
+[INFO] 7/28 fde ours 0.23080994
+[INFO] 7/28 ade ours 0.39248976
+[INFO] 7/28 fde ours 0.22797476
+[INFO] 7/28 ade ours 0.40646148
+[INFO] 7/28 fde ours 0.22298145
+[INFO] 8/28 ade ours 0.43521836
+[INFO] 8/28 fde ours 0.2312287
+[INFO] 8/28 ade ours 0.42132205
+[INFO] 8/28 fde ours 0.2190066
+[INFO] 8/28 ade ours 0.400265
+[INFO] 8/28 fde ours 0.20493837
+[INFO] 8/28 ade ours 0.42088214
+[INFO] 8/28 fde ours 0.22509457
+[INFO] 8/28 ade ours 0.40680817
+[INFO] 8/28 fde ours 0.21501046
+[INFO] 8/28 ade ours 0.4082183
+[INFO] 8/28 fde ours 0.20803152
+[INFO] 8/28 ade ours 0.41803676
+[INFO] 8/28 fde ours 0.2218424
+[INFO] 8/28 ade ours 0.42480057
+[INFO] 8/28 fde ours 0.22445293
+[INFO] 8/28 ade ours 0.40109017
+[INFO] 8/28 fde ours 0.21609788
+[INFO] 8/28 ade ours 0.40693948
+[INFO] 8/28 fde ours 0.21933647
+[INFO] 9/28 ade ours 0.32510498
+[INFO] 9/28 fde ours 0.17846961
+[INFO] 9/28 ade ours 0.39234993
+[INFO] 9/28 fde ours 0.2267302
+[INFO] 9/28 ade ours 0.39510405
+[INFO] 9/28 fde ours 0.22950369
+[INFO] 9/28 ade ours 0.38660786
+[INFO] 9/28 fde ours 0.22416826
+[INFO] 9/28 ade ours 0.3659978
+[INFO] 9/28 fde ours 0.20543605
+[INFO] 9/28 ade ours 0.38732144
+[INFO] 9/28 fde ours 0.21909398
+[INFO] 9/28 ade ours 0.36791614
+[INFO] 9/28 fde ours 0.20274687
+[INFO] 9/28 ade ours 0.38963187
+[INFO] 9/28 fde ours 0.21585797
+[INFO] 9/28 ade ours 0.3759731
+[INFO] 9/28 fde ours 0.21627188
+[INFO] 9/28 ade ours 0.39444113
+[INFO] 9/28 fde ours 0.2245822
+[INFO] 10/28 ade ours 0.31606176
+[INFO] 10/28 fde ours 0.17271547
+[INFO] 10/28 ade ours 0.31935668
+[INFO] 10/28 fde ours 0.1653042
+[INFO] 10/28 ade ours 0.31820446
+[INFO] 10/28 fde ours 0.1660638
+[INFO] 10/28 ade ours 0.31187844
+[INFO] 10/28 fde ours 0.16869457
+[INFO] 10/28 ade ours 0.30981305
+[INFO] 10/28 fde ours 0.1682041
+[INFO] 10/28 ade ours 0.33663246
+[INFO] 10/28 fde ours 0.19210546
+[INFO] 10/28 ade ours 0.32542774
+[INFO] 10/28 fde ours 0.17208278
+[INFO] 10/28 ade ours 0.32772467
+[INFO] 10/28 fde ours 0.17663415
+[INFO] 10/28 ade ours 0.3123451
+[INFO] 10/28 fde ours 0.16244853
+[INFO] 10/28 ade ours 0.33426625
+[INFO] 10/28 fde ours 0.18589947
+[INFO] 11/28 ade ours 0.5605854
+[INFO] 11/28 fde ours 0.299534
+[INFO] 11/28 ade ours 0.56814665
+[INFO] 11/28 fde ours 0.28680974
+[INFO] 11/28 ade ours 0.5742687
+[INFO] 11/28 fde ours 0.30573496
+[INFO] 11/28 ade ours 0.589485
+[INFO] 11/28 fde ours 0.30745348
+[INFO] 11/28 ade ours 0.5910168
+[INFO] 11/28 fde ours 0.31159118
+[INFO] 11/28 ade ours 0.5625647
+[INFO] 11/28 fde ours 0.29943752
+[INFO] 11/28 ade ours 0.5861906
+[INFO] 11/28 fde ours 0.3127341
+[INFO] 11/28 ade ours 0.548203
+[INFO] 11/28 fde ours 0.27547792
+[INFO] 11/28 ade ours 0.5567159
+[INFO] 11/28 fde ours 0.2909565
+[INFO] 11/28 ade ours 0.56577986
+[INFO] 11/28 fde ours 0.29243848
+[INFO] 12/28 ade ours 0.33026695
+[INFO] 12/28 fde ours 0.1674432
+[INFO] 12/28 ade ours 0.31826276
+[INFO] 12/28 fde ours 0.16571574
+[INFO] 12/28 ade ours 0.3548636
+[INFO] 12/28 fde ours 0.19093372
+[INFO] 12/28 ade ours 0.33527908
+[INFO] 12/28 fde ours 0.18306988
+[INFO] 12/28 ade ours 0.33689177
+[INFO] 12/28 fde ours 0.18363419
+[INFO] 12/28 ade ours 0.33908424
+[INFO] 12/28 fde ours 0.17407379
+[INFO] 12/28 ade ours 0.33792084
+[INFO] 12/28 fde ours 0.16798753
+[INFO] 12/28 ade ours 0.33466455
+[INFO] 12/28 fde ours 0.18087956
+[INFO] 12/28 ade ours 0.3565315
+[INFO] 12/28 fde ours 0.19407845
+[INFO] 12/28 ade ours 0.35846284
+[INFO] 12/28 fde ours 0.18883397
+[INFO] 13/28 ade ours 0.4143925
+[INFO] 13/28 fde ours 0.22601567
+[INFO] 13/28 ade ours 0.40596092
+[INFO] 13/28 fde ours 0.21128097
+[INFO] 13/28 ade ours 0.41373998
+[INFO] 13/28 fde ours 0.2237393
+[INFO] 13/28 ade ours 0.42068547
+[INFO] 13/28 fde ours 0.22541088
+[INFO] 13/28 ade ours 0.44321948
+[INFO] 13/28 fde ours 0.2366117
+[INFO] 13/28 ade ours 0.40537325
+[INFO] 13/28 fde ours 0.20731767
+[INFO] 13/28 ade ours 0.41790906
+[INFO] 13/28 fde ours 0.21845111
+[INFO] 13/28 ade ours 0.39283043
+[INFO] 13/28 fde ours 0.20660618
+[INFO] 13/28 ade ours 0.4233192
+[INFO] 13/28 fde ours 0.2277726
+[INFO] 13/28 ade ours 0.41176024
+[INFO] 13/28 fde ours 0.22479656
+[INFO] 14/28 ade ours 0.4770711
+[INFO] 14/28 fde ours 0.24754076
+[INFO] 14/28 ade ours 0.46913868
+[INFO] 14/28 fde ours 0.23521319
+[INFO] 14/28 ade ours 0.45054564
+[INFO] 14/28 fde ours 0.2276339
+[INFO] 14/28 ade ours 0.45713142
+[INFO] 14/28 fde ours 0.23040158
+[INFO] 14/28 ade ours 0.4631194
+[INFO] 14/28 fde ours 0.24104504
+[INFO] 14/28 ade ours 0.4466474
+[INFO] 14/28 fde ours 0.23122588
+[INFO] 14/28 ade ours 0.49668545
+[INFO] 14/28 fde ours 0.2523998
+[INFO] 14/28 ade ours 0.4754534
+[INFO] 14/28 fde ours 0.24892488
+[INFO] 14/28 ade ours 0.46247843
+[INFO] 14/28 fde ours 0.2362049
+[INFO] 14/28 ade ours 0.454177
+[INFO] 14/28 fde ours 0.23429029
+[INFO] 15/28 ade ours 0.3790402
+[INFO] 15/28 fde ours 0.19492128
+[INFO] 15/28 ade ours 0.3763142
+[INFO] 15/28 fde ours 0.1937845
+[INFO] 15/28 ade ours 0.37552845
+[INFO] 15/28 fde ours 0.20806238
+[INFO] 15/28 ade ours 0.3618825
+[INFO] 15/28 fde ours 0.18997829
+[INFO] 15/28 ade ours 0.35048485
+[INFO] 15/28 fde ours 0.18575664
+[INFO] 15/28 ade ours 0.36859637
+[INFO] 15/28 fde ours 0.19221736
+[INFO] 15/28 ade ours 0.3716117
+[INFO] 15/28 fde ours 0.19027491
+[INFO] 15/28 ade ours 0.35249677
+[INFO] 15/28 fde ours 0.17856884
+[INFO] 15/28 ade ours 0.36375564
+[INFO] 15/28 fde ours 0.18408616
+[INFO] 15/28 ade ours 0.3338787
+[INFO] 15/28 fde ours 0.1713387
+[INFO] 16/28 ade ours 0.43320948
+[INFO] 16/28 fde ours 0.22815692
+[INFO] 16/28 ade ours 0.44437093
+[INFO] 16/28 fde ours 0.22899058
+[INFO] 16/28 ade ours 0.4163357
+[INFO] 16/28 fde ours 0.21007045
+[INFO] 16/28 ade ours 0.4467703
+[INFO] 16/28 fde ours 0.24231808
+[INFO] 16/28 ade ours 0.39817223
+[INFO] 16/28 fde ours 0.21495683
+[INFO] 16/28 ade ours 0.4212763
+[INFO] 16/28 fde ours 0.23638509
+[INFO] 16/28 ade ours 0.44898766
+[INFO] 16/28 fde ours 0.2476587
+[INFO] 16/28 ade ours 0.39746472
+[INFO] 16/28 fde ours 0.21897323
+[INFO] 16/28 ade ours 0.4213612
+[INFO] 16/28 fde ours 0.23159423
+[INFO] 16/28 ade ours 0.4171177
+[INFO] 16/28 fde ours 0.23113632
+[INFO] 17/28 ade ours 0.34840956
+[INFO] 17/28 fde ours 0.18877788
+[INFO] 17/28 ade ours 0.33660644
+[INFO] 17/28 fde ours 0.18383761
+[INFO] 17/28 ade ours 0.32846174
+[INFO] 17/28 fde ours 0.17258798
+[INFO] 17/28 ade ours 0.32364509
+[INFO] 17/28 fde ours 0.17385393
+[INFO] 17/28 ade ours 0.31273967
+[INFO] 17/28 fde ours 0.16524592
+[INFO] 17/28 ade ours 0.34318078
+[INFO] 17/28 fde ours 0.18088585
+[INFO] 17/28 ade ours 0.34562686
+[INFO] 17/28 fde ours 0.18736272
+[INFO] 17/28 ade ours 0.3167659
+[INFO] 17/28 fde ours 0.1724617
+[INFO] 17/28 ade ours 0.32094556
+[INFO] 17/28 fde ours 0.17770125
+[INFO] 17/28 ade ours 0.37209836
+[INFO] 17/28 fde ours 0.19756036
+[INFO] 18/28 ade ours 0.3539764
+[INFO] 18/28 fde ours 0.18367559
+[INFO] 18/28 ade ours 0.37438574
+[INFO] 18/28 fde ours 0.20223916
+[INFO] 18/28 ade ours 0.36517906
+[INFO] 18/28 fde ours 0.19553228
+[INFO] 18/28 ade ours 0.35678646
+[INFO] 18/28 fde ours 0.18986934
+[INFO] 18/28 ade ours 0.38327345
+[INFO] 18/28 fde ours 0.20308147
+[INFO] 18/28 ade ours 0.33216986
+[INFO] 18/28 fde ours 0.16993344
+[INFO] 18/28 ade ours 0.3556502
+[INFO] 18/28 fde ours 0.18764977
+[INFO] 18/28 ade ours 0.35698867
+[INFO] 18/28 fde ours 0.17994416
+[INFO] 18/28 ade ours 0.35602424
+[INFO] 18/28 fde ours 0.18351896
+[INFO] 18/28 ade ours 0.35665882
+[INFO] 18/28 fde ours 0.1836217
+[INFO] 19/28 ade ours 0.4615487
+[INFO] 19/28 fde ours 0.24177599
+[INFO] 19/28 ade ours 0.46058625
+[INFO] 19/28 fde ours 0.24963011
+[INFO] 19/28 ade ours 0.4461035
+[INFO] 19/28 fde ours 0.22661129
+[INFO] 19/28 ade ours 0.4520008
+[INFO] 19/28 fde ours 0.23943487
+[INFO] 19/28 ade ours 0.45819178
+[INFO] 19/28 fde ours 0.23870018
+[INFO] 19/28 ade ours 0.47627372
+[INFO] 19/28 fde ours 0.25783312
+[INFO] 19/28 ade ours 0.39819568
+[INFO] 19/28 fde ours 0.20438915
+[INFO] 19/28 ade ours 0.42895508
+[INFO] 19/28 fde ours 0.22699282
+[INFO] 19/28 ade ours 0.4349307
+[INFO] 19/28 fde ours 0.22665182
+[INFO] 19/28 ade ours 0.4545842
+[INFO] 19/28 fde ours 0.23890963
+[INFO] 20/28 ade ours 0.41994503
+[INFO] 20/28 fde ours 0.22487336
+[INFO] 20/28 ade ours 0.43816465
+[INFO] 20/28 fde ours 0.2345517
+[INFO] 20/28 ade ours 0.42512783
+[INFO] 20/28 fde ours 0.22741105
+[INFO] 20/28 ade ours 0.43215472
+[INFO] 20/28 fde ours 0.23592845
+[INFO] 20/28 ade ours 0.4384092
+[INFO] 20/28 fde ours 0.24046223
+[INFO] 20/28 ade ours 0.4465392
+[INFO] 20/28 fde ours 0.23711136
+[INFO] 20/28 ade ours 0.4285482
+[INFO] 20/28 fde ours 0.22108929
+[INFO] 20/28 ade ours 0.41045576
+[INFO] 20/28 fde ours 0.22140281
+[INFO] 20/28 ade ours 0.42985544
+[INFO] 20/28 fde ours 0.23135914
+[INFO] 20/28 ade ours 0.4213034
+[INFO] 20/28 fde ours 0.22420251
+[INFO] 21/28 ade ours 0.4284315
+[INFO] 21/28 fde ours 0.22263592
+[INFO] 21/28 ade ours 0.4079563
+[INFO] 21/28 fde ours 0.20849113
+[INFO] 21/28 ade ours 0.40380493
+[INFO] 21/28 fde ours 0.19877476
+[INFO] 21/28 ade ours 0.3895854
+[INFO] 21/28 fde ours 0.20683186
+[INFO] 21/28 ade ours 0.3954184
+[INFO] 21/28 fde ours 0.19282448
+[INFO] 21/28 ade ours 0.36720872
+[INFO] 21/28 fde ours 0.18968815
+[INFO] 21/28 ade ours 0.4087413
+[INFO] 21/28 fde ours 0.20839582
+[INFO] 21/28 ade ours 0.40732455
+[INFO] 21/28 fde ours 0.19778423
+[INFO] 21/28 ade ours 0.413853
+[INFO] 21/28 fde ours 0.20987165
+[INFO] 21/28 ade ours 0.4292144
+[INFO] 21/28 fde ours 0.2252565
+[INFO] 22/28 ade ours 0.3451794
+[INFO] 22/28 fde ours 0.19040357
+[INFO] 22/28 ade ours 0.33379927
+[INFO] 22/28 fde ours 0.19716851
+[INFO] 22/28 ade ours 0.3521831
+[INFO] 22/28 fde ours 0.20026124
+[INFO] 22/28 ade ours 0.34573373
+[INFO] 22/28 fde ours 0.20093636
+[INFO] 22/28 ade ours 0.35634926
+[INFO] 22/28 fde ours 0.19587564
+[INFO] 22/28 ade ours 0.34458652
+[INFO] 22/28 fde ours 0.1900518
+[INFO] 22/28 ade ours 0.32989517
+[INFO] 22/28 fde ours 0.18131512
+[INFO] 22/28 ade ours 0.33745113
+[INFO] 22/28 fde ours 0.18893309
+[INFO] 22/28 ade ours 0.34349576
+[INFO] 22/28 fde ours 0.18996811
+[INFO] 22/28 ade ours 0.33189356
+[INFO] 22/28 fde ours 0.18924586
+[INFO] 23/28 ade ours 0.35753623
+[INFO] 23/28 fde ours 0.18494378
+[INFO] 23/28 ade ours 0.34401527
+[INFO] 23/28 fde ours 0.17521381
+[INFO] 23/28 ade ours 0.36818734
+[INFO] 23/28 fde ours 0.1933737
+[INFO] 23/28 ade ours 0.3535697
+[INFO] 23/28 fde ours 0.1793749
+[INFO] 23/28 ade ours 0.34625998
+[INFO] 23/28 fde ours 0.1771803
+[INFO] 23/28 ade ours 0.33810562
+[INFO] 23/28 fde ours 0.16604494
+[INFO] 23/28 ade ours 0.3262529
+[INFO] 23/28 fde ours 0.16125597
+[INFO] 23/28 ade ours 0.35177922
+[INFO] 23/28 fde ours 0.18595019
+[INFO] 23/28 ade ours 0.33080792
+[INFO] 23/28 fde ours 0.16611338
+[INFO] 23/28 ade ours 0.3474681
+[INFO] 23/28 fde ours 0.17977694
+[INFO] 24/28 ade ours 0.45724955
+[INFO] 24/28 fde ours 0.25432342
+[INFO] 24/28 ade ours 0.44743547
+[INFO] 24/28 fde ours 0.2382592
+[INFO] 24/28 ade ours 0.46928588
+[INFO] 24/28 fde ours 0.24924317
+[INFO] 24/28 ade ours 0.4545783
+[INFO] 24/28 fde ours 0.24608326
+[INFO] 24/28 ade ours 0.49076533
+[INFO] 24/28 fde ours 0.27217203
+[INFO] 24/28 ade ours 0.4520586
+[INFO] 24/28 fde ours 0.2401605
+[INFO] 24/28 ade ours 0.45500064
+[INFO] 24/28 fde ours 0.24648826
+[INFO] 24/28 ade ours 0.48624846
+[INFO] 24/28 fde ours 0.2559837
+[INFO] 24/28 ade ours 0.46207777
+[INFO] 24/28 fde ours 0.24976036
+[INFO] 24/28 ade ours 0.45381227
+[INFO] 24/28 fde ours 0.24821904
+[INFO] 25/28 ade ours 0.38188607
+[INFO] 25/28 fde ours 0.2125398
+[INFO] 25/28 ade ours 0.3626336
+[INFO] 25/28 fde ours 0.20233232
+[INFO] 25/28 ade ours 0.37481958
+[INFO] 25/28 fde ours 0.21696754
+[INFO] 25/28 ade ours 0.39701733
+[INFO] 25/28 fde ours 0.21601075
+[INFO] 25/28 ade ours 0.36439106
+[INFO] 25/28 fde ours 0.2023191
+[INFO] 25/28 ade ours 0.3678355
+[INFO] 25/28 fde ours 0.204366
+[INFO] 25/28 ade ours 0.37455353
+[INFO] 25/28 fde ours 0.20955624
+[INFO] 25/28 ade ours 0.3737647
+[INFO] 25/28 fde ours 0.20467949
+[INFO] 25/28 ade ours 0.36030024
+[INFO] 25/28 fde ours 0.20389643
+[INFO] 25/28 ade ours 0.34566423
+[INFO] 25/28 fde ours 0.18142869
+[INFO] 26/28 ade ours 0.4062037
+[INFO] 26/28 fde ours 0.22402781
+[INFO] 26/28 ade ours 0.40323475
+[INFO] 26/28 fde ours 0.21645047
+[INFO] 26/28 ade ours 0.3978672
+[INFO] 26/28 fde ours 0.2070095
+[INFO] 26/28 ade ours 0.42196438
+[INFO] 26/28 fde ours 0.22353046
+[INFO] 26/28 ade ours 0.3807829
+[INFO] 26/28 fde ours 0.19991577
+[INFO] 26/28 ade ours 0.43054587
+[INFO] 26/28 fde ours 0.2356052
+[INFO] 26/28 ade ours 0.42490515
+[INFO] 26/28 fde ours 0.22113082
+[INFO] 26/28 ade ours 0.42861992
+[INFO] 26/28 fde ours 0.23155935
+[INFO] 26/28 ade ours 0.4186046
+[INFO] 26/28 fde ours 0.20966884
+[INFO] 26/28 ade ours 0.4026151
+[INFO] 26/28 fde ours 0.21432641
+[INFO] 27/28 ade ours 0.3243731
+[INFO] 27/28 fde ours 0.17925769
+[INFO] 27/28 ade ours 0.32155058
+[INFO] 27/28 fde ours 0.17148717
+[INFO] 27/28 ade ours 0.33934096
+[INFO] 27/28 fde ours 0.17176436
+[INFO] 27/28 ade ours 0.32518598
+[INFO] 27/28 fde ours 0.16644369
+[INFO] 27/28 ade ours 0.3354435
+[INFO] 27/28 fde ours 0.16942504
+[INFO] 27/28 ade ours 0.30281684
+[INFO] 27/28 fde ours 0.16448113
+[INFO] 27/28 ade ours 0.3252926
+[INFO] 27/28 fde ours 0.16823663
+[INFO] 27/28 ade ours 0.35092214
+[INFO] 27/28 fde ours 0.19613974
+[INFO] 27/28 ade ours 0.34215623
+[INFO] 27/28 fde ours 0.17406604
+[INFO] 27/28 ade ours 0.33994043
+[INFO] 27/28 fde ours 0.18400227
+[INFO] ours wde ---> 0.40539571610944614
+[INFO] ours fde ---> 0.21576614917388984
+[INFO] GPU: 0 Done!
+[rank0]:[W413 09:21:03.956491280 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 8730.64it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4900.05it/s]
+/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path, map_location=device)
+[INFO] Start to test!
+[INFO] ours SIM ---> 0.22345282
+[INFO] ours AUC-J ---> 0.7506506805849475
+[INFO] ours NSS ---> 0.95825416
+[INFO] GPU: 0 Done!
+[rank0]:[W413 09:21:24.567632447 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 32
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': True} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/1880 [00:00<?, ?it/s]Loading train samples:  61%|██████    | 1138/1880 [00:00<00:00, 11310.81it/s]Loading train samples: 100%|██████████| 1880/1880 [00:00<00:00, 11678.49it/s]
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 9599.79it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 5118.35it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]:[W413 09:21:36.542439779 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 182, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 164, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 312, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 369, in epoch_pass
+[rank0]:     if self.training and self.gaze_cfg_dropout > 0:
+[rank0]: AttributeError: 'TrainValLoop' object has no attribute 'training'
+[rank0]:[W413 09:21:41.667422790 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': True} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 8482.76it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4897.15it/s]
+/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path, map_location=device)
+[INFO] Start to test!
+[INFO] 0/28 ade ours 0.46637252
+[INFO] 0/28 fde ours 0.2512183
+[INFO] 0/28 ade ours 0.46794146
+[INFO] 0/28 fde ours 0.24717465
+[INFO] 0/28 ade ours 0.44290435
+[INFO] 0/28 fde ours 0.22725815
+[INFO] 0/28 ade ours 0.43770334
+[INFO] 0/28 fde ours 0.22424945
+[INFO] 0/28 ade ours 0.46395653
+[INFO] 0/28 fde ours 0.2502345
+[INFO] 0/28 ade ours 0.47913238
+[INFO] 0/28 fde ours 0.25379783
+[INFO] 0/28 ade ours 0.47316238
+[INFO] 0/28 fde ours 0.2565073
+[INFO] 0/28 ade ours 0.460635
+[INFO] 0/28 fde ours 0.23895784
+[INFO] 0/28 ade ours 0.46082392
+[INFO] 0/28 fde ours 0.23866944
+[INFO] 0/28 ade ours 0.47096235
+[INFO] 0/28 fde ours 0.25391626
+[INFO] 1/28 ade ours 0.46186078
+[INFO] 1/28 fde ours 0.24155422
+[INFO] 1/28 ade ours 0.44017252
+[INFO] 1/28 fde ours 0.2246552
+[INFO] 1/28 ade ours 0.47059894
+[INFO] 1/28 fde ours 0.2523963
+[INFO] 1/28 ade ours 0.44844
+[INFO] 1/28 fde ours 0.22341882
+[INFO] 1/28 ade ours 0.41739526
+[INFO] 1/28 fde ours 0.21712935
+[INFO] 1/28 ade ours 0.42983103
+[INFO] 1/28 fde ours 0.22274958
+[INFO] 1/28 ade ours 0.4500833
+[INFO] 1/28 fde ours 0.23088884
+[INFO] 1/28 ade ours 0.4345902
+[INFO] 1/28 fde ours 0.22796345
+[INFO] 1/28 ade ours 0.44222915
+[INFO] 1/28 fde ours 0.23189934
+[INFO] 1/28 ade ours 0.42408678
+[INFO] 1/28 fde ours 0.21771812
+[INFO] 2/28 ade ours 0.41631013
+[INFO] 2/28 fde ours 0.21906433
+[INFO] 2/28 ade ours 0.4410959
+[INFO] 2/28 fde ours 0.2340485
+[INFO] 2/28 ade ours 0.42744574
+[INFO] 2/28 fde ours 0.22617336
+[INFO] 2/28 ade ours 0.4207173
+[INFO] 2/28 fde ours 0.22344281
+[INFO] 2/28 ade ours 0.443062
+[INFO] 2/28 fde ours 0.23535912
+[INFO] 2/28 ade ours 0.41510978
+[INFO] 2/28 fde ours 0.22476771
+[INFO] 2/28 ade ours 0.41456872
+[INFO] 2/28 fde ours 0.23024823
+[INFO] 2/28 ade ours 0.39552706
+[INFO] 2/28 fde ours 0.20674467
+[INFO] 2/28 ade ours 0.43859515
+[INFO] 2/28 fde ours 0.22473738
+[INFO] 2/28 ade ours 0.43194708
+[INFO] 2/28 fde ours 0.22977336
+[INFO] 3/28 ade ours 0.4090969
+[INFO] 3/28 fde ours 0.21413144
+[INFO] 3/28 ade ours 0.42957458
+[INFO] 3/28 fde ours 0.22663474
+[INFO] 3/28 ade ours 0.41971666
+[INFO] 3/28 fde ours 0.22355135
+[INFO] 3/28 ade ours 0.43724713
+[INFO] 3/28 fde ours 0.22726531
+[INFO] 3/28 ade ours 0.41584724
+[INFO] 3/28 fde ours 0.21935537
+[INFO] 3/28 ade ours 0.4163932
+[INFO] 3/28 fde ours 0.21208444
+[INFO] 3/28 ade ours 0.41574535
+[INFO] 3/28 fde ours 0.22539213
+[INFO] 3/28 ade ours 0.43183643
+[INFO] 3/28 fde ours 0.22498146
+[INFO] 3/28 ade ours 0.4031352
+[INFO] 3/28 fde ours 0.21786532
+[INFO] 3/28 ade ours 0.43741417
+[INFO] 3/28 fde ours 0.23231173
+[INFO] 4/28 ade ours 0.32915753
+[INFO] 4/28 fde ours 0.17562285
+[INFO] 4/28 ade ours 0.34225067
+[INFO] 4/28 fde ours 0.18064758
+[INFO] 4/28 ade ours 0.33191565
+[INFO] 4/28 fde ours 0.17833182
+[INFO] 4/28 ade ours 0.3360734
+[INFO] 4/28 fde ours 0.16742453
+[INFO] 4/28 ade ours 0.30903393
+[INFO] 4/28 fde ours 0.15967354
+[INFO] 4/28 ade ours 0.35883218
+[INFO] 4/28 fde ours 0.17930801
+[INFO] 4/28 ade ours 0.3040444
+[INFO] 4/28 fde ours 0.14582443
+[INFO] 4/28 ade ours 0.31961483
+[INFO] 4/28 fde ours 0.16084443
+[INFO] 4/28 ade ours 0.34975457
+[INFO] 4/28 fde ours 0.17304823
+[INFO] 4/28 ade ours 0.31054515
+[INFO] 4/28 fde ours 0.15685043
+[INFO] 5/28 ade ours 0.5334734
+[INFO] 5/28 fde ours 0.277277
+[INFO] 5/28 ade ours 0.55338526
+[INFO] 5/28 fde ours 0.27871674
+[INFO] 5/28 ade ours 0.5343297
+[INFO] 5/28 fde ours 0.2571163
+[INFO] 5/28 ade ours 0.5365754
+[INFO] 5/28 fde ours 0.27073574
+[INFO] 5/28 ade ours 0.5467841
+[INFO] 5/28 fde ours 0.2823215
+[INFO] 5/28 ade ours 0.56982535
+[INFO] 5/28 fde ours 0.2868897
+[INFO] 5/28 ade ours 0.5495209
+[INFO] 5/28 fde ours 0.2815851
+[INFO] 5/28 ade ours 0.5621961
+[INFO] 5/28 fde ours 0.29871005
+[INFO] 5/28 ade ours 0.5655327
+[INFO] 5/28 fde ours 0.27930984
+[INFO] 5/28 ade ours 0.5579615
+[INFO] 5/28 fde ours 0.28788227
+[INFO] 6/28 ade ours 0.42972142
+[INFO] 6/28 fde ours 0.2531896
+[INFO] 6/28 ade ours 0.42608634
+[INFO] 6/28 fde ours 0.24283522
+[INFO] 6/28 ade ours 0.44624448
+[INFO] 6/28 fde ours 0.2693712
+[INFO] 6/28 ade ours 0.42981988
+[INFO] 6/28 fde ours 0.25148147
+[INFO] 6/28 ade ours 0.4236838
+[INFO] 6/28 fde ours 0.2502882
+[INFO] 6/28 ade ours 0.43241182
+[INFO] 6/28 fde ours 0.25307876
+[INFO] 6/28 ade ours 0.4199831
+[INFO] 6/28 fde ours 0.24476069
+[INFO] 6/28 ade ours 0.39598814
+[INFO] 6/28 fde ours 0.2308087
+[INFO] 6/28 ade ours 0.41292253
+[INFO] 6/28 fde ours 0.24597791
+[INFO] 6/28 ade ours 0.4238008
+[INFO] 6/28 fde ours 0.24832726
+[INFO] 7/28 ade ours 0.39432535
+[INFO] 7/28 fde ours 0.22077388
+[INFO] 7/28 ade ours 0.38185257
+[INFO] 7/28 fde ours 0.20967068
+[INFO] 7/28 ade ours 0.41411147
+[INFO] 7/28 fde ours 0.22958863
+[INFO] 7/28 ade ours 0.39387146
+[INFO] 7/28 fde ours 0.22456291
+[INFO] 7/28 ade ours 0.38711286
+[INFO] 7/28 fde ours 0.21260603
+[INFO] 7/28 ade ours 0.3768136
+[INFO] 7/28 fde ours 0.21733241
+[INFO] 7/28 ade ours 0.37959066
+[INFO] 7/28 fde ours 0.20914584
+[INFO] 7/28 ade ours 0.405243
+[INFO] 7/28 fde ours 0.23236574
+[INFO] 7/28 ade ours 0.39291137
+[INFO] 7/28 fde ours 0.22814353
+[INFO] 7/28 ade ours 0.4100756
+[INFO] 7/28 fde ours 0.22554848
+[INFO] 8/28 ade ours 0.4453827
+[INFO] 8/28 fde ours 0.23733482
+[INFO] 8/28 ade ours 0.42079648
+[INFO] 8/28 fde ours 0.21808566
+[INFO] 8/28 ade ours 0.40705195
+[INFO] 8/28 fde ours 0.20825815
+[INFO] 8/28 ade ours 0.42373267
+[INFO] 8/28 fde ours 0.2274538
+[INFO] 8/28 ade ours 0.4118923
+[INFO] 8/28 fde ours 0.21822563
+[INFO] 8/28 ade ours 0.41437703
+[INFO] 8/28 fde ours 0.21183573
+[INFO] 8/28 ade ours 0.41792557
+[INFO] 8/28 fde ours 0.22209245
+[INFO] 8/28 ade ours 0.42767203
+[INFO] 8/28 fde ours 0.22470547
+[INFO] 8/28 ade ours 0.4045432
+[INFO] 8/28 fde ours 0.21927643
+[INFO] 8/28 ade ours 0.411481
+[INFO] 8/28 fde ours 0.22227043
+[INFO] 9/28 ade ours 0.32333705
+[INFO] 9/28 fde ours 0.17431808
+[INFO] 9/28 ade ours 0.3897165
+[INFO] 9/28 fde ours 0.22460896
+[INFO] 9/28 ade ours 0.39692792
+[INFO] 9/28 fde ours 0.23123676
+[INFO] 9/28 ade ours 0.38652003
+[INFO] 9/28 fde ours 0.22465186
+[INFO] 9/28 ade ours 0.3690755
+[INFO] 9/28 fde ours 0.20801042
+[INFO] 9/28 ade ours 0.39149934
+[INFO] 9/28 fde ours 0.22298388
+[INFO] 9/28 ade ours 0.36880416
+[INFO] 9/28 fde ours 0.20082326
+[INFO] 9/28 ade ours 0.3919977
+[INFO] 9/28 fde ours 0.21735789
+[INFO] 9/28 ade ours 0.37998945
+[INFO] 9/28 fde ours 0.21890043
+[INFO] 9/28 ade ours 0.39864752
+[INFO] 9/28 fde ours 0.22703074
+[INFO] 10/28 ade ours 0.3182283
+[INFO] 10/28 fde ours 0.17570789
+[INFO] 10/28 ade ours 0.32413658
+[INFO] 10/28 fde ours 0.16769631
+[INFO] 10/28 ade ours 0.320295
+[INFO] 10/28 fde ours 0.16728513
+[INFO] 10/28 ade ours 0.314339
+[INFO] 10/28 fde ours 0.1698666
+[INFO] 10/28 ade ours 0.31323
+[INFO] 10/28 fde ours 0.17100385
+[INFO] 10/28 ade ours 0.33915022
+[INFO] 10/28 fde ours 0.19372712
+[INFO] 10/28 ade ours 0.32792875
+[INFO] 10/28 fde ours 0.17278843
+[INFO] 10/28 ade ours 0.33200526
+[INFO] 10/28 fde ours 0.17873986
+[INFO] 10/28 ade ours 0.31869173
+[INFO] 10/28 fde ours 0.16675095
+[INFO] 10/28 ade ours 0.33607787
+[INFO] 10/28 fde ours 0.18754338
+[INFO] 11/28 ade ours 0.5683546
+[INFO] 11/28 fde ours 0.30305207
+[INFO] 11/28 ade ours 0.57358533
+[INFO] 11/28 fde ours 0.29054976
+[INFO] 11/28 ade ours 0.57965815
+[INFO] 11/28 fde ours 0.30916512
+[INFO] 11/28 ade ours 0.59405476
+[INFO] 11/28 fde ours 0.30785546
+[INFO] 11/28 ade ours 0.600487
+[INFO] 11/28 fde ours 0.31593782
+[INFO] 11/28 ade ours 0.5735493
+[INFO] 11/28 fde ours 0.30487615
+[INFO] 11/28 ade ours 0.59528327
+[INFO] 11/28 fde ours 0.3167586
+[INFO] 11/28 ade ours 0.5522612
+[INFO] 11/28 fde ours 0.2752205
+[INFO] 11/28 ade ours 0.56797105
+[INFO] 11/28 fde ours 0.29839113
+[INFO] 11/28 ade ours 0.5737258
+[INFO] 11/28 fde ours 0.29605052
+[INFO] 12/28 ade ours 0.33354694
+[INFO] 12/28 fde ours 0.17078406
+[INFO] 12/28 ade ours 0.31969938
+[INFO] 12/28 fde ours 0.16582963
+[INFO] 12/28 ade ours 0.3580179
+[INFO] 12/28 fde ours 0.19211215
+[INFO] 12/28 ade ours 0.3379938
+[INFO] 12/28 fde ours 0.18456736
+[INFO] 12/28 ade ours 0.3420882
+[INFO] 12/28 fde ours 0.18883891
+[INFO] 12/28 ade ours 0.33961967
+[INFO] 12/28 fde ours 0.17551808
+[INFO] 12/28 ade ours 0.34125692
+[INFO] 12/28 fde ours 0.1676053
+[INFO] 12/28 ade ours 0.3378086
+[INFO] 12/28 fde ours 0.18173712
+[INFO] 12/28 ade ours 0.35650998
+[INFO] 12/28 fde ours 0.19422883
+[INFO] 12/28 ade ours 0.35967198
+[INFO] 12/28 fde ours 0.18871307
+[INFO] 13/28 ade ours 0.41857624
+[INFO] 13/28 fde ours 0.22799069
+[INFO] 13/28 ade ours 0.41251913
+[INFO] 13/28 fde ours 0.21634409
+[INFO] 13/28 ade ours 0.4168502
+[INFO] 13/28 fde ours 0.22375154
+[INFO] 13/28 ade ours 0.42144775
+[INFO] 13/28 fde ours 0.22563197
+[INFO] 13/28 ade ours 0.44317585
+[INFO] 13/28 fde ours 0.23598588
+[INFO] 13/28 ade ours 0.40814018
+[INFO] 13/28 fde ours 0.20967902
+[INFO] 13/28 ade ours 0.41822284
+[INFO] 13/28 fde ours 0.2181417
+[INFO] 13/28 ade ours 0.4001897
+[INFO] 13/28 fde ours 0.21056677
+[INFO] 13/28 ade ours 0.42494437
+[INFO] 13/28 fde ours 0.22811864
+[INFO] 13/28 ade ours 0.41813725
+[INFO] 13/28 fde ours 0.22850148
+[INFO] 14/28 ade ours 0.48319024
+[INFO] 14/28 fde ours 0.25124782
+[INFO] 14/28 ade ours 0.46868077
+[INFO] 14/28 fde ours 0.23562355
+[INFO] 14/28 ade ours 0.45408577
+[INFO] 14/28 fde ours 0.22778055
+[INFO] 14/28 ade ours 0.4578527
+[INFO] 14/28 fde ours 0.23126252
+[INFO] 14/28 ade ours 0.463356
+[INFO] 14/28 fde ours 0.24151213
+[INFO] 14/28 ade ours 0.4477735
+[INFO] 14/28 fde ours 0.23267385
+[INFO] 14/28 ade ours 0.49718
+[INFO] 14/28 fde ours 0.25288177
+[INFO] 14/28 ade ours 0.47722587
+[INFO] 14/28 fde ours 0.25093976
+[INFO] 14/28 ade ours 0.4605629
+[INFO] 14/28 fde ours 0.23426862
+[INFO] 14/28 ade ours 0.45831242
+[INFO] 14/28 fde ours 0.23728615
+[INFO] 15/28 ade ours 0.38155347
+[INFO] 15/28 fde ours 0.1965881
+[INFO] 15/28 ade ours 0.37816113
+[INFO] 15/28 fde ours 0.1939582
+[INFO] 15/28 ade ours 0.3762533
+[INFO] 15/28 fde ours 0.20729901
+[INFO] 15/28 ade ours 0.36491075
+[INFO] 15/28 fde ours 0.19161531
+[INFO] 15/28 ade ours 0.3537999
+[INFO] 15/28 fde ours 0.18737458
+[INFO] 15/28 ade ours 0.3697854
+[INFO] 15/28 fde ours 0.19275972
+[INFO] 15/28 ade ours 0.37318254
+[INFO] 15/28 fde ours 0.19021343
+[INFO] 15/28 ade ours 0.3519502
+[INFO] 15/28 fde ours 0.17848885
+[INFO] 15/28 ade ours 0.36188653
+[INFO] 15/28 fde ours 0.18443818
+[INFO] 15/28 ade ours 0.33507293
+[INFO] 15/28 fde ours 0.17001131
+[INFO] 16/28 ade ours 0.4321806
+[INFO] 16/28 fde ours 0.22736235
+[INFO] 16/28 ade ours 0.44930735
+[INFO] 16/28 fde ours 0.23187093
+[INFO] 16/28 ade ours 0.4278061
+[INFO] 16/28 fde ours 0.21483263
+[INFO] 16/28 ade ours 0.45209262
+[INFO] 16/28 fde ours 0.24568304
+[INFO] 16/28 ade ours 0.40972054
+[INFO] 16/28 fde ours 0.2211773
+[INFO] 16/28 ade ours 0.42240012
+[INFO] 16/28 fde ours 0.23544678
+[INFO] 16/28 ade ours 0.45125997
+[INFO] 16/28 fde ours 0.2480741
+[INFO] 16/28 ade ours 0.40261063
+[INFO] 16/28 fde ours 0.2223949
+[INFO] 16/28 ade ours 0.42626768
+[INFO] 16/28 fde ours 0.2340386
+[INFO] 16/28 ade ours 0.41966018
+[INFO] 16/28 fde ours 0.23061202
+[INFO] 17/28 ade ours 0.3596524
+[INFO] 17/28 fde ours 0.19348124
+[INFO] 17/28 ade ours 0.34161562
+[INFO] 17/28 fde ours 0.18547036
+[INFO] 17/28 ade ours 0.33689135
+[INFO] 17/28 fde ours 0.17759492
+[INFO] 17/28 ade ours 0.32780713
+[INFO] 17/28 fde ours 0.17712422
+[INFO] 17/28 ade ours 0.31488925
+[INFO] 17/28 fde ours 0.16639255
+[INFO] 17/28 ade ours 0.3475116
+[INFO] 17/28 fde ours 0.18251583
+[INFO] 17/28 ade ours 0.35033035
+[INFO] 17/28 fde ours 0.1900842
+[INFO] 17/28 ade ours 0.32431266
+[INFO] 17/28 fde ours 0.17755237
+[INFO] 17/28 ade ours 0.32637736
+[INFO] 17/28 fde ours 0.17960034
+[INFO] 17/28 ade ours 0.37857512
+[INFO] 17/28 fde ours 0.20021778
+[INFO] 18/28 ade ours 0.35521993
+[INFO] 18/28 fde ours 0.18304229
+[INFO] 18/28 ade ours 0.37784863
+[INFO] 18/28 fde ours 0.20341611
+[INFO] 18/28 ade ours 0.36851716
+[INFO] 18/28 fde ours 0.19756818
+[INFO] 18/28 ade ours 0.3569213
+[INFO] 18/28 fde ours 0.18991399
+[INFO] 18/28 ade ours 0.38403854
+[INFO] 18/28 fde ours 0.20318826
+[INFO] 18/28 ade ours 0.33575073
+[INFO] 18/28 fde ours 0.17233515
+[INFO] 18/28 ade ours 0.35634455
+[INFO] 18/28 fde ours 0.18731086
+[INFO] 18/28 ade ours 0.3551022
+[INFO] 18/28 fde ours 0.17800607
+[INFO] 18/28 ade ours 0.36269763
+[INFO] 18/28 fde ours 0.18578863
+[INFO] 18/28 ade ours 0.3604848
+[INFO] 18/28 fde ours 0.18611842
+[INFO] 19/28 ade ours 0.46449882
+[INFO] 19/28 fde ours 0.24556212
+[INFO] 19/28 ade ours 0.46466884
+[INFO] 19/28 fde ours 0.25275886
+[INFO] 19/28 ade ours 0.4519781
+[INFO] 19/28 fde ours 0.2295943
+[INFO] 19/28 ade ours 0.45506608
+[INFO] 19/28 fde ours 0.24061988
+[INFO] 19/28 ade ours 0.46414936
+[INFO] 19/28 fde ours 0.24097498
+[INFO] 19/28 ade ours 0.4807866
+[INFO] 19/28 fde ours 0.26140845
+[INFO] 19/28 ade ours 0.39993066
+[INFO] 19/28 fde ours 0.20538616
+[INFO] 19/28 ade ours 0.43284047
+[INFO] 19/28 fde ours 0.2302794
+[INFO] 19/28 ade ours 0.4379698
+[INFO] 19/28 fde ours 0.2284153
+[INFO] 19/28 ade ours 0.4568641
+[INFO] 19/28 fde ours 0.24112688
+[INFO] 20/28 ade ours 0.42715964
+[INFO] 20/28 fde ours 0.22959216
+[INFO] 20/28 ade ours 0.4523617
+[INFO] 20/28 fde ours 0.24116893
+[INFO] 20/28 ade ours 0.43006992
+[INFO] 20/28 fde ours 0.22895025
+[INFO] 20/28 ade ours 0.44052798
+[INFO] 20/28 fde ours 0.23997347
+[INFO] 20/28 ade ours 0.45322183
+[INFO] 20/28 fde ours 0.24786751
+[INFO] 20/28 ade ours 0.45263553
+[INFO] 20/28 fde ours 0.23895684
+[INFO] 20/28 ade ours 0.43580452
+[INFO] 20/28 fde ours 0.22594908
+[INFO] 20/28 ade ours 0.41421464
+[INFO] 20/28 fde ours 0.22137047
+[INFO] 20/28 ade ours 0.43657202
+[INFO] 20/28 fde ours 0.23647152
+[INFO] 20/28 ade ours 0.43165606
+[INFO] 20/28 fde ours 0.2312279
+[INFO] 21/28 ade ours 0.43336082
+[INFO] 21/28 fde ours 0.2256506
+[INFO] 21/28 ade ours 0.41219592
+[INFO] 21/28 fde ours 0.2108226
+[INFO] 21/28 ade ours 0.40692475
+[INFO] 21/28 fde ours 0.20100845
+[INFO] 21/28 ade ours 0.39792725
+[INFO] 21/28 fde ours 0.21131612
+[INFO] 21/28 ade ours 0.4002829
+[INFO] 21/28 fde ours 0.1938178
+[INFO] 21/28 ade ours 0.36942628
+[INFO] 21/28 fde ours 0.19004574
+[INFO] 21/28 ade ours 0.41309965
+[INFO] 21/28 fde ours 0.21039985
+[INFO] 21/28 ade ours 0.41389182
+[INFO] 21/28 fde ours 0.20110145
+[INFO] 21/28 ade ours 0.41680428
+[INFO] 21/28 fde ours 0.21212031
+[INFO] 21/28 ade ours 0.43601722
+[INFO] 21/28 fde ours 0.2291003
+[INFO] 22/28 ade ours 0.34800705
+[INFO] 22/28 fde ours 0.19071977
+[INFO] 22/28 ade ours 0.33460036
+[INFO] 22/28 fde ours 0.19862337
+[INFO] 22/28 ade ours 0.35774353
+[INFO] 22/28 fde ours 0.20330231
+[INFO] 22/28 ade ours 0.34519374
+[INFO] 22/28 fde ours 0.20042133
+[INFO] 22/28 ade ours 0.3604379
+[INFO] 22/28 fde ours 0.19909109
+[INFO] 22/28 ade ours 0.3470131
+[INFO] 22/28 fde ours 0.19091673
+[INFO] 22/28 ade ours 0.33117017
+[INFO] 22/28 fde ours 0.18297504
+[INFO] 22/28 ade ours 0.34085417
+[INFO] 22/28 fde ours 0.19202393
+[INFO] 22/28 ade ours 0.34431648
+[INFO] 22/28 fde ours 0.1901166
+[INFO] 22/28 ade ours 0.33589423
+[INFO] 22/28 fde ours 0.19224973
+[INFO] 23/28 ade ours 0.35904315
+[INFO] 23/28 fde ours 0.18473327
+[INFO] 23/28 ade ours 0.3436366
+[INFO] 23/28 fde ours 0.1725054
+[INFO] 23/28 ade ours 0.36893025
+[INFO] 23/28 fde ours 0.19233443
+[INFO] 23/28 ade ours 0.35227528
+[INFO] 23/28 fde ours 0.17890275
+[INFO] 23/28 ade ours 0.34691492
+[INFO] 23/28 fde ours 0.17826669
+[INFO] 23/28 ade ours 0.33495012
+[INFO] 23/28 fde ours 0.16328426
+[INFO] 23/28 ade ours 0.32365596
+[INFO] 23/28 fde ours 0.15867683
+[INFO] 23/28 ade ours 0.3529435
+[INFO] 23/28 fde ours 0.18813282
+[INFO] 23/28 ade ours 0.32736692
+[INFO] 23/28 fde ours 0.16305742
+[INFO] 23/28 ade ours 0.35320503
+[INFO] 23/28 fde ours 0.18349537
+[INFO] 24/28 ade ours 0.4622658
+[INFO] 24/28 fde ours 0.25682616
+[INFO] 24/28 ade ours 0.4482422
+[INFO] 24/28 fde ours 0.23747508
+[INFO] 24/28 ade ours 0.47048914
+[INFO] 24/28 fde ours 0.25016084
+[INFO] 24/28 ade ours 0.4581664
+[INFO] 24/28 fde ours 0.24786255
+[INFO] 24/28 ade ours 0.4909162
+[INFO] 24/28 fde ours 0.2719222
+[INFO] 24/28 ade ours 0.4492333
+[INFO] 24/28 fde ours 0.23642327
+[INFO] 24/28 ade ours 0.4585359
+[INFO] 24/28 fde ours 0.24764621
+[INFO] 24/28 ade ours 0.4863583
+[INFO] 24/28 fde ours 0.25448117
+[INFO] 24/28 ade ours 0.46092597
+[INFO] 24/28 fde ours 0.24868241
+[INFO] 24/28 ade ours 0.4555679
+[INFO] 24/28 fde ours 0.24853265
+[INFO] 25/28 ade ours 0.3855969
+[INFO] 25/28 fde ours 0.21366647
+[INFO] 25/28 ade ours 0.36968845
+[INFO] 25/28 fde ours 0.20478217
+[INFO] 25/28 ade ours 0.3818506
+[INFO] 25/28 fde ours 0.21946114
+[INFO] 25/28 ade ours 0.40132114
+[INFO] 25/28 fde ours 0.21847105
+[INFO] 25/28 ade ours 0.37082973
+[INFO] 25/28 fde ours 0.20605305
+[INFO] 25/28 ade ours 0.37332574
+[INFO] 25/28 fde ours 0.2076205
+[INFO] 25/28 ade ours 0.37799525
+[INFO] 25/28 fde ours 0.21066618
+[INFO] 25/28 ade ours 0.37790027
+[INFO] 25/28 fde ours 0.20831633
+[INFO] 25/28 ade ours 0.3638487
+[INFO] 25/28 fde ours 0.20591177
+[INFO] 25/28 ade ours 0.34872738
+[INFO] 25/28 fde ours 0.18226512
+[INFO] 26/28 ade ours 0.41046786
+[INFO] 26/28 fde ours 0.22834305
+[INFO] 26/28 ade ours 0.40449846
+[INFO] 26/28 fde ours 0.21696994
+[INFO] 26/28 ade ours 0.3966582
+[INFO] 26/28 fde ours 0.20780608
+[INFO] 26/28 ade ours 0.42414743
+[INFO] 26/28 fde ours 0.22311397
+[INFO] 26/28 ade ours 0.3838802
+[INFO] 26/28 fde ours 0.20221612
+[INFO] 26/28 ade ours 0.43186715
+[INFO] 26/28 fde ours 0.23699987
+[INFO] 26/28 ade ours 0.42495283
+[INFO] 26/28 fde ours 0.22226247
+[INFO] 26/28 ade ours 0.43240905
+[INFO] 26/28 fde ours 0.23415558
+[INFO] 26/28 ade ours 0.42081133
+[INFO] 26/28 fde ours 0.21288785
+[INFO] 26/28 ade ours 0.40735096
+[INFO] 26/28 fde ours 0.21692255
+[INFO] 27/28 ade ours 0.3208431
+[INFO] 27/28 fde ours 0.1768772
+[INFO] 27/28 ade ours 0.31906754
+[INFO] 27/28 fde ours 0.17032519
+[INFO] 27/28 ade ours 0.3394512
+[INFO] 27/28 fde ours 0.17179394
+[INFO] 27/28 ade ours 0.32387665
+[INFO] 27/28 fde ours 0.16590786
+[INFO] 27/28 ade ours 0.33758515
+[INFO] 27/28 fde ours 0.17431648
+[INFO] 27/28 ade ours 0.30260202
+[INFO] 27/28 fde ours 0.16544303
+[INFO] 27/28 ade ours 0.32790586
+[INFO] 27/28 fde ours 0.17014877
+[INFO] 27/28 ade ours 0.3490457
+[INFO] 27/28 fde ours 0.19731852
+[INFO] 27/28 ade ours 0.3424574
+[INFO] 27/28 fde ours 0.173236
+[INFO] 27/28 ade ours 0.3385089
+[INFO] 27/28 fde ours 0.18420397
+[INFO] ours wde ---> 0.4087273127266339
+[INFO] ours fde ---> 0.21751114332250188
+[INFO] GPU: 0 Done!
+[rank0]:[W413 09:22:14.405907627 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': True, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 3, 'gaze_bias_init_amp': 0.5, 'gaze_before_motion': True} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/442 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 442/442 [00:00<00:00, 8729.86it/s]
+Loading eval samples:   0%|          | 0/69 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 69/69 [00:00<00:00, 4967.85it/s]
+/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(resume_path, map_location=device)
+[INFO] Start to test!
+[INFO] ours SIM ---> 0.22468823
+[INFO] ours AUC-J ---> 0.7484534713575579
+[INFO] ours NSS ---> 0.9718218
+[INFO] GPU: 0 Done!
+[rank0]:[W413 09:22:34.604816492 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

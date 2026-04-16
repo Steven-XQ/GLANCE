@@ -14,7 +14,7 @@ def farthest_sampling(pcd, n_samples):
     remaining_pts = np.copy(pcd)
 
     if n_pts > 1:
-        start_idx = np.random.randint(low=0, high=n_pts - 1)
+        start_idx = 0  # deterministic: always start from first point
     else:
         start_idx = 0
     selected_pts_expanded[0] = remaining_pts[start_idx]
@@ -90,7 +90,9 @@ def AUC_Judd(saliency_map, fixation_map, jitter=True):
     if saliency_map.shape != fixation_map.shape:
         saliency_map = cv2.resize(saliency_map, fixation_map.shape, interpolation=cv2.INTER_AREA)
     if jitter:
-        saliency_map += np.random.rand(*saliency_map.shape) * 1e-7
+        # Deterministic jitter using a fixed-seed RNG
+        rng = np.random.RandomState(42)
+        saliency_map += rng.rand(*saliency_map.shape) * 1e-7
     saliency_map = (saliency_map - np.min(saliency_map)) / (np.max(saliency_map) - np.min(saliency_map) + 1e-12)
 
     S = saliency_map.ravel()

@@ -57,6 +57,9 @@ def add_nets_opts(parser):
     parser.add_argument("--gaze_fixed_delta", default=0, type=int, help="Use a fixed temporal offset (in frames) for gaze->hand attention instead of learnable bias (0=learnable)")
     parser.add_argument("--gaze_bias_init_delta", default=0, type=int, help="Initialize learnable temporal bias with a Gaussian bump centered at this delta (0=zero-init)")
     parser.add_argument("--gaze_bias_init_amp", default=2.0, type=float, help="Amplitude of the Gaussian bump used for bias init")
+    parser.add_argument("--gaze_heatmap_only", action="store_true", help="Use only heatmap CNN for gaze (skip coordinate MLP stream)")
+    parser.add_argument("--gaze_cfg_dropout", default=0.0, type=float, help="CFG-style dropout rate: zero entire gaze stream for this fraction of batches (0=disabled)")
+    parser.add_argument("--gaze_before_motion", action="store_true", help="Apply gaze cross-attention BEFORE egomotion cross-attention in DecoderBlock")
 
     parser.add_argument("--lambda_obj", default=1e-1, type=float, help="Weight to supervise object affordance")
     parser.add_argument("--lambda_traj", default=1., type=float, help="Weight to supervise hand traj")

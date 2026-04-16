@@ -242,7 +242,8 @@ class TransformerNetModel(nn.Module):
 class DecoderBlock(nn.Module):
     def __init__(self, dim, num_heads, mlp_ratio=4., qkv_bias=True, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0.1, act_layer=nn.GELU, norm_layer=nn.LayerNorm,
-                 use_gaze=False, T_max=20, gaze_alpha_clamp=0.0, gaze_fixed_delta=0, gaze_bias_init_delta=0, gaze_bias_init_amp=2.0):
+                 use_gaze=False, T_max=20, gaze_alpha_clamp=0.0, gaze_fixed_delta=0, gaze_bias_init_delta=0, gaze_bias_init_amp=2.0,
+                 gaze_before_motion=False):
         super().__init__()
         self.norm1 = nn.LayerNorm(dim)
         self.self_attn = MultiHeadAttention(dim, num_heads=num_heads, qkv_bias=qkv_bias,
@@ -256,6 +257,7 @@ class DecoderBlock(nn.Module):
 
         self.use_gaze = use_gaze
         self.gaze_alpha_clamp = gaze_alpha_clamp
+        self.gaze_before_motion = gaze_before_motion
         if use_gaze:
             from .gaze_modules import GazeTemporalCrossAttention
             self.norm_gaze = nn.LayerNorm(dim)
@@ -275,8 +277,12 @@ class DecoderBlock(nn.Module):
     def forward(self, tgt, emb_motion, memory_mask=None, trg_mask=None, gaze_feat=None):
         tgt_2 = self.norm1(tgt)
         tgt = tgt + self.drop_path(self.self_attn(q=tgt_2, k=tgt_2, v=tgt_2, mask=trg_mask))
+        if self.use_gaze and self.gaze_before_motion and gaze_feat is not None:
+            gaze_out = self.gaze_cross_attn(q_hand=self.norm_gaze(tgt), kv_gaze=gaze_feat)
+            alpha = self.gaze_alpha.clamp(max=self.gaze_alpha_clamp) if self.gaze_alpha_clamp > 0 else self.gaze_alpha
+            tgt = tgt + self.drop_path(alpha * gaze_out)
         tgt = tgt + self.drop_path(self.enc_dec_attn(q=self.norm2(tgt), k=emb_motion, v=emb_motion, mask=None))
-        if self.use_gaze and gaze_feat is not None:
+        if self.use_gaze and not self.gaze_before_motion and gaze_feat is not None:
             gaze_out = self.gaze_cross_attn(q_hand=self.norm_gaze(tgt), kv_gaze=gaze_feat)
             alpha = self.gaze_alpha.clamp(max=self.gaze_alpha_clamp) if self.gaze_alpha_clamp > 0 else self.gaze_alpha
             tgt = tgt + self.drop_path(alpha * gaze_out)
@@ -325,6 +331,7 @@ class MADT(nn.Module):
         gaze_fixed_delta=0,
         gaze_bias_init_delta=0,
         gaze_bias_init_amp=2.0,
+        gaze_before_motion=False,
     ):
         super().__init__()
 
@@ -364,7 +371,8 @@ class MADT(nn.Module):
         drop=self.dropout_value, attn_drop=0., drop_path=dpr[i],
         use_gaze=use_gaze if (gaze_last_n_blocks == 0 or i >= depth - gaze_last_n_blocks) else False,
         T_max=T_max, gaze_alpha_clamp=gaze_alpha_clamp, gaze_fixed_delta=gaze_fixed_delta,
-        gaze_bias_init_delta=gaze_bias_init_delta, gaze_bias_init_amp=gaze_bias_init_amp)
+        gaze_bias_init_delta=gaze_bias_init_delta, gaze_bias_init_amp=gaze_bias_init_amp,
+        gaze_before_motion=gaze_before_motion)
         for i in range(self.depth)])
 
     def forward(self, x_r, timesteps, motion_feat_encoded, valid_mask=None, gaze_feat_encoded=None):

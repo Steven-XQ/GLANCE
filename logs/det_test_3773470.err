@@ -1,0 +1,552 @@
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_train_baseline.py': [Errno 2] No such file or directory
+E0413 04:25:41.679000 99737 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 99807) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_train_baseline.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:41
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 99807)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_traj_baseline.py': [Errno 2] No such file or directory
+E0413 04:25:43.770000 99809 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 99875) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_traj_baseline.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:43
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 99875)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_affordance_baseline.py': [Errno 2] No such file or directory
+E0413 04:25:45.419000 99876 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 99941) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_affordance_baseline.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:45
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 99941)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_train_baseline.py': [Errno 2] No such file or directory
+E0413 04:25:47.736000 99942 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100007) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_train_baseline.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:47
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100007)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_traj_baseline.py': [Errno 2] No such file or directory
+E0413 04:25:49.249000 100008 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100074) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_traj_baseline.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:49
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100074)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_affordance_baseline.py': [Errno 2] No such file or directory
+E0413 04:25:50.579000 100075 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100141) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_affordance_baseline.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:50
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100141)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_train_v2_repro.py': [Errno 2] No such file or directory
+E0413 04:25:51.903000 100143 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100208) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_train_v2_repro.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:51
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100208)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_traj_v2_repro.py': [Errno 2] No such file or directory
+E0413 04:25:53.223000 100209 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100274) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_traj_v2_repro.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:53
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100274)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_affordance_v2_repro.py': [Errno 2] No such file or directory
+E0413 04:25:54.529000 100275 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100340) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_affordance_v2_repro.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:54
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100340)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_train_v2_repro.py': [Errno 2] No such file or directory
+E0413 04:25:55.840000 100341 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100407) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_train_v2_repro.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:55
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100407)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_traj_v2_repro.py': [Errno 2] No such file or directory
+E0413 04:25:57.149000 100408 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100473) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_traj_v2_repro.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:57
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100473)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python: can't open file '/home/u6x/sx2022.u6x/Diff-IP2D-main/run_val_affordance_v2_repro.py': [Errno 2] No such file or directory
+E0413 04:25:58.449000 100474 /lus/lfs1aip2/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 100539) of binary: /scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/bin/python
+Traceback (most recent call last):
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/typing_extensions.py", line 3004, in wrapper
+    return arg(*args, **kwargs)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run_val_affordance_v2_repro.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-13_04:25:58
+  host      : nid011230
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 100539)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

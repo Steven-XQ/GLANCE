@@ -35,6 +35,11 @@ def main(args):
     torch.manual_seed(args.manual_seed)
     np.random.seed(args.manual_seed)
     random.seed(args.manual_seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    import os as _os
+    _os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
+    torch.use_deterministic_algorithms(True)
     dist_util.setup_dist()
 
     datasetargs = DatasetArgs(ek_version=args.ek_version)
@@ -76,6 +81,7 @@ def main(args):
         "gaze_fixed_delta": getattr(args, 'gaze_fixed_delta', 0),
         "gaze_bias_init_delta": getattr(args, 'gaze_bias_init_delta', 0),
         "gaze_bias_init_amp": getattr(args, 'gaze_bias_init_amp', 2.0),
+        "gaze_before_motion": getattr(args, 'gaze_before_motion', False),
     }
     if int(os.environ['LOCAL_RANK']) == 0:
         logging.info("diffusion setups\n================= \n%s \n=================", model_diff_args)
@@ -153,6 +159,8 @@ def main(args):
             use_gaze=getattr(args, 'use_gaze', False),
             gaze_fusion_only=getattr(args, 'gaze_fusion_only', False),
             gaze_detach_diffusion=getattr(args, 'gaze_detach_diffusion', False),
+            gaze_heatmap_only=getattr(args, 'gaze_heatmap_only', False),
+            gaze_cfg_dropout=getattr(args, 'gaze_cfg_dropout', 0.0),
     ).run_loop()
 
 
