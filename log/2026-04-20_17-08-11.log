@@ -1,0 +1,1200 @@
+2026-04-20 17:08:11,212 - main - INFO - Using lr 0.0002
+2026-04-20 17:08:11,213 - main - INFO - train epoch: 1
+2026-04-20 17:08:13,199 - main - INFO - 2.280052661895752
+2026-04-20 17:08:13,200 - main - INFO - Epoch:0 (1/59) Data: 1.253989s | Batch: 1.986s | future_traj_r_loss: 0.310 | future_traj_l_loss: 0.497 | rec_r_loss: 0.974| rec_l_loss: 0.978| total_loss: 2.280 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.714 
+2026-04-20 17:08:13,340 - main - INFO - 2.02433705329895
+2026-04-20 17:08:13,341 - main - INFO - Epoch:0 (2/59) Data: 0.001009s | Batch: 1.064s | future_traj_r_loss: 0.298 | future_traj_l_loss: 0.123 | rec_r_loss: 0.874| rec_l_loss: 0.886| total_loss: 1.769 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.095 
+2026-04-20 17:08:13,464 - main - INFO - 1.850848913192749
+2026-04-20 17:08:13,465 - main - INFO - Epoch:0 (3/59) Data: 0.000813s | Batch: 0.750s | future_traj_r_loss: 0.238 | future_traj_l_loss: 0.244 | rec_r_loss: 0.723| rec_l_loss: 0.693| total_loss: 1.504 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.276 
+2026-04-20 17:08:13,592 - main - INFO - 1.6765945553779602
+2026-04-20 17:08:13,592 - main - INFO - Epoch:0 (4/59) Data: 0.000860s | Batch: 0.594s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.251 | rec_r_loss: 0.591| rec_l_loss: 0.546| total_loss: 1.154 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.122 
+2026-04-20 17:08:13,715 - main - INFO - 1.5032025456428528
+2026-04-20 17:08:13,716 - main - INFO - Epoch:0 (5/59) Data: 0.000855s | Batch: 0.500s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.218 | rec_r_loss: 0.472| rec_l_loss: 0.492| total_loss: 0.810 | future_valid_r: 32.0 | future_valid_l: 7.0 | obj_loss: 0.122 
+2026-04-20 17:08:13,844 - main - INFO - 1.3807844122250874
+2026-04-20 17:08:13,845 - main - INFO - Epoch:0 (6/59) Data: 0.000845s | Batch: 0.438s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.171 | rec_r_loss: 0.343| rec_l_loss: 0.331| total_loss: 0.769 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.196 
+2026-04-20 17:08:13,970 - main - INFO - 1.2766013911792211
+2026-04-20 17:08:13,970 - main - INFO - Epoch:0 (7/59) Data: 0.000871s | Batch: 0.393s | future_traj_r_loss: 0.098 | future_traj_l_loss: 0.125 | rec_r_loss: 0.262| rec_l_loss: 0.268| total_loss: 0.652 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.080 
+2026-04-20 17:08:14,093 - main - INFO - 1.2044412717223167
+2026-04-20 17:08:14,094 - main - INFO - Epoch:0 (8/59) Data: 0.000842s | Batch: 0.360s | future_traj_r_loss: 0.185 | future_traj_l_loss: 0.177 | rec_r_loss: 0.240| rec_l_loss: 0.224| total_loss: 0.699 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.078 
+2026-04-20 17:08:14,220 - main - INFO - 1.1445153620507982
+2026-04-20 17:08:14,221 - main - INFO - Epoch:0 (9/59) Data: 0.000868s | Batch: 0.334s | future_traj_r_loss: 0.103 | future_traj_l_loss: 0.305 | rec_r_loss: 0.267| rec_l_loss: 0.319| total_loss: 0.665 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.098 
+2026-04-20 17:08:14,345 - main - INFO - 1.0962325274944305
+2026-04-20 17:08:14,345 - main - INFO - Epoch:0 (10/59) Data: 0.000904s | Batch: 0.313s | future_traj_r_loss: 0.148 | future_traj_l_loss: 0.260 | rec_r_loss: 0.239| rec_l_loss: 0.270| total_loss: 0.662 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.090 
+2026-04-20 17:08:14,470 - main - INFO - 1.061983504078605
+2026-04-20 17:08:14,471 - main - INFO - Epoch:0 (11/59) Data: 0.000887s | Batch: 0.296s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.241 | rec_r_loss: 0.301| rec_l_loss: 0.270| total_loss: 0.719 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.072 
+2026-04-20 17:08:14,593 - main - INFO - 1.028095429142316
+2026-04-20 17:08:14,594 - main - INFO - Epoch:0 (12/59) Data: 0.000998s | Batch: 0.281s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.226 | rec_r_loss: 0.222| rec_l_loss: 0.212| total_loss: 0.655 | future_valid_r: 32.0 | future_valid_l: 20.0 | obj_loss: 0.050 
+2026-04-20 17:08:14,717 - main - INFO - 0.9972753020433279
+2026-04-20 17:08:14,717 - main - INFO - Epoch:0 (13/59) Data: 0.000813s | Batch: 0.269s | future_traj_r_loss: 0.131 | future_traj_l_loss: 0.289 | rec_r_loss: 0.245| rec_l_loss: 0.211| total_loss: 0.627 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.072 
+2026-04-20 17:08:14,840 - main - INFO - 0.9675603040627071
+2026-04-20 17:08:14,840 - main - INFO - Epoch:0 (14/59) Data: 0.000842s | Batch: 0.258s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.223 | rec_r_loss: 0.208| rec_l_loss: 0.221| total_loss: 0.581 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.061 
+2026-04-20 17:08:14,965 - main - INFO - 0.9428228457768758
+2026-04-20 17:08:14,965 - main - INFO - Epoch:0 (15/59) Data: 0.000873s | Batch: 0.250s | future_traj_r_loss: 0.150 | future_traj_l_loss: 0.186 | rec_r_loss: 0.176| rec_l_loss: 0.170| total_loss: 0.596 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.089 
+2026-04-20 17:08:15,090 - main - INFO - 0.9213739931583405
+2026-04-20 17:08:15,090 - main - INFO - Epoch:0 (16/59) Data: 0.000857s | Batch: 0.242s | future_traj_r_loss: 0.178 | future_traj_l_loss: 0.211 | rec_r_loss: 0.180| rec_l_loss: 0.163| total_loss: 0.600 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.048 
+2026-04-20 17:08:15,214 - main - INFO - 0.9004082749871647
+2026-04-20 17:08:15,215 - main - INFO - Epoch:0 (17/59) Data: 0.000896s | Batch: 0.235s | future_traj_r_loss: 0.137 | future_traj_l_loss: 0.144 | rec_r_loss: 0.166| rec_l_loss: 0.162| total_loss: 0.565 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.060 
+2026-04-20 17:08:15,338 - main - INFO - 0.8783608078956604
+2026-04-20 17:08:15,338 - main - INFO - Epoch:0 (18/59) Data: 0.000874s | Batch: 0.229s | future_traj_r_loss: 0.161 | future_traj_l_loss: 0.092 | rec_r_loss: 0.175| rec_l_loss: 0.162| total_loss: 0.504 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.064 
+2026-04-20 17:08:15,461 - main - INFO - 0.8577028387471249
+2026-04-20 17:08:15,462 - main - INFO - Epoch:0 (19/59) Data: 0.000833s | Batch: 0.223s | future_traj_r_loss: 0.127 | future_traj_l_loss: 0.104 | rec_r_loss: 0.186| rec_l_loss: 0.180| total_loss: 0.486 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.064 
+2026-04-20 17:08:15,587 - main - INFO - 0.8431730926036834
+2026-04-20 17:08:15,587 - main - INFO - Epoch:0 (20/59) Data: 0.000845s | Batch: 0.218s | future_traj_r_loss: 0.179 | future_traj_l_loss: 0.216 | rec_r_loss: 0.180| rec_l_loss: 0.173| total_loss: 0.567 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.070 
+2026-04-20 17:08:15,710 - main - INFO - 0.8271033962567648
+2026-04-20 17:08:15,711 - main - INFO - Epoch:0 (21/59) Data: 0.000818s | Batch: 0.214s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.190 | rec_r_loss: 0.176| rec_l_loss: 0.169| total_loss: 0.506 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.054 
+2026-04-20 17:08:15,834 - main - INFO - 0.810540181669322
+2026-04-20 17:08:15,834 - main - INFO - Epoch:0 (22/59) Data: 0.000828s | Batch: 0.209s | future_traj_r_loss: 0.105 | future_traj_l_loss: 0.150 | rec_r_loss: 0.181| rec_l_loss: 0.169| total_loss: 0.463 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.054 
+2026-04-20 17:08:15,958 - main - INFO - 0.7970244132954142
+2026-04-20 17:08:15,958 - main - INFO - Epoch:0 (23/59) Data: 0.000826s | Batch: 0.206s | future_traj_r_loss: 0.078 | future_traj_l_loss: 0.185 | rec_r_loss: 0.171| rec_l_loss: 0.170| total_loss: 0.500 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.054 
+2026-04-20 17:08:16,081 - main - INFO - 0.7905708476901054
+2026-04-20 17:08:16,082 - main - INFO - Epoch:0 (24/59) Data: 0.000823s | Batch: 0.202s | future_traj_r_loss: 0.152 | future_traj_l_loss: 0.281 | rec_r_loss: 0.150| rec_l_loss: 0.142| total_loss: 0.642 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.067 
+2026-04-20 17:08:16,207 - main - INFO - 0.7762623691558838
+2026-04-20 17:08:16,208 - main - INFO - Epoch:0 (25/59) Data: 0.000808s | Batch: 0.199s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.131 | rec_r_loss: 0.148| rec_l_loss: 0.146| total_loss: 0.433 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.079 
+2026-04-20 17:08:16,334 - main - INFO - 0.7656437341983502
+2026-04-20 17:08:16,334 - main - INFO - Epoch:0 (26/59) Data: 0.000839s | Batch: 0.196s | future_traj_r_loss: 0.164 | future_traj_l_loss: 0.153 | rec_r_loss: 0.146| rec_l_loss: 0.149| total_loss: 0.500 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.071 
+2026-04-20 17:08:16,457 - main - INFO - 0.7559502389695909
+2026-04-20 17:08:16,457 - main - INFO - Epoch:0 (27/59) Data: 0.000809s | Batch: 0.194s | future_traj_r_loss: 0.142 | future_traj_l_loss: 0.136 | rec_r_loss: 0.161| rec_l_loss: 0.152| total_loss: 0.504 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.050 
+2026-04-20 17:08:16,580 - main - INFO - 0.7491093767540795
+2026-04-20 17:08:16,580 - main - INFO - Epoch:0 (28/59) Data: 0.000718s | Batch: 0.191s | future_traj_r_loss: 0.198 | future_traj_l_loss: 0.186 | rec_r_loss: 0.142| rec_l_loss: 0.133| total_loss: 0.564 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.047 
+2026-04-20 17:08:16,701 - main - INFO - 0.738897929931509
+2026-04-20 17:08:16,702 - main - INFO - Epoch:0 (29/59) Data: 0.000723s | Batch: 0.189s | future_traj_r_loss: 0.127 | future_traj_l_loss: 0.095 | rec_r_loss: 0.144| rec_l_loss: 0.131| total_loss: 0.453 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.061 
+2026-04-20 17:08:16,827 - main - INFO - 0.7307816167672475
+2026-04-20 17:08:16,827 - main - INFO - Epoch:0 (30/59) Data: 0.000767s | Batch: 0.187s | future_traj_r_loss: 0.135 | future_traj_l_loss: 0.149 | rec_r_loss: 0.135| rec_l_loss: 0.137| total_loss: 0.495 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.069 
+2026-04-20 17:08:16,946 - main - INFO - 0.7203956602081176
+2026-04-20 17:08:16,946 - main - INFO - Epoch:0 (31/59) Data: 0.000688s | Batch: 0.184s | future_traj_r_loss: 0.095 | future_traj_l_loss: 0.155 | rec_r_loss: 0.134| rec_l_loss: 0.132| total_loss: 0.409 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.052 
+2026-04-20 17:08:17,064 - main - INFO - 0.7117781499400735
+2026-04-20 17:08:17,065 - main - INFO - Epoch:0 (32/59) Data: 0.000661s | Batch: 0.182s | future_traj_r_loss: 0.120 | future_traj_l_loss: 0.161 | rec_r_loss: 0.137| rec_l_loss: 0.132| total_loss: 0.445 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.034 
+2026-04-20 17:08:17,183 - main - INFO - 0.7056472762064501
+2026-04-20 17:08:17,184 - main - INFO - Epoch:0 (33/59) Data: 0.000691s | Batch: 0.180s | future_traj_r_loss: 0.170 | future_traj_l_loss: 0.163 | rec_r_loss: 0.128| rec_l_loss: 0.124| total_loss: 0.509 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.061 
+2026-04-20 17:08:17,302 - main - INFO - 0.6986216332982568
+2026-04-20 17:08:17,302 - main - INFO - Epoch:0 (34/59) Data: 0.000765s | Batch: 0.178s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.192 | rec_r_loss: 0.132| rec_l_loss: 0.131| total_loss: 0.467 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.046 
+2026-04-20 17:08:17,420 - main - INFO - 0.6918581111090524
+2026-04-20 17:08:17,420 - main - INFO - Epoch:0 (35/59) Data: 0.000689s | Batch: 0.177s | future_traj_r_loss: 0.148 | future_traj_l_loss: 0.241 | rec_r_loss: 0.136| rec_l_loss: 0.124| total_loss: 0.462 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.064 
+2026-04-20 17:08:17,538 - main - INFO - 0.6841835868027475
+2026-04-20 17:08:17,539 - main - INFO - Epoch:0 (36/59) Data: 0.000690s | Batch: 0.175s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.180 | rec_r_loss: 0.124| rec_l_loss: 0.116| total_loss: 0.416 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.046 
+2026-04-20 17:08:17,657 - main - INFO - 0.6770166118402738
+2026-04-20 17:08:17,658 - main - INFO - Epoch:0 (37/59) Data: 0.000685s | Batch: 0.174s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.177 | rec_r_loss: 0.121| rec_l_loss: 0.122| total_loss: 0.419 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.058 
+2026-04-20 17:08:17,776 - main - INFO - 0.6696257803000902
+2026-04-20 17:08:17,777 - main - INFO - Epoch:0 (38/59) Data: 0.000708s | Batch: 0.172s | future_traj_r_loss: 0.143 | future_traj_l_loss: 0.123 | rec_r_loss: 0.124| rec_l_loss: 0.117| total_loss: 0.396 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.026 
+2026-04-20 17:08:17,895 - main - INFO - 0.6639651679075681
+2026-04-20 17:08:17,895 - main - INFO - Epoch:0 (39/59) Data: 0.000705s | Batch: 0.171s | future_traj_r_loss: 0.125 | future_traj_l_loss: 0.196 | rec_r_loss: 0.119| rec_l_loss: 0.118| total_loss: 0.449 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.044 
+2026-04-20 17:08:18,014 - main - INFO - 0.6565573193132878
+2026-04-20 17:08:18,014 - main - INFO - Epoch:0 (40/59) Data: 0.000727s | Batch: 0.169s | future_traj_r_loss: 0.101 | future_traj_l_loss: 0.126 | rec_r_loss: 0.123| rec_l_loss: 0.121| total_loss: 0.368 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.050 
+2026-04-20 17:08:18,132 - main - INFO - 0.6536889185265797
+2026-04-20 17:08:18,133 - main - INFO - Epoch:0 (41/59) Data: 0.000665s | Batch: 0.168s | future_traj_r_loss: 0.147 | future_traj_l_loss: 0.241 | rec_r_loss: 0.120| rec_l_loss: 0.125| total_loss: 0.539 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.052 
+2026-04-20 17:08:18,251 - main - INFO - 0.6478724437100547
+2026-04-20 17:08:18,251 - main - INFO - Epoch:0 (42/59) Data: 0.000688s | Batch: 0.167s | future_traj_r_loss: 0.112 | future_traj_l_loss: 0.156 | rec_r_loss: 0.117| rec_l_loss: 0.114| total_loss: 0.409 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.040 
+2026-04-20 17:08:18,368 - main - INFO - 0.6414949949397597
+2026-04-20 17:08:18,369 - main - INFO - Epoch:0 (43/59) Data: 0.000685s | Batch: 0.166s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.183 | rec_r_loss: 0.115| rec_l_loss: 0.107| total_loss: 0.374 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.041 
+2026-04-20 17:08:18,487 - main - INFO - 0.636964697052132
+2026-04-20 17:08:18,488 - main - INFO - Epoch:0 (44/59) Data: 0.000738s | Batch: 0.165s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.188 | rec_r_loss: 0.115| rec_l_loss: 0.107| total_loss: 0.442 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.034 
+2026-04-20 17:08:18,606 - main - INFO - 0.6327491117848291
+2026-04-20 17:08:18,607 - main - INFO - Epoch:0 (45/59) Data: 0.000702s | Batch: 0.164s | future_traj_r_loss: 0.120 | future_traj_l_loss: 0.333 | rec_r_loss: 0.114| rec_l_loss: 0.105| total_loss: 0.447 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.032 
+2026-04-20 17:08:18,725 - main - INFO - 0.6278331785098367
+2026-04-20 17:08:18,726 - main - INFO - Epoch:0 (46/59) Data: 0.000702s | Batch: 0.163s | future_traj_r_loss: 0.118 | future_traj_l_loss: 0.151 | rec_r_loss: 0.110| rec_l_loss: 0.114| total_loss: 0.407 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.043 
+2026-04-20 17:08:18,843 - main - INFO - 0.6222006443967211
+2026-04-20 17:08:18,844 - main - INFO - Epoch:0 (47/59) Data: 0.000688s | Batch: 0.162s | future_traj_r_loss: 0.129 | future_traj_l_loss: 0.172 | rec_r_loss: 0.110| rec_l_loss: 0.112| total_loss: 0.363 | future_valid_r: 32.0 | future_valid_l: 7.0 | obj_loss: 0.032 
+2026-04-20 17:08:18,961 - main - INFO - 0.6177299059927464
+2026-04-20 17:08:18,961 - main - INFO - Epoch:0 (48/59) Data: 0.000683s | Batch: 0.161s | future_traj_r_loss: 0.136 | future_traj_l_loss: 0.174 | rec_r_loss: 0.111| rec_l_loss: 0.113| total_loss: 0.408 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.041 
+2026-04-20 17:08:19,079 - main - INFO - 0.6135460831681077
+2026-04-20 17:08:19,079 - main - INFO - Epoch:0 (49/59) Data: 0.000701s | Batch: 0.160s | future_traj_r_loss: 0.131 | future_traj_l_loss: 0.148 | rec_r_loss: 0.107| rec_l_loss: 0.105| total_loss: 0.413 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.041 
+2026-04-20 17:08:19,197 - main - INFO - 0.6086831676959992
+2026-04-20 17:08:19,197 - main - INFO - Epoch:0 (50/59) Data: 0.000667s | Batch: 0.159s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.209 | rec_r_loss: 0.108| rec_l_loss: 0.106| total_loss: 0.370 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.049 
+2026-04-20 17:08:19,316 - main - INFO - 0.6062297785983366
+2026-04-20 17:08:19,316 - main - INFO - Epoch:0 (51/59) Data: 0.000708s | Batch: 0.158s | future_traj_r_loss: 0.141 | future_traj_l_loss: 0.372 | rec_r_loss: 0.111| rec_l_loss: 0.107| total_loss: 0.484 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.030 
+2026-04-20 17:08:19,434 - main - INFO - 0.6033003037938705
+2026-04-20 17:08:19,434 - main - INFO - Epoch:0 (52/59) Data: 0.000667s | Batch: 0.158s | future_traj_r_loss: 0.134 | future_traj_l_loss: 0.240 | rec_r_loss: 0.110| rec_l_loss: 0.106| total_loss: 0.454 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.034 
+2026-04-20 17:08:19,552 - main - INFO - 0.600148339878838
+2026-04-20 17:08:19,552 - main - INFO - Epoch:0 (53/59) Data: 0.000693s | Batch: 0.157s | future_traj_r_loss: 0.126 | future_traj_l_loss: 0.225 | rec_r_loss: 0.104| rec_l_loss: 0.100| total_loss: 0.436 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.031 
+2026-04-20 17:08:19,670 - main - INFO - 0.5977597622959702
+2026-04-20 17:08:19,670 - main - INFO - Epoch:0 (54/59) Data: 0.000673s | Batch: 0.156s | future_traj_r_loss: 0.172 | future_traj_l_loss: 0.186 | rec_r_loss: 0.109| rec_l_loss: 0.105| total_loss: 0.471 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.027 
+2026-04-20 17:08:19,788 - main - INFO - 0.5947618051008745
+2026-04-20 17:08:19,789 - main - INFO - Epoch:0 (55/59) Data: 0.000680s | Batch: 0.155s | future_traj_r_loss: 0.146 | future_traj_l_loss: 0.228 | rec_r_loss: 0.096| rec_l_loss: 0.092| total_loss: 0.433 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:08:19,906 - main - INFO - 0.5925863704511097
+2026-04-20 17:08:19,907 - main - INFO - Epoch:0 (56/59) Data: 0.000676s | Batch: 0.155s | future_traj_r_loss: 0.168 | future_traj_l_loss: 0.178 | rec_r_loss: 0.109| rec_l_loss: 0.102| total_loss: 0.473 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.027 
+2026-04-20 17:08:20,023 - main - INFO - 0.5889851456148583
+2026-04-20 17:08:20,024 - main - INFO - Epoch:0 (57/59) Data: 0.000669s | Batch: 0.154s | future_traj_r_loss: 0.118 | future_traj_l_loss: 0.153 | rec_r_loss: 0.107| rec_l_loss: 0.100| total_loss: 0.387 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.029 
+2026-04-20 17:08:20,140 - main - INFO - 0.5876599688982141
+2026-04-20 17:08:20,140 - main - INFO - Epoch:0 (58/59) Data: 0.000669s | Batch: 0.153s | future_traj_r_loss: 0.148 | future_traj_l_loss: 0.232 | rec_r_loss: 0.102| rec_l_loss: 0.098| total_loss: 0.512 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.042 
+2026-04-20 17:08:20,259 - main - INFO - 0.5846449591345706
+2026-04-20 17:08:20,260 - main - INFO - Epoch:0 (59/59) Data: 0.000683s | Batch: 0.153s | future_traj_r_loss: 0.085 | future_traj_l_loss: 0.198 | rec_r_loss: 0.098| rec_l_loss: 0.101| total_loss: 0.410 | future_valid_r: 24.0 | future_valid_l: 13.0 | obj_loss: 0.019 
+2026-04-20 17:08:20,995 - main - INFO - Using lr 0.0002
+2026-04-20 17:08:20,995 - main - INFO - train epoch: 2
+2026-04-20 17:08:21,783 - main - INFO - 0.45751455426216125
+2026-04-20 17:08:21,784 - main - INFO - Epoch:1 (1/59) Data: 0.641685s | Batch: 0.788s | future_traj_r_loss: 0.153 | future_traj_l_loss: 0.152 | rec_r_loss: 0.096| rec_l_loss: 0.094| total_loss: 0.458 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.027 
+2026-04-20 17:08:21,896 - main - INFO - 0.4357042461633682
+2026-04-20 17:08:21,897 - main - INFO - Epoch:1 (2/59) Data: 0.000882s | Batch: 0.450s | future_traj_r_loss: 0.153 | future_traj_l_loss: 0.182 | rec_r_loss: 0.099| rec_l_loss: 0.088| total_loss: 0.414 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.039 
+2026-04-20 17:08:22,018 - main - INFO - 0.4598454336325328
+2026-04-20 17:08:22,019 - main - INFO - Epoch:1 (3/59) Data: 0.000899s | Batch: 0.341s | future_traj_r_loss: 0.179 | future_traj_l_loss: 0.183 | rec_r_loss: 0.094| rec_l_loss: 0.089| total_loss: 0.508 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.030 
+2026-04-20 17:08:22,159 - main - INFO - 0.4472351744771004
+2026-04-20 17:08:22,159 - main - INFO - Epoch:1 (4/59) Data: 0.001901s | Batch: 0.290s | future_traj_r_loss: 0.171 | future_traj_l_loss: 0.100 | rec_r_loss: 0.094| rec_l_loss: 0.090| total_loss: 0.409 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.023 
+2026-04-20 17:08:22,279 - main - INFO - 0.44503248333930967
+2026-04-20 17:08:22,279 - main - INFO - Epoch:1 (5/59) Data: 0.000866s | Batch: 0.256s | future_traj_r_loss: 0.128 | future_traj_l_loss: 0.185 | rec_r_loss: 0.091| rec_l_loss: 0.090| total_loss: 0.436 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.018 
+2026-04-20 17:08:22,395 - main - INFO - 0.43428295354048413
+2026-04-20 17:08:22,395 - main - INFO - Epoch:1 (6/59) Data: 0.000855s | Batch: 0.233s | future_traj_r_loss: 0.148 | future_traj_l_loss: 0.177 | rec_r_loss: 0.096| rec_l_loss: 0.090| total_loss: 0.381 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.034 
+2026-04-20 17:08:22,510 - main - INFO - 0.4382691127913339
+2026-04-20 17:08:22,510 - main - INFO - Epoch:1 (7/59) Data: 0.000772s | Batch: 0.216s | future_traj_r_loss: 0.122 | future_traj_l_loss: 0.218 | rec_r_loss: 0.095| rec_l_loss: 0.093| total_loss: 0.462 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.030 
+2026-04-20 17:08:22,625 - main - INFO - 0.4307241290807724
+2026-04-20 17:08:22,626 - main - INFO - Epoch:1 (8/59) Data: 0.000861s | Batch: 0.203s | future_traj_r_loss: 0.130 | future_traj_l_loss: 0.162 | rec_r_loss: 0.094| rec_l_loss: 0.094| total_loss: 0.378 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.041 
+2026-04-20 17:08:22,746 - main - INFO - 0.42470617757903206
+2026-04-20 17:08:22,747 - main - INFO - Epoch:1 (9/59) Data: 0.001542s | Batch: 0.194s | future_traj_r_loss: 0.094 | future_traj_l_loss: 0.174 | rec_r_loss: 0.093| rec_l_loss: 0.093| total_loss: 0.377 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.020 
+2026-04-20 17:08:22,866 - main - INFO - 0.4213220447301865
+2026-04-20 17:08:22,867 - main - INFO - Epoch:1 (10/59) Data: 0.000875s | Batch: 0.187s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.168 | rec_r_loss: 0.096| rec_l_loss: 0.089| total_loss: 0.391 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.031 
+2026-04-20 17:08:22,986 - main - INFO - 0.41784086552533234
+2026-04-20 17:08:22,987 - main - INFO - Epoch:1 (11/59) Data: 0.000851s | Batch: 0.180s | future_traj_r_loss: 0.111 | future_traj_l_loss: 0.170 | rec_r_loss: 0.090| rec_l_loss: 0.087| total_loss: 0.383 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.026 
+2026-04-20 17:08:23,106 - main - INFO - 0.41302445034186047
+2026-04-20 17:08:23,107 - main - INFO - Epoch:1 (12/59) Data: 0.000835s | Batch: 0.175s | future_traj_r_loss: 0.080 | future_traj_l_loss: 0.171 | rec_r_loss: 0.088| rec_l_loss: 0.083| total_loss: 0.360 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.018 
+2026-04-20 17:08:23,226 - main - INFO - 0.4148221336878263
+2026-04-20 17:08:23,226 - main - INFO - Epoch:1 (13/59) Data: 0.000882s | Batch: 0.171s | future_traj_r_loss: 0.152 | future_traj_l_loss: 0.265 | rec_r_loss: 0.095| rec_l_loss: 0.090| total_loss: 0.436 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.042 
+2026-04-20 17:08:23,346 - main - INFO - 0.41392846192632404
+2026-04-20 17:08:23,347 - main - INFO - Epoch:1 (14/59) Data: 0.000838s | Batch: 0.167s | future_traj_r_loss: 0.147 | future_traj_l_loss: 0.157 | rec_r_loss: 0.088| rec_l_loss: 0.087| total_loss: 0.402 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.025 
+2026-04-20 17:08:23,466 - main - INFO - 0.41328165531158445
+2026-04-20 17:08:23,466 - main - INFO - Epoch:1 (15/59) Data: 0.000829s | Batch: 0.164s | future_traj_r_loss: 0.117 | future_traj_l_loss: 0.158 | rec_r_loss: 0.090| rec_l_loss: 0.092| total_loss: 0.404 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.028 
+2026-04-20 17:08:23,585 - main - INFO - 0.413128312677145
+2026-04-20 17:08:23,586 - main - INFO - Epoch:1 (16/59) Data: 0.000818s | Batch: 0.161s | future_traj_r_loss: 0.147 | future_traj_l_loss: 0.127 | rec_r_loss: 0.089| rec_l_loss: 0.089| total_loss: 0.411 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.025 
+2026-04-20 17:08:23,705 - main - INFO - 0.4183758567361271
+2026-04-20 17:08:23,705 - main - INFO - Epoch:1 (17/59) Data: 0.000869s | Batch: 0.159s | future_traj_r_loss: 0.218 | future_traj_l_loss: 0.442 | rec_r_loss: 0.087| rec_l_loss: 0.093| total_loss: 0.502 | future_valid_r: 32.0 | future_valid_l: 6.0 | obj_loss: 0.035 
+2026-04-20 17:08:23,824 - main - INFO - 0.41443853080272675
+2026-04-20 17:08:23,825 - main - INFO - Epoch:1 (18/59) Data: 0.000875s | Batch: 0.157s | future_traj_r_loss: 0.093 | future_traj_l_loss: 0.196 | rec_r_loss: 0.089| rec_l_loss: 0.088| total_loss: 0.348 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.021 
+2026-04-20 17:08:23,944 - main - INFO - 0.41124437827813
+2026-04-20 17:08:23,945 - main - INFO - Epoch:1 (19/59) Data: 0.000856s | Batch: 0.155s | future_traj_r_loss: 0.126 | future_traj_l_loss: 0.142 | rec_r_loss: 0.090| rec_l_loss: 0.085| total_loss: 0.354 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.025 
+2026-04-20 17:08:24,065 - main - INFO - 0.40959287732839583
+2026-04-20 17:08:24,066 - main - INFO - Epoch:1 (20/59) Data: 0.000880s | Batch: 0.153s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.203 | rec_r_loss: 0.084| rec_l_loss: 0.087| total_loss: 0.378 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.028 
+2026-04-20 17:08:24,186 - main - INFO - 0.4081020142350878
+2026-04-20 17:08:24,186 - main - INFO - Epoch:1 (21/59) Data: 0.001282s | Batch: 0.151s | future_traj_r_loss: 0.160 | future_traj_l_loss: 0.162 | rec_r_loss: 0.088| rec_l_loss: 0.085| total_loss: 0.378 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.030 
+2026-04-20 17:08:24,300 - main - INFO - 0.41132991828701715
+2026-04-20 17:08:24,301 - main - INFO - Epoch:1 (22/59) Data: 0.000817s | Batch: 0.150s | future_traj_r_loss: 0.103 | future_traj_l_loss: 0.233 | rec_r_loss: 0.081| rec_l_loss: 0.081| total_loss: 0.479 | future_valid_r: 32.0 | future_valid_l: 22.0 | obj_loss: 0.035 
+2026-04-20 17:08:24,418 - main - INFO - 0.4130156986091448
+2026-04-20 17:08:24,419 - main - INFO - Epoch:1 (23/59) Data: 0.000862s | Batch: 0.148s | future_traj_r_loss: 0.143 | future_traj_l_loss: 0.287 | rec_r_loss: 0.086| rec_l_loss: 0.082| total_loss: 0.450 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.038 
+2026-04-20 17:08:24,538 - main - INFO - 0.4148287611703078
+2026-04-20 17:08:24,538 - main - INFO - Epoch:1 (24/59) Data: 0.000868s | Batch: 0.147s | future_traj_r_loss: 0.121 | future_traj_l_loss: 0.274 | rec_r_loss: 0.085| rec_l_loss: 0.084| total_loss: 0.457 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.033 
+2026-04-20 17:08:24,659 - main - INFO - 0.41219595551490784
+2026-04-20 17:08:24,660 - main - INFO - Epoch:1 (25/59) Data: 0.000820s | Batch: 0.146s | future_traj_r_loss: 0.100 | future_traj_l_loss: 0.156 | rec_r_loss: 0.087| rec_l_loss: 0.084| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:08:24,779 - main - INFO - 0.41409549575585586
+2026-04-20 17:08:24,779 - main - INFO - Epoch:1 (26/59) Data: 0.000805s | Batch: 0.145s | future_traj_r_loss: 0.147 | future_traj_l_loss: 0.184 | rec_r_loss: 0.090| rec_l_loss: 0.085| total_loss: 0.462 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.029 
+2026-04-20 17:08:24,898 - main - INFO - 0.41128396104883264
+2026-04-20 17:08:24,899 - main - INFO - Epoch:1 (27/59) Data: 0.000829s | Batch: 0.144s | future_traj_r_loss: 0.147 | future_traj_l_loss: 0.073 | rec_r_loss: 0.087| rec_l_loss: 0.077| total_loss: 0.338 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.043 
+2026-04-20 17:08:25,019 - main - INFO - 0.412403689963477
+2026-04-20 17:08:25,019 - main - INFO - Epoch:1 (28/59) Data: 0.000692s | Batch: 0.143s | future_traj_r_loss: 0.146 | future_traj_l_loss: 0.203 | rec_r_loss: 0.081| rec_l_loss: 0.080| total_loss: 0.443 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.025 
+2026-04-20 17:08:25,136 - main - INFO - 0.41156381985236856
+2026-04-20 17:08:25,136 - main - INFO - Epoch:1 (29/59) Data: 0.000682s | Batch: 0.142s | future_traj_r_loss: 0.161 | future_traj_l_loss: 0.153 | rec_r_loss: 0.084| rec_l_loss: 0.076| total_loss: 0.388 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.033 
+2026-04-20 17:08:25,253 - main - INFO - 0.40843035479386647
+2026-04-20 17:08:25,253 - main - INFO - Epoch:1 (30/59) Data: 0.000686s | Batch: 0.141s | future_traj_r_loss: 0.078 | future_traj_l_loss: 0.148 | rec_r_loss: 0.085| rec_l_loss: 0.080| total_loss: 0.318 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.020 
+2026-04-20 17:08:25,370 - main - INFO - 0.4081259206418068
+2026-04-20 17:08:25,371 - main - INFO - Epoch:1 (31/59) Data: 0.000697s | Batch: 0.141s | future_traj_r_loss: 0.105 | future_traj_l_loss: 0.277 | rec_r_loss: 0.085| rec_l_loss: 0.079| total_loss: 0.399 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:08:25,488 - main - INFO - 0.40805588010698557
+2026-04-20 17:08:25,488 - main - INFO - Epoch:1 (32/59) Data: 0.000662s | Batch: 0.140s | future_traj_r_loss: 0.098 | future_traj_l_loss: 0.191 | rec_r_loss: 0.081| rec_l_loss: 0.081| total_loss: 0.406 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.021 
+2026-04-20 17:08:25,605 - main - INFO - 0.4086675996130163
+2026-04-20 17:08:25,605 - main - INFO - Epoch:1 (33/59) Data: 0.000700s | Batch: 0.139s | future_traj_r_loss: 0.130 | future_traj_l_loss: 0.209 | rec_r_loss: 0.080| rec_l_loss: 0.078| total_loss: 0.428 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.034 
+2026-04-20 17:08:25,722 - main - INFO - 0.40659115156706643
+2026-04-20 17:08:25,722 - main - INFO - Epoch:1 (34/59) Data: 0.000700s | Batch: 0.138s | future_traj_r_loss: 0.153 | future_traj_l_loss: 0.191 | rec_r_loss: 0.082| rec_l_loss: 0.073| total_loss: 0.338 | future_valid_r: 32.0 | future_valid_l: 5.0 | obj_loss: 0.034 
+2026-04-20 17:08:25,839 - main - INFO - 0.4048149917806898
+2026-04-20 17:08:25,839 - main - INFO - Epoch:1 (35/59) Data: 0.000669s | Batch: 0.138s | future_traj_r_loss: 0.135 | future_traj_l_loss: 0.152 | rec_r_loss: 0.083| rec_l_loss: 0.080| total_loss: 0.344 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.039 
+2026-04-20 17:08:25,955 - main - INFO - 0.40154708756340873
+2026-04-20 17:08:25,956 - main - INFO - Epoch:1 (36/59) Data: 0.000705s | Batch: 0.137s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.092 | rec_r_loss: 0.078| rec_l_loss: 0.079| total_loss: 0.287 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.025 
+2026-04-20 17:08:26,072 - main - INFO - 0.3996181641076062
+2026-04-20 17:08:26,073 - main - INFO - Epoch:1 (37/59) Data: 0.000674s | Batch: 0.137s | future_traj_r_loss: 0.109 | future_traj_l_loss: 0.144 | rec_r_loss: 0.087| rec_l_loss: 0.089| total_loss: 0.330 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.028 
+2026-04-20 17:08:26,189 - main - INFO - 0.3990407954705389
+2026-04-20 17:08:26,190 - main - INFO - Epoch:1 (38/59) Data: 0.000682s | Batch: 0.136s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.190 | rec_r_loss: 0.081| rec_l_loss: 0.078| total_loss: 0.378 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.022 
+2026-04-20 17:08:26,307 - main - INFO - 0.4021505996202811
+2026-04-20 17:08:26,308 - main - INFO - Epoch:1 (39/59) Data: 0.000705s | Batch: 0.136s | future_traj_r_loss: 0.191 | future_traj_l_loss: 0.329 | rec_r_loss: 0.085| rec_l_loss: 0.082| total_loss: 0.520 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.049 
+2026-04-20 17:08:26,425 - main - INFO - 0.4046597324311733
+2026-04-20 17:08:26,425 - main - INFO - Epoch:1 (40/59) Data: 0.000680s | Batch: 0.135s | future_traj_r_loss: 0.111 | future_traj_l_loss: 0.352 | rec_r_loss: 0.081| rec_l_loss: 0.079| total_loss: 0.503 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.023 
+2026-04-20 17:08:26,542 - main - INFO - 0.40625654706140846
+2026-04-20 17:08:26,543 - main - INFO - Epoch:1 (41/59) Data: 0.000701s | Batch: 0.135s | future_traj_r_loss: 0.160 | future_traj_l_loss: 0.164 | rec_r_loss: 0.078| rec_l_loss: 0.076| total_loss: 0.470 | future_valid_r: 32.0 | future_valid_l: 20.0 | obj_loss: 0.033 
+2026-04-20 17:08:26,660 - main - INFO - 0.40626533045655205
+2026-04-20 17:08:26,660 - main - INFO - Epoch:1 (42/59) Data: 0.000686s | Batch: 0.134s | future_traj_r_loss: 0.132 | future_traj_l_loss: 0.166 | rec_r_loss: 0.080| rec_l_loss: 0.077| total_loss: 0.407 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.032 
+2026-04-20 17:08:26,776 - main - INFO - 0.40425566116044687
+2026-04-20 17:08:26,776 - main - INFO - Epoch:1 (43/59) Data: 0.000676s | Batch: 0.134s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.105 | rec_r_loss: 0.079| rec_l_loss: 0.077| total_loss: 0.320 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.027 
+2026-04-20 17:08:26,892 - main - INFO - 0.4033605774695223
+2026-04-20 17:08:26,892 - main - INFO - Epoch:1 (44/59) Data: 0.000671s | Batch: 0.133s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.140 | rec_r_loss: 0.082| rec_l_loss: 0.076| total_loss: 0.365 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.026 
+2026-04-20 17:08:27,008 - main - INFO - 0.4034748673439026
+2026-04-20 17:08:27,008 - main - INFO - Epoch:1 (45/59) Data: 0.000682s | Batch: 0.133s | future_traj_r_loss: 0.129 | future_traj_l_loss: 0.164 | rec_r_loss: 0.075| rec_l_loss: 0.072| total_loss: 0.409 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.032 
+2026-04-20 17:08:27,125 - main - INFO - 0.40319750490395917
+2026-04-20 17:08:27,125 - main - INFO - Epoch:1 (46/59) Data: 0.000703s | Batch: 0.133s | future_traj_r_loss: 0.148 | future_traj_l_loss: 0.178 | rec_r_loss: 0.079| rec_l_loss: 0.073| total_loss: 0.391 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.027 
+2026-04-20 17:08:27,242 - main - INFO - 0.4030651424793487
+2026-04-20 17:08:27,242 - main - INFO - Epoch:1 (47/59) Data: 0.000723s | Batch: 0.132s | future_traj_r_loss: 0.140 | future_traj_l_loss: 0.157 | rec_r_loss: 0.080| rec_l_loss: 0.075| total_loss: 0.397 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.033 
+2026-04-20 17:08:27,358 - main - INFO - 0.40276513745387393
+2026-04-20 17:08:27,359 - main - INFO - Epoch:1 (48/59) Data: 0.000688s | Batch: 0.132s | future_traj_r_loss: 0.125 | future_traj_l_loss: 0.215 | rec_r_loss: 0.082| rec_l_loss: 0.079| total_loss: 0.389 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.021 
+2026-04-20 17:08:27,475 - main - INFO - 0.4012445624993772
+2026-04-20 17:08:27,475 - main - INFO - Epoch:1 (49/59) Data: 0.000687s | Batch: 0.132s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.199 | rec_r_loss: 0.078| rec_l_loss: 0.076| total_loss: 0.328 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.023 
+2026-04-20 17:08:27,592 - main - INFO - 0.40074126422405243
+2026-04-20 17:08:27,592 - main - INFO - Epoch:1 (50/59) Data: 0.000680s | Batch: 0.131s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.168 | rec_r_loss: 0.083| rec_l_loss: 0.073| total_loss: 0.376 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.024 
+2026-04-20 17:08:27,708 - main - INFO - 0.4005682883309383
+2026-04-20 17:08:27,709 - main - INFO - Epoch:1 (51/59) Data: 0.000693s | Batch: 0.131s | future_traj_r_loss: 0.081 | future_traj_l_loss: 0.244 | rec_r_loss: 0.077| rec_l_loss: 0.077| total_loss: 0.392 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.028 
+2026-04-20 17:08:27,824 - main - INFO - 0.40033675787540585
+2026-04-20 17:08:27,825 - main - INFO - Epoch:1 (52/59) Data: 0.000680s | Batch: 0.131s | future_traj_r_loss: 0.149 | future_traj_l_loss: 0.133 | rec_r_loss: 0.078| rec_l_loss: 0.077| total_loss: 0.389 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:08:27,941 - main - INFO - 0.3983344109553211
+2026-04-20 17:08:27,941 - main - INFO - Epoch:1 (53/59) Data: 0.000684s | Batch: 0.130s | future_traj_r_loss: 0.084 | future_traj_l_loss: 0.150 | rec_r_loss: 0.077| rec_l_loss: 0.074| total_loss: 0.294 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:08:28,057 - main - INFO - 0.39726265161125746
+2026-04-20 17:08:28,058 - main - INFO - Epoch:1 (54/59) Data: 0.000691s | Batch: 0.130s | future_traj_r_loss: 0.118 | future_traj_l_loss: 0.190 | rec_r_loss: 0.079| rec_l_loss: 0.073| total_loss: 0.340 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.022 
+2026-04-20 17:08:28,174 - main - INFO - 0.3963643561710011
+2026-04-20 17:08:28,174 - main - INFO - Epoch:1 (55/59) Data: 0.000707s | Batch: 0.130s | future_traj_r_loss: 0.118 | future_traj_l_loss: 0.158 | rec_r_loss: 0.077| rec_l_loss: 0.075| total_loss: 0.348 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:08:28,291 - main - INFO - 0.39611838119370596
+2026-04-20 17:08:28,291 - main - INFO - Epoch:1 (56/59) Data: 0.000705s | Batch: 0.130s | future_traj_r_loss: 0.180 | future_traj_l_loss: 0.087 | rec_r_loss: 0.076| rec_l_loss: 0.074| total_loss: 0.383 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:08:28,407 - main - INFO - 0.39685089284913583
+2026-04-20 17:08:28,407 - main - INFO - Epoch:1 (57/59) Data: 0.000672s | Batch: 0.129s | future_traj_r_loss: 0.161 | future_traj_l_loss: 0.241 | rec_r_loss: 0.075| rec_l_loss: 0.071| total_loss: 0.438 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:08:28,523 - main - INFO - 0.39674595512192823
+2026-04-20 17:08:28,523 - main - INFO - Epoch:1 (58/59) Data: 0.000667s | Batch: 0.129s | future_traj_r_loss: 0.109 | future_traj_l_loss: 0.263 | rec_r_loss: 0.075| rec_l_loss: 0.076| total_loss: 0.391 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:08:28,639 - main - INFO - 0.3961957041489876
+2026-04-20 17:08:28,639 - main - INFO - Epoch:1 (59/59) Data: 0.000669s | Batch: 0.129s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.159 | rec_r_loss: 0.079| rec_l_loss: 0.072| total_loss: 0.364 | future_valid_r: 24.0 | future_valid_l: 10.0 | obj_loss: 0.017 
+2026-04-20 17:08:29,375 - main - INFO - Using lr 0.0002
+2026-04-20 17:08:29,376 - main - INFO - train epoch: 3
+2026-04-20 17:08:30,120 - main - INFO - 0.4316210150718689
+2026-04-20 17:08:30,121 - main - INFO - Epoch:2 (1/59) Data: 0.598632s | Batch: 0.744s | future_traj_r_loss: 0.168 | future_traj_l_loss: 0.174 | rec_r_loss: 0.072| rec_l_loss: 0.068| total_loss: 0.432 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.035 
+2026-04-20 17:08:30,238 - main - INFO - 0.3905666470527649
+2026-04-20 17:08:30,238 - main - INFO - Epoch:2 (2/59) Data: 0.000979s | Batch: 0.431s | future_traj_r_loss: 0.120 | future_traj_l_loss: 0.228 | rec_r_loss: 0.070| rec_l_loss: 0.067| total_loss: 0.350 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.022 
+2026-04-20 17:08:30,371 - main - INFO - 0.37267542878786725
+2026-04-20 17:08:30,372 - main - INFO - Epoch:2 (3/59) Data: 0.000881s | Batch: 0.331s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.235 | rec_r_loss: 0.071| rec_l_loss: 0.067| total_loss: 0.337 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.019 
+2026-04-20 17:08:30,491 - main - INFO - 0.3856884017586708
+2026-04-20 17:08:30,491 - main - INFO - Epoch:2 (4/59) Data: 0.000907s | Batch: 0.278s | future_traj_r_loss: 0.156 | future_traj_l_loss: 0.221 | rec_r_loss: 0.071| rec_l_loss: 0.065| total_loss: 0.425 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:08:30,618 - main - INFO - 0.3959291875362396
+2026-04-20 17:08:30,618 - main - INFO - Epoch:2 (5/59) Data: 0.000908s | Batch: 0.248s | future_traj_r_loss: 0.155 | future_traj_l_loss: 0.288 | rec_r_loss: 0.073| rec_l_loss: 0.066| total_loss: 0.437 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.032 
+2026-04-20 17:08:30,738 - main - INFO - 0.3915887425343196
+2026-04-20 17:08:30,738 - main - INFO - Epoch:2 (6/59) Data: 0.000856s | Batch: 0.227s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.171 | rec_r_loss: 0.073| rec_l_loss: 0.071| total_loss: 0.370 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.041 
+2026-04-20 17:08:30,858 - main - INFO - 0.396009875195367
+2026-04-20 17:08:30,859 - main - INFO - Epoch:2 (7/59) Data: 0.000828s | Batch: 0.211s | future_traj_r_loss: 0.153 | future_traj_l_loss: 0.207 | rec_r_loss: 0.070| rec_l_loss: 0.066| total_loss: 0.423 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.022 
+2026-04-20 17:08:30,978 - main - INFO - 0.38656096532940865
+2026-04-20 17:08:30,978 - main - INFO - Epoch:2 (8/59) Data: 0.000851s | Batch: 0.200s | future_traj_r_loss: 0.126 | future_traj_l_loss: 0.092 | rec_r_loss: 0.071| rec_l_loss: 0.066| total_loss: 0.320 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:08:31,098 - main - INFO - 0.37880419029129875
+2026-04-20 17:08:31,099 - main - INFO - Epoch:2 (9/59) Data: 0.000844s | Batch: 0.191s | future_traj_r_loss: 0.100 | future_traj_l_loss: 0.168 | rec_r_loss: 0.069| rec_l_loss: 0.064| total_loss: 0.317 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.020 
+2026-04-20 17:08:31,218 - main - INFO - 0.37289655208587646
+2026-04-20 17:08:31,219 - main - INFO - Epoch:2 (10/59) Data: 0.000908s | Batch: 0.184s | future_traj_r_loss: 0.111 | future_traj_l_loss: 0.157 | rec_r_loss: 0.069| rec_l_loss: 0.066| total_loss: 0.320 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.023 
+2026-04-20 17:08:31,339 - main - INFO - 0.3746058995073492
+2026-04-20 17:08:31,340 - main - INFO - Epoch:2 (11/59) Data: 0.000823s | Batch: 0.178s | future_traj_r_loss: 0.117 | future_traj_l_loss: 0.203 | rec_r_loss: 0.070| rec_l_loss: 0.069| total_loss: 0.392 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.035 
+2026-04-20 17:08:31,459 - main - INFO - 0.3727424790461858
+2026-04-20 17:08:31,460 - main - INFO - Epoch:2 (12/59) Data: 0.000829s | Batch: 0.173s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.155 | rec_r_loss: 0.068| rec_l_loss: 0.067| total_loss: 0.352 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.027 
+2026-04-20 17:08:31,579 - main - INFO - 0.3748930486348959
+2026-04-20 17:08:31,580 - main - INFO - Epoch:2 (13/59) Data: 0.000828s | Batch: 0.169s | future_traj_r_loss: 0.164 | future_traj_l_loss: 0.150 | rec_r_loss: 0.072| rec_l_loss: 0.067| total_loss: 0.401 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.031 
+2026-04-20 17:08:31,697 - main - INFO - 0.3756697688783918
+2026-04-20 17:08:31,698 - main - INFO - Epoch:2 (14/59) Data: 0.000849s | Batch: 0.165s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.195 | rec_r_loss: 0.069| rec_l_loss: 0.068| total_loss: 0.386 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.027 
+2026-04-20 17:08:31,816 - main - INFO - 0.37687509854634604
+2026-04-20 17:08:31,816 - main - INFO - Epoch:2 (15/59) Data: 0.000835s | Batch: 0.162s | future_traj_r_loss: 0.120 | future_traj_l_loss: 0.166 | rec_r_loss: 0.069| rec_l_loss: 0.066| total_loss: 0.394 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.031 
+2026-04-20 17:08:31,935 - main - INFO - 0.37386454083025455
+2026-04-20 17:08:31,935 - main - INFO - Epoch:2 (16/59) Data: 0.000843s | Batch: 0.159s | future_traj_r_loss: 0.103 | future_traj_l_loss: 0.147 | rec_r_loss: 0.068| rec_l_loss: 0.065| total_loss: 0.329 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:32,053 - main - INFO - 0.37310364491799297
+2026-04-20 17:08:32,054 - main - INFO - Epoch:2 (17/59) Data: 0.000854s | Batch: 0.157s | future_traj_r_loss: 0.159 | future_traj_l_loss: 0.135 | rec_r_loss: 0.068| rec_l_loss: 0.063| total_loss: 0.361 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.033 
+2026-04-20 17:08:32,173 - main - INFO - 0.3714611844884025
+2026-04-20 17:08:32,173 - main - INFO - Epoch:2 (18/59) Data: 0.000825s | Batch: 0.155s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.173 | rec_r_loss: 0.069| rec_l_loss: 0.067| total_loss: 0.344 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.030 
+2026-04-20 17:08:32,292 - main - INFO - 0.37028419971466064
+2026-04-20 17:08:32,292 - main - INFO - Epoch:2 (19/59) Data: 0.000854s | Batch: 0.153s | future_traj_r_loss: 0.125 | future_traj_l_loss: 0.154 | rec_r_loss: 0.066| rec_l_loss: 0.063| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.025 
+2026-04-20 17:08:32,409 - main - INFO - 0.36745143830776217
+2026-04-20 17:08:32,409 - main - INFO - Epoch:2 (20/59) Data: 0.000790s | Batch: 0.151s | future_traj_r_loss: 0.122 | future_traj_l_loss: 0.152 | rec_r_loss: 0.070| rec_l_loss: 0.062| total_loss: 0.314 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.022 
+2026-04-20 17:08:32,528 - main - INFO - 0.3659935196240743
+2026-04-20 17:08:32,529 - main - INFO - Epoch:2 (21/59) Data: 0.000832s | Batch: 0.150s | future_traj_r_loss: 0.133 | future_traj_l_loss: 0.194 | rec_r_loss: 0.067| rec_l_loss: 0.063| total_loss: 0.337 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.042 
+2026-04-20 17:08:32,647 - main - INFO - 0.36695941469886084
+2026-04-20 17:08:32,648 - main - INFO - Epoch:2 (22/59) Data: 0.000844s | Batch: 0.148s | future_traj_r_loss: 0.120 | future_traj_l_loss: 0.258 | rec_r_loss: 0.066| rec_l_loss: 0.063| total_loss: 0.387 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.030 
+2026-04-20 17:08:32,767 - main - INFO - 0.36679982879887457
+2026-04-20 17:08:32,767 - main - INFO - Epoch:2 (23/59) Data: 0.000835s | Batch: 0.147s | future_traj_r_loss: 0.111 | future_traj_l_loss: 0.288 | rec_r_loss: 0.067| rec_l_loss: 0.068| total_loss: 0.363 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.024 
+2026-04-20 17:08:32,887 - main - INFO - 0.36920489619175595
+2026-04-20 17:08:32,887 - main - INFO - Epoch:2 (24/59) Data: 0.000846s | Batch: 0.146s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.269 | rec_r_loss: 0.066| rec_l_loss: 0.066| total_loss: 0.425 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.033 
+2026-04-20 17:08:33,007 - main - INFO - 0.37213351964950564
+2026-04-20 17:08:33,007 - main - INFO - Epoch:2 (25/59) Data: 0.000837s | Batch: 0.145s | future_traj_r_loss: 0.129 | future_traj_l_loss: 0.250 | rec_r_loss: 0.068| rec_l_loss: 0.066| total_loss: 0.442 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.032 
+2026-04-20 17:08:33,127 - main - INFO - 0.37052592864403355
+2026-04-20 17:08:33,127 - main - INFO - Epoch:2 (26/59) Data: 0.000828s | Batch: 0.144s | future_traj_r_loss: 0.097 | future_traj_l_loss: 0.195 | rec_r_loss: 0.066| rec_l_loss: 0.062| total_loss: 0.330 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.037 
+2026-04-20 17:08:33,248 - main - INFO - 0.36817728148566353
+2026-04-20 17:08:33,248 - main - INFO - Epoch:2 (27/59) Data: 0.000864s | Batch: 0.143s | future_traj_r_loss: 0.125 | future_traj_l_loss: 0.098 | rec_r_loss: 0.064| rec_l_loss: 0.065| total_loss: 0.307 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.049 
+2026-04-20 17:08:33,369 - main - INFO - 0.3673056427921568
+2026-04-20 17:08:33,369 - main - INFO - Epoch:2 (28/59) Data: 0.000740s | Batch: 0.142s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.157 | rec_r_loss: 0.062| rec_l_loss: 0.060| total_loss: 0.344 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.028 
+2026-04-20 17:08:33,487 - main - INFO - 0.3652158543981355
+2026-04-20 17:08:33,488 - main - INFO - Epoch:2 (29/59) Data: 0.000727s | Batch: 0.141s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.146 | rec_r_loss: 0.068| rec_l_loss: 0.068| total_loss: 0.307 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.019 
+2026-04-20 17:08:33,605 - main - INFO - 0.3667804578940074
+2026-04-20 17:08:33,606 - main - INFO - Epoch:2 (30/59) Data: 0.000679s | Batch: 0.140s | future_traj_r_loss: 0.202 | future_traj_l_loss: 0.110 | rec_r_loss: 0.067| rec_l_loss: 0.063| total_loss: 0.412 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.054 
+2026-04-20 17:08:33,723 - main - INFO - 0.36519861221313477
+2026-04-20 17:08:33,724 - main - INFO - Epoch:2 (31/59) Data: 0.000713s | Batch: 0.140s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.125 | rec_r_loss: 0.064| rec_l_loss: 0.061| total_loss: 0.318 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.039 
+2026-04-20 17:08:33,841 - main - INFO - 0.36587697453796864
+2026-04-20 17:08:33,841 - main - INFO - Epoch:2 (32/59) Data: 0.000694s | Batch: 0.139s | future_traj_r_loss: 0.175 | future_traj_l_loss: 0.183 | rec_r_loss: 0.067| rec_l_loss: 0.062| total_loss: 0.387 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.028 
+2026-04-20 17:08:33,958 - main - INFO - 0.3669131885875355
+2026-04-20 17:08:33,958 - main - INFO - Epoch:2 (33/59) Data: 0.000710s | Batch: 0.138s | future_traj_r_loss: 0.125 | future_traj_l_loss: 0.223 | rec_r_loss: 0.071| rec_l_loss: 0.069| total_loss: 0.400 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:34,075 - main - INFO - 0.36688514316783233
+2026-04-20 17:08:34,075 - main - INFO - Epoch:2 (34/59) Data: 0.000684s | Batch: 0.138s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.230 | rec_r_loss: 0.064| rec_l_loss: 0.063| total_loss: 0.366 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.045 
+2026-04-20 17:08:34,193 - main - INFO - 0.36531498602458407
+2026-04-20 17:08:34,193 - main - INFO - Epoch:2 (35/59) Data: 0.000698s | Batch: 0.137s | future_traj_r_loss: 0.113 | future_traj_l_loss: 0.128 | rec_r_loss: 0.064| rec_l_loss: 0.060| total_loss: 0.312 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.023 
+2026-04-20 17:08:34,310 - main - INFO - 0.3672610993186633
+2026-04-20 17:08:34,310 - main - INFO - Epoch:2 (36/59) Data: 0.000787s | Batch: 0.136s | future_traj_r_loss: 0.126 | future_traj_l_loss: 0.375 | rec_r_loss: 0.065| rec_l_loss: 0.064| total_loss: 0.435 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.027 
+2026-04-20 17:08:34,427 - main - INFO - 0.3692784212731026
+2026-04-20 17:08:34,428 - main - INFO - Epoch:2 (37/59) Data: 0.000694s | Batch: 0.136s | future_traj_r_loss: 0.151 | future_traj_l_loss: 0.212 | rec_r_loss: 0.069| rec_l_loss: 0.068| total_loss: 0.442 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.027 
+2026-04-20 17:08:34,545 - main - INFO - 0.3669407391234448
+2026-04-20 17:08:34,545 - main - INFO - Epoch:2 (38/59) Data: 0.000683s | Batch: 0.135s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.126 | rec_r_loss: 0.063| rec_l_loss: 0.061| total_loss: 0.280 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.032 
+2026-04-20 17:08:34,663 - main - INFO - 0.3658084158714001
+2026-04-20 17:08:34,663 - main - INFO - Epoch:2 (39/59) Data: 0.000749s | Batch: 0.135s | future_traj_r_loss: 0.105 | future_traj_l_loss: 0.156 | rec_r_loss: 0.063| rec_l_loss: 0.061| total_loss: 0.323 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.032 
+2026-04-20 17:08:34,780 - main - INFO - 0.3654725722968578
+2026-04-20 17:08:34,781 - main - INFO - Epoch:2 (40/59) Data: 0.000676s | Batch: 0.135s | future_traj_r_loss: 0.135 | future_traj_l_loss: 0.177 | rec_r_loss: 0.064| rec_l_loss: 0.059| total_loss: 0.352 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.023 
+2026-04-20 17:08:34,898 - main - INFO - 0.3648882551891048
+2026-04-20 17:08:34,898 - main - INFO - Epoch:2 (41/59) Data: 0.000673s | Batch: 0.134s | future_traj_r_loss: 0.123 | future_traj_l_loss: 0.154 | rec_r_loss: 0.064| rec_l_loss: 0.062| total_loss: 0.342 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.029 
+2026-04-20 17:08:35,015 - main - INFO - 0.36489557936078026
+2026-04-20 17:08:35,015 - main - INFO - Epoch:2 (42/59) Data: 0.000685s | Batch: 0.134s | future_traj_r_loss: 0.113 | future_traj_l_loss: 0.184 | rec_r_loss: 0.063| rec_l_loss: 0.063| total_loss: 0.365 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.024 
+2026-04-20 17:08:35,133 - main - INFO - 0.3647944407407628
+2026-04-20 17:08:35,133 - main - INFO - Epoch:2 (43/59) Data: 0.000690s | Batch: 0.133s | future_traj_r_loss: 0.140 | future_traj_l_loss: 0.151 | rec_r_loss: 0.067| rec_l_loss: 0.066| total_loss: 0.361 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.032 
+2026-04-20 17:08:35,250 - main - INFO - 0.36414114047180524
+2026-04-20 17:08:35,250 - main - INFO - Epoch:2 (44/59) Data: 0.000704s | Batch: 0.133s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.161 | rec_r_loss: 0.065| rec_l_loss: 0.063| total_loss: 0.336 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.023 
+2026-04-20 17:08:35,366 - main - INFO - 0.3665373086929321
+2026-04-20 17:08:35,367 - main - INFO - Epoch:2 (45/59) Data: 0.000670s | Batch: 0.133s | future_traj_r_loss: 0.160 | future_traj_l_loss: 0.233 | rec_r_loss: 0.063| rec_l_loss: 0.063| total_loss: 0.472 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.039 
+2026-04-20 17:08:35,484 - main - INFO - 0.36680322691150336
+2026-04-20 17:08:35,484 - main - INFO - Epoch:2 (46/59) Data: 0.000681s | Batch: 0.132s | future_traj_r_loss: 0.186 | future_traj_l_loss: 0.123 | rec_r_loss: 0.063| rec_l_loss: 0.061| total_loss: 0.379 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:08:35,602 - main - INFO - 0.366982694636
+2026-04-20 17:08:35,602 - main - INFO - Epoch:2 (47/59) Data: 0.000712s | Batch: 0.132s | future_traj_r_loss: 0.132 | future_traj_l_loss: 0.224 | rec_r_loss: 0.062| rec_l_loss: 0.061| total_loss: 0.375 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.030 
+2026-04-20 17:08:35,719 - main - INFO - 0.3666295154641072
+2026-04-20 17:08:35,720 - main - INFO - Epoch:2 (48/59) Data: 0.000702s | Batch: 0.132s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.235 | rec_r_loss: 0.065| rec_l_loss: 0.063| total_loss: 0.350 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.029 
+2026-04-20 17:08:35,837 - main - INFO - 0.36789522913037515
+2026-04-20 17:08:35,837 - main - INFO - Epoch:2 (49/59) Data: 0.000684s | Batch: 0.131s | future_traj_r_loss: 0.157 | future_traj_l_loss: 0.204 | rec_r_loss: 0.062| rec_l_loss: 0.062| total_loss: 0.429 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.044 
+2026-04-20 17:08:35,953 - main - INFO - 0.3687554997205734
+2026-04-20 17:08:35,954 - main - INFO - Epoch:2 (50/59) Data: 0.000701s | Batch: 0.131s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.234 | rec_r_loss: 0.060| rec_l_loss: 0.058| total_loss: 0.411 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.025 
+2026-04-20 17:08:36,071 - main - INFO - 0.36907535265473757
+2026-04-20 17:08:36,072 - main - INFO - Epoch:2 (51/59) Data: 0.000674s | Batch: 0.131s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.248 | rec_r_loss: 0.062| rec_l_loss: 0.060| total_loss: 0.385 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.018 
+2026-04-20 17:08:36,188 - main - INFO - 0.36813996674922794
+2026-04-20 17:08:36,189 - main - INFO - Epoch:2 (52/59) Data: 0.000672s | Batch: 0.130s | future_traj_r_loss: 0.104 | future_traj_l_loss: 0.220 | rec_r_loss: 0.063| rec_l_loss: 0.063| total_loss: 0.320 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.027 
+2026-04-20 17:08:36,306 - main - INFO - 0.3669196114225208
+2026-04-20 17:08:36,306 - main - INFO - Epoch:2 (53/59) Data: 0.000689s | Batch: 0.130s | future_traj_r_loss: 0.097 | future_traj_l_loss: 0.223 | rec_r_loss: 0.059| rec_l_loss: 0.057| total_loss: 0.303 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.021 
+2026-04-20 17:08:36,423 - main - INFO - 0.3659868229318548
+2026-04-20 17:08:36,423 - main - INFO - Epoch:2 (54/59) Data: 0.000681s | Batch: 0.130s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.140 | rec_r_loss: 0.061| rec_l_loss: 0.059| total_loss: 0.317 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.019 
+2026-04-20 17:08:36,540 - main - INFO - 0.36637186299670826
+2026-04-20 17:08:36,541 - main - INFO - Epoch:2 (55/59) Data: 0.000694s | Batch: 0.130s | future_traj_r_loss: 0.154 | future_traj_l_loss: 0.160 | rec_r_loss: 0.060| rec_l_loss: 0.059| total_loss: 0.387 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.023 
+2026-04-20 17:08:36,653 - main - INFO - 0.36608151878629414
+2026-04-20 17:08:36,653 - main - INFO - Epoch:2 (56/59) Data: 0.000690s | Batch: 0.129s | future_traj_r_loss: 0.170 | future_traj_l_loss: 0.130 | rec_r_loss: 0.058| rec_l_loss: 0.054| total_loss: 0.350 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.035 
+2026-04-20 17:08:36,768 - main - INFO - 0.3669420031079075
+2026-04-20 17:08:36,769 - main - INFO - Epoch:2 (57/59) Data: 0.000734s | Batch: 0.129s | future_traj_r_loss: 0.134 | future_traj_l_loss: 0.182 | rec_r_loss: 0.061| rec_l_loss: 0.060| total_loss: 0.415 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.025 
+2026-04-20 17:08:36,884 - main - INFO - 0.36746461175639056
+2026-04-20 17:08:36,884 - main - INFO - Epoch:2 (58/59) Data: 0.000679s | Batch: 0.129s | future_traj_r_loss: 0.184 | future_traj_l_loss: 0.103 | rec_r_loss: 0.062| rec_l_loss: 0.057| total_loss: 0.397 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.027 
+2026-04-20 17:08:37,000 - main - INFO - 0.36999448628748877
+2026-04-20 17:08:37,000 - main - INFO - Epoch:2 (59/59) Data: 0.000666s | Batch: 0.129s | future_traj_r_loss: 0.205 | future_traj_l_loss: 0.248 | rec_r_loss: 0.060| rec_l_loss: 0.058| total_loss: 0.517 | future_valid_r: 24.0 | future_valid_l: 12.0 | obj_loss: 0.025 
+2026-04-20 17:08:37,724 - main - INFO - Using lr 0.0002
+2026-04-20 17:08:37,725 - main - INFO - train epoch: 4
+2026-04-20 17:08:38,495 - main - INFO - 0.3840622901916504
+2026-04-20 17:08:38,496 - main - INFO - Epoch:3 (1/59) Data: 0.621838s | Batch: 0.771s | future_traj_r_loss: 0.151 | future_traj_l_loss: 0.172 | rec_r_loss: 0.059| rec_l_loss: 0.056| total_loss: 0.384 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.041 
+2026-04-20 17:08:38,617 - main - INFO - 0.3455914258956909
+2026-04-20 17:08:38,618 - main - INFO - Epoch:3 (2/59) Data: 0.000926s | Batch: 0.446s | future_traj_r_loss: 0.127 | future_traj_l_loss: 0.160 | rec_r_loss: 0.060| rec_l_loss: 0.059| total_loss: 0.307 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.029 
+2026-04-20 17:08:38,753 - main - INFO - 0.3531877398490906
+2026-04-20 17:08:38,753 - main - INFO - Epoch:3 (3/59) Data: 0.000941s | Batch: 0.342s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.263 | rec_r_loss: 0.061| rec_l_loss: 0.061| total_loss: 0.368 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.025 
+2026-04-20 17:08:38,882 - main - INFO - 0.34548915922641754
+2026-04-20 17:08:38,882 - main - INFO - Epoch:3 (4/59) Data: 0.001463s | Batch: 0.289s | future_traj_r_loss: 0.081 | future_traj_l_loss: 0.271 | rec_r_loss: 0.058| rec_l_loss: 0.056| total_loss: 0.322 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:08:39,007 - main - INFO - 0.3556817531585693
+2026-04-20 17:08:39,007 - main - INFO - Epoch:3 (5/59) Data: 0.000895s | Batch: 0.256s | future_traj_r_loss: 0.094 | future_traj_l_loss: 0.232 | rec_r_loss: 0.057| rec_l_loss: 0.055| total_loss: 0.396 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.025 
+2026-04-20 17:08:39,125 - main - INFO - 0.35399802029132843
+2026-04-20 17:08:39,126 - main - INFO - Epoch:3 (6/59) Data: 0.000855s | Batch: 0.233s | future_traj_r_loss: 0.130 | future_traj_l_loss: 0.165 | rec_r_loss: 0.059| rec_l_loss: 0.057| total_loss: 0.346 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.027 
+2026-04-20 17:08:39,246 - main - INFO - 0.35419813649994986
+2026-04-20 17:08:39,247 - main - INFO - Epoch:3 (7/59) Data: 0.000830s | Batch: 0.217s | future_traj_r_loss: 0.122 | future_traj_l_loss: 0.180 | rec_r_loss: 0.059| rec_l_loss: 0.056| total_loss: 0.355 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.029 
+2026-04-20 17:08:39,368 - main - INFO - 0.35442254319787025
+2026-04-20 17:08:39,368 - main - INFO - Epoch:3 (8/59) Data: 0.000885s | Batch: 0.205s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.179 | rec_r_loss: 0.058| rec_l_loss: 0.058| total_loss: 0.356 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.035 
+2026-04-20 17:08:39,489 - main - INFO - 0.35107001662254333
+2026-04-20 17:08:39,490 - main - INFO - Epoch:3 (9/59) Data: 0.000845s | Batch: 0.195s | future_traj_r_loss: 0.151 | future_traj_l_loss: 0.115 | rec_r_loss: 0.058| rec_l_loss: 0.056| total_loss: 0.324 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.026 
+2026-04-20 17:08:39,611 - main - INFO - 0.35928252041339875
+2026-04-20 17:08:39,611 - main - INFO - Epoch:3 (10/59) Data: 0.000877s | Batch: 0.188s | future_traj_r_loss: 0.183 | future_traj_l_loss: 0.226 | rec_r_loss: 0.061| rec_l_loss: 0.059| total_loss: 0.433 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.021 
+2026-04-20 17:08:39,729 - main - INFO - 0.3540020070292733
+2026-04-20 17:08:39,729 - main - INFO - Epoch:3 (11/59) Data: 0.000886s | Batch: 0.182s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.139 | rec_r_loss: 0.057| rec_l_loss: 0.055| total_loss: 0.301 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.016 
+2026-04-20 17:08:39,849 - main - INFO - 0.3553306683897972
+2026-04-20 17:08:39,850 - main - INFO - Epoch:3 (12/59) Data: 0.000880s | Batch: 0.176s | future_traj_r_loss: 0.133 | future_traj_l_loss: 0.259 | rec_r_loss: 0.057| rec_l_loss: 0.055| total_loss: 0.370 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.029 
+2026-04-20 17:08:39,970 - main - INFO - 0.3505292213880099
+2026-04-20 17:08:39,970 - main - INFO - Epoch:3 (13/59) Data: 0.000856s | Batch: 0.172s | future_traj_r_loss: 0.080 | future_traj_l_loss: 0.184 | rec_r_loss: 0.057| rec_l_loss: 0.056| total_loss: 0.293 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:40,092 - main - INFO - 0.3497099152633122
+2026-04-20 17:08:40,092 - main - INFO - Epoch:3 (14/59) Data: 0.000849s | Batch: 0.168s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.196 | rec_r_loss: 0.058| rec_l_loss: 0.057| total_loss: 0.339 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.013 
+2026-04-20 17:08:40,213 - main - INFO - 0.35250324010849
+2026-04-20 17:08:40,213 - main - INFO - Epoch:3 (15/59) Data: 0.000834s | Batch: 0.165s | future_traj_r_loss: 0.149 | future_traj_l_loss: 0.205 | rec_r_loss: 0.058| rec_l_loss: 0.056| total_loss: 0.392 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.025 
+2026-04-20 17:08:40,334 - main - INFO - 0.35280012898147106
+2026-04-20 17:08:40,335 - main - INFO - Epoch:3 (16/59) Data: 0.000882s | Batch: 0.163s | future_traj_r_loss: 0.180 | future_traj_l_loss: 0.125 | rec_r_loss: 0.058| rec_l_loss: 0.054| total_loss: 0.357 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.034 
+2026-04-20 17:08:40,457 - main - INFO - 0.35305917438338785
+2026-04-20 17:08:40,458 - main - INFO - Epoch:3 (17/59) Data: 0.000889s | Batch: 0.160s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.166 | rec_r_loss: 0.057| rec_l_loss: 0.054| total_loss: 0.357 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.035 
+2026-04-20 17:08:40,579 - main - INFO - 0.3493808690044615
+2026-04-20 17:08:40,579 - main - INFO - Epoch:3 (18/59) Data: 0.000820s | Batch: 0.158s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.145 | rec_r_loss: 0.056| rec_l_loss: 0.055| total_loss: 0.287 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.023 
+2026-04-20 17:08:40,699 - main - INFO - 0.34777035681824936
+2026-04-20 17:08:40,699 - main - INFO - Epoch:3 (19/59) Data: 0.000823s | Batch: 0.156s | future_traj_r_loss: 0.139 | future_traj_l_loss: 0.169 | rec_r_loss: 0.058| rec_l_loss: 0.054| total_loss: 0.319 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.037 
+2026-04-20 17:08:40,820 - main - INFO - 0.34466327279806136
+2026-04-20 17:08:40,820 - main - INFO - Epoch:3 (20/59) Data: 0.000865s | Batch: 0.154s | future_traj_r_loss: 0.100 | future_traj_l_loss: 0.124 | rec_r_loss: 0.056| rec_l_loss: 0.055| total_loss: 0.286 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.024 
+2026-04-20 17:08:40,941 - main - INFO - 0.3418430501506442
+2026-04-20 17:08:40,941 - main - INFO - Epoch:3 (21/59) Data: 0.000824s | Batch: 0.153s | future_traj_r_loss: 0.098 | future_traj_l_loss: 0.226 | rec_r_loss: 0.059| rec_l_loss: 0.054| total_loss: 0.285 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.020 
+2026-04-20 17:08:41,060 - main - INFO - 0.34086285396055743
+2026-04-20 17:08:41,061 - main - INFO - Epoch:3 (22/59) Data: 0.000838s | Batch: 0.151s | future_traj_r_loss: 0.083 | future_traj_l_loss: 0.209 | rec_r_loss: 0.056| rec_l_loss: 0.054| total_loss: 0.320 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.041 
+2026-04-20 17:08:41,182 - main - INFO - 0.33805379141931946
+2026-04-20 17:08:41,183 - main - INFO - Epoch:3 (23/59) Data: 0.000830s | Batch: 0.150s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.128 | rec_r_loss: 0.056| rec_l_loss: 0.051| total_loss: 0.276 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.023 
+2026-04-20 17:08:41,304 - main - INFO - 0.3394525349140167
+2026-04-20 17:08:41,304 - main - INFO - Epoch:3 (24/59) Data: 0.000856s | Batch: 0.149s | future_traj_r_loss: 0.135 | future_traj_l_loss: 0.181 | rec_r_loss: 0.055| rec_l_loss: 0.053| total_loss: 0.372 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.018 
+2026-04-20 17:08:41,427 - main - INFO - 0.3442482590675354
+2026-04-20 17:08:41,427 - main - INFO - Epoch:3 (25/59) Data: 0.000894s | Batch: 0.147s | future_traj_r_loss: 0.171 | future_traj_l_loss: 0.189 | rec_r_loss: 0.056| rec_l_loss: 0.054| total_loss: 0.459 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.019 
+2026-04-20 17:08:41,549 - main - INFO - 0.3468754830268713
+2026-04-20 17:08:41,549 - main - INFO - Epoch:3 (26/59) Data: 0.000829s | Batch: 0.146s | future_traj_r_loss: 0.167 | future_traj_l_loss: 0.192 | rec_r_loss: 0.056| rec_l_loss: 0.055| total_loss: 0.413 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.027 
+2026-04-20 17:08:41,672 - main - INFO - 0.34705224191700973
+2026-04-20 17:08:41,672 - main - INFO - Epoch:3 (27/59) Data: 0.000897s | Batch: 0.146s | future_traj_r_loss: 0.143 | future_traj_l_loss: 0.097 | rec_r_loss: 0.056| rec_l_loss: 0.054| total_loss: 0.352 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.028 
+2026-04-20 17:08:41,795 - main - INFO - 0.34907907779727665
+2026-04-20 17:08:41,795 - main - INFO - Epoch:3 (28/59) Data: 0.000718s | Batch: 0.145s | future_traj_r_loss: 0.205 | future_traj_l_loss: 0.125 | rec_r_loss: 0.056| rec_l_loss: 0.054| total_loss: 0.404 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:08:41,913 - main - INFO - 0.34746409079124185
+2026-04-20 17:08:41,914 - main - INFO - Epoch:3 (29/59) Data: 0.000734s | Batch: 0.144s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.099 | rec_r_loss: 0.055| rec_l_loss: 0.052| total_loss: 0.302 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.023 
+2026-04-20 17:08:42,032 - main - INFO - 0.3480693797270457
+2026-04-20 17:08:42,033 - main - INFO - Epoch:3 (30/59) Data: 0.000694s | Batch: 0.143s | future_traj_r_loss: 0.135 | future_traj_l_loss: 0.164 | rec_r_loss: 0.054| rec_l_loss: 0.053| total_loss: 0.366 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.018 
+2026-04-20 17:08:42,151 - main - INFO - 0.3473095682359511
+2026-04-20 17:08:42,151 - main - INFO - Epoch:3 (31/59) Data: 0.000725s | Batch: 0.142s | future_traj_r_loss: 0.083 | future_traj_l_loss: 0.165 | rec_r_loss: 0.057| rec_l_loss: 0.056| total_loss: 0.325 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.028 
+2026-04-20 17:08:42,269 - main - INFO - 0.3490753695368767
+2026-04-20 17:08:42,270 - main - INFO - Epoch:3 (32/59) Data: 0.000698s | Batch: 0.141s | future_traj_r_loss: 0.105 | future_traj_l_loss: 0.267 | rec_r_loss: 0.058| rec_l_loss: 0.057| total_loss: 0.404 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.026 
+2026-04-20 17:08:42,388 - main - INFO - 0.3515365638516166
+2026-04-20 17:08:42,388 - main - INFO - Epoch:3 (33/59) Data: 0.000717s | Batch: 0.141s | future_traj_r_loss: 0.163 | future_traj_l_loss: 0.301 | rec_r_loss: 0.056| rec_l_loss: 0.056| total_loss: 0.430 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.025 
+2026-04-20 17:08:42,506 - main - INFO - 0.3520286582848605
+2026-04-20 17:08:42,507 - main - INFO - Epoch:3 (34/59) Data: 0.000708s | Batch: 0.140s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.165 | rec_r_loss: 0.054| rec_l_loss: 0.053| total_loss: 0.368 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.024 
+2026-04-20 17:08:42,625 - main - INFO - 0.35165014692715235
+2026-04-20 17:08:42,626 - main - INFO - Epoch:3 (35/59) Data: 0.000686s | Batch: 0.139s | future_traj_r_loss: 0.140 | future_traj_l_loss: 0.186 | rec_r_loss: 0.055| rec_l_loss: 0.053| total_loss: 0.339 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.031 
+2026-04-20 17:08:42,744 - main - INFO - 0.35148121251000297
+2026-04-20 17:08:42,744 - main - INFO - Epoch:3 (36/59) Data: 0.000682s | Batch: 0.139s | future_traj_r_loss: 0.151 | future_traj_l_loss: 0.194 | rec_r_loss: 0.059| rec_l_loss: 0.060| total_loss: 0.346 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.033 
+2026-04-20 17:08:42,862 - main - INFO - 0.3530602245717435
+2026-04-20 17:08:42,863 - main - INFO - Epoch:3 (37/59) Data: 0.000702s | Batch: 0.138s | future_traj_r_loss: 0.129 | future_traj_l_loss: 0.275 | rec_r_loss: 0.058| rec_l_loss: 0.058| total_loss: 0.410 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.023 
+2026-04-20 17:08:42,981 - main - INFO - 0.35597574240282964
+2026-04-20 17:08:42,981 - main - INFO - Epoch:3 (38/59) Data: 0.000729s | Batch: 0.138s | future_traj_r_loss: 0.133 | future_traj_l_loss: 0.307 | rec_r_loss: 0.057| rec_l_loss: 0.055| total_loss: 0.464 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.022 
+2026-04-20 17:08:43,099 - main - INFO - 0.35675954818725586
+2026-04-20 17:08:43,099 - main - INFO - Epoch:3 (39/59) Data: 0.000711s | Batch: 0.137s | future_traj_r_loss: 0.141 | future_traj_l_loss: 0.214 | rec_r_loss: 0.056| rec_l_loss: 0.053| total_loss: 0.387 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.022 
+2026-04-20 17:08:43,217 - main - INFO - 0.3563424862921238
+2026-04-20 17:08:43,218 - main - INFO - Epoch:3 (40/59) Data: 0.000696s | Batch: 0.137s | future_traj_r_loss: 0.132 | future_traj_l_loss: 0.195 | rec_r_loss: 0.057| rec_l_loss: 0.053| total_loss: 0.340 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.034 
+2026-04-20 17:08:43,335 - main - INFO - 0.3550374391602307
+2026-04-20 17:08:43,336 - main - INFO - Epoch:3 (41/59) Data: 0.000696s | Batch: 0.136s | future_traj_r_loss: 0.103 | future_traj_l_loss: 0.166 | rec_r_loss: 0.057| rec_l_loss: 0.054| total_loss: 0.303 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.037 
+2026-04-20 17:08:43,454 - main - INFO - 0.3549202162595022
+2026-04-20 17:08:43,454 - main - INFO - Epoch:3 (42/59) Data: 0.000696s | Batch: 0.136s | future_traj_r_loss: 0.128 | future_traj_l_loss: 0.177 | rec_r_loss: 0.057| rec_l_loss: 0.055| total_loss: 0.350 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.023 
+2026-04-20 17:08:43,572 - main - INFO - 0.3566472585811171
+2026-04-20 17:08:43,573 - main - INFO - Epoch:3 (43/59) Data: 0.000699s | Batch: 0.135s | future_traj_r_loss: 0.139 | future_traj_l_loss: 0.191 | rec_r_loss: 0.059| rec_l_loss: 0.058| total_loss: 0.429 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.022 
+2026-04-20 17:08:43,691 - main - INFO - 0.35494204000993207
+2026-04-20 17:08:43,691 - main - INFO - Epoch:3 (44/59) Data: 0.000693s | Batch: 0.135s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.125 | rec_r_loss: 0.055| rec_l_loss: 0.052| total_loss: 0.282 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.022 
+2026-04-20 17:08:43,809 - main - INFO - 0.35529891914791534
+2026-04-20 17:08:43,809 - main - INFO - Epoch:3 (45/59) Data: 0.000690s | Batch: 0.135s | future_traj_r_loss: 0.181 | future_traj_l_loss: 0.100 | rec_r_loss: 0.055| rec_l_loss: 0.052| total_loss: 0.371 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.020 
+2026-04-20 17:08:43,926 - main - INFO - 0.3556140544621841
+2026-04-20 17:08:43,927 - main - INFO - Epoch:3 (46/59) Data: 0.000700s | Batch: 0.134s | future_traj_r_loss: 0.140 | future_traj_l_loss: 0.208 | rec_r_loss: 0.056| rec_l_loss: 0.057| total_loss: 0.370 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.030 
+2026-04-20 17:08:44,045 - main - INFO - 0.3566501432276787
+2026-04-20 17:08:44,045 - main - INFO - Epoch:3 (47/59) Data: 0.000699s | Batch: 0.134s | future_traj_r_loss: 0.210 | future_traj_l_loss: 0.117 | rec_r_loss: 0.057| rec_l_loss: 0.054| total_loss: 0.404 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.032 
+2026-04-20 17:08:44,163 - main - INFO - 0.35797657010455924
+2026-04-20 17:08:44,163 - main - INFO - Epoch:3 (48/59) Data: 0.000751s | Batch: 0.134s | future_traj_r_loss: 0.150 | future_traj_l_loss: 0.272 | rec_r_loss: 0.056| rec_l_loss: 0.056| total_loss: 0.420 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.022 
+2026-04-20 17:08:44,281 - main - INFO - 0.357546259554065
+2026-04-20 17:08:44,282 - main - INFO - Epoch:3 (49/59) Data: 0.000691s | Batch: 0.133s | future_traj_r_loss: 0.117 | future_traj_l_loss: 0.198 | rec_r_loss: 0.055| rec_l_loss: 0.055| total_loss: 0.337 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.022 
+2026-04-20 17:08:44,400 - main - INFO - 0.3567217791080475
+2026-04-20 17:08:44,400 - main - INFO - Epoch:3 (50/59) Data: 0.000688s | Batch: 0.133s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.145 | rec_r_loss: 0.055| rec_l_loss: 0.054| total_loss: 0.316 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.020 
+2026-04-20 17:08:44,518 - main - INFO - 0.35587293493981453
+2026-04-20 17:08:44,519 - main - INFO - Epoch:3 (51/59) Data: 0.000705s | Batch: 0.133s | future_traj_r_loss: 0.107 | future_traj_l_loss: 0.168 | rec_r_loss: 0.053| rec_l_loss: 0.053| total_loss: 0.313 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.015 
+2026-04-20 17:08:44,637 - main - INFO - 0.35536257120279163
+2026-04-20 17:08:44,638 - main - INFO - Epoch:3 (52/59) Data: 0.000702s | Batch: 0.132s | future_traj_r_loss: 0.151 | future_traj_l_loss: 0.186 | rec_r_loss: 0.053| rec_l_loss: 0.050| total_loss: 0.329 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.040 
+2026-04-20 17:08:44,756 - main - INFO - 0.3569357513256793
+2026-04-20 17:08:44,756 - main - INFO - Epoch:3 (53/59) Data: 0.000708s | Batch: 0.132s | future_traj_r_loss: 0.123 | future_traj_l_loss: 0.313 | rec_r_loss: 0.055| rec_l_loss: 0.054| total_loss: 0.439 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.023 
+2026-04-20 17:08:44,874 - main - INFO - 0.35650429295168984
+2026-04-20 17:08:44,874 - main - INFO - Epoch:3 (54/59) Data: 0.000700s | Batch: 0.132s | future_traj_r_loss: 0.129 | future_traj_l_loss: 0.255 | rec_r_loss: 0.052| rec_l_loss: 0.052| total_loss: 0.334 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.039 
+2026-04-20 17:08:44,992 - main - INFO - 0.3555480875752189
+2026-04-20 17:08:44,992 - main - INFO - Epoch:3 (55/59) Data: 0.000698s | Batch: 0.132s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.128 | rec_r_loss: 0.055| rec_l_loss: 0.054| total_loss: 0.304 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.038 
+2026-04-20 17:08:45,110 - main - INFO - 0.35462617395179613
+2026-04-20 17:08:45,111 - main - INFO - Epoch:3 (56/59) Data: 0.000687s | Batch: 0.131s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.146 | rec_r_loss: 0.053| rec_l_loss: 0.051| total_loss: 0.304 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.033 
+2026-04-20 17:08:45,228 - main - INFO - 0.3558221914266285
+2026-04-20 17:08:45,228 - main - INFO - Epoch:3 (57/59) Data: 0.000686s | Batch: 0.131s | future_traj_r_loss: 0.137 | future_traj_l_loss: 0.295 | rec_r_loss: 0.054| rec_l_loss: 0.053| total_loss: 0.423 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.024 
+2026-04-20 17:08:45,345 - main - INFO - 0.3557121938672559
+2026-04-20 17:08:45,346 - main - INFO - Epoch:3 (58/59) Data: 0.000695s | Batch: 0.131s | future_traj_r_loss: 0.136 | future_traj_l_loss: 0.159 | rec_r_loss: 0.053| rec_l_loss: 0.052| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.039 
+2026-04-20 17:08:45,464 - main - INFO - 0.35495570504059226
+2026-04-20 17:08:45,464 - main - INFO - Epoch:3 (59/59) Data: 0.000695s | Batch: 0.131s | future_traj_r_loss: 0.139 | future_traj_l_loss: 0.158 | rec_r_loss: 0.054| rec_l_loss: 0.050| total_loss: 0.311 | future_valid_r: 24.0 | future_valid_l: 6.0 | obj_loss: 0.038 
+2026-04-20 17:08:46,183 - main - INFO - Using lr 0.0002
+2026-04-20 17:08:46,183 - main - INFO - train epoch: 5
+2026-04-20 17:08:46,908 - main - INFO - 0.27798527479171753
+2026-04-20 17:08:46,908 - main - INFO - Epoch:4 (1/59) Data: 0.575362s | Batch: 0.724s | future_traj_r_loss: 0.144 | future_traj_l_loss: 0.102 | rec_r_loss: 0.052| rec_l_loss: 0.050| total_loss: 0.278 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.027 
+2026-04-20 17:08:47,030 - main - INFO - 0.2705528438091278
+2026-04-20 17:08:47,030 - main - INFO - Epoch:4 (2/59) Data: 0.000945s | Batch: 0.423s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.089 | rec_r_loss: 0.052| rec_l_loss: 0.049| total_loss: 0.263 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.020 
+2026-04-20 17:08:47,176 - main - INFO - 0.29317686955134076
+2026-04-20 17:08:47,177 - main - INFO - Epoch:4 (3/59) Data: 0.001042s | Batch: 0.331s | future_traj_r_loss: 0.143 | future_traj_l_loss: 0.231 | rec_r_loss: 0.052| rec_l_loss: 0.054| total_loss: 0.338 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.022 
+2026-04-20 17:08:47,298 - main - INFO - 0.29933953285217285
+2026-04-20 17:08:47,299 - main - INFO - Epoch:4 (4/59) Data: 0.000912s | Batch: 0.278s | future_traj_r_loss: 0.093 | future_traj_l_loss: 0.202 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.318 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.036 
+2026-04-20 17:08:47,419 - main - INFO - 0.31797176599502563
+2026-04-20 17:08:47,419 - main - INFO - Epoch:4 (5/59) Data: 0.000891s | Batch: 0.247s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.278 | rec_r_loss: 0.052| rec_l_loss: 0.053| total_loss: 0.393 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.028 
+2026-04-20 17:08:47,539 - main - INFO - 0.3230847915013631
+2026-04-20 17:08:47,539 - main - INFO - Epoch:4 (6/59) Data: 0.000831s | Batch: 0.225s | future_traj_r_loss: 0.127 | future_traj_l_loss: 0.205 | rec_r_loss: 0.051| rec_l_loss: 0.052| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.022 
+2026-04-20 17:08:47,659 - main - INFO - 0.3345761937754495
+2026-04-20 17:08:47,660 - main - INFO - Epoch:4 (7/59) Data: 0.000859s | Batch: 0.210s | future_traj_r_loss: 0.121 | future_traj_l_loss: 0.312 | rec_r_loss: 0.051| rec_l_loss: 0.052| total_loss: 0.404 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.024 
+2026-04-20 17:08:47,779 - main - INFO - 0.33224039152264595
+2026-04-20 17:08:47,780 - main - INFO - Epoch:4 (8/59) Data: 0.000874s | Batch: 0.199s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.248 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.316 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.048 
+2026-04-20 17:08:47,899 - main - INFO - 0.325401375691096
+2026-04-20 17:08:47,899 - main - INFO - Epoch:4 (9/59) Data: 0.000845s | Batch: 0.190s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.184 | rec_r_loss: 0.051| rec_l_loss: 0.049| total_loss: 0.271 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.023 
+2026-04-20 17:08:48,019 - main - INFO - 0.32904012203216554
+2026-04-20 17:08:48,020 - main - INFO - Epoch:4 (10/59) Data: 0.000817s | Batch: 0.183s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.227 | rec_r_loss: 0.052| rec_l_loss: 0.049| total_loss: 0.362 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.028 
+2026-04-20 17:08:48,140 - main - INFO - 0.3339438492601568
+2026-04-20 17:08:48,140 - main - INFO - Epoch:4 (11/59) Data: 0.000841s | Batch: 0.177s | future_traj_r_loss: 0.130 | future_traj_l_loss: 0.244 | rec_r_loss: 0.052| rec_l_loss: 0.050| total_loss: 0.383 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.029 
+2026-04-20 17:08:48,260 - main - INFO - 0.33356088648239773
+2026-04-20 17:08:48,260 - main - INFO - Epoch:4 (12/59) Data: 0.000823s | Batch: 0.172s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.156 | rec_r_loss: 0.052| rec_l_loss: 0.050| total_loss: 0.329 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.033 
+2026-04-20 17:08:48,381 - main - INFO - 0.34291098897273725
+2026-04-20 17:08:48,381 - main - INFO - Epoch:4 (13/59) Data: 0.000862s | Batch: 0.168s | future_traj_r_loss: 0.174 | future_traj_l_loss: 0.321 | rec_r_loss: 0.050| rec_l_loss: 0.049| total_loss: 0.455 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.025 
+2026-04-20 17:08:48,502 - main - INFO - 0.3477958270481655
+2026-04-20 17:08:48,503 - main - INFO - Epoch:4 (14/59) Data: 0.000859s | Batch: 0.165s | future_traj_r_loss: 0.147 | future_traj_l_loss: 0.198 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.411 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.030 
+2026-04-20 17:08:48,623 - main - INFO - 0.35072480837504066
+2026-04-20 17:08:48,624 - main - INFO - Epoch:4 (15/59) Data: 0.000853s | Batch: 0.162s | future_traj_r_loss: 0.129 | future_traj_l_loss: 0.204 | rec_r_loss: 0.052| rec_l_loss: 0.052| total_loss: 0.392 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.018 
+2026-04-20 17:08:48,744 - main - INFO - 0.3496558889746666
+2026-04-20 17:08:48,745 - main - INFO - Epoch:4 (16/59) Data: 0.000854s | Batch: 0.159s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.146 | rec_r_loss: 0.049| rec_l_loss: 0.049| total_loss: 0.334 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.028 
+2026-04-20 17:08:48,864 - main - INFO - 0.3544158988139209
+2026-04-20 17:08:48,865 - main - INFO - Epoch:4 (17/59) Data: 0.000880s | Batch: 0.157s | future_traj_r_loss: 0.186 | future_traj_l_loss: 0.209 | rec_r_loss: 0.051| rec_l_loss: 0.050| total_loss: 0.431 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.038 
+2026-04-20 17:08:48,988 - main - INFO - 0.3535183154874378
+2026-04-20 17:08:48,989 - main - INFO - Epoch:4 (18/59) Data: 0.000890s | Batch: 0.155s | future_traj_r_loss: 0.107 | future_traj_l_loss: 0.180 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.338 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.025 
+2026-04-20 17:08:49,110 - main - INFO - 0.3488310120607677
+2026-04-20 17:08:49,110 - main - INFO - Epoch:4 (19/59) Data: 0.000911s | Batch: 0.153s | future_traj_r_loss: 0.112 | future_traj_l_loss: 0.100 | rec_r_loss: 0.053| rec_l_loss: 0.049| total_loss: 0.264 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:08:49,232 - main - INFO - 0.3455628290772438
+2026-04-20 17:08:49,233 - main - INFO - Epoch:4 (20/59) Data: 0.000832s | Batch: 0.152s | future_traj_r_loss: 0.112 | future_traj_l_loss: 0.104 | rec_r_loss: 0.051| rec_l_loss: 0.049| total_loss: 0.283 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.028 
+2026-04-20 17:08:49,354 - main - INFO - 0.3414609602519444
+2026-04-20 17:08:49,354 - main - INFO - Epoch:4 (21/59) Data: 0.000875s | Batch: 0.150s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.148 | rec_r_loss: 0.050| rec_l_loss: 0.048| total_loss: 0.259 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.030 
+2026-04-20 17:08:49,476 - main - INFO - 0.33940989727323706
+2026-04-20 17:08:49,476 - main - INFO - Epoch:4 (22/59) Data: 0.000851s | Batch: 0.149s | future_traj_r_loss: 0.090 | future_traj_l_loss: 0.182 | rec_r_loss: 0.050| rec_l_loss: 0.049| total_loss: 0.296 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.031 
+2026-04-20 17:08:49,598 - main - INFO - 0.3395370206107264
+2026-04-20 17:08:49,598 - main - INFO - Epoch:4 (23/59) Data: 0.000855s | Batch: 0.148s | future_traj_r_loss: 0.163 | future_traj_l_loss: 0.124 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.342 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.035 
+2026-04-20 17:08:49,720 - main - INFO - 0.339920320858558
+2026-04-20 17:08:49,721 - main - INFO - Epoch:4 (24/59) Data: 0.000862s | Batch: 0.147s | future_traj_r_loss: 0.152 | future_traj_l_loss: 0.211 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.025 
+2026-04-20 17:08:49,843 - main - INFO - 0.34001959204673765
+2026-04-20 17:08:49,843 - main - INFO - Epoch:4 (25/59) Data: 0.000881s | Batch: 0.146s | future_traj_r_loss: 0.097 | future_traj_l_loss: 0.238 | rec_r_loss: 0.051| rec_l_loss: 0.050| total_loss: 0.342 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.020 
+2026-04-20 17:08:49,966 - main - INFO - 0.34091802629140705
+2026-04-20 17:08:49,966 - main - INFO - Epoch:4 (26/59) Data: 0.000873s | Batch: 0.145s | future_traj_r_loss: 0.107 | future_traj_l_loss: 0.226 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.363 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.025 
+2026-04-20 17:08:50,089 - main - INFO - 0.33923276486220183
+2026-04-20 17:08:50,089 - main - INFO - Epoch:4 (27/59) Data: 0.000889s | Batch: 0.144s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.174 | rec_r_loss: 0.052| rec_l_loss: 0.052| total_loss: 0.295 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.030 
+2026-04-20 17:08:50,211 - main - INFO - 0.3364291074020522
+2026-04-20 17:08:50,211 - main - INFO - Epoch:4 (28/59) Data: 0.000725s | Batch: 0.143s | future_traj_r_loss: 0.097 | future_traj_l_loss: 0.115 | rec_r_loss: 0.051| rec_l_loss: 0.050| total_loss: 0.261 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:08:50,330 - main - INFO - 0.3359099677924452
+2026-04-20 17:08:50,330 - main - INFO - Epoch:4 (29/59) Data: 0.000718s | Batch: 0.142s | future_traj_r_loss: 0.105 | future_traj_l_loss: 0.229 | rec_r_loss: 0.053| rec_l_loss: 0.054| total_loss: 0.321 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.022 
+2026-04-20 17:08:50,448 - main - INFO - 0.33633335332075753
+2026-04-20 17:08:50,449 - main - INFO - Epoch:4 (30/59) Data: 0.000705s | Batch: 0.142s | future_traj_r_loss: 0.123 | future_traj_l_loss: 0.209 | rec_r_loss: 0.049| rec_l_loss: 0.047| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.034 
+2026-04-20 17:08:50,567 - main - INFO - 0.335662632219253
+2026-04-20 17:08:50,568 - main - INFO - Epoch:4 (31/59) Data: 0.000710s | Batch: 0.141s | future_traj_r_loss: 0.134 | future_traj_l_loss: 0.211 | rec_r_loss: 0.052| rec_l_loss: 0.049| total_loss: 0.316 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.032 
+2026-04-20 17:08:50,685 - main - INFO - 0.33650593739002943
+2026-04-20 17:08:50,686 - main - INFO - Epoch:4 (32/59) Data: 0.000678s | Batch: 0.140s | future_traj_r_loss: 0.142 | future_traj_l_loss: 0.171 | rec_r_loss: 0.051| rec_l_loss: 0.050| total_loss: 0.363 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.021 
+2026-04-20 17:08:50,804 - main - INFO - 0.3364041239926309
+2026-04-20 17:08:50,804 - main - INFO - Epoch:4 (33/59) Data: 0.000768s | Batch: 0.139s | future_traj_r_loss: 0.126 | future_traj_l_loss: 0.181 | rec_r_loss: 0.049| rec_l_loss: 0.047| total_loss: 0.333 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.017 
+2026-04-20 17:08:50,922 - main - INFO - 0.33670155704021454
+2026-04-20 17:08:50,923 - main - INFO - Epoch:4 (34/59) Data: 0.000686s | Batch: 0.139s | future_traj_r_loss: 0.130 | future_traj_l_loss: 0.153 | rec_r_loss: 0.050| rec_l_loss: 0.049| total_loss: 0.347 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.021 
+2026-04-20 17:08:51,041 - main - INFO - 0.3361421057156154
+2026-04-20 17:08:51,041 - main - INFO - Epoch:4 (35/59) Data: 0.000689s | Batch: 0.138s | future_traj_r_loss: 0.102 | future_traj_l_loss: 0.150 | rec_r_loss: 0.051| rec_l_loss: 0.052| total_loss: 0.317 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.035 
+2026-04-20 17:08:51,159 - main - INFO - 0.3392144160138236
+2026-04-20 17:08:51,160 - main - INFO - Epoch:4 (36/59) Data: 0.000755s | Batch: 0.138s | future_traj_r_loss: 0.166 | future_traj_l_loss: 0.225 | rec_r_loss: 0.049| rec_l_loss: 0.048| total_loss: 0.447 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.020 
+2026-04-20 17:08:51,278 - main - INFO - 0.33756390052872737
+2026-04-20 17:08:51,279 - main - INFO - Epoch:4 (37/59) Data: 0.000735s | Batch: 0.137s | future_traj_r_loss: 0.095 | future_traj_l_loss: 0.140 | rec_r_loss: 0.049| rec_l_loss: 0.047| total_loss: 0.278 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:51,397 - main - INFO - 0.33794331942733963
+2026-04-20 17:08:51,397 - main - INFO - Epoch:4 (38/59) Data: 0.000699s | Batch: 0.137s | future_traj_r_loss: 0.139 | future_traj_l_loss: 0.191 | rec_r_loss: 0.052| rec_l_loss: 0.050| total_loss: 0.352 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:08:51,515 - main - INFO - 0.3382951701298738
+2026-04-20 17:08:51,516 - main - INFO - Epoch:4 (39/59) Data: 0.000737s | Batch: 0.136s | future_traj_r_loss: 0.127 | future_traj_l_loss: 0.166 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.352 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.041 
+2026-04-20 17:08:51,634 - main - INFO - 0.33872177377343177
+2026-04-20 17:08:51,634 - main - INFO - Epoch:4 (40/59) Data: 0.000701s | Batch: 0.136s | future_traj_r_loss: 0.161 | future_traj_l_loss: 0.149 | rec_r_loss: 0.053| rec_l_loss: 0.050| total_loss: 0.355 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.028 
+2026-04-20 17:08:51,752 - main - INFO - 0.3389733324690563
+2026-04-20 17:08:51,753 - main - INFO - Epoch:4 (41/59) Data: 0.000711s | Batch: 0.135s | future_traj_r_loss: 0.137 | future_traj_l_loss: 0.216 | rec_r_loss: 0.052| rec_l_loss: 0.051| total_loss: 0.349 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.030 
+2026-04-20 17:08:51,870 - main - INFO - 0.33933942090897334
+2026-04-20 17:08:51,871 - main - INFO - Epoch:4 (42/59) Data: 0.000686s | Batch: 0.135s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.194 | rec_r_loss: 0.049| rec_l_loss: 0.047| total_loss: 0.354 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.035 
+2026-04-20 17:08:51,989 - main - INFO - 0.3400420532670132
+2026-04-20 17:08:51,989 - main - INFO - Epoch:4 (43/59) Data: 0.000687s | Batch: 0.134s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.227 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.370 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.017 
+2026-04-20 17:08:52,107 - main - INFO - 0.34186135638843884
+2026-04-20 17:08:52,107 - main - INFO - Epoch:4 (44/59) Data: 0.000746s | Batch: 0.134s | future_traj_r_loss: 0.163 | future_traj_l_loss: 0.262 | rec_r_loss: 0.055| rec_l_loss: 0.056| total_loss: 0.420 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.025 
+2026-04-20 17:08:52,225 - main - INFO - 0.3416099018520779
+2026-04-20 17:08:52,225 - main - INFO - Epoch:4 (45/59) Data: 0.000698s | Batch: 0.134s | future_traj_r_loss: 0.127 | future_traj_l_loss: 0.145 | rec_r_loss: 0.052| rec_l_loss: 0.050| total_loss: 0.331 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:52,343 - main - INFO - 0.33993034259132715
+2026-04-20 17:08:52,344 - main - INFO - Epoch:4 (46/59) Data: 0.000745s | Batch: 0.133s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.134 | rec_r_loss: 0.050| rec_l_loss: 0.051| total_loss: 0.264 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.030 
+2026-04-20 17:08:52,462 - main - INFO - 0.3392510559964687
+2026-04-20 17:08:52,462 - main - INFO - Epoch:4 (47/59) Data: 0.000710s | Batch: 0.133s | future_traj_r_loss: 0.094 | future_traj_l_loss: 0.162 | rec_r_loss: 0.052| rec_l_loss: 0.054| total_loss: 0.308 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.022 
+2026-04-20 17:08:52,580 - main - INFO - 0.338863476489981
+2026-04-20 17:08:52,581 - main - INFO - Epoch:4 (48/59) Data: 0.000716s | Batch: 0.133s | future_traj_r_loss: 0.134 | future_traj_l_loss: 0.155 | rec_r_loss: 0.049| rec_l_loss: 0.048| total_loss: 0.321 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.023 
+2026-04-20 17:08:52,699 - main - INFO - 0.3371703576068489
+2026-04-20 17:08:52,700 - main - INFO - Epoch:4 (49/59) Data: 0.000689s | Batch: 0.132s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.098 | rec_r_loss: 0.050| rec_l_loss: 0.049| total_loss: 0.256 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.023 
+2026-04-20 17:08:52,817 - main - INFO - 0.33659062027931214
+2026-04-20 17:08:52,818 - main - INFO - Epoch:4 (50/59) Data: 0.000696s | Batch: 0.132s | future_traj_r_loss: 0.098 | future_traj_l_loss: 0.130 | rec_r_loss: 0.049| rec_l_loss: 0.048| total_loss: 0.308 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.024 
+2026-04-20 17:08:52,936 - main - INFO - 0.3354208662229426
+2026-04-20 17:08:52,936 - main - INFO - Epoch:4 (51/59) Data: 0.000691s | Batch: 0.132s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.144 | rec_r_loss: 0.054| rec_l_loss: 0.050| total_loss: 0.277 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.032 
+2026-04-20 17:08:53,054 - main - INFO - 0.33395018657812703
+2026-04-20 17:08:53,054 - main - INFO - Epoch:4 (52/59) Data: 0.000680s | Batch: 0.132s | future_traj_r_loss: 0.068 | future_traj_l_loss: 0.176 | rec_r_loss: 0.052| rec_l_loss: 0.050| total_loss: 0.259 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.027 
+2026-04-20 17:08:53,171 - main - INFO - 0.3330347757294493
+2026-04-20 17:08:53,171 - main - INFO - Epoch:4 (53/59) Data: 0.000694s | Batch: 0.131s | future_traj_r_loss: 0.104 | future_traj_l_loss: 0.176 | rec_r_loss: 0.053| rec_l_loss: 0.052| total_loss: 0.285 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.025 
+2026-04-20 17:08:53,289 - main - INFO - 0.3332928634352154
+2026-04-20 17:08:53,289 - main - INFO - Epoch:4 (54/59) Data: 0.000709s | Batch: 0.131s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.160 | rec_r_loss: 0.054| rec_l_loss: 0.055| total_loss: 0.347 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.022 
+2026-04-20 17:08:53,407 - main - INFO - 0.33215432329611344
+2026-04-20 17:08:53,407 - main - INFO - Epoch:4 (55/59) Data: 0.000705s | Batch: 0.131s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.119 | rec_r_loss: 0.048| rec_l_loss: 0.047| total_loss: 0.271 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.041 
+2026-04-20 17:08:53,524 - main - INFO - 0.3318022015903677
+2026-04-20 17:08:53,525 - main - INFO - Epoch:4 (56/59) Data: 0.000686s | Batch: 0.131s | future_traj_r_loss: 0.121 | future_traj_l_loss: 0.143 | rec_r_loss: 0.054| rec_l_loss: 0.058| total_loss: 0.312 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:08:53,642 - main - INFO - 0.3315124820198929
+2026-04-20 17:08:53,643 - main - INFO - Epoch:4 (57/59) Data: 0.000695s | Batch: 0.130s | future_traj_r_loss: 0.134 | future_traj_l_loss: 0.131 | rec_r_loss: 0.052| rec_l_loss: 0.054| total_loss: 0.315 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.026 
+2026-04-20 17:08:53,760 - main - INFO - 0.331283098664777
+2026-04-20 17:08:53,761 - main - INFO - Epoch:4 (58/59) Data: 0.000696s | Batch: 0.130s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.221 | rec_r_loss: 0.052| rec_l_loss: 0.052| total_loss: 0.318 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.027 
+2026-04-20 17:08:53,878 - main - INFO - 0.33148728588880116
+2026-04-20 17:08:53,879 - main - INFO - Epoch:4 (59/59) Data: 0.000696s | Batch: 0.130s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.150 | rec_r_loss: 0.049| rec_l_loss: 0.049| total_loss: 0.343 | future_valid_r: 24.0 | future_valid_l: 13.0 | obj_loss: 0.027 
+2026-04-20 17:08:54,576 - main - INFO - Using lr 0.0002
+2026-04-20 17:08:54,576 - main - INFO - train epoch: 6
+2026-04-20 17:08:55,322 - main - INFO - 0.2954915761947632
+2026-04-20 17:08:55,323 - main - INFO - Epoch:5 (1/59) Data: 0.598779s | Batch: 0.746s | future_traj_r_loss: 0.101 | future_traj_l_loss: 0.142 | rec_r_loss: 0.053| rec_l_loss: 0.051| total_loss: 0.295 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:08:55,440 - main - INFO - 0.3034125119447708
+2026-04-20 17:08:55,441 - main - INFO - Epoch:5 (2/59) Data: 0.000995s | Batch: 0.431s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.182 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.311 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.026 
+2026-04-20 17:08:55,571 - main - INFO - 0.2924210826555888
+2026-04-20 17:08:55,571 - main - INFO - Epoch:5 (3/59) Data: 0.000877s | Batch: 0.331s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.130 | rec_r_loss: 0.050| rec_l_loss: 0.047| total_loss: 0.270 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.015 
+2026-04-20 17:08:55,693 - main - INFO - 0.3010461777448654
+2026-04-20 17:08:55,694 - main - INFO - Epoch:5 (4/59) Data: 0.000951s | Batch: 0.279s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.171 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.327 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.021 
+2026-04-20 17:08:55,815 - main - INFO - 0.3097163438796997
+2026-04-20 17:08:55,815 - main - INFO - Epoch:5 (5/59) Data: 0.000833s | Batch: 0.247s | future_traj_r_loss: 0.153 | future_traj_l_loss: 0.131 | rec_r_loss: 0.052| rec_l_loss: 0.053| total_loss: 0.344 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.022 
+2026-04-20 17:08:55,933 - main - INFO - 0.3090284913778305
+2026-04-20 17:08:55,933 - main - INFO - Epoch:5 (6/59) Data: 0.000896s | Batch: 0.226s | future_traj_r_loss: 0.115 | future_traj_l_loss: 0.171 | rec_r_loss: 0.050| rec_l_loss: 0.049| total_loss: 0.306 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.022 
+2026-04-20 17:08:56,050 - main - INFO - 0.30659249424934387
+2026-04-20 17:08:56,050 - main - INFO - Epoch:5 (7/59) Data: 0.000841s | Batch: 0.210s | future_traj_r_loss: 0.100 | future_traj_l_loss: 0.214 | rec_r_loss: 0.051| rec_l_loss: 0.050| total_loss: 0.292 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.021 
+2026-04-20 17:08:56,168 - main - INFO - 0.30686983466148376
+2026-04-20 17:08:56,169 - main - INFO - Epoch:5 (8/59) Data: 0.000834s | Batch: 0.198s | future_traj_r_loss: 0.100 | future_traj_l_loss: 0.229 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.309 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:08:56,286 - main - INFO - 0.3025080892774794
+2026-04-20 17:08:56,287 - main - INFO - Epoch:5 (9/59) Data: 0.000831s | Batch: 0.189s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.174 | rec_r_loss: 0.051| rec_l_loss: 0.053| total_loss: 0.268 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.023 
+2026-04-20 17:08:56,405 - main - INFO - 0.3010272026062012
+2026-04-20 17:08:56,405 - main - INFO - Epoch:5 (10/59) Data: 0.000820s | Batch: 0.182s | future_traj_r_loss: 0.084 | future_traj_l_loss: 0.225 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.288 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.020 
+2026-04-20 17:08:56,523 - main - INFO - 0.2960561635819348
+2026-04-20 17:08:56,524 - main - INFO - Epoch:5 (11/59) Data: 0.000854s | Batch: 0.176s | future_traj_r_loss: 0.090 | future_traj_l_loss: 0.193 | rec_r_loss: 0.051| rec_l_loss: 0.049| total_loss: 0.246 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.018 
+2026-04-20 17:08:56,642 - main - INFO - 0.2904397373398145
+2026-04-20 17:08:56,643 - main - INFO - Epoch:5 (12/59) Data: 0.000849s | Batch: 0.172s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.184 | rec_r_loss: 0.050| rec_l_loss: 0.051| total_loss: 0.229 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.027 
+2026-04-20 17:08:56,761 - main - INFO - 0.2917507222065559
+2026-04-20 17:08:56,762 - main - INFO - Epoch:5 (13/59) Data: 0.000844s | Batch: 0.167s | future_traj_r_loss: 0.090 | future_traj_l_loss: 0.196 | rec_r_loss: 0.051| rec_l_loss: 0.048| total_loss: 0.307 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.028 
+2026-04-20 17:08:56,881 - main - INFO - 0.28731587742056164
+2026-04-20 17:08:56,881 - main - INFO - Epoch:5 (14/59) Data: 0.000839s | Batch: 0.164s | future_traj_r_loss: 0.088 | future_traj_l_loss: 0.124 | rec_r_loss: 0.051| rec_l_loss: 0.046| total_loss: 0.230 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.030 
+2026-04-20 17:08:57,000 - main - INFO - 0.2904072384039561
+2026-04-20 17:08:57,001 - main - INFO - Epoch:5 (15/59) Data: 0.000851s | Batch: 0.161s | future_traj_r_loss: 0.112 | future_traj_l_loss: 0.185 | rec_r_loss: 0.047| rec_l_loss: 0.048| total_loss: 0.334 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.034 
+2026-04-20 17:08:57,120 - main - INFO - 0.29090586118400097
+2026-04-20 17:08:57,121 - main - INFO - Epoch:5 (16/59) Data: 0.000846s | Batch: 0.158s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.210 | rec_r_loss: 0.049| rec_l_loss: 0.049| total_loss: 0.298 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.030 
+2026-04-20 17:08:57,240 - main - INFO - 0.29348519970388975
+2026-04-20 17:08:57,240 - main - INFO - Epoch:5 (17/59) Data: 0.000866s | Batch: 0.156s | future_traj_r_loss: 0.101 | future_traj_l_loss: 0.219 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.335 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.022 
+2026-04-20 17:08:57,360 - main - INFO - 0.2947777062654495
+2026-04-20 17:08:57,361 - main - INFO - Epoch:5 (18/59) Data: 0.000853s | Batch: 0.154s | future_traj_r_loss: 0.101 | future_traj_l_loss: 0.125 | rec_r_loss: 0.049| rec_l_loss: 0.051| total_loss: 0.317 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.034 
+2026-04-20 17:08:57,481 - main - INFO - 0.2919916941931373
+2026-04-20 17:08:57,481 - main - INFO - Epoch:5 (19/59) Data: 0.000849s | Batch: 0.152s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.126 | rec_r_loss: 0.051| rec_l_loss: 0.052| total_loss: 0.242 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:57,602 - main - INFO - 0.2954563222825527
+2026-04-20 17:08:57,602 - main - INFO - Epoch:5 (20/59) Data: 0.000909s | Batch: 0.151s | future_traj_r_loss: 0.154 | future_traj_l_loss: 0.162 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.361 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:08:57,721 - main - INFO - 0.29647108415762585
+2026-04-20 17:08:57,722 - main - INFO - Epoch:5 (21/59) Data: 0.000819s | Batch: 0.149s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.128 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.317 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.024 
+2026-04-20 17:08:57,840 - main - INFO - 0.2965371764518998
+2026-04-20 17:08:57,841 - main - INFO - Epoch:5 (22/59) Data: 0.000848s | Batch: 0.148s | future_traj_r_loss: 0.110 | future_traj_l_loss: 0.142 | rec_r_loss: 0.050| rec_l_loss: 0.053| total_loss: 0.298 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.029 
+2026-04-20 17:08:57,959 - main - INFO - 0.29637436698312347
+2026-04-20 17:08:57,959 - main - INFO - Epoch:5 (23/59) Data: 0.000864s | Batch: 0.146s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.100 | rec_r_loss: 0.048| rec_l_loss: 0.048| total_loss: 0.293 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.030 
+2026-04-20 17:08:58,082 - main - INFO - 0.2971255648881197
+2026-04-20 17:08:58,083 - main - INFO - Epoch:5 (24/59) Data: 0.000821s | Batch: 0.146s | future_traj_r_loss: 0.155 | future_traj_l_loss: 0.096 | rec_r_loss: 0.049| rec_l_loss: 0.048| total_loss: 0.314 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.036 
+2026-04-20 17:08:58,202 - main - INFO - 0.3031435292959213
+2026-04-20 17:08:58,202 - main - INFO - Epoch:5 (25/59) Data: 0.000832s | Batch: 0.144s | future_traj_r_loss: 0.141 | future_traj_l_loss: 0.251 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.448 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.022 
+2026-04-20 17:08:58,324 - main - INFO - 0.30340449340068376
+2026-04-20 17:08:58,325 - main - INFO - Epoch:5 (26/59) Data: 0.000850s | Batch: 0.144s | future_traj_r_loss: 0.097 | future_traj_l_loss: 0.256 | rec_r_loss: 0.049| rec_l_loss: 0.049| total_loss: 0.310 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:08:58,445 - main - INFO - 0.302778998458827
+2026-04-20 17:08:58,445 - main - INFO - Epoch:5 (27/59) Data: 0.000849s | Batch: 0.143s | future_traj_r_loss: 0.098 | future_traj_l_loss: 0.225 | rec_r_loss: 0.048| rec_l_loss: 0.051| total_loss: 0.287 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.033 
+2026-04-20 17:08:58,566 - main - INFO - 0.3031844289175102
+2026-04-20 17:08:58,567 - main - INFO - Epoch:5 (28/59) Data: 0.000740s | Batch: 0.142s | future_traj_r_loss: 0.080 | future_traj_l_loss: 0.194 | rec_r_loss: 0.048| rec_l_loss: 0.052| total_loss: 0.314 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.021 
+2026-04-20 17:08:58,685 - main - INFO - 0.29961498389984
+2026-04-20 17:08:58,685 - main - INFO - Epoch:5 (29/59) Data: 0.000682s | Batch: 0.141s | future_traj_r_loss: 0.068 | future_traj_l_loss: 0.091 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.200 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.030 
+2026-04-20 17:08:58,802 - main - INFO - 0.3005048200488091
+2026-04-20 17:08:58,803 - main - INFO - Epoch:5 (30/59) Data: 0.000748s | Batch: 0.140s | future_traj_r_loss: 0.118 | future_traj_l_loss: 0.162 | rec_r_loss: 0.050| rec_l_loss: 0.049| total_loss: 0.326 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.014 
+2026-04-20 17:08:58,919 - main - INFO - 0.2999038355004403
+2026-04-20 17:08:58,920 - main - INFO - Epoch:5 (31/59) Data: 0.000705s | Batch: 0.140s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.109 | rec_r_loss: 0.048| rec_l_loss: 0.049| total_loss: 0.282 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.026 
+2026-04-20 17:08:59,037 - main - INFO - 0.2994080209173262
+2026-04-20 17:08:59,037 - main - INFO - Epoch:5 (32/59) Data: 0.000669s | Batch: 0.139s | future_traj_r_loss: 0.104 | future_traj_l_loss: 0.156 | rec_r_loss: 0.049| rec_l_loss: 0.050| total_loss: 0.284 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.020 
+2026-04-20 17:08:59,154 - main - INFO - 0.3008595637299798
+2026-04-20 17:08:59,154 - main - INFO - Epoch:5 (33/59) Data: 0.000712s | Batch: 0.138s | future_traj_r_loss: 0.103 | future_traj_l_loss: 0.159 | rec_r_loss: 0.048| rec_l_loss: 0.050| total_loss: 0.347 | future_valid_r: 32.0 | future_valid_l: 20.0 | obj_loss: 0.027 
+2026-04-20 17:08:59,271 - main - INFO - 0.30111388467690525
+2026-04-20 17:08:59,272 - main - INFO - Epoch:5 (34/59) Data: 0.000714s | Batch: 0.137s | future_traj_r_loss: 0.131 | future_traj_l_loss: 0.121 | rec_r_loss: 0.051| rec_l_loss: 0.054| total_loss: 0.310 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.036 
+2026-04-20 17:08:59,388 - main - INFO - 0.30112140817301614
+2026-04-20 17:08:59,389 - main - INFO - Epoch:5 (35/59) Data: 0.000703s | Batch: 0.137s | future_traj_r_loss: 0.083 | future_traj_l_loss: 0.192 | rec_r_loss: 0.052| rec_l_loss: 0.053| total_loss: 0.301 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.027 
+2026-04-20 17:08:59,505 - main - INFO - 0.2998955800301499
+2026-04-20 17:08:59,506 - main - INFO - Epoch:5 (36/59) Data: 0.000684s | Batch: 0.136s | future_traj_r_loss: 0.083 | future_traj_l_loss: 0.117 | rec_r_loss: 0.049| rec_l_loss: 0.049| total_loss: 0.257 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:08:59,622 - main - INFO - 0.3001098451582161
+2026-04-20 17:08:59,622 - main - INFO - Epoch:5 (37/59) Data: 0.000697s | Batch: 0.136s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.225 | rec_r_loss: 0.048| rec_l_loss: 0.048| total_loss: 0.308 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.025 
+2026-04-20 17:08:59,738 - main - INFO - 0.2997513409507902
+2026-04-20 17:08:59,739 - main - INFO - Epoch:5 (38/59) Data: 0.000681s | Batch: 0.135s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.160 | rec_r_loss: 0.051| rec_l_loss: 0.052| total_loss: 0.286 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.041 
+2026-04-20 17:08:59,855 - main - INFO - 0.29923453353918517
+2026-04-20 17:08:59,855 - main - INFO - Epoch:5 (39/59) Data: 0.000692s | Batch: 0.135s | future_traj_r_loss: 0.114 | future_traj_l_loss: 0.139 | rec_r_loss: 0.051| rec_l_loss: 0.049| total_loss: 0.280 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.023 
+2026-04-20 17:08:59,971 - main - INFO - 0.29971944354474545
+2026-04-20 17:08:59,971 - main - INFO - Epoch:5 (40/59) Data: 0.000683s | Batch: 0.134s | future_traj_r_loss: 0.104 | future_traj_l_loss: 0.129 | rec_r_loss: 0.051| rec_l_loss: 0.051| total_loss: 0.319 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.019 
+2026-04-20 17:09:00,087 - main - INFO - 0.2986722708475299
+2026-04-20 17:09:00,088 - main - INFO - Epoch:5 (41/59) Data: 0.000676s | Batch: 0.134s | future_traj_r_loss: 0.088 | future_traj_l_loss: 0.108 | rec_r_loss: 0.049| rec_l_loss: 0.052| total_loss: 0.257 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.017 
+2026-04-20 17:09:00,204 - main - INFO - 0.2974169949690501
+2026-04-20 17:09:00,204 - main - INFO - Epoch:5 (42/59) Data: 0.000679s | Batch: 0.133s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.100 | rec_r_loss: 0.049| rec_l_loss: 0.054| total_loss: 0.246 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:09:00,319 - main - INFO - 0.2957826031501903
+2026-04-20 17:09:00,320 - main - INFO - Epoch:5 (43/59) Data: 0.000669s | Batch: 0.133s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.097 | rec_r_loss: 0.049| rec_l_loss: 0.055| total_loss: 0.227 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:09:00,435 - main - INFO - 0.29532707584175194
+2026-04-20 17:09:00,436 - main - INFO - Epoch:5 (44/59) Data: 0.000712s | Batch: 0.133s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.158 | rec_r_loss: 0.050| rec_l_loss: 0.054| total_loss: 0.276 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.023 
+2026-04-20 17:09:00,552 - main - INFO - 0.2946973035732905
+2026-04-20 17:09:00,552 - main - INFO - Epoch:5 (45/59) Data: 0.000675s | Batch: 0.132s | future_traj_r_loss: 0.094 | future_traj_l_loss: 0.086 | rec_r_loss: 0.053| rec_l_loss: 0.055| total_loss: 0.267 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.020 
+2026-04-20 17:09:00,668 - main - INFO - 0.2943798825144768
+2026-04-20 17:09:00,669 - main - INFO - Epoch:5 (46/59) Data: 0.000714s | Batch: 0.132s | future_traj_r_loss: 0.119 | future_traj_l_loss: 0.098 | rec_r_loss: 0.052| rec_l_loss: 0.049| total_loss: 0.280 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.026 
+2026-04-20 17:09:00,785 - main - INFO - 0.29378999008777296
+2026-04-20 17:09:00,785 - main - INFO - Epoch:5 (47/59) Data: 0.000736s | Batch: 0.132s | future_traj_r_loss: 0.098 | future_traj_l_loss: 0.086 | rec_r_loss: 0.051| rec_l_loss: 0.046| total_loss: 0.267 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.035 
+2026-04-20 17:09:00,901 - main - INFO - 0.2920559495687485
+2026-04-20 17:09:00,902 - main - INFO - Epoch:5 (48/59) Data: 0.000709s | Batch: 0.131s | future_traj_r_loss: 0.056 | future_traj_l_loss: 0.105 | rec_r_loss: 0.051| rec_l_loss: 0.049| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.019 
+2026-04-20 17:09:01,017 - main - INFO - 0.29071216923849924
+2026-04-20 17:09:01,017 - main - INFO - Epoch:5 (49/59) Data: 0.000695s | Batch: 0.131s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.098 | rec_r_loss: 0.050| rec_l_loss: 0.051| total_loss: 0.226 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.022 
+2026-04-20 17:09:01,133 - main - INFO - 0.28982673794031144
+2026-04-20 17:09:01,134 - main - INFO - Epoch:5 (50/59) Data: 0.000720s | Batch: 0.131s | future_traj_r_loss: 0.124 | future_traj_l_loss: 0.042 | rec_r_loss: 0.050| rec_l_loss: 0.052| total_loss: 0.246 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.024 
+2026-04-20 17:09:01,250 - main - INFO - 0.28920603937962475
+2026-04-20 17:09:01,250 - main - INFO - Epoch:5 (51/59) Data: 0.000678s | Batch: 0.130s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.063 | rec_r_loss: 0.049| rec_l_loss: 0.053| total_loss: 0.258 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.025 
+2026-04-20 17:09:01,366 - main - INFO - 0.290435585551537
+2026-04-20 17:09:01,366 - main - INFO - Epoch:5 (52/59) Data: 0.000679s | Batch: 0.130s | future_traj_r_loss: 0.150 | future_traj_l_loss: 0.173 | rec_r_loss: 0.055| rec_l_loss: 0.060| total_loss: 0.353 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.041 
+2026-04-20 17:09:01,482 - main - INFO - 0.2904248797106293
+2026-04-20 17:09:01,483 - main - INFO - Epoch:5 (53/59) Data: 0.000665s | Batch: 0.130s | future_traj_r_loss: 0.112 | future_traj_l_loss: 0.108 | rec_r_loss: 0.051| rec_l_loss: 0.053| total_loss: 0.290 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.029 
+2026-04-20 17:09:01,599 - main - INFO - 0.2890538542910858
+2026-04-20 17:09:01,599 - main - INFO - Epoch:5 (54/59) Data: 0.000686s | Batch: 0.129s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.044 | rec_r_loss: 0.050| rec_l_loss: 0.052| total_loss: 0.216 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.029 
+2026-04-20 17:09:01,715 - main - INFO - 0.2885374136946418
+2026-04-20 17:09:01,716 - main - INFO - Epoch:5 (55/59) Data: 0.000670s | Batch: 0.129s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.082 | rec_r_loss: 0.049| rec_l_loss: 0.048| total_loss: 0.261 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.045 
+2026-04-20 17:09:01,831 - main - INFO - 0.2886681681764977
+2026-04-20 17:09:01,832 - main - INFO - Epoch:5 (56/59) Data: 0.000665s | Batch: 0.129s | future_traj_r_loss: 0.088 | future_traj_l_loss: 0.195 | rec_r_loss: 0.054| rec_l_loss: 0.053| total_loss: 0.296 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.031 
+2026-04-20 17:09:01,947 - main - INFO - 0.28933035046385047
+2026-04-20 17:09:01,948 - main - INFO - Epoch:5 (57/59) Data: 0.000725s | Batch: 0.129s | future_traj_r_loss: 0.108 | future_traj_l_loss: 0.180 | rec_r_loss: 0.052| rec_l_loss: 0.048| total_loss: 0.326 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.019 
+2026-04-20 17:09:02,063 - main - INFO - 0.28860971845429517
+2026-04-20 17:09:02,064 - main - INFO - Epoch:5 (58/59) Data: 0.000692s | Batch: 0.129s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.058 | rec_r_loss: 0.051| rec_l_loss: 0.050| total_loss: 0.248 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.023 
+2026-04-20 17:09:02,179 - main - INFO - 0.2871618197631028
+2026-04-20 17:09:02,179 - main - INFO - Epoch:5 (59/59) Data: 0.000682s | Batch: 0.128s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.079 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.203 | future_valid_r: 24.0 | future_valid_l: 8.0 | obj_loss: 0.029 
+2026-04-20 17:09:02,916 - main - INFO - Using lr 0.0002
+2026-04-20 17:09:02,917 - main - INFO - train epoch: 7
+2026-04-20 17:09:03,657 - main - INFO - 0.1960446536540985
+2026-04-20 17:09:03,657 - main - INFO - Epoch:6 (1/59) Data: 0.593132s | Batch: 0.740s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.057 | rec_r_loss: 0.048| rec_l_loss: 0.051| total_loss: 0.196 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.030 
+2026-04-20 17:09:03,774 - main - INFO - 0.21870122849941254
+2026-04-20 17:09:03,775 - main - INFO - Epoch:6 (2/59) Data: 0.000908s | Batch: 0.428s | future_traj_r_loss: 0.080 | future_traj_l_loss: 0.090 | rec_r_loss: 0.051| rec_l_loss: 0.054| total_loss: 0.241 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.019 
+2026-04-20 17:09:03,908 - main - INFO - 0.23084517319997153
+2026-04-20 17:09:03,908 - main - INFO - Epoch:6 (3/59) Data: 0.000883s | Batch: 0.330s | future_traj_r_loss: 0.091 | future_traj_l_loss: 0.094 | rec_r_loss: 0.048| rec_l_loss: 0.050| total_loss: 0.255 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.017 
+2026-04-20 17:09:04,037 - main - INFO - 0.22736775130033493
+2026-04-20 17:09:04,037 - main - INFO - Epoch:6 (4/59) Data: 0.001340s | Batch: 0.280s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.027 | rec_r_loss: 0.048| rec_l_loss: 0.051| total_loss: 0.217 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.028 
+2026-04-20 17:09:04,164 - main - INFO - 0.23055904507637023
+2026-04-20 17:09:04,165 - main - INFO - Epoch:6 (5/59) Data: 0.000934s | Batch: 0.249s | future_traj_r_loss: 0.100 | future_traj_l_loss: 0.087 | rec_r_loss: 0.047| rec_l_loss: 0.050| total_loss: 0.243 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.032 
+2026-04-20 17:09:04,284 - main - INFO - 0.2343139797449112
+2026-04-20 17:09:04,284 - main - INFO - Epoch:6 (6/59) Data: 0.000868s | Batch: 0.227s | future_traj_r_loss: 0.102 | future_traj_l_loss: 0.048 | rec_r_loss: 0.048| rec_l_loss: 0.048| total_loss: 0.253 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.024 
+2026-04-20 17:09:04,403 - main - INFO - 0.23024732300213405
+2026-04-20 17:09:04,404 - main - INFO - Epoch:6 (7/59) Data: 0.000835s | Batch: 0.212s | future_traj_r_loss: 0.085 | future_traj_l_loss: 0.028 | rec_r_loss: 0.049| rec_l_loss: 0.047| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.035 
+2026-04-20 17:09:04,524 - main - INFO - 0.2268209084868431
+2026-04-20 17:09:04,524 - main - INFO - Epoch:6 (8/59) Data: 0.000876s | Batch: 0.200s | future_traj_r_loss: 0.065 | future_traj_l_loss: 0.078 | rec_r_loss: 0.048| rec_l_loss: 0.048| total_loss: 0.203 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.020 
+2026-04-20 17:09:04,643 - main - INFO - 0.2281742062833574
+2026-04-20 17:09:04,644 - main - INFO - Epoch:6 (9/59) Data: 0.000823s | Batch: 0.191s | future_traj_r_loss: 0.093 | future_traj_l_loss: 0.044 | rec_r_loss: 0.047| rec_l_loss: 0.048| total_loss: 0.239 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.022 
+2026-04-20 17:09:04,763 - main - INFO - 0.22594263702630996
+2026-04-20 17:09:04,764 - main - INFO - Epoch:6 (10/59) Data: 0.000811s | Batch: 0.184s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.043 | rec_r_loss: 0.049| rec_l_loss: 0.048| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.034 
+2026-04-20 17:09:04,883 - main - INFO - 0.22730407525192609
+2026-04-20 17:09:04,884 - main - INFO - Epoch:6 (11/59) Data: 0.000827s | Batch: 0.178s | future_traj_r_loss: 0.084 | future_traj_l_loss: 0.086 | rec_r_loss: 0.049| rec_l_loss: 0.050| total_loss: 0.241 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.038 
+2026-04-20 17:09:05,003 - main - INFO - 0.23074703539411226
+2026-04-20 17:09:05,003 - main - INFO - Epoch:6 (12/59) Data: 0.000847s | Batch: 0.173s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.073 | rec_r_loss: 0.047| rec_l_loss: 0.050| total_loss: 0.269 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.031 
+2026-04-20 17:09:05,123 - main - INFO - 0.22728175268723413
+2026-04-20 17:09:05,124 - main - INFO - Epoch:6 (13/59) Data: 0.000863s | Batch: 0.169s | future_traj_r_loss: 0.056 | future_traj_l_loss: 0.075 | rec_r_loss: 0.047| rec_l_loss: 0.051| total_loss: 0.186 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:09:05,243 - main - INFO - 0.22671853538070405
+2026-04-20 17:09:05,243 - main - INFO - Epoch:6 (14/59) Data: 0.000882s | Batch: 0.166s | future_traj_r_loss: 0.083 | future_traj_l_loss: 0.064 | rec_r_loss: 0.048| rec_l_loss: 0.051| total_loss: 0.219 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.032 
+2026-04-20 17:09:05,362 - main - INFO - 0.2246736317873001
+2026-04-20 17:09:05,362 - main - INFO - Epoch:6 (15/59) Data: 0.000840s | Batch: 0.162s | future_traj_r_loss: 0.061 | future_traj_l_loss: 0.077 | rec_r_loss: 0.047| rec_l_loss: 0.047| total_loss: 0.196 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.027 
+2026-04-20 17:09:05,480 - main - INFO - 0.22205695789307356
+2026-04-20 17:09:05,481 - main - INFO - Epoch:6 (16/59) Data: 0.000816s | Batch: 0.160s | future_traj_r_loss: 0.061 | future_traj_l_loss: 0.025 | rec_r_loss: 0.047| rec_l_loss: 0.047| total_loss: 0.183 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.025 
+2026-04-20 17:09:05,602 - main - INFO - 0.22021943944341996
+2026-04-20 17:09:05,602 - main - INFO - Epoch:6 (17/59) Data: 0.000855s | Batch: 0.157s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.050 | rec_r_loss: 0.047| rec_l_loss: 0.048| total_loss: 0.191 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.019 
+2026-04-20 17:09:05,724 - main - INFO - 0.22069846507575777
+2026-04-20 17:09:05,725 - main - INFO - Epoch:6 (18/59) Data: 0.000812s | Batch: 0.155s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.060 | rec_r_loss: 0.046| rec_l_loss: 0.047| total_loss: 0.229 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.025 
+2026-04-20 17:09:05,844 - main - INFO - 0.2203267742144434
+2026-04-20 17:09:05,845 - main - INFO - Epoch:6 (19/59) Data: 0.000848s | Batch: 0.153s | future_traj_r_loss: 0.083 | future_traj_l_loss: 0.043 | rec_r_loss: 0.047| rec_l_loss: 0.047| total_loss: 0.214 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.031 
+2026-04-20 17:09:05,964 - main - INFO - 0.2186334915459156
+2026-04-20 17:09:05,965 - main - INFO - Epoch:6 (20/59) Data: 0.000843s | Batch: 0.152s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.051 | rec_r_loss: 0.047| rec_l_loss: 0.048| total_loss: 0.186 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.026 
+2026-04-20 17:09:06,084 - main - INFO - 0.21636386996223814
+2026-04-20 17:09:06,085 - main - INFO - Epoch:6 (21/59) Data: 0.000893s | Batch: 0.150s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.044 | rec_r_loss: 0.049| rec_l_loss: 0.050| total_loss: 0.171 | future_valid_r: 32.0 | future_valid_l: 7.0 | obj_loss: 0.025 
+2026-04-20 17:09:06,203 - main - INFO - 0.2163913527672941
+2026-04-20 17:09:06,204 - main - INFO - Epoch:6 (22/59) Data: 0.000900s | Batch: 0.149s | future_traj_r_loss: 0.078 | future_traj_l_loss: 0.084 | rec_r_loss: 0.050| rec_l_loss: 0.050| total_loss: 0.217 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:09:06,323 - main - INFO - 0.21861410983230756
+2026-04-20 17:09:06,323 - main - INFO - Epoch:6 (23/59) Data: 0.000858s | Batch: 0.147s | future_traj_r_loss: 0.101 | future_traj_l_loss: 0.086 | rec_r_loss: 0.045| rec_l_loss: 0.048| total_loss: 0.268 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.028 
+2026-04-20 17:09:06,443 - main - INFO - 0.22014222480356693
+2026-04-20 17:09:06,444 - main - INFO - Epoch:6 (24/59) Data: 0.000893s | Batch: 0.146s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.097 | rec_r_loss: 0.047| rec_l_loss: 0.049| total_loss: 0.255 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.034 
+2026-04-20 17:09:06,564 - main - INFO - 0.22141856610774993
+2026-04-20 17:09:06,564 - main - INFO - Epoch:6 (25/59) Data: 0.000798s | Batch: 0.145s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.074 | rec_r_loss: 0.047| rec_l_loss: 0.046| total_loss: 0.252 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.038 
+2026-04-20 17:09:06,686 - main - INFO - 0.22171336985551393
+2026-04-20 17:09:06,687 - main - INFO - Epoch:6 (26/59) Data: 0.000843s | Batch: 0.144s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.059 | rec_r_loss: 0.047| rec_l_loss: 0.045| total_loss: 0.229 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.028 
+2026-04-20 17:09:06,807 - main - INFO - 0.22276772172362716
+2026-04-20 17:09:06,807 - main - INFO - Epoch:6 (27/59) Data: 0.000854s | Batch: 0.143s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.091 | rec_r_loss: 0.046| rec_l_loss: 0.048| total_loss: 0.250 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.036 
+2026-04-20 17:09:06,928 - main - INFO - 0.22258108322109496
+2026-04-20 17:09:06,928 - main - INFO - Epoch:6 (28/59) Data: 0.000737s | Batch: 0.143s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.061 | rec_r_loss: 0.048| rec_l_loss: 0.045| total_loss: 0.218 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.022 
+2026-04-20 17:09:07,046 - main - INFO - 0.2231751778002443
+2026-04-20 17:09:07,046 - main - INFO - Epoch:6 (29/59) Data: 0.000719s | Batch: 0.142s | future_traj_r_loss: 0.068 | future_traj_l_loss: 0.074 | rec_r_loss: 0.047| rec_l_loss: 0.047| total_loss: 0.240 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.032 
+2026-04-20 17:09:07,163 - main - INFO - 0.22225972364346186
+2026-04-20 17:09:07,164 - main - INFO - Epoch:6 (30/59) Data: 0.000680s | Batch: 0.141s | future_traj_r_loss: 0.053 | future_traj_l_loss: 0.054 | rec_r_loss: 0.046| rec_l_loss: 0.046| total_loss: 0.196 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.023 
+2026-04-20 17:09:07,280 - main - INFO - 0.22104687508075468
+2026-04-20 17:09:07,281 - main - INFO - Epoch:6 (31/59) Data: 0.000728s | Batch: 0.140s | future_traj_r_loss: 0.056 | future_traj_l_loss: 0.066 | rec_r_loss: 0.045| rec_l_loss: 0.046| total_loss: 0.185 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.035 
+2026-04-20 17:09:07,397 - main - INFO - 0.22154737496748567
+2026-04-20 17:09:07,398 - main - INFO - Epoch:6 (32/59) Data: 0.000664s | Batch: 0.139s | future_traj_r_loss: 0.088 | future_traj_l_loss: 0.067 | rec_r_loss: 0.045| rec_l_loss: 0.046| total_loss: 0.237 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.034 
+2026-04-20 17:09:07,514 - main - INFO - 0.21940830485387283
+2026-04-20 17:09:07,514 - main - INFO - Epoch:6 (33/59) Data: 0.000734s | Batch: 0.139s | future_traj_r_loss: 0.043 | future_traj_l_loss: 0.044 | rec_r_loss: 0.044| rec_l_loss: 0.044| total_loss: 0.151 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.024 
+2026-04-20 17:09:07,631 - main - INFO - 0.22080697601332383
+2026-04-20 17:09:07,632 - main - INFO - Epoch:6 (34/59) Data: 0.000697s | Batch: 0.138s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.106 | rec_r_loss: 0.045| rec_l_loss: 0.046| total_loss: 0.267 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.031 
+2026-04-20 17:09:07,748 - main - INFO - 0.22119834891387394
+2026-04-20 17:09:07,749 - main - INFO - Epoch:6 (35/59) Data: 0.000698s | Batch: 0.137s | future_traj_r_loss: 0.078 | future_traj_l_loss: 0.063 | rec_r_loss: 0.044| rec_l_loss: 0.047| total_loss: 0.235 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.028 
+2026-04-20 17:09:07,866 - main - INFO - 0.22080925645099747
+2026-04-20 17:09:07,866 - main - INFO - Epoch:6 (36/59) Data: 0.000726s | Batch: 0.137s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.107 | rec_r_loss: 0.046| rec_l_loss: 0.047| total_loss: 0.207 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.045 
+2026-04-20 17:09:07,983 - main - INFO - 0.2200559703884898
+2026-04-20 17:09:07,983 - main - INFO - Epoch:6 (37/59) Data: 0.000684s | Batch: 0.136s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.058 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.193 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.020 
+2026-04-20 17:09:08,099 - main - INFO - 0.21903855667302483
+2026-04-20 17:09:08,100 - main - INFO - Epoch:6 (38/59) Data: 0.000706s | Batch: 0.136s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.088 | rec_r_loss: 0.045| rec_l_loss: 0.047| total_loss: 0.181 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.028 
+2026-04-20 17:09:08,216 - main - INFO - 0.21937549458100244
+2026-04-20 17:09:08,216 - main - INFO - Epoch:6 (39/59) Data: 0.000690s | Batch: 0.135s | future_traj_r_loss: 0.090 | future_traj_l_loss: 0.065 | rec_r_loss: 0.045| rec_l_loss: 0.044| total_loss: 0.232 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.027 
+2026-04-20 17:09:08,333 - main - INFO - 0.21852691955864428
+2026-04-20 17:09:08,333 - main - INFO - Epoch:6 (40/59) Data: 0.000684s | Batch: 0.135s | future_traj_r_loss: 0.064 | future_traj_l_loss: 0.032 | rec_r_loss: 0.044| rec_l_loss: 0.044| total_loss: 0.185 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.024 
+2026-04-20 17:09:08,450 - main - INFO - 0.21890689214555228
+2026-04-20 17:09:08,451 - main - INFO - Epoch:6 (41/59) Data: 0.000694s | Batch: 0.134s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.053 | rec_r_loss: 0.045| rec_l_loss: 0.046| total_loss: 0.234 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.036 
+2026-04-20 17:09:08,567 - main - INFO - 0.21921738520974204
+2026-04-20 17:09:08,568 - main - INFO - Epoch:6 (42/59) Data: 0.000682s | Batch: 0.134s | future_traj_r_loss: 0.084 | future_traj_l_loss: 0.045 | rec_r_loss: 0.046| rec_l_loss: 0.045| total_loss: 0.232 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.023 
+2026-04-20 17:09:08,684 - main - INFO - 0.2181707915178565
+2026-04-20 17:09:08,685 - main - INFO - Epoch:6 (43/59) Data: 0.000694s | Batch: 0.134s | future_traj_r_loss: 0.060 | future_traj_l_loss: 0.051 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.174 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.022 
+2026-04-20 17:09:08,801 - main - INFO - 0.217988982796669
+2026-04-20 17:09:08,802 - main - INFO - Epoch:6 (44/59) Data: 0.000680s | Batch: 0.133s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.043 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.210 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.025 
+2026-04-20 17:09:08,918 - main - INFO - 0.21899983286857605
+2026-04-20 17:09:08,918 - main - INFO - Epoch:6 (45/59) Data: 0.000682s | Batch: 0.133s | future_traj_r_loss: 0.109 | future_traj_l_loss: 0.105 | rec_r_loss: 0.045| rec_l_loss: 0.046| total_loss: 0.263 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.030 
+2026-04-20 17:09:09,035 - main - INFO - 0.21873862199161365
+2026-04-20 17:09:09,035 - main - INFO - Epoch:6 (46/59) Data: 0.000716s | Batch: 0.132s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.061 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.207 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:09:09,152 - main - INFO - 0.21846055160177516
+2026-04-20 17:09:09,153 - main - INFO - Epoch:6 (47/59) Data: 0.000689s | Batch: 0.132s | future_traj_r_loss: 0.070 | future_traj_l_loss: 0.103 | rec_r_loss: 0.046| rec_l_loss: 0.045| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.019 
+2026-04-20 17:09:09,268 - main - INFO - 0.2187194957708319
+2026-04-20 17:09:09,269 - main - INFO - Epoch:6 (48/59) Data: 0.000708s | Batch: 0.132s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.083 | rec_r_loss: 0.046| rec_l_loss: 0.045| total_loss: 0.231 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.028 
+2026-04-20 17:09:09,385 - main - INFO - 0.21865670018050135
+2026-04-20 17:09:09,386 - main - INFO - Epoch:6 (49/59) Data: 0.000703s | Batch: 0.131s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.048 | rec_r_loss: 0.045| rec_l_loss: 0.043| total_loss: 0.216 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.024 
+2026-04-20 17:09:09,502 - main - INFO - 0.2183867698907852
+2026-04-20 17:09:09,502 - main - INFO - Epoch:6 (50/59) Data: 0.000681s | Batch: 0.131s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.100 | rec_r_loss: 0.045| rec_l_loss: 0.045| total_loss: 0.205 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.023 
+2026-04-20 17:09:09,618 - main - INFO - 0.2183777102652718
+2026-04-20 17:09:09,619 - main - INFO - Epoch:6 (51/59) Data: 0.000689s | Batch: 0.131s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.098 | rec_r_loss: 0.045| rec_l_loss: 0.045| total_loss: 0.218 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.025 
+2026-04-20 17:09:09,735 - main - INFO - 0.2184373068694885
+2026-04-20 17:09:09,735 - main - INFO - Epoch:6 (52/59) Data: 0.000714s | Batch: 0.131s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.087 | rec_r_loss: 0.045| rec_l_loss: 0.045| total_loss: 0.221 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.032 
+2026-04-20 17:09:09,852 - main - INFO - 0.21857448821922518
+2026-04-20 17:09:09,852 - main - INFO - Epoch:6 (53/59) Data: 0.000690s | Batch: 0.130s | future_traj_r_loss: 0.096 | future_traj_l_loss: 0.058 | rec_r_loss: 0.045| rec_l_loss: 0.045| total_loss: 0.226 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:09:09,968 - main - INFO - 0.2182706398544488
+2026-04-20 17:09:09,968 - main - INFO - Epoch:6 (54/59) Data: 0.000719s | Batch: 0.130s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.068 | rec_r_loss: 0.045| rec_l_loss: 0.044| total_loss: 0.202 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.026 
+2026-04-20 17:09:10,083 - main - INFO - 0.21822840761054646
+2026-04-20 17:09:10,084 - main - INFO - Epoch:6 (55/59) Data: 0.000675s | Batch: 0.130s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.082 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.216 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.033 
+2026-04-20 17:09:10,200 - main - INFO - 0.21786023596567766
+2026-04-20 17:09:10,200 - main - INFO - Epoch:6 (56/59) Data: 0.000671s | Batch: 0.129s | future_traj_r_loss: 0.060 | future_traj_l_loss: 0.049 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.198 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.034 
+2026-04-20 17:09:10,316 - main - INFO - 0.21794708282278294
+2026-04-20 17:09:10,317 - main - INFO - Epoch:6 (57/59) Data: 0.000675s | Batch: 0.129s | future_traj_r_loss: 0.093 | future_traj_l_loss: 0.046 | rec_r_loss: 0.045| rec_l_loss: 0.046| total_loss: 0.223 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.031 
+2026-04-20 17:09:10,433 - main - INFO - 0.21785500542870884
+2026-04-20 17:09:10,433 - main - INFO - Epoch:6 (58/59) Data: 0.000732s | Batch: 0.129s | future_traj_r_loss: 0.079 | future_traj_l_loss: 0.063 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.213 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.033 
+2026-04-20 17:09:10,549 - main - INFO - 0.21737913358009467
+2026-04-20 17:09:10,550 - main - INFO - Epoch:6 (59/59) Data: 0.000697s | Batch: 0.129s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.039 | rec_r_loss: 0.044| rec_l_loss: 0.046| total_loss: 0.190 | future_valid_r: 24.0 | future_valid_l: 9.0 | obj_loss: 0.029 
+2026-04-20 17:09:11,240 - main - INFO - Using lr 0.0002
+2026-04-20 17:09:11,241 - main - INFO - train epoch: 8
+2026-04-20 17:09:11,965 - main - INFO - 0.1974637806415558
+2026-04-20 17:09:11,965 - main - INFO - Epoch:7 (1/59) Data: 0.578672s | Batch: 0.724s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.073 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.197 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.030 
+2026-04-20 17:09:12,085 - main - INFO - 0.20831997692584991
+2026-04-20 17:09:12,086 - main - INFO - Epoch:7 (2/59) Data: 0.000955s | Batch: 0.422s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.047 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.219 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.026 
+2026-04-20 17:09:12,224 - main - INFO - 0.2223813831806183
+2026-04-20 17:09:12,224 - main - INFO - Epoch:7 (3/59) Data: 0.001519s | Batch: 0.327s | future_traj_r_loss: 0.093 | future_traj_l_loss: 0.087 | rec_r_loss: 0.044| rec_l_loss: 0.047| total_loss: 0.251 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.026 
+2026-04-20 17:09:12,340 - main - INFO - 0.21240220218896866
+2026-04-20 17:09:12,341 - main - INFO - Epoch:7 (4/59) Data: 0.000892s | Batch: 0.274s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.021 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.182 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.029 
+2026-04-20 17:09:12,458 - main - INFO - 0.22474411725997925
+2026-04-20 17:09:12,459 - main - INFO - Epoch:7 (5/59) Data: 0.000911s | Batch: 0.243s | future_traj_r_loss: 0.092 | future_traj_l_loss: 0.112 | rec_r_loss: 0.043| rec_l_loss: 0.045| total_loss: 0.274 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.034 
+2026-04-20 17:09:12,577 - main - INFO - 0.2230492706100146
+2026-04-20 17:09:12,578 - main - INFO - Epoch:7 (6/59) Data: 0.000859s | Batch: 0.222s | future_traj_r_loss: 0.087 | future_traj_l_loss: 0.046 | rec_r_loss: 0.043| rec_l_loss: 0.045| total_loss: 0.215 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.033 
+2026-04-20 17:09:12,697 - main - INFO - 0.21762087728296006
+2026-04-20 17:09:12,697 - main - INFO - Epoch:7 (7/59) Data: 0.000834s | Batch: 0.207s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.064 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.185 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.030 
+2026-04-20 17:09:12,815 - main - INFO - 0.21665329672396183
+2026-04-20 17:09:12,816 - main - INFO - Epoch:7 (8/59) Data: 0.000875s | Batch: 0.196s | future_traj_r_loss: 0.064 | future_traj_l_loss: 0.065 | rec_r_loss: 0.044| rec_l_loss: 0.046| total_loss: 0.210 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.032 
+2026-04-20 17:09:12,935 - main - INFO - 0.21492643654346466
+2026-04-20 17:09:12,935 - main - INFO - Epoch:7 (9/59) Data: 0.000838s | Batch: 0.188s | future_traj_r_loss: 0.070 | future_traj_l_loss: 0.054 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.201 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.029 
+2026-04-20 17:09:13,054 - main - INFO - 0.21694561541080476
+2026-04-20 17:09:13,054 - main - INFO - Epoch:7 (10/59) Data: 0.000818s | Batch: 0.181s | future_traj_r_loss: 0.079 | future_traj_l_loss: 0.064 | rec_r_loss: 0.044| rec_l_loss: 0.044| total_loss: 0.235 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.030 
+2026-04-20 17:09:13,173 - main - INFO - 0.2156969579783353
+2026-04-20 17:09:13,173 - main - INFO - Epoch:7 (11/59) Data: 0.000822s | Batch: 0.175s | future_traj_r_loss: 0.064 | future_traj_l_loss: 0.098 | rec_r_loss: 0.045| rec_l_loss: 0.044| total_loss: 0.203 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.020 
+2026-04-20 17:09:13,292 - main - INFO - 0.21238242338101068
+2026-04-20 17:09:13,292 - main - INFO - Epoch:7 (12/59) Data: 0.000828s | Batch: 0.170s | future_traj_r_loss: 0.064 | future_traj_l_loss: 0.039 | rec_r_loss: 0.044| rec_l_loss: 0.042| total_loss: 0.176 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.028 
+2026-04-20 17:09:13,412 - main - INFO - 0.21159198192449716
+2026-04-20 17:09:13,412 - main - INFO - Epoch:7 (13/59) Data: 0.000817s | Batch: 0.166s | future_traj_r_loss: 0.049 | future_traj_l_loss: 0.091 | rec_r_loss: 0.044| rec_l_loss: 0.044| total_loss: 0.202 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.035 
+2026-04-20 17:09:13,532 - main - INFO - 0.21249796875885554
+2026-04-20 17:09:13,532 - main - INFO - Epoch:7 (14/59) Data: 0.000875s | Batch: 0.163s | future_traj_r_loss: 0.084 | future_traj_l_loss: 0.064 | rec_r_loss: 0.043| rec_l_loss: 0.042| total_loss: 0.224 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.027 
+2026-04-20 17:09:13,653 - main - INFO - 0.21103965838750202
+2026-04-20 17:09:13,653 - main - INFO - Epoch:7 (15/59) Data: 0.000848s | Batch: 0.160s | future_traj_r_loss: 0.069 | future_traj_l_loss: 0.066 | rec_r_loss: 0.045| rec_l_loss: 0.043| total_loss: 0.191 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.040 
+2026-04-20 17:09:13,773 - main - INFO - 0.21041028015315533
+2026-04-20 17:09:13,773 - main - INFO - Epoch:7 (16/59) Data: 0.000823s | Batch: 0.158s | future_traj_r_loss: 0.062 | future_traj_l_loss: 0.103 | rec_r_loss: 0.045| rec_l_loss: 0.043| total_loss: 0.201 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.030 
+2026-04-20 17:09:13,893 - main - INFO - 0.21037350857959075
+2026-04-20 17:09:13,894 - main - INFO - Epoch:7 (17/59) Data: 0.000872s | Batch: 0.155s | future_traj_r_loss: 0.088 | future_traj_l_loss: 0.046 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.210 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.030 
+2026-04-20 17:09:14,013 - main - INFO - 0.2105047388209237
+2026-04-20 17:09:14,014 - main - INFO - Epoch:7 (18/59) Data: 0.000833s | Batch: 0.153s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.116 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.213 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.023 
+2026-04-20 17:09:14,133 - main - INFO - 0.20957151525898984
+2026-04-20 17:09:14,134 - main - INFO - Epoch:7 (19/59) Data: 0.000870s | Batch: 0.152s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.047 | rec_r_loss: 0.043| rec_l_loss: 0.045| total_loss: 0.193 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.024 
+2026-04-20 17:09:14,252 - main - INFO - 0.20884675532579422
+2026-04-20 17:09:14,252 - main - INFO - Epoch:7 (20/59) Data: 0.000828s | Batch: 0.150s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.054 | rec_r_loss: 0.044| rec_l_loss: 0.046| total_loss: 0.195 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.020 
+2026-04-20 17:09:14,375 - main - INFO - 0.20799109907377333
+2026-04-20 17:09:14,375 - main - INFO - Epoch:7 (21/59) Data: 0.001282s | Batch: 0.149s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.052 | rec_r_loss: 0.044| rec_l_loss: 0.046| total_loss: 0.191 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.018 
+2026-04-20 17:09:14,495 - main - INFO - 0.20993274585767227
+2026-04-20 17:09:14,496 - main - INFO - Epoch:7 (22/59) Data: 0.000864s | Batch: 0.147s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.138 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.251 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.017 
+2026-04-20 17:09:14,616 - main - INFO - 0.21150493751401486
+2026-04-20 17:09:14,617 - main - INFO - Epoch:7 (23/59) Data: 0.000833s | Batch: 0.146s | future_traj_r_loss: 0.106 | future_traj_l_loss: 0.044 | rec_r_loss: 0.045| rec_l_loss: 0.041| total_loss: 0.246 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.035 
+2026-04-20 17:09:14,737 - main - INFO - 0.2114823634425799
+2026-04-20 17:09:14,738 - main - INFO - Epoch:7 (24/59) Data: 0.000878s | Batch: 0.145s | future_traj_r_loss: 0.094 | future_traj_l_loss: 0.043 | rec_r_loss: 0.044| rec_l_loss: 0.043| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.022 
+2026-04-20 17:09:14,857 - main - INFO - 0.2089201617240906
+2026-04-20 17:09:14,857 - main - INFO - Epoch:7 (25/59) Data: 0.000793s | Batch: 0.144s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.030 | rec_r_loss: 0.043| rec_l_loss: 0.041| total_loss: 0.147 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.027 
+2026-04-20 17:09:14,976 - main - INFO - 0.20767428668645713
+2026-04-20 17:09:14,976 - main - INFO - Epoch:7 (26/59) Data: 0.000835s | Batch: 0.143s | future_traj_r_loss: 0.045 | future_traj_l_loss: 0.074 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.177 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.030 
+2026-04-20 17:09:15,096 - main - INFO - 0.20599537315192046
+2026-04-20 17:09:15,096 - main - INFO - Epoch:7 (27/59) Data: 0.000846s | Batch: 0.142s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.031 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.162 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.025 
+2026-04-20 17:09:15,217 - main - INFO - 0.2057368489248412
+2026-04-20 17:09:15,218 - main - INFO - Epoch:7 (28/59) Data: 0.000713s | Batch: 0.141s | future_traj_r_loss: 0.058 | future_traj_l_loss: 0.047 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.199 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.022 
+2026-04-20 17:09:15,337 - main - INFO - 0.20371722250149168
+2026-04-20 17:09:15,337 - main - INFO - Epoch:7 (29/59) Data: 0.000713s | Batch: 0.141s | future_traj_r_loss: 0.041 | future_traj_l_loss: 0.027 | rec_r_loss: 0.044| rec_l_loss: 0.045| total_loss: 0.147 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.028 
+2026-04-20 17:09:15,455 - main - INFO - 0.20403772592544556
+2026-04-20 17:09:15,455 - main - INFO - Epoch:7 (30/59) Data: 0.000697s | Batch: 0.140s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.068 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.213 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.025 
+2026-04-20 17:09:15,572 - main - INFO - 0.20381779536124198
+2026-04-20 17:09:15,573 - main - INFO - Epoch:7 (31/59) Data: 0.000700s | Batch: 0.139s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.055 | rec_r_loss: 0.044| rec_l_loss: 0.043| total_loss: 0.197 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.028 
+2026-04-20 17:09:15,690 - main - INFO - 0.2040647752583027
+2026-04-20 17:09:15,690 - main - INFO - Epoch:7 (32/59) Data: 0.000689s | Batch: 0.138s | future_traj_r_loss: 0.069 | future_traj_l_loss: 0.081 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.212 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.021 
+2026-04-20 17:09:15,807 - main - INFO - 0.2043058533560146
+2026-04-20 17:09:15,808 - main - INFO - Epoch:7 (33/59) Data: 0.000709s | Batch: 0.138s | future_traj_r_loss: 0.084 | future_traj_l_loss: 0.054 | rec_r_loss: 0.042| rec_l_loss: 0.046| total_loss: 0.212 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.026 
+2026-04-20 17:09:15,925 - main - INFO - 0.20374841681298086
+2026-04-20 17:09:15,925 - main - INFO - Epoch:7 (34/59) Data: 0.000671s | Batch: 0.137s | future_traj_r_loss: 0.060 | future_traj_l_loss: 0.069 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.185 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.020 
+2026-04-20 17:09:16,043 - main - INFO - 0.20341728159359523
+2026-04-20 17:09:16,043 - main - INFO - Epoch:7 (35/59) Data: 0.000721s | Batch: 0.137s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.049 | rec_r_loss: 0.043| rec_l_loss: 0.041| total_loss: 0.192 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.033 
+2026-04-20 17:09:16,159 - main - INFO - 0.20514988154172897
+2026-04-20 17:09:16,160 - main - INFO - Epoch:7 (36/59) Data: 0.000732s | Batch: 0.136s | future_traj_r_loss: 0.116 | future_traj_l_loss: 0.069 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.266 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.030 
+2026-04-20 17:09:16,277 - main - INFO - 0.20560036076081767
+2026-04-20 17:09:16,277 - main - INFO - Epoch:7 (37/59) Data: 0.000698s | Batch: 0.136s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.079 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.222 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.032 
+2026-04-20 17:09:16,394 - main - INFO - 0.2052875976813467
+2026-04-20 17:09:16,394 - main - INFO - Epoch:7 (38/59) Data: 0.000687s | Batch: 0.135s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.044 | rec_r_loss: 0.044| rec_l_loss: 0.043| total_loss: 0.194 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.040 
+2026-04-20 17:09:16,511 - main - INFO - 0.20442437323240134
+2026-04-20 17:09:16,511 - main - INFO - Epoch:7 (39/59) Data: 0.000696s | Batch: 0.135s | future_traj_r_loss: 0.063 | future_traj_l_loss: 0.053 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.172 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.025 
+2026-04-20 17:09:16,628 - main - INFO - 0.2039708185940981
+2026-04-20 17:09:16,628 - main - INFO - Epoch:7 (40/59) Data: 0.000702s | Batch: 0.134s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.049 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.186 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.023 
+2026-04-20 17:09:16,745 - main - INFO - 0.20347905849538198
+2026-04-20 17:09:16,746 - main - INFO - Epoch:7 (41/59) Data: 0.000686s | Batch: 0.134s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.046 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.184 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.018 
+2026-04-20 17:09:16,862 - main - INFO - 0.20374425536110288
+2026-04-20 17:09:16,862 - main - INFO - Epoch:7 (42/59) Data: 0.000686s | Batch: 0.133s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.068 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.215 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.023 
+2026-04-20 17:09:16,978 - main - INFO - 0.20454756811607716
+2026-04-20 17:09:16,978 - main - INFO - Epoch:7 (43/59) Data: 0.000676s | Batch: 0.133s | future_traj_r_loss: 0.069 | future_traj_l_loss: 0.096 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.238 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.030 
+2026-04-20 17:09:17,094 - main - INFO - 0.20520530505613846
+2026-04-20 17:09:17,095 - main - INFO - Epoch:7 (44/59) Data: 0.000687s | Batch: 0.132s | future_traj_r_loss: 0.105 | future_traj_l_loss: 0.052 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.233 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.027 
+2026-04-20 17:09:17,211 - main - INFO - 0.2048244598839018
+2026-04-20 17:09:17,212 - main - INFO - Epoch:7 (45/59) Data: 0.000655s | Batch: 0.132s | future_traj_r_loss: 0.054 | future_traj_l_loss: 0.065 | rec_r_loss: 0.042| rec_l_loss: 0.041| total_loss: 0.188 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.020 
+2026-04-20 17:09:17,328 - main - INFO - 0.20489380864993387
+2026-04-20 17:09:17,328 - main - INFO - Epoch:7 (46/59) Data: 0.000669s | Batch: 0.132s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.074 | rec_r_loss: 0.043| rec_l_loss: 0.042| total_loss: 0.208 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.040 
+2026-04-20 17:09:17,444 - main - INFO - 0.2058049240644942
+2026-04-20 17:09:17,445 - main - INFO - Epoch:7 (47/59) Data: 0.000682s | Batch: 0.131s | future_traj_r_loss: 0.095 | future_traj_l_loss: 0.061 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.248 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.024 
+2026-04-20 17:09:17,562 - main - INFO - 0.20602028351277113
+2026-04-20 17:09:17,563 - main - INFO - Epoch:7 (48/59) Data: 0.000736s | Batch: 0.131s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.089 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.216 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.031 
+2026-04-20 17:09:17,680 - main - INFO - 0.20544343578572177
+2026-04-20 17:09:17,680 - main - INFO - Epoch:7 (49/59) Data: 0.000675s | Batch: 0.131s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.038 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.178 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.020 
+2026-04-20 17:09:17,797 - main - INFO - 0.20465351998806
+2026-04-20 17:09:17,797 - main - INFO - Epoch:7 (50/59) Data: 0.000684s | Batch: 0.131s | future_traj_r_loss: 0.045 | future_traj_l_loss: 0.044 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.166 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.026 
+2026-04-20 17:09:17,914 - main - INFO - 0.20441684477469502
+2026-04-20 17:09:17,914 - main - INFO - Epoch:7 (51/59) Data: 0.000685s | Batch: 0.130s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.041 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.193 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.022 
+2026-04-20 17:09:18,031 - main - INFO - 0.2043640808417247
+2026-04-20 17:09:18,031 - main - INFO - Epoch:7 (52/59) Data: 0.000681s | Batch: 0.130s | future_traj_r_loss: 0.063 | future_traj_l_loss: 0.054 | rec_r_loss: 0.041| rec_l_loss: 0.040| total_loss: 0.202 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.016 
+2026-04-20 17:09:18,147 - main - INFO - 0.20401040872312942
+2026-04-20 17:09:18,148 - main - INFO - Epoch:7 (53/59) Data: 0.000716s | Batch: 0.130s | future_traj_r_loss: 0.064 | future_traj_l_loss: 0.058 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.186 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.034 
+2026-04-20 17:09:18,263 - main - INFO - 0.20357269241853995
+2026-04-20 17:09:18,264 - main - INFO - Epoch:7 (54/59) Data: 0.000681s | Batch: 0.129s | future_traj_r_loss: 0.060 | future_traj_l_loss: 0.051 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.180 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.026 
+2026-04-20 17:09:18,380 - main - INFO - 0.2029322643171657
+2026-04-20 17:09:18,380 - main - INFO - Epoch:7 (55/59) Data: 0.000679s | Batch: 0.129s | future_traj_r_loss: 0.057 | future_traj_l_loss: 0.043 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.168 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.035 
+2026-04-20 17:09:18,496 - main - INFO - 0.20296817193073885
+2026-04-20 17:09:18,497 - main - INFO - Epoch:7 (56/59) Data: 0.000716s | Batch: 0.129s | future_traj_r_loss: 0.082 | future_traj_l_loss: 0.066 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.205 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.032 
+2026-04-20 17:09:18,613 - main - INFO - 0.20322504064493013
+2026-04-20 17:09:18,613 - main - INFO - Epoch:7 (57/59) Data: 0.000692s | Batch: 0.129s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.070 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.218 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.018 
+2026-04-20 17:09:18,729 - main - INFO - 0.2037094189175244
+2026-04-20 17:09:18,729 - main - INFO - Epoch:7 (58/59) Data: 0.000707s | Batch: 0.129s | future_traj_r_loss: 0.068 | future_traj_l_loss: 0.083 | rec_r_loss: 0.042| rec_l_loss: 0.044| total_loss: 0.231 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.025 
+2026-04-20 17:09:18,845 - main - INFO - 0.20386243826251918
+2026-04-20 17:09:18,846 - main - INFO - Epoch:7 (59/59) Data: 0.000682s | Batch: 0.128s | future_traj_r_loss: 0.063 | future_traj_l_loss: 0.066 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.213 | future_valid_r: 24.0 | future_valid_l: 12.0 | obj_loss: 0.025 
+2026-04-20 17:09:19,591 - main - INFO - Using lr 0.0002
+2026-04-20 17:09:19,591 - main - INFO - train epoch: 9
+2026-04-20 17:09:20,317 - main - INFO - 0.21056684851646423
+2026-04-20 17:09:20,317 - main - INFO - Epoch:8 (1/59) Data: 0.564423s | Batch: 0.725s | future_traj_r_loss: 0.079 | future_traj_l_loss: 0.062 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.030 
+2026-04-20 17:09:20,437 - main - INFO - 0.22716984152793884
+2026-04-20 17:09:20,437 - main - INFO - Epoch:8 (2/59) Data: 0.000936s | Batch: 0.422s | future_traj_r_loss: 0.101 | future_traj_l_loss: 0.093 | rec_r_loss: 0.042| rec_l_loss: 0.041| total_loss: 0.244 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:09:20,582 - main - INFO - 0.21965505679448447
+2026-04-20 17:09:20,583 - main - INFO - Epoch:8 (3/59) Data: 0.000923s | Batch: 0.330s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.053 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.205 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.041 
+2026-04-20 17:09:20,706 - main - INFO - 0.2098279967904091
+2026-04-20 17:09:20,707 - main - INFO - Epoch:8 (4/59) Data: 0.000917s | Batch: 0.278s | future_traj_r_loss: 0.056 | future_traj_l_loss: 0.040 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.180 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.028 
+2026-04-20 17:09:20,828 - main - INFO - 0.20825707912445068
+2026-04-20 17:09:20,829 - main - INFO - Epoch:8 (5/59) Data: 0.000926s | Batch: 0.247s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.059 | rec_r_loss: 0.043| rec_l_loss: 0.044| total_loss: 0.202 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.018 
+2026-04-20 17:09:20,949 - main - INFO - 0.21048290779193243
+2026-04-20 17:09:20,949 - main - INFO - Epoch:8 (6/59) Data: 0.000895s | Batch: 0.226s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.059 | rec_r_loss: 0.042| rec_l_loss: 0.044| total_loss: 0.222 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.022 
+2026-04-20 17:09:21,071 - main - INFO - 0.20975506092820848
+2026-04-20 17:09:21,071 - main - INFO - Epoch:8 (7/59) Data: 0.000900s | Batch: 0.211s | future_traj_r_loss: 0.064 | future_traj_l_loss: 0.064 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.205 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.020 
+2026-04-20 17:09:21,192 - main - INFO - 0.20865743048489094
+2026-04-20 17:09:21,193 - main - INFO - Epoch:8 (8/59) Data: 0.000863s | Batch: 0.199s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.060 | rec_r_loss: 0.042| rec_l_loss: 0.041| total_loss: 0.201 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.034 
+2026-04-20 17:09:21,313 - main - INFO - 0.20715692142645517
+2026-04-20 17:09:21,314 - main - INFO - Epoch:8 (9/59) Data: 0.000840s | Batch: 0.191s | future_traj_r_loss: 0.063 | future_traj_l_loss: 0.041 | rec_r_loss: 0.041| rec_l_loss: 0.043| total_loss: 0.195 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.026 
+2026-04-20 17:09:21,435 - main - INFO - 0.20424782186746598
+2026-04-20 17:09:21,435 - main - INFO - Epoch:8 (10/59) Data: 0.000879s | Batch: 0.184s | future_traj_r_loss: 0.056 | future_traj_l_loss: 0.044 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.178 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.023 
+2026-04-20 17:09:21,555 - main - INFO - 0.2067933069034056
+2026-04-20 17:09:21,555 - main - INFO - Epoch:8 (11/59) Data: 0.000864s | Batch: 0.178s | future_traj_r_loss: 0.095 | future_traj_l_loss: 0.135 | rec_r_loss: 0.042| rec_l_loss: 0.040| total_loss: 0.232 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.018 
+2026-04-20 17:09:21,675 - main - INFO - 0.20340040077765784
+2026-04-20 17:09:21,676 - main - INFO - Epoch:8 (12/59) Data: 0.000844s | Batch: 0.173s | future_traj_r_loss: 0.048 | future_traj_l_loss: 0.070 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.166 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.026 
+2026-04-20 17:09:21,795 - main - INFO - 0.20360400126530573
+2026-04-20 17:09:21,796 - main - INFO - Epoch:8 (13/59) Data: 0.000873s | Batch: 0.169s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.056 | rec_r_loss: 0.042| rec_l_loss: 0.044| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.027 
+2026-04-20 17:09:21,919 - main - INFO - 0.20614034043891089
+2026-04-20 17:09:21,920 - main - INFO - Epoch:8 (14/59) Data: 0.001061s | Batch: 0.166s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.083 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.239 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.032 
+2026-04-20 17:09:22,040 - main - INFO - 0.2043941229581833
+2026-04-20 17:09:22,040 - main - INFO - Epoch:8 (15/59) Data: 0.000832s | Batch: 0.163s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.039 | rec_r_loss: 0.042| rec_l_loss: 0.044| total_loss: 0.180 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.023 
+2026-04-20 17:09:22,161 - main - INFO - 0.2051900252699852
+2026-04-20 17:09:22,162 - main - INFO - Epoch:8 (16/59) Data: 0.000873s | Batch: 0.160s | future_traj_r_loss: 0.069 | future_traj_l_loss: 0.123 | rec_r_loss: 0.041| rec_l_loss: 0.043| total_loss: 0.217 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.021 
+2026-04-20 17:09:22,283 - main - INFO - 0.20436160529361053
+2026-04-20 17:09:22,283 - main - INFO - Epoch:8 (17/59) Data: 0.000846s | Batch: 0.158s | future_traj_r_loss: 0.052 | future_traj_l_loss: 0.075 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.191 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.021 
+2026-04-20 17:09:22,404 - main - INFO - 0.20500508033567005
+2026-04-20 17:09:22,404 - main - INFO - Epoch:8 (18/59) Data: 0.000855s | Batch: 0.156s | future_traj_r_loss: 0.078 | future_traj_l_loss: 0.082 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.216 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:09:22,525 - main - INFO - 0.2024831418928347
+2026-04-20 17:09:22,525 - main - INFO - Epoch:8 (19/59) Data: 0.000836s | Batch: 0.154s | future_traj_r_loss: 0.049 | future_traj_l_loss: 0.035 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.157 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.021 
+2026-04-20 17:09:22,646 - main - INFO - 0.20308614447712897
+2026-04-20 17:09:22,647 - main - INFO - Epoch:8 (20/59) Data: 0.000885s | Batch: 0.152s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.070 | rec_r_loss: 0.041| rec_l_loss: 0.040| total_loss: 0.215 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.022 
+2026-04-20 17:09:22,767 - main - INFO - 0.20508231222629547
+2026-04-20 17:09:22,767 - main - INFO - Epoch:8 (21/59) Data: 0.000858s | Batch: 0.151s | future_traj_r_loss: 0.080 | future_traj_l_loss: 0.113 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.245 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.023 
+2026-04-20 17:09:22,887 - main - INFO - 0.20297457887367767
+2026-04-20 17:09:22,888 - main - INFO - Epoch:8 (22/59) Data: 0.000870s | Batch: 0.149s | future_traj_r_loss: 0.047 | future_traj_l_loss: 0.051 | rec_r_loss: 0.043| rec_l_loss: 0.042| total_loss: 0.159 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.028 
+2026-04-20 17:09:23,009 - main - INFO - 0.2021086818498114
+2026-04-20 17:09:23,009 - main - INFO - Epoch:8 (23/59) Data: 0.000844s | Batch: 0.148s | future_traj_r_loss: 0.060 | future_traj_l_loss: 0.083 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.183 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.030 
+2026-04-20 17:09:23,130 - main - INFO - 0.20071617824335894
+2026-04-20 17:09:23,130 - main - INFO - Epoch:8 (24/59) Data: 0.000904s | Batch: 0.147s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.031 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.169 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.027 
+2026-04-20 17:09:23,250 - main - INFO - 0.19856772124767302
+2026-04-20 17:09:23,251 - main - INFO - Epoch:8 (25/59) Data: 0.000869s | Batch: 0.146s | future_traj_r_loss: 0.054 | future_traj_l_loss: 0.036 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.147 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.022 
+2026-04-20 17:09:23,372 - main - INFO - 0.1977468551351474
+2026-04-20 17:09:23,372 - main - INFO - Epoch:8 (26/59) Data: 0.000820s | Batch: 0.145s | future_traj_r_loss: 0.070 | future_traj_l_loss: 0.052 | rec_r_loss: 0.042| rec_l_loss: 0.040| total_loss: 0.177 | future_valid_r: 32.0 | future_valid_l: 7.0 | obj_loss: 0.030 
+2026-04-20 17:09:23,494 - main - INFO - 0.19903578084928017
+2026-04-20 17:09:23,495 - main - INFO - Epoch:8 (27/59) Data: 0.000892s | Batch: 0.144s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.075 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.233 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.033 
+2026-04-20 17:09:23,617 - main - INFO - 0.19876184367707797
+2026-04-20 17:09:23,617 - main - INFO - Epoch:8 (28/59) Data: 0.000729s | Batch: 0.143s | future_traj_r_loss: 0.053 | future_traj_l_loss: 0.057 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.191 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.032 
+2026-04-20 17:09:23,736 - main - INFO - 0.1986346260227006
+2026-04-20 17:09:23,736 - main - INFO - Epoch:8 (29/59) Data: 0.000742s | Batch: 0.142s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.035 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.195 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.015 
+2026-04-20 17:09:23,854 - main - INFO - 0.19891560326019922
+2026-04-20 17:09:23,855 - main - INFO - Epoch:8 (30/59) Data: 0.000690s | Batch: 0.141s | future_traj_r_loss: 0.065 | future_traj_l_loss: 0.075 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.207 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.019 
+2026-04-20 17:09:23,973 - main - INFO - 0.1972451243669756
+2026-04-20 17:09:23,973 - main - INFO - Epoch:8 (31/59) Data: 0.000697s | Batch: 0.141s | future_traj_r_loss: 0.054 | future_traj_l_loss: 0.024 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.147 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:09:24,091 - main - INFO - 0.19615151220932603
+2026-04-20 17:09:24,092 - main - INFO - Epoch:8 (32/59) Data: 0.000700s | Batch: 0.140s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.023 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.162 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.019 
+2026-04-20 17:09:24,210 - main - INFO - 0.19664529462655386
+2026-04-20 17:09:24,211 - main - INFO - Epoch:8 (33/59) Data: 0.000713s | Batch: 0.139s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.085 | rec_r_loss: 0.041| rec_l_loss: 0.043| total_loss: 0.212 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.020 
+2026-04-20 17:09:24,328 - main - INFO - 0.19700919968240402
+2026-04-20 17:09:24,329 - main - INFO - Epoch:8 (34/59) Data: 0.000708s | Batch: 0.139s | future_traj_r_loss: 0.074 | future_traj_l_loss: 0.103 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.209 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.017 
+2026-04-20 17:09:24,446 - main - INFO - 0.1960397890635899
+2026-04-20 17:09:24,447 - main - INFO - Epoch:8 (35/59) Data: 0.000722s | Batch: 0.138s | future_traj_r_loss: 0.039 | future_traj_l_loss: 0.046 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.163 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.019 
+2026-04-20 17:09:24,564 - main - INFO - 0.19692951689163843
+2026-04-20 17:09:24,565 - main - INFO - Epoch:8 (36/59) Data: 0.000737s | Batch: 0.138s | future_traj_r_loss: 0.086 | future_traj_l_loss: 0.081 | rec_r_loss: 0.042| rec_l_loss: 0.041| total_loss: 0.228 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:09:24,681 - main - INFO - 0.19710114799641273
+2026-04-20 17:09:24,681 - main - INFO - Epoch:8 (37/59) Data: 0.000701s | Batch: 0.137s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.072 | rec_r_loss: 0.043| rec_l_loss: 0.042| total_loss: 0.203 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.030 
+2026-04-20 17:09:24,798 - main - INFO - 0.19763121008872986
+2026-04-20 17:09:24,799 - main - INFO - Epoch:8 (38/59) Data: 0.000710s | Batch: 0.136s | future_traj_r_loss: 0.087 | future_traj_l_loss: 0.039 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.217 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.022 
+2026-04-20 17:09:24,916 - main - INFO - 0.19791784691504943
+2026-04-20 17:09:24,917 - main - INFO - Epoch:8 (39/59) Data: 0.000707s | Batch: 0.136s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.058 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.209 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.026 
+2026-04-20 17:09:25,034 - main - INFO - 0.19874680005013942
+2026-04-20 17:09:25,035 - main - INFO - Epoch:8 (40/59) Data: 0.000708s | Batch: 0.135s | future_traj_r_loss: 0.095 | future_traj_l_loss: 0.061 | rec_r_loss: 0.044| rec_l_loss: 0.044| total_loss: 0.231 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.030 
+2026-04-20 17:09:25,152 - main - INFO - 0.19808264331119815
+2026-04-20 17:09:25,153 - main - INFO - Epoch:8 (41/59) Data: 0.000695s | Batch: 0.135s | future_traj_r_loss: 0.057 | future_traj_l_loss: 0.054 | rec_r_loss: 0.044| rec_l_loss: 0.041| total_loss: 0.172 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.034 
+2026-04-20 17:09:25,270 - main - INFO - 0.1983858666249684
+2026-04-20 17:09:25,270 - main - INFO - Epoch:8 (42/59) Data: 0.000683s | Batch: 0.135s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.090 | rec_r_loss: 0.042| rec_l_loss: 0.040| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.029 
+2026-04-20 17:09:25,387 - main - INFO - 0.1982589474944181
+2026-04-20 17:09:25,388 - main - INFO - Epoch:8 (43/59) Data: 0.000685s | Batch: 0.134s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.068 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.193 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.024 
+2026-04-20 17:09:25,505 - main - INFO - 0.19804208793423392
+2026-04-20 17:09:25,506 - main - INFO - Epoch:8 (44/59) Data: 0.000679s | Batch: 0.134s | future_traj_r_loss: 0.067 | future_traj_l_loss: 0.049 | rec_r_loss: 0.042| rec_l_loss: 0.044| total_loss: 0.189 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.029 
+2026-04-20 17:09:25,623 - main - INFO - 0.19805257121721903
+2026-04-20 17:09:25,624 - main - INFO - Epoch:8 (45/59) Data: 0.000678s | Batch: 0.133s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.055 | rec_r_loss: 0.042| rec_l_loss: 0.047| total_loss: 0.199 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.023 
+2026-04-20 17:09:25,741 - main - INFO - 0.19774468631848044
+2026-04-20 17:09:25,742 - main - INFO - Epoch:8 (46/59) Data: 0.000685s | Batch: 0.133s | future_traj_r_loss: 0.058 | future_traj_l_loss: 0.075 | rec_r_loss: 0.042| rec_l_loss: 0.047| total_loss: 0.184 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.023 
+2026-04-20 17:09:25,859 - main - INFO - 0.19761072923528386
+2026-04-20 17:09:25,859 - main - INFO - Epoch:8 (47/59) Data: 0.000684s | Batch: 0.133s | future_traj_r_loss: 0.069 | future_traj_l_loss: 0.043 | rec_r_loss: 0.042| rec_l_loss: 0.045| total_loss: 0.191 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.036 
+2026-04-20 17:09:25,977 - main - INFO - 0.19688510615378618
+2026-04-20 17:09:25,977 - main - INFO - Epoch:8 (48/59) Data: 0.000687s | Batch: 0.132s | future_traj_r_loss: 0.051 | future_traj_l_loss: 0.072 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.163 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.029 
+2026-04-20 17:09:26,094 - main - INFO - 0.1970306884269325
+2026-04-20 17:09:26,095 - main - INFO - Epoch:8 (49/59) Data: 0.000699s | Batch: 0.132s | future_traj_r_loss: 0.099 | future_traj_l_loss: 0.032 | rec_r_loss: 0.042| rec_l_loss: 0.041| total_loss: 0.204 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.021 
+2026-04-20 17:09:26,212 - main - INFO - 0.1980196452140808
+2026-04-20 17:09:26,213 - main - INFO - Epoch:8 (50/59) Data: 0.000698s | Batch: 0.132s | future_traj_r_loss: 0.081 | future_traj_l_loss: 0.105 | rec_r_loss: 0.043| rec_l_loss: 0.043| total_loss: 0.246 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.031 
+2026-04-20 17:09:26,330 - main - INFO - 0.19856008887290955
+2026-04-20 17:09:26,331 - main - INFO - Epoch:8 (51/59) Data: 0.000682s | Batch: 0.132s | future_traj_r_loss: 0.079 | future_traj_l_loss: 0.113 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.226 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.022 
+2026-04-20 17:09:26,448 - main - INFO - 0.19892816302868035
+2026-04-20 17:09:26,448 - main - INFO - Epoch:8 (52/59) Data: 0.000695s | Batch: 0.131s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.058 | rec_r_loss: 0.041| rec_l_loss: 0.043| total_loss: 0.218 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.028 
+2026-04-20 17:09:26,566 - main - INFO - 0.1994585968413443
+2026-04-20 17:09:26,566 - main - INFO - Epoch:8 (53/59) Data: 0.000681s | Batch: 0.131s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.094 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.227 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.034 
+2026-04-20 17:09:26,683 - main - INFO - 0.19920559337845556
+2026-04-20 17:09:26,684 - main - INFO - Epoch:8 (54/59) Data: 0.000681s | Batch: 0.131s | future_traj_r_loss: 0.050 | future_traj_l_loss: 0.057 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.186 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.022 
+2026-04-20 17:09:26,801 - main - INFO - 0.1998566676269878
+2026-04-20 17:09:26,801 - main - INFO - Epoch:8 (55/59) Data: 0.000676s | Batch: 0.131s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.038 | rec_r_loss: 0.043| rec_l_loss: 0.042| total_loss: 0.235 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.030 
+2026-04-20 17:09:26,918 - main - INFO - 0.2003229558467865
+2026-04-20 17:09:26,918 - main - INFO - Epoch:8 (56/59) Data: 0.000703s | Batch: 0.130s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.102 | rec_r_loss: 0.041| rec_l_loss: 0.040| total_loss: 0.226 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.029 
+2026-04-20 17:09:27,036 - main - INFO - 0.19939434005503068
+2026-04-20 17:09:27,036 - main - INFO - Epoch:8 (57/59) Data: 0.000717s | Batch: 0.130s | future_traj_r_loss: 0.035 | future_traj_l_loss: 0.054 | rec_r_loss: 0.041| rec_l_loss: 0.040| total_loss: 0.147 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.021 
+2026-04-20 17:09:27,154 - main - INFO - 0.1988270842823489
+2026-04-20 17:09:27,154 - main - INFO - Epoch:8 (58/59) Data: 0.000700s | Batch: 0.130s | future_traj_r_loss: 0.057 | future_traj_l_loss: 0.032 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.166 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.033 
+2026-04-20 17:09:27,272 - main - INFO - 0.20036384160235776
+2026-04-20 17:09:27,272 - main - INFO - Epoch:8 (59/59) Data: 0.000707s | Batch: 0.130s | future_traj_r_loss: 0.126 | future_traj_l_loss: 0.083 | rec_r_loss: 0.040| rec_l_loss: 0.043| total_loss: 0.289 | future_valid_r: 24.0 | future_valid_l: 10.0 | obj_loss: 0.045 
+2026-04-20 17:09:28,023 - main - INFO - Using lr 0.0002
+2026-04-20 17:09:28,023 - main - INFO - train epoch: 10
+2026-04-20 17:09:28,771 - main - INFO - 0.19025208055973053
+2026-04-20 17:09:28,772 - main - INFO - Epoch:9 (1/59) Data: 0.599195s | Batch: 0.748s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.023 | rec_r_loss: 0.041| rec_l_loss: 0.044| total_loss: 0.190 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.032 
+2026-04-20 17:09:28,895 - main - INFO - 0.1743999943137169
+2026-04-20 17:09:28,896 - main - INFO - Epoch:9 (2/59) Data: 0.001728s | Batch: 0.436s | future_traj_r_loss: 0.046 | future_traj_l_loss: 0.033 | rec_r_loss: 0.040| rec_l_loss: 0.042| total_loss: 0.159 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.028 
+2026-04-20 17:09:29,021 - main - INFO - 0.17205878595511118
+2026-04-20 17:09:29,021 - main - INFO - Epoch:9 (3/59) Data: 0.000833s | Batch: 0.332s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.029 | rec_r_loss: 0.042| rec_l_loss: 0.039| total_loss: 0.167 | future_valid_r: 32.0 | future_valid_l: 4.0 | obj_loss: 0.031 
+2026-04-20 17:09:29,141 - main - INFO - 0.18860793113708496
+2026-04-20 17:09:29,142 - main - INFO - Epoch:9 (4/59) Data: 0.000909s | Batch: 0.279s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.085 | rec_r_loss: 0.044| rec_l_loss: 0.043| total_loss: 0.238 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.026 
+2026-04-20 17:09:29,262 - main - INFO - 0.18796862959861754
+2026-04-20 17:09:29,263 - main - INFO - Epoch:9 (5/59) Data: 0.000846s | Batch: 0.247s | future_traj_r_loss: 0.059 | future_traj_l_loss: 0.041 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.185 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.015 
+2026-04-20 17:09:29,383 - main - INFO - 0.17827051877975464
+2026-04-20 17:09:29,384 - main - INFO - Epoch:9 (6/59) Data: 0.000909s | Batch: 0.226s | future_traj_r_loss: 0.044 | future_traj_l_loss: 0.042 | rec_r_loss: 0.042| rec_l_loss: 0.040| total_loss: 0.130 | future_valid_r: 32.0 | future_valid_l: 7.0 | obj_loss: 0.030 
+2026-04-20 17:09:29,502 - main - INFO - 0.18671625639711106
+2026-04-20 17:09:29,503 - main - INFO - Epoch:9 (7/59) Data: 0.001689s | Batch: 0.211s | future_traj_r_loss: 0.085 | future_traj_l_loss: 0.103 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.237 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.026 
+2026-04-20 17:09:29,620 - main - INFO - 0.19172483310103416
+2026-04-20 17:09:29,620 - main - INFO - Epoch:9 (8/59) Data: 0.000833s | Batch: 0.199s | future_traj_r_loss: 0.065 | future_traj_l_loss: 0.115 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.227 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.024 
+2026-04-20 17:09:29,738 - main - INFO - 0.19143029219574398
+2026-04-20 17:09:29,739 - main - INFO - Epoch:9 (9/59) Data: 0.000844s | Batch: 0.190s | future_traj_r_loss: 0.086 | future_traj_l_loss: 0.026 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.189 | future_valid_r: 32.0 | future_valid_l: 8.0 | obj_loss: 0.031 
+2026-04-20 17:09:29,857 - main - INFO - 0.18935035765171052
+2026-04-20 17:09:29,858 - main - INFO - Epoch:9 (10/59) Data: 0.000850s | Batch: 0.183s | future_traj_r_loss: 0.053 | future_traj_l_loss: 0.066 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.171 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.020 
+2026-04-20 17:09:29,976 - main - INFO - 0.1860504231669686
+2026-04-20 17:09:29,977 - main - INFO - Epoch:9 (11/59) Data: 0.000824s | Batch: 0.177s | future_traj_r_loss: 0.038 | future_traj_l_loss: 0.038 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.153 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.025 
+2026-04-20 17:09:30,095 - main - INFO - 0.19000309457381567
+2026-04-20 17:09:30,096 - main - INFO - Epoch:9 (12/59) Data: 0.000814s | Batch: 0.172s | future_traj_r_loss: 0.090 | future_traj_l_loss: 0.062 | rec_r_loss: 0.042| rec_l_loss: 0.040| total_loss: 0.233 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.017 
+2026-04-20 17:09:30,214 - main - INFO - 0.18898353439110976
+2026-04-20 17:09:30,214 - main - INFO - Epoch:9 (13/59) Data: 0.000830s | Batch: 0.168s | future_traj_r_loss: 0.081 | future_traj_l_loss: 0.028 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.177 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.020 
+2026-04-20 17:09:30,333 - main - INFO - 0.18708008314882005
+2026-04-20 17:09:30,333 - main - INFO - Epoch:9 (14/59) Data: 0.000823s | Batch: 0.164s | future_traj_r_loss: 0.052 | future_traj_l_loss: 0.026 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.162 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.019 
+2026-04-20 17:09:30,452 - main - INFO - 0.18816314339637757
+2026-04-20 17:09:30,452 - main - INFO - Epoch:9 (15/59) Data: 0.000838s | Batch: 0.161s | future_traj_r_loss: 0.050 | future_traj_l_loss: 0.115 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.203 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.023 
+2026-04-20 17:09:30,571 - main - INFO - 0.18510282412171364
+2026-04-20 17:09:30,572 - main - INFO - Epoch:9 (16/59) Data: 0.000817s | Batch: 0.159s | future_traj_r_loss: 0.041 | future_traj_l_loss: 0.052 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.139 | future_valid_r: 32.0 | future_valid_l: 9.0 | obj_loss: 0.024 
+2026-04-20 17:09:30,692 - main - INFO - 0.187317034777473
+2026-04-20 17:09:30,692 - main - INFO - Epoch:9 (17/59) Data: 0.000862s | Batch: 0.156s | future_traj_r_loss: 0.109 | future_traj_l_loss: 0.042 | rec_r_loss: 0.041| rec_l_loss: 0.040| total_loss: 0.223 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.023 
+2026-04-20 17:09:30,808 - main - INFO - 0.18604443636205462
+2026-04-20 17:09:30,809 - main - INFO - Epoch:9 (18/59) Data: 0.000850s | Batch: 0.154s | future_traj_r_loss: 0.055 | future_traj_l_loss: 0.045 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.164 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.020 
+2026-04-20 17:09:30,928 - main - INFO - 0.18724859466678218
+2026-04-20 17:09:30,928 - main - INFO - Epoch:9 (19/59) Data: 0.000854s | Batch: 0.152s | future_traj_r_loss: 0.076 | future_traj_l_loss: 0.075 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.209 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.029 
+2026-04-20 17:09:31,047 - main - INFO - 0.18666292503476142
+2026-04-20 17:09:31,048 - main - INFO - Epoch:9 (20/59) Data: 0.000869s | Batch: 0.151s | future_traj_r_loss: 0.052 | future_traj_l_loss: 0.056 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.176 | future_valid_r: 32.0 | future_valid_l: 16.0 | obj_loss: 0.026 
+2026-04-20 17:09:31,168 - main - INFO - 0.18791999774319784
+2026-04-20 17:09:31,169 - main - INFO - Epoch:9 (21/59) Data: 0.000846s | Batch: 0.149s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.079 | rec_r_loss: 0.040| rec_l_loss: 0.042| total_loss: 0.213 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.024 
+2026-04-20 17:09:31,292 - main - INFO - 0.18898648768663406
+2026-04-20 17:09:31,293 - main - INFO - Epoch:9 (22/59) Data: 0.000844s | Batch: 0.148s | future_traj_r_loss: 0.079 | future_traj_l_loss: 0.092 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.030 
+2026-04-20 17:09:31,417 - main - INFO - 0.1897394974594531
+2026-04-20 17:09:31,418 - main - INFO - Epoch:9 (23/59) Data: 0.000870s | Batch: 0.147s | future_traj_r_loss: 0.062 | future_traj_l_loss: 0.077 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.032 
+2026-04-20 17:09:31,540 - main - INFO - 0.18800401439269385
+2026-04-20 17:09:31,540 - main - INFO - Epoch:9 (24/59) Data: 0.000863s | Batch: 0.146s | future_traj_r_loss: 0.041 | future_traj_l_loss: 0.042 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.148 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.019 
+2026-04-20 17:09:31,662 - main - INFO - 0.1887177872657776
+2026-04-20 17:09:31,662 - main - INFO - Epoch:9 (25/59) Data: 0.000839s | Batch: 0.145s | future_traj_r_loss: 0.068 | future_traj_l_loss: 0.047 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 19.0 | obj_loss: 0.020 
+2026-04-20 17:09:31,783 - main - INFO - 0.1901650274029145
+2026-04-20 17:09:31,784 - main - INFO - Epoch:9 (26/59) Data: 0.000835s | Batch: 0.144s | future_traj_r_loss: 0.093 | future_traj_l_loss: 0.056 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.226 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.027 
+2026-04-20 17:09:31,905 - main - INFO - 0.19116945343988914
+2026-04-20 17:09:31,905 - main - INFO - Epoch:9 (27/59) Data: 0.000890s | Batch: 0.143s | future_traj_r_loss: 0.078 | future_traj_l_loss: 0.054 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.217 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.025 
+2026-04-20 17:09:32,026 - main - INFO - 0.19162030890583992
+2026-04-20 17:09:32,026 - main - INFO - Epoch:9 (28/59) Data: 0.000718s | Batch: 0.142s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.066 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.204 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.020 
+2026-04-20 17:09:32,144 - main - INFO - 0.19154344704644433
+2026-04-20 17:09:32,144 - main - INFO - Epoch:9 (29/59) Data: 0.000744s | Batch: 0.142s | future_traj_r_loss: 0.070 | future_traj_l_loss: 0.059 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.189 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.025 
+2026-04-20 17:09:32,262 - main - INFO - 0.19201569507519403
+2026-04-20 17:09:32,262 - main - INFO - Epoch:9 (30/59) Data: 0.000701s | Batch: 0.141s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.039 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.206 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.024 
+2026-04-20 17:09:32,380 - main - INFO - 0.1910335599414764
+2026-04-20 17:09:32,381 - main - INFO - Epoch:9 (31/59) Data: 0.000711s | Batch: 0.140s | future_traj_r_loss: 0.050 | future_traj_l_loss: 0.060 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.162 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.020 
+2026-04-20 17:09:32,498 - main - INFO - 0.19032189389690757
+2026-04-20 17:09:32,499 - main - INFO - Epoch:9 (32/59) Data: 0.000683s | Batch: 0.139s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.029 | rec_r_loss: 0.041| rec_l_loss: 0.039| total_loss: 0.168 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.023 
+2026-04-20 17:09:32,616 - main - INFO - 0.19070497742204956
+2026-04-20 17:09:32,617 - main - INFO - Epoch:9 (33/59) Data: 0.000730s | Batch: 0.139s | future_traj_r_loss: 0.073 | future_traj_l_loss: 0.085 | rec_r_loss: 0.042| rec_l_loss: 0.042| total_loss: 0.203 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.025 
+2026-04-20 17:09:32,734 - main - INFO - 0.19102391995051327
+2026-04-20 17:09:32,734 - main - INFO - Epoch:9 (34/59) Data: 0.000707s | Batch: 0.138s | future_traj_r_loss: 0.065 | future_traj_l_loss: 0.081 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.202 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.031 
+2026-04-20 17:09:32,851 - main - INFO - 0.19154160703931536
+2026-04-20 17:09:32,852 - main - INFO - Epoch:9 (35/59) Data: 0.000685s | Batch: 0.137s | future_traj_r_loss: 0.075 | future_traj_l_loss: 0.065 | rec_r_loss: 0.041| rec_l_loss: 0.040| total_loss: 0.209 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.026 
+2026-04-20 17:09:32,969 - main - INFO - 0.19181333978970846
+2026-04-20 17:09:32,969 - main - INFO - Epoch:9 (36/59) Data: 0.000694s | Batch: 0.137s | future_traj_r_loss: 0.086 | future_traj_l_loss: 0.078 | rec_r_loss: 0.039| rec_l_loss: 0.039| total_loss: 0.201 | future_valid_r: 32.0 | future_valid_l: 7.0 | obj_loss: 0.028 
+2026-04-20 17:09:33,086 - main - INFO - 0.19199369203399969
+2026-04-20 17:09:33,086 - main - INFO - Epoch:9 (37/59) Data: 0.000717s | Batch: 0.136s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.053 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.198 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.030 
+2026-04-20 17:09:33,203 - main - INFO - 0.19176226815110758
+2026-04-20 17:09:33,204 - main - INFO - Epoch:9 (38/59) Data: 0.000686s | Batch: 0.136s | future_traj_r_loss: 0.061 | future_traj_l_loss: 0.067 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.183 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.028 
+2026-04-20 17:09:33,321 - main - INFO - 0.19229243733944038
+2026-04-20 17:09:33,322 - main - INFO - Epoch:9 (39/59) Data: 0.000691s | Batch: 0.135s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.093 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.212 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.038 
+2026-04-20 17:09:33,438 - main - INFO - 0.19272840097546579
+2026-04-20 17:09:33,439 - main - INFO - Epoch:9 (40/59) Data: 0.000686s | Batch: 0.135s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.072 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.210 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.025 
+2026-04-20 17:09:33,556 - main - INFO - 0.19318203446341725
+2026-04-20 17:09:33,556 - main - INFO - Epoch:9 (41/59) Data: 0.000726s | Batch: 0.134s | future_traj_r_loss: 0.089 | future_traj_l_loss: 0.035 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.031 
+2026-04-20 17:09:33,673 - main - INFO - 0.19341176819233669
+2026-04-20 17:09:33,674 - main - INFO - Epoch:9 (42/59) Data: 0.000685s | Batch: 0.134s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.051 | rec_r_loss: 0.042| rec_l_loss: 0.043| total_loss: 0.203 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.027 
+2026-04-20 17:09:33,791 - main - INFO - 0.19382421221843985
+2026-04-20 17:09:33,791 - main - INFO - Epoch:9 (43/59) Data: 0.000686s | Batch: 0.134s | future_traj_r_loss: 0.062 | future_traj_l_loss: 0.080 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.211 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.027 
+2026-04-20 17:09:33,908 - main - INFO - 0.19352352145043286
+2026-04-20 17:09:33,908 - main - INFO - Epoch:9 (44/59) Data: 0.000700s | Batch: 0.133s | future_traj_r_loss: 0.050 | future_traj_l_loss: 0.055 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.181 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.027 
+2026-04-20 17:09:34,025 - main - INFO - 0.193578745259179
+2026-04-20 17:09:34,025 - main - INFO - Epoch:9 (45/59) Data: 0.000699s | Batch: 0.133s | future_traj_r_loss: 0.072 | future_traj_l_loss: 0.045 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.196 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.033 
+2026-04-20 17:09:34,142 - main - INFO - 0.19413376113642816
+2026-04-20 17:09:34,142 - main - INFO - Epoch:9 (46/59) Data: 0.000700s | Batch: 0.132s | future_traj_r_loss: 0.071 | future_traj_l_loss: 0.079 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.219 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.021 
+2026-04-20 17:09:34,259 - main - INFO - 0.19405599953012265
+2026-04-20 17:09:34,260 - main - INFO - Epoch:9 (47/59) Data: 0.000717s | Batch: 0.132s | future_traj_r_loss: 0.061 | future_traj_l_loss: 0.043 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.190 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.027 
+2026-04-20 17:09:34,376 - main - INFO - 0.19342822674661875
+2026-04-20 17:09:34,377 - main - INFO - Epoch:9 (48/59) Data: 0.000743s | Batch: 0.132s | future_traj_r_loss: 0.054 | future_traj_l_loss: 0.067 | rec_r_loss: 0.042| rec_l_loss: 0.041| total_loss: 0.164 | future_valid_r: 32.0 | future_valid_l: 10.0 | obj_loss: 0.020 
+2026-04-20 17:09:34,493 - main - INFO - 0.19370146673552843
+2026-04-20 17:09:34,493 - main - INFO - Epoch:9 (49/59) Data: 0.000690s | Batch: 0.131s | future_traj_r_loss: 0.070 | future_traj_l_loss: 0.064 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.207 | future_valid_r: 32.0 | future_valid_l: 17.0 | obj_loss: 0.024 
+2026-04-20 17:09:34,610 - main - INFO - 0.194355428814888
+2026-04-20 17:09:34,610 - main - INFO - Epoch:9 (50/59) Data: 0.000704s | Batch: 0.131s | future_traj_r_loss: 0.094 | future_traj_l_loss: 0.052 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.226 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.025 
+2026-04-20 17:09:34,726 - main - INFO - 0.1938138618773105
+2026-04-20 17:09:34,727 - main - INFO - Epoch:9 (51/59) Data: 0.000678s | Batch: 0.131s | future_traj_r_loss: 0.052 | future_traj_l_loss: 0.032 | rec_r_loss: 0.040| rec_l_loss: 0.042| total_loss: 0.167 | future_valid_r: 32.0 | future_valid_l: 12.0 | obj_loss: 0.024 
+2026-04-20 17:09:34,843 - main - INFO - 0.1931504696034468
+2026-04-20 17:09:34,843 - main - INFO - Epoch:9 (52/59) Data: 0.000697s | Batch: 0.131s | future_traj_r_loss: 0.046 | future_traj_l_loss: 0.034 | rec_r_loss: 0.041| rec_l_loss: 0.041| total_loss: 0.159 | future_valid_r: 32.0 | future_valid_l: 14.0 | obj_loss: 0.033 
+2026-04-20 17:09:34,960 - main - INFO - 0.19385514703561674
+2026-04-20 17:09:34,960 - main - INFO - Epoch:9 (53/59) Data: 0.000709s | Batch: 0.130s | future_traj_r_loss: 0.085 | future_traj_l_loss: 0.088 | rec_r_loss: 0.039| rec_l_loss: 0.040| total_loss: 0.230 | future_valid_r: 32.0 | future_valid_l: 11.0 | obj_loss: 0.034 
+2026-04-20 17:09:35,076 - main - INFO - 0.19396391648937156
+2026-04-20 17:09:35,077 - main - INFO - Epoch:9 (54/59) Data: 0.000687s | Batch: 0.130s | future_traj_r_loss: 0.069 | future_traj_l_loss: 0.048 | rec_r_loss: 0.040| rec_l_loss: 0.040| total_loss: 0.200 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.024 
+2026-04-20 17:09:35,193 - main - INFO - 0.19352132813497022
+2026-04-20 17:09:35,194 - main - INFO - Epoch:9 (55/59) Data: 0.000709s | Batch: 0.130s | future_traj_r_loss: 0.041 | future_traj_l_loss: 0.046 | rec_r_loss: 0.039| rec_l_loss: 0.040| total_loss: 0.170 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.018 
+2026-04-20 17:09:35,310 - main - INFO - 0.19314028163041388
+2026-04-20 17:09:35,311 - main - INFO - Epoch:9 (56/59) Data: 0.000684s | Batch: 0.130s | future_traj_r_loss: 0.058 | future_traj_l_loss: 0.047 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.172 | future_valid_r: 32.0 | future_valid_l: 13.0 | obj_loss: 0.024 
+2026-04-20 17:09:35,428 - main - INFO - 0.1934640093853599
+2026-04-20 17:09:35,428 - main - INFO - Epoch:9 (57/59) Data: 0.000706s | Batch: 0.129s | future_traj_r_loss: 0.077 | future_traj_l_loss: 0.047 | rec_r_loss: 0.040| rec_l_loss: 0.041| total_loss: 0.212 | future_valid_r: 32.0 | future_valid_l: 18.0 | obj_loss: 0.020 
+2026-04-20 17:09:35,545 - main - INFO - 0.1934577809839413
+2026-04-20 17:09:35,545 - main - INFO - Epoch:9 (58/59) Data: 0.000686s | Batch: 0.129s | future_traj_r_loss: 0.051 | future_traj_l_loss: 0.087 | rec_r_loss: 0.041| rec_l_loss: 0.042| total_loss: 0.193 | future_valid_r: 32.0 | future_valid_l: 15.0 | obj_loss: 0.026 
+2026-04-20 17:09:35,662 - main - INFO - 0.19394816357200428
+2026-04-20 17:09:35,662 - main - INFO - Epoch:9 (59/59) Data: 0.000698s | Batch: 0.129s | future_traj_r_loss: 0.066 | future_traj_l_loss: 0.065 | rec_r_loss: 0.040| rec_l_loss: 0.039| total_loss: 0.222 | future_valid_r: 24.0 | future_valid_l: 11.0 | obj_loss: 0.015 

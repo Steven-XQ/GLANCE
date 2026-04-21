@@ -14,7 +14,7 @@ conda activate diffip
 python -c "import torch; print(torch.cuda.is_available())"
 
 # 2. Navigate to your working directory
-cd /home/u6x/sx2022.u6x/Diff-IP2D-main
+cd /home/u6cu/sx2022.u6cu/Diff-IP2D
 
 # 3. Create a logs directory if it doesn't exist to keep things tidy
 mkdir -p logs

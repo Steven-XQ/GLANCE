@@ -12,7 +12,7 @@
 source $SCRATCH/miniconda3/etc/profile.d/conda.sh
 conda activate diffip
 
-cd $HOME/Diff-IP2D-main
+cd $HOME/Diff-IP2D
 mkdir -p logs
 
 echo "=== v11: Learnable bias init with Gaussian bump @ delta=2 ==="

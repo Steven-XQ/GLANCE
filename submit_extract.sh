@@ -13,7 +13,7 @@ source $SCRATCH/miniconda3/etc/profile.d/conda.sh
 conda activate diffip
 
 # Define paths based on your provided structure
-BASE_DIR="/scratch/u6x/sx2022.u6x/datasets/EGTEA_Gaze_Plus/EGTEA"
+BASE_DIR="/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA"
 INPUT_DIR="$BASE_DIR/Raw_Videos"
 OUTPUT_DIR="$BASE_DIR/extracted_frames"
 

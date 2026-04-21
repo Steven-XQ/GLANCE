@@ -12,7 +12,7 @@
 source $SCRATCH/miniconda3/etc/profile.d/conda.sh
 conda activate diffip
 
-cd $HOME/Diff-IP2D-main
+cd $HOME/Diff-IP2D
 mkdir -p logs
 
 EVAL_TRAJ="--evaluate --ek_version=egtea --num_classes=106 --seq_len_obs=10 --seq_len_unobs=3 --resume=./diffip_weights/checkpoint_30.pth.tar --traj_only"

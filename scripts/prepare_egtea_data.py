@@ -32,7 +32,7 @@ OCT_DIR = os.path.join(BASE_DIR, "CVPR2022-hoi-forecast-training-data")
 DATA_DIR = os.path.join(BASE_DIR, "data", "egtea")
 ANNOT_DIR = os.path.join(BASE_DIR, "common", "egtea-annotations")
 RULSTM_DIR = os.path.join(BASE_DIR, "common", "rulstm", "RULSTM", "data", "egtea")
-EGTEA_FRAMES_DIR = "/scratch/u6x/sx2022.u6x/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames"
+EGTEA_FRAMES_DIR = "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames"
 
 
 def build_uid_mapping():

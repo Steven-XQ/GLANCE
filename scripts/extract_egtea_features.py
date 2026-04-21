@@ -28,7 +28,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--split', default='train', choices=['train', 'test'],
                         help='Which split to extract features for')
-    parser.add_argument('--frames_dir', default='/scratch/u6x/sx2022.u6x/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames',
+    parser.add_argument('--frames_dir', default='/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames',
                         help='Path to extracted EGTEA frames')
     parser.add_argument('--model_path', default='./common/rulstm/FEATEXT/models/ek100/TSN-rgb-ek100.pth.tar',
                         help='Path to pretrained TSN BNInception weights')

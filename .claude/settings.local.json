@@ -24,7 +24,8 @@
       "Read(//scratch/u6x/sx2022.u6x/datasets/**)",
       "Read(//scratch/u6x/sx2022.u6x/datasets/EGTEA/**)",
       "Bash(chmod +x /home/u6x/sx2022.u6x/Diff-IP2D-main/submit_repro.sh)",
-      "Bash(sbatch /home/u6x/sx2022.u6x/Diff-IP2D-main/submit_repro.sh)"
+      "Bash(sbatch /home/u6x/sx2022.u6x/Diff-IP2D-main/submit_repro.sh)",
+      "Read(//home/u6cu/sx2022.u6cu/**)"
     ]
   }
 }

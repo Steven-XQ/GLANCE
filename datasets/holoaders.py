@@ -72,7 +72,7 @@ class FeaturesHOLoader(object):
             else:
                 self.lmdb_path = os.path.join("./data/egtea/feats_test", "data.lmdb")
             self.env = None
-            self.raw_images_base = "/scratch/u6x/sx2022.u6x/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames"
+            self.raw_images_base = "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames"
         else:
             if mode == 'train':
                 self.lmdb_path1 = os.path.join("./data/ek100/feats_train", "full_data_with_future_train_part1.lmdb")
@@ -105,7 +105,7 @@ class FeaturesHOLoader(object):
         self.gaze_heatmap_size = gaze_heatmap_size
         self.gaze_sigma = gaze_sigma
         if self.use_gaze:
-            self.gaze_data_base = gaze_data_base or "/scratch/u6x/sx2022.u6x/datasets/EGTEA_Gaze_Plus/EGTEA/Gaze_Data/gaze_data/gaze_data"
+            self.gaze_data_base = gaze_data_base or "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/Gaze_Data/gaze_data"
             self._gaze_cache = {}
 
     def _load_gaze_for_video(self, video_id):
