@@ -10,29 +10,34 @@ class DatasetArgs(object):
         self.features_paths = {
             'ek55': os.path.join(base_path, 'data/ek55/feats'),
             'ek100': os.path.join(base_path, 'data/ek100/feats'),
-            'egtea': os.path.join(base_path, 'data/egtea/feats')}
+            'egtea': os.path.join(base_path, 'data/egtea/feats'),
+            'meccano': os.path.join(base_path, 'data/meccano/feats')}
         # generated data labels
         self.label_path = {
             'ek55': os.path.join(base_path, 'data/ek55'),
             'ek100': os.path.join(base_path, 'data/ek100'),
-            'egtea': os.path.join(base_path, 'data/egtea')}
+            'egtea': os.path.join(base_path, 'data/egtea'),
+            'meccano': os.path.join(base_path, 'data/meccano')}
 
         # eval labels
         self.eval_label_path = {
             'ek55': os.path.join(base_path, 'data/ek55/ek55_eval_labels.pkl'),
             'ek100': os.path.join(base_path, 'data/ek100/ek100_eval_labels.pkl'),
-            'egtea': os.path.join(base_path, 'data/egtea/egtea_eval_labels.pkl')
+            'egtea': os.path.join(base_path, 'data/egtea/egtea_eval_labels.pkl'),
+            'meccano': os.path.join(base_path, 'data/meccano/meccano_eval_labels.pkl'),
         }
 
         self.annot_path = {
             'ek55': os.path.join(base_path, 'common/epic-kitchens-55-annotations'),
             'ek100': os.path.join(base_path, 'common/epic-kitchens-100-annotations'),
-            'egtea': os.path.join(base_path, 'common/egtea-annotations')}
+            'egtea': os.path.join(base_path, 'common/egtea-annotations'),
+            'meccano': os.path.join(base_path, 'common/meccano-annotations')}
 
         self.rulstm_annot_path = {
             'ek55': os.path.join(base_path, 'common/rulstm/RULSTM/data/ek55'),
             'ek100': os.path.join(base_path, 'common/rulstm/RULSTM/data/ek100'),
-            'egtea': os.path.join(base_path, 'common/rulstm/RULSTM/data/egtea')}
+            'egtea': os.path.join(base_path, 'common/rulstm/RULSTM/data/egtea'),
+            'meccano': os.path.join(base_path, 'common/meccano-annotations')}
 
         self.pretrained_backbone_path = {
             'ek55': os.path.join(base_path, 'common/rulstm/FEATEXT/models/ek55', 'TSN-rgb.pth.tar'),
@@ -44,6 +49,13 @@ class DatasetArgs(object):
             self.fps = fps if fps is not None else 6
             self.t_buffer = t_buffer if t_buffer is not None else 10.0 / 6.0
             self.ori_fps = 30.0
+            self.t_ant = 0.5
+        elif ek_version == 'meccano':
+            # Match EGTEA seq_len config (user choice "a"): fps=6 at 12 fps source
+            # samples every 2nd frame, 10 obs features + 3 anticipated features.
+            self.fps = fps if fps is not None else 6
+            self.t_buffer = t_buffer if t_buffer is not None else 10.0 / 6.0
+            self.ori_fps = 12.0
             self.t_ant = 0.5
         else:
             self.fps = fps if fps is not None else 4

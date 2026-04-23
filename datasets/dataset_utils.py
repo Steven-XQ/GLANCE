@@ -257,6 +257,48 @@ def get_ek100_annotation(annot_path, rulstm_annot_path, label_path, eval_label_p
     return df
 
 
+def get_meccano_annotation(annot_path, rulstm_annot_path, label_path, eval_label_path, partition, validation_ratio=0.2,
+                            use_rulstm_splits=False, use_label_only=True, raw=False):
+    """Load MECCANO annotations for the specified partition.
+
+    partition options: 'train', 'validation', 'eval' (test split filtered by eval_labels), 'test'.
+    """
+    if partition == 'train':
+        df = pd.read_csv(os.path.join(annot_path['meccano'], 'MECCANO_train_split.csv'))
+    elif partition in ('validation', 'val'):
+        df = pd.read_csv(os.path.join(annot_path['meccano'], 'MECCANO_val_split.csv'))
+    elif partition in ('eval', 'evaluation', 'test'):
+        df = pd.read_csv(os.path.join(annot_path['meccano'], 'MECCANO_test_split.csv'))
+    else:
+        raise Exception(f'Error. Partition "{partition}" not supported for MECCANO.')
+
+    if raw:
+        return df
+
+    if partition in ('eval', 'evaluation'):
+        with open(eval_label_path['meccano'], 'rb') as f:
+            eval_labels = pickle.load(f)
+        eval_uids = eval_labels.keys()
+        df = df.loc[df['uid'].isin(eval_uids)]
+
+    if use_label_only:
+        label_info_path = os.path.join(label_path['meccano'], "video_info.json")
+        with open(label_info_path, 'r') as f:
+            uids_label = json.load(f)
+        df = df.loc[df['uid'].isin(uids_label)]
+
+    # Force video_id / participant_id to 4-digit strings (pandas parses "0001" -> int 1)
+    df['video_id'] = df['video_id'].map(lambda v: f"{int(v):04d}")
+    df['participant_id'] = df['participant_id'].map(lambda v: f"{int(v):04d}")
+
+    # all_nouns / all_noun_classes stored as string repr of lists in CSV
+    if 'all_nouns' in df.columns:
+        df['all_nouns'] = df['all_nouns'].map(lambda x: str2list(x) if isinstance(x, str) else x)
+        df['all_noun_classes'] = df['all_noun_classes'].map(lambda x: str2list(x, out_type=int) if isinstance(x, str) else x)
+
+    return df
+
+
 def get_egtea_annotation(annot_path, rulstm_annot_path, label_path, eval_label_path, partition, validation_ratio=0.2,
                           use_rulstm_splits=False, use_label_only=True, raw=False):
     """Load EGTEA-Gaze+ annotations for the specified partition."""

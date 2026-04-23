@@ -73,6 +73,13 @@ class FeaturesHOLoader(object):
                 self.lmdb_path = os.path.join("./data/egtea/feats_test", "data.lmdb")
             self.env = None
             self.raw_images_base = "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/extracted_frames"
+        elif ek_version == 'meccano':
+            if mode == 'train':
+                self.lmdb_path = os.path.join("./data/meccano/feats_train", "data.lmdb")
+            else:
+                self.lmdb_path = os.path.join("./data/meccano/feats_test", "data.lmdb")
+            self.env = None
+            self.raw_images_base = "/scratch/u6cu/sx2022.u6cu/datasets/MECCANO/extracted_frames"
         else:
             if mode == 'train':
                 self.lmdb_path1 = os.path.join("./data/ek100/feats_train", "full_data_with_future_train_part1.lmdb")
@@ -86,7 +93,10 @@ class FeaturesHOLoader(object):
 
         self.fps = fps
         self.input_name = input_name
-        self.frame_tmpl = frame_tmpl
+        if ek_version == 'meccano':
+            self.frame_tmpl = '{:05d}.jpg'
+        else:
+            self.frame_tmpl = frame_tmpl
         self.transform_feat = transform_feat
         self.transform_video = transform_video
         self.sampler = sampler
@@ -96,16 +106,23 @@ class FeaturesHOLoader(object):
 
         if ek_version == 'egtea':
             uid2future_path = "./data/uid2future_file_name_egtea.pickle"
+        elif ek_version == 'meccano':
+            uid2future_path = "./data/uid2future_file_name_meccano.pickle"
         else:
             uid2future_path = "./data/uid2future_file_name.pickle"
         with open(uid2future_path, 'rb') as f:
             self.uid2future_file_name = pickle.load(f)
 
-        self.use_gaze = use_gaze and (ek_version == 'egtea')
+        self.use_gaze = use_gaze and (ek_version in ('egtea', 'meccano'))
         self.gaze_heatmap_size = gaze_heatmap_size
         self.gaze_sigma = gaze_sigma
         if self.use_gaze:
-            self.gaze_data_base = gaze_data_base or "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/Gaze_Data/gaze_data"
+            if ek_version == 'meccano':
+                self.gaze_data_base = gaze_data_base or \
+                    "/scratch/u6cu/sx2022.u6cu/datasets/MECCANO/annotations/MECCANO_Gaze_data/MECCANO_Gaze_data"
+            else:
+                self.gaze_data_base = gaze_data_base or \
+                    "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/Gaze_Data/gaze_data"
             self._gaze_cache = {}
 
     def _load_gaze_for_video(self, video_id):
@@ -115,11 +132,17 @@ class FeaturesHOLoader(object):
         if video_id in self._gaze_cache:
             return self._gaze_cache[video_id]
 
+        if self.ek_version == 'meccano':
+            averaged = self._load_meccano_gaze(video_id)
+        else:
+            averaged = self._load_egtea_gaze(video_id)
+        self._gaze_cache[video_id] = averaged
+        return averaged
+
+    def _load_egtea_gaze(self, video_id):
         gaze_file = os.path.join(self.gaze_data_base, f"{video_id}.txt")
         if not os.path.exists(gaze_file):
-            self._gaze_cache[video_id] = None
             return None
-
         frame_gaze = {}
         with open(gaze_file, 'r') as f:
             for line in f:
@@ -139,24 +162,53 @@ class FeaturesHOLoader(object):
                     continue
                 x_norm = max(0.0, min(1.0, x_px / 1280.0))
                 y_norm = max(0.0, min(1.0, y_px / 960.0))
-                if frame_num not in frame_gaze:
-                    frame_gaze[frame_num] = []
-                frame_gaze[frame_num].append((x_norm, y_norm))
+                frame_gaze.setdefault(frame_num, []).append((x_norm, y_norm))
+        averaged = {fnum: (sum(p[0] for p in pts) / len(pts),
+                           sum(p[1] for p in pts) / len(pts))
+                    for fnum, pts in frame_gaze.items()}
+        return averaged
 
-        # Average multiple gaze points per frame
-        averaged = {}
-        for fnum, points in frame_gaze.items():
-            xs = [p[0] for p in points]
-            ys = [p[1] for p in points]
-            averaged[fnum] = (sum(xs) / len(xs), sum(ys) / len(ys))
+    def _load_meccano_gaze(self, video_id):
+        """MECCANO gaze CSV: frame,confidence,x_pixel_coord,y_pixel_coord at 200 Hz.
+        Files live under MECCANO_Gaze_data/{Train,Val,Test}/{video_id}_gaze-data.csv.
+        """
+        gaze_file = None
+        for sub in ("Train", "Val", "Test"):
+            candidate = os.path.join(self.gaze_data_base, sub, f"{video_id}_gaze-data.csv")
+            if os.path.exists(candidate):
+                gaze_file = candidate
+                break
+        if gaze_file is None:
+            return None
 
-        self._gaze_cache[video_id] = averaged
+        frame_gaze = {}
+        with open(gaze_file, 'r') as f:
+            header = True
+            for line in f:
+                if header:
+                    header = False
+                    continue
+                parts = line.strip().split(",")
+                if len(parts) < 4:
+                    continue
+                try:
+                    frame_num = int(parts[0].replace(".jpg", ""))
+                    x_px = float(parts[2])
+                    y_px = float(parts[3])
+                except ValueError:
+                    continue
+                x_norm = max(0.0, min(1.0, x_px / 1920.0))
+                y_norm = max(0.0, min(1.0, y_px / 1080.0))
+                frame_gaze.setdefault(frame_num, []).append((x_norm, y_norm))
+        averaged = {fnum: (sum(p[0] for p in pts) / len(pts),
+                           sum(p[1] for p in pts) / len(pts))
+                    for fnum, pts in frame_gaze.items()}
         return averaged
 
     def _open_lmdb(self):
         """Lazy LMDB open for multiprocessing safety."""
         from lmdbdict import lmdbdict
-        if self.ek_version == 'egtea':
+        if self.ek_version in ('egtea', 'meccano'):
             if self.env is None:
                 self.env = lmdbdict(self.lmdb_path, 'r')
         else:
@@ -184,10 +236,10 @@ class FeaturesHOLoader(object):
             return None
 
     def _get_feat_dict(self, key_enc):
-        if self.ek_version == 'egtea':
+        if self.ek_version in ('egtea', 'meccano'):
             f_dict = self._db_get_native(self.env, key_enc)
             if f_dict is None:
-                raise KeyError(f"Key {key_enc} missing from EGTEA LMDB at {self.lmdb_path}")
+                raise KeyError(f"Key {key_enc} missing from LMDB at {self.lmdb_path}")
             return f_dict
         else:
             if self.mode == 'train':
@@ -205,7 +257,7 @@ class FeaturesHOLoader(object):
 
     def _make_full_name(self, action, f_name):
         """Build the LMDB key / full path name for a frame."""
-        if self.ek_version == 'egtea':
+        if self.ek_version in ('egtea', 'meccano'):
             return os.path.join(action.video_id, f_name)
         else:
             return os.path.join(action.participant_id, "rgb_frames", action.video_id, f_name)
@@ -252,9 +304,11 @@ class FeaturesHOLoader(object):
             if self.mode=='train':
                 file_path = os.path.join(homo_path_train, action.participant_id, "homo", action.video_id, f_name[:-3]+"npy")
                 if f_idx == 0 and os.path.exists(file_path):
-                    assert os.path.exists(file_path)
-                    exist_flag = True
-                    homography_stack = np.load(file_path)
+                    try:
+                        homography_stack = np.load(file_path)
+                        exist_flag = True
+                    except (EOFError, ValueError, OSError):
+                        exist_flag = False  # corrupt/partial cache (concurrent write); recompute
                 elif not exist_flag:
                     image_cur = cv2.imread(self._get_raw_image_path(full_name))
                     if f_idx > 0 and f_idx < 10 and (not exist_flag):
@@ -264,9 +318,11 @@ class FeaturesHOLoader(object):
             else:
                 file_path = os.path.join(homo_path_test, action.participant_id, "homo", action.video_id, f_name[:-3]+"npy")
                 if f_idx == 0 and os.path.exists(file_path):
-                    assert os.path.exists(file_path)
-                    exist_flag = True
-                    homography_stack = np.load(file_path)
+                    try:
+                        homography_stack = np.load(file_path)
+                        exist_flag = True
+                    except (EOFError, ValueError, OSError):
+                        exist_flag = False
                 elif not exist_flag:
                     image_cur = cv2.imread(self._get_raw_image_path(full_name))
                     if f_idx > 0 and f_idx < 15 and exist_flag==False and f_idx != 10:
@@ -370,11 +426,15 @@ class FeaturesHOLoader(object):
             else:
                 homo_folder_path = os.path.join(homo_path_test, action.participant_id, "homo", action.video_id)
             if not os.path.exists(homo_folder_path):
-                os.makedirs(homo_folder_path)
+                os.makedirs(homo_folder_path, exist_ok=True)
             homography_stack = np.stack(homography_stack, axis=0)
             homo_file_path = os.path.join(homo_folder_path, frames_names[0][:-4])
-            np.save(homo_file_path, homography_stack)
-            print("saving homo to ", homo_file_path)
+            # Atomic write: save to unique tmp, then rename. Avoids EOFError in a
+            # concurrent reader seeing a partially-written .npy.
+            tmp_path = f"{homo_file_path}.tmp.{os.getpid()}"
+            np.save(tmp_path, homography_stack)
+            os.replace(tmp_path + ".npy" if not tmp_path.endswith(".npy") else tmp_path,
+                       homo_file_path + ".npy")
 
         out = {"name": full_names, "feat": feats, "bbox_feat": bbox_feats, "valid_mask": valid_masks, 'times': times, 'start_time': action.start_time, 'frames_idxs': frames_idxs, 'future_file_name_list': future_file_name_list, 'homography_stack': homography_stack, }
 

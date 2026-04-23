@@ -3,7 +3,7 @@ from tqdm import tqdm
 import json
 import numpy as np
 
-from datasets.dataset_utils import get_ek55_annotation, get_ek100_annotation, get_egtea_annotation
+from datasets.dataset_utils import get_ek55_annotation, get_ek100_annotation, get_egtea_annotation, get_meccano_annotation
 from datasets.input_loaders import get_loaders
 
 
@@ -184,6 +184,12 @@ def get_datasets(args, epic_ds=None, featuresloader=None):
             'train': get_egtea_annotation(partition='train', **annotation_args),
             'validation': get_egtea_annotation(partition='validation', **annotation_args),
             'eval': get_egtea_annotation(partition='eval', **annotation_args),
+        }
+    elif args.ek_version == 'meccano':
+        dfs = {
+            'train': get_meccano_annotation(partition='train', **annotation_args),
+            'validation': get_meccano_annotation(partition='validation', **annotation_args),
+            'eval': get_meccano_annotation(partition='eval', **annotation_args),
         }
     else:
         raise Exception(f'Error. Dataset version "{args.ek_version}" not supported.')
