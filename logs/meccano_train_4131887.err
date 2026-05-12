@@ -1,0 +1,117 @@
+/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 32
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': False, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 0, 'gaze_bias_init_amp': 2.0, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading train samples:   0%|          | 0/4885 [00:00<?, ?it/s]Loading train samples:  29%|██▊       | 1396/4885 [00:00<00:00, 11911.95it/s]Loading train samples:  64%|██████▍   | 3140/4885 [00:00<00:00, 12866.69it/s]Loading train samples: 100%|██████████| 4885/4885 [00:00<00:00, 12771.04it/s]Loading train samples: 100%|██████████| 4885/4885 [00:00<00:00, 12704.05it/s]
+Loading validation samples:   0%|          | 0/938 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 938/938 [00:00<00:00, 13420.72it/s]
+Loading eval samples:   0%|          | 0/2710 [00:00<?, ?it/s]Loading eval samples:  54%|█████▍    | 1466/2710 [00:00<00:00, 12768.74it/s]Loading eval samples: 100%|██████████| 2710/2710 [00:00<00:00, 13128.23it/s]
+[INFO] Using lr 0.0002
+[INFO] train epoch: 1
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/traineval.py", line 182, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/traineval.py", line 164, in main
+[rank0]:     ).run_loop()
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/netscripts/epoch_feat.py", line 312, in run_loop
+[rank0]:     self.epoch_pass(
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/netscripts/epoch_feat.py", line 337, in epoch_pass
+[rank0]:     for batch_idx, sample in enumerate(self.loader):
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1465, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+[rank0]:     raise exception
+[rank0]: AttributeError: Caught AttributeError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/datasets/holoaders.py", line 492, in __getitem__
+[rank0]:     inputs = self.loader(a)
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/datasets/input_loaders.py", line 96, in __call__
+[rank0]:     out.update(loader(action))
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/datasets/holoaders.py", line 230, in __call__
+[rank0]:     self._open_lmdb()
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/datasets/holoaders.py", line 176, in _open_lmdb
+[rank0]:     if self.env1 is None:
+[rank0]: AttributeError: 'FeaturesHOLoader' object has no attribute 'env1'. Did you mean: 'env'?
+
+[rank0]:[W421 13:01:42.990069522 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': False, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 0, 'gaze_bias_init_amp': 2.0, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/938 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 938/938 [00:00<00:00, 11761.32it/s]
+Loading eval samples:   0%|          | 0/2710 [00:00<?, ?it/s]Loading eval samples:  54%|█████▍    | 1466/2710 [00:00<00:00, 13285.88it/s]Loading eval samples: 100%|██████████| 2710/2710 [00:00<00:00, 13481.69it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/traineval.py", line 182, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/traineval.py", line 126, in main
+[rank0]:     TrainValLoop(
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/netscripts/epoch_feat.py", line 248, in __init__
+[rank0]:     self.start_epoch = modelio.load_checkpoint_by_name(self.sf_encoder, resume_path=resume[0], state_dict_name="sf_encoder_state_dict", strict=False, device=dist_util.dev())
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/netscripts/modelio.py", line 50, in load_checkpoint_by_name
+[rank0]:     raise ValueError("=> no checkpoint found at '{}'".format(resume_path))
+[rank0]: ValueError: => no checkpoint found at './diffip_weights/checkpoint_30.pth.tar'
+[rank0]:[W421 13:01:53.666534855 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+/scratch/u6cu/sx2022.u6cu/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[INFO] use batch size: 16
+[INFO] diffusion setups
+================= 
+{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6, 'use_gaze': False, 'T_max': 64, 'gaze_coord_only': False, 'gaze_fusion_only': False, 'gaze_alpha_clamp': 0.0, 'gaze_last_n_blocks': 0, 'gaze_fixed_delta': 0, 'gaze_bias_init_delta': 0, 'gaze_bias_init_amp': 2.0, 'gaze_before_motion': False} 
+=================
+[INFO] finish building diffusion model!
+[INFO] finish building schedule sampler!
+Loading validation samples:   0%|          | 0/938 [00:00<?, ?it/s]Loading validation samples: 100%|██████████| 938/938 [00:00<00:00, 11927.59it/s]
+Loading eval samples:   0%|          | 0/2710 [00:00<?, ?it/s]Loading eval samples:  54%|█████▍    | 1466/2710 [00:00<00:00, 13223.82it/s]Loading eval samples: 100%|██████████| 2710/2710 [00:00<00:00, 13386.92it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/traineval.py", line 182, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/traineval.py", line 126, in main
+[rank0]:     TrainValLoop(
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/netscripts/epoch_feat.py", line 248, in __init__
+[rank0]:     self.start_epoch = modelio.load_checkpoint_by_name(self.sf_encoder, resume_path=resume[0], state_dict_name="sf_encoder_state_dict", strict=False, device=dist_util.dev())
+[rank0]:   File "/home/u6cu/sx2022.u6cu/Diff-IP2D/netscripts/modelio.py", line 50, in load_checkpoint_by_name
+[rank0]:     raise ValueError("=> no checkpoint found at '{}'".format(resume_path))
+[rank0]: ValueError: => no checkpoint found at './diffip_weights/checkpoint_30.pth.tar'
+[rank0]:[W421 13:02:02.113042934 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
