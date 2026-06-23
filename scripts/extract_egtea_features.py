@@ -1,14 +1,3 @@
-"""
-Extract per-frame BNInception features for EGTEA-Gaze+ dataset and store in LMDB.
-
-Produces LMDB files compatible with FeaturesHOLoader in holoaders.py.
-Each entry: key = '{video_id}/frame_{:010d}.jpg', value = dict with 'GLOBAL_FEAT' (1024-D).
-
-Usage:
-    python scripts/extract_egtea_features.py --split train
-    python scripts/extract_egtea_features.py --split test
-"""
-
 import os
 import sys
 import argparse
@@ -38,7 +27,6 @@ def get_args():
 
 
 def build_model(model_path, device):
-    """Build BNInception model for feature extraction."""
     from pretrainedmodels import bninception
     model = bninception(pretrained=None)
     state_dict = torch.load(model_path, map_location='cpu')['state_dict']
@@ -61,12 +49,6 @@ def get_transform():
 
 
 def collect_frames_to_extract(split, frames_dir):
-    """Collect all (video_id, frame_idx) pairs that need feature extraction.
-
-    For train split: use training1.csv UIDs and their label frame ranges.
-    For test split: use validation1.csv UIDs.
-    We extract features for all frames referenced by the data pipeline.
-    """
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     # Load uid2future for future frames
@@ -126,7 +108,6 @@ def collect_frames_to_extract(split, frames_dir):
 
 
 def extract_features(args):
-    """Extract and store features in LMDB."""
     from lmdbdict import lmdbdict
 
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

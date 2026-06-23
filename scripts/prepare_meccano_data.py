@@ -1,19 +1,3 @@
-"""
-Prepare MECCANO data for Diff-IP2D training and evaluation.
-
-Matches the EGTEA label schema exactly (16-frame windows anchored so that
-frame_indices[-1] == action start_frame, like EGTEA). Outputs:
-
-  data/meccano/labels/label_{uid}.pkl        per-action training labels
-  data/meccano/video_info.json               list of UIDs with labels
-  data/meccano/meccano_eval_labels.pkl       held-out eval set (test split)
-  data/meccano/MECCANO_{partition}_split.csv annotation CSVs with uid column
-  data/uid2future_file_name_meccano.pickle   uid -> future frame paths
-
-Input: /scratch/.../MECCANO/annotations/{MECCANO_action,hands,NAO,...}
-Frames live at /scratch/.../MECCANO/extracted_frames/<video_id>/<frame>.jpg
-"""
-
 import json
 import os
 import pickle
@@ -42,12 +26,10 @@ WINDOW = 7
 
 
 def vid4(v):
-    """MECCANO 4-digit video id string, e.g. 1 -> '0001'."""
     return f"{int(v):04d}"
 
 
 def vid2(v):
-    """2-digit video id used in NAO/active-object file_name prefix."""
     return f"{int(v):02d}"
 
 
@@ -74,7 +56,6 @@ def _parse_hand_class(region_attrs_json):
 
 
 def load_hand_bboxes(partition_dir):
-    """Map video_id (4-digit str) -> {frame_int: {'LEFT': (cx,cy), 'RIGHT': (cx,cy)}}."""
     result = {}
     for fn in sorted(os.listdir(partition_dir)):
         if not fn.endswith(".csv"):
@@ -99,11 +80,6 @@ def load_hand_bboxes(partition_dir):
 
 
 def load_nao(partition):
-    """Load NAO annotations for one partition.
-
-    Returns: dict video_id(4-digit) -> {frame_int: [bbox, ...]}
-             where bbox = (x, y, w, h) in MECCANO pixel coords.
-    """
     mapping = {"train": "train", "val": "val", "test": "test"}
     path = os.path.join(
         SRC, "MECCANO_NAO_bounding_box_annotations",
@@ -124,11 +100,6 @@ def load_nao(partition):
 
 
 def interp_and_fit(frame_indices, centers_by_frame):
-    """Produce traj (16, 2) in canonical coord space, plus fill_indices, fit_curve, centers.
-
-    centers_by_frame: dict frame_int -> (cx_pixel, cy_pixel) in MECCANO pixel coords.
-    Returns None if fewer than 2 observations.
-    """
     obs = [(i, centers_by_frame[f]) for i, f in enumerate(frame_indices) if f in centers_by_frame]
     if len(obs) < 2:
         return None
@@ -162,7 +133,6 @@ def interp_and_fit(frame_indices, centers_by_frame):
 
 
 def pick_nao_at_or_near(frame_indices, nao_by_frame):
-    """Pick NAO bbox nearest (but not before anchor) frame_indices[-1]."""
     target = frame_indices[-1]
     if not nao_by_frame:
         return None
@@ -178,7 +148,6 @@ def pick_nao_at_or_near(frame_indices, nao_by_frame):
 
 
 def make_select_points(bbox_pixel, n=5):
-    """Sample N points inside a pixel-space bbox; return canonical (CANON_W, CANON_H) coords."""
     x, y, w, h = bbox_pixel
     rng = np.random.RandomState(0)
     xs = rng.uniform(x, x + w, size=n) * SX
@@ -187,12 +156,6 @@ def make_select_points(bbox_pixel, n=5):
 
 
 def build_labels(partition, actions_df, hand_data, nao_data, want_eval_labels=False):
-    """Return (label_records, rows_with_uid, eval_labels).
-
-    label_records: list of (uid, pickle_dict) to write.
-    rows_with_uid: DataFrame with uid column added for this partition.
-    eval_labels: dict uid -> eval-label-dict (only populated if want_eval_labels).
-    """
     labels = []
     rows_out = []
     eval_labels = {}

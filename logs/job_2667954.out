@@ -1,7 +1,0 @@
-False
-Starting homography generation and validation...
-python traineval.py --evaluate --ek_version=ek100 --resume=./diffip_weights/checkpoint_traj.pth.tar  --traj_only
-python traineval.py --evaluate --ek_version=ek100 --resume=./diffip_weights/checkpoint_traj.pth.tar  --traj_only
-evaluation dataset size: 3513
-evaluation dataset size: 3513
-Job finished!

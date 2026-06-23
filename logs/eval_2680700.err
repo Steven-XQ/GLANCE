@@ -1,62 +1,0 @@
-/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
-and will be removed in future. Use torchrun.
-Note that --use-env is set by default in torchrun.
-If your script expects `--local-rank` argument to be set, please
-change it to read from `os.environ['LOCAL_RANK']` instead. See 
-https://pytorch.org/docs/stable/distributed.html#launch-utility for 
-further instructions
-
-  main()
-[INFO] use batch size: 16
-[INFO] diffusion setups
-================= 
-{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
-=================
-[INFO] finish building diffusion model!
-[INFO] finish building schedule sampler!
-Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  31%|███▏      | 1105/3513 [00:00<00:00, 10778.51it/s]Loading validation samples:  64%|██████▍   | 2254/3513 [00:00<00:00, 11079.14it/s]Loading validation samples:  98%|█████████▊| 3430/3513 [00:00<00:00, 11349.34it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11122.23it/s]
-Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 6599.22it/s]
-/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  checkpoint = torch.load(resume_path, map_location=device)
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 160, in <module>
-[rank0]:     main(args)
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 110, in main
-[rank0]:     TrainValLoop(
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 225, in __init__
-[rank0]:     self.start_epoch = modelio.load_checkpoint_by_name(self.sf_encoder, resume_path=resume[0], state_dict_name="pre_encoder_state_dict", strict=False, device=dist_util.dev())
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py", line 38, in load_checkpoint_by_name
-[rank0]:     if "module" in list(checkpoint[state_dict_name].keys())[0]:
-[rank0]: KeyError: 'pre_encoder_state_dict'
-[rank0]:[W309 14:48:41.728076083 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
-/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
-and will be removed in future. Use torchrun.
-Note that --use-env is set by default in torchrun.
-If your script expects `--local-rank` argument to be set, please
-change it to read from `os.environ['LOCAL_RANK']` instead. See 
-https://pytorch.org/docs/stable/distributed.html#launch-utility for 
-further instructions
-
-  main()
-[INFO] use batch size: 16
-[INFO] diffusion setups
-================= 
-{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
-=================
-[INFO] finish building diffusion model!
-[INFO] finish building schedule sampler!
-Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  31%|███▏      | 1105/3513 [00:00<00:00, 10661.31it/s]Loading validation samples:  64%|██████▍   | 2254/3513 [00:00<00:00, 11005.29it/s]Loading validation samples:  98%|█████████▊| 3430/3513 [00:00<00:00, 11318.21it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11073.87it/s]
-Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 6522.69it/s]
-/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py:35: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  checkpoint = torch.load(resume_path, map_location=device)
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 160, in <module>
-[rank0]:     main(args)
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/traineval.py", line 110, in main
-[rank0]:     TrainValLoop(
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 225, in __init__
-[rank0]:     self.start_epoch = modelio.load_checkpoint_by_name(self.sf_encoder, resume_path=resume[0], state_dict_name="pre_encoder_state_dict", strict=False, device=dist_util.dev())
-[rank0]:   File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/modelio.py", line 38, in load_checkpoint_by_name
-[rank0]:     if "module" in list(checkpoint[state_dict_name].keys())[0]:
-[rank0]: KeyError: 'pre_encoder_state_dict'
-[rank0]:[W309 14:48:59.903879932 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

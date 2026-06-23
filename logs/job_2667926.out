@@ -1,4 +1,0 @@
-Starting homography generation and validation...
-python traineval.py --evaluate --ek_version=ek100 --resume=./diffip_weights/checkpoint_traj.pth.tar  --traj_only
-python traineval.py --evaluate --ek_version=ek100 --resume=./diffip_weights/checkpoint_traj.pth.tar  --traj_only
-Job finished!

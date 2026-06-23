@@ -1,47 +1,0 @@
-/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.8/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
-and will be removed in future. Use torchrun.
-Note that --use-env is set by default in torchrun.
-If your script expects `--local-rank` argument to be set, please
-change it to read from `os.environ['LOCAL_RANK']` instead. See 
-https://pytorch.org/docs/stable/distributed.html#launch-utility for 
-further instructions
-
-  warnings.warn(
-[2026-03-07 03:01:55,643] torch.distributed.run: [WARNING] 
-[2026-03-07 03:01:55,643] torch.distributed.run: [WARNING] *****************************************
-[2026-03-07 03:01:55,643] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-[2026-03-07 03:01:55,643] torch.distributed.run: [WARNING] *****************************************
-[INFO] diffusion setups
-================= 
-{'hidden_t_dim': 512, 'hidden_dim': 512, 'vocab_size': None, 'config_name': 'huggingface-config', 'use_plm_init': 'no', 'dropout': 0.1, 'diffusion_steps': 1000, 'noise_schedule': 'sqrt', 'learn_sigma': False, 'timestep_respacing': '', 'predict_xstart': True, 'rescale_timesteps': True, 'sigma_small': False, 'rescale_learned_sigmas': False, 'use_kl': False, 'sf_encoder_hidden': 64, 'traj_decoder_hidden1': 256, 'traj_decoder_hidden2': 64, 'motion_encoder_hidden': 64, 'madt_depth': 6} 
-=================
-[INFO] finish building diffusion model!
-[INFO] finish building schedule sampler!
-Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  31%|███▏      | 1105/3513 [00:00<00:00, 11019.51it/s]Loading validation samples:  64%|██████▍   | 2254/3513 [00:00<00:00, 11277.08it/s]Loading validation samples:  98%|█████████▊| 3430/3513 [00:00<00:00, 11492.34it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11268.24it/s]
-Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 6228.30it/s]
-Traceback (most recent call last):
-  File "traineval.py", line 160, in <module>
-    main(args)
-  File "traineval.py", line 110, in main
-    TrainValLoop(
-  File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 139, in __init__
-    self.sf_encoder = DDP(
-  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 712, in __init__
-    self._log_and_throw(
-  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 1037, in _log_and_throw
-    raise err_type(err_msg)
-ValueError: DistributedDataParallel device_ids and output_device arguments only work with single-device/multiple-device GPU modules or CPU modules, but got device_ids [device(type='cpu')], output_device cpu, and module parameters {device(type='cpu')}.
-Loading validation samples:   0%|          | 0/3513 [00:00<?, ?it/s]Loading validation samples:  30%|██▉       | 1051/3513 [00:00<00:00, 10415.84it/s]Loading validation samples:  64%|██████▍   | 2254/3513 [00:00<00:00, 10995.78it/s]Loading validation samples:  98%|█████████▊| 3430/3513 [00:00<00:00, 11321.08it/s]Loading validation samples: 100%|██████████| 3513/3513 [00:00<00:00, 11034.37it/s]
-Loading eval samples:   0%|          | 0/401 [00:00<?, ?it/s]Loading eval samples: 100%|██████████| 401/401 [00:00<00:00, 5923.64it/s]
-Traceback (most recent call last):
-  File "traineval.py", line 160, in <module>
-    main(args)
-  File "traineval.py", line 110, in main
-    TrainValLoop(
-  File "/home/u6x/sx2022.u6x/Diff-IP2D-main/netscripts/epoch_feat.py", line 139, in __init__
-    self.sf_encoder = DDP(
-  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 712, in __init__
-    self._log_and_throw(
-  File "/scratch/u6x/sx2022.u6x/miniconda3/envs/diffip/lib/python3.8/site-packages/torch/nn/parallel/distributed.py", line 1037, in _log_and_throw
-    raise err_type(err_msg)
-ValueError: DistributedDataParallel device_ids and output_device arguments only work with single-device/multiple-device GPU modules or CPU modules, but got device_ids [device(type='cpu')], output_device cpu, and module parameters {device(type='cpu')}.

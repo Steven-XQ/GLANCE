@@ -1,22 +1,3 @@
-"""
-Prepare EGTEA-Gaze+ data for Diff-IP2D training and evaluation.
-
-Key insight: OCT label_N.pkl corresponds to row N in egtea.csv (the master
-UID mapping). The egtea.csv uses RULSTM UIDs (1-17050), while OCT uses
-sequential indices (0-10318). We remap labels to RULSTM UIDs.
-
-Steps:
-1. Build OCT-to-RULSTM UID mapping via egtea.csv row indices
-2. Extract and remap label pickle files into data/egtea/labels/
-3. Copy eval labels
-4. Generate video_info.json (RULSTM UIDs that have labels)
-5. Generate uid2future_file_name_egtea.pickle
-6. Create annotation CSVs
-
-Usage:
-    python scripts/prepare_egtea_data.py
-"""
-
 import os
 import sys
 import json
@@ -36,11 +17,6 @@ EGTEA_FRAMES_DIR = "/scratch/u6cu/sx2022.u6cu/datasets/EGTEA_Gaze_Plus/EGTEA/ext
 
 
 def build_uid_mapping():
-    """Build mapping from OCT sequential index to RULSTM UID.
-
-    OCT label_N.pkl corresponds to row N in egtea.csv.
-    egtea.csv uses RULSTM UIDs.
-    """
     egtea_csv = os.path.join(OCT_DIR, "evaluation_labels", "egtea.csv")
     df = pd.read_csv(egtea_csv, header=None,
                      names=['uid', 'video_id', 'start_frame', 'stop_frame',
@@ -58,7 +34,6 @@ def build_uid_mapping():
 
 
 def extract_and_remap_labels(oct_to_rulstm):
-    """Extract OCT label pickles and remap to RULSTM UIDs."""
     label_dir = os.path.join(DATA_DIR, "labels")
     os.makedirs(label_dir, exist_ok=True)
 
@@ -96,7 +71,6 @@ def extract_and_remap_labels(oct_to_rulstm):
 
 
 def remap_eval_labels(oct_to_rulstm):
-    """Remap EGTEA eval labels from OCT sequential UIDs to RULSTM UIDs."""
     src = os.path.join(OCT_DIR, "evaluation_labels", "egtea_eval_labels.pkl")
     dst = os.path.join(DATA_DIR, "egtea_eval_labels.pkl")
 
@@ -120,7 +94,6 @@ def remap_eval_labels(oct_to_rulstm):
 
 
 def generate_video_info():
-    """Generate video_info.json listing RULSTM UIDs that have labels."""
     label_dir = os.path.join(DATA_DIR, "labels")
     uids = []
     for f in os.listdir(label_dir):
@@ -136,10 +109,6 @@ def generate_video_info():
 
 
 def generate_uid2future(oct_to_rulstm):
-    """Generate uid2future_file_name_egtea.pickle.
-
-    Maps each RULSTM UID (that has a label) to future frame file paths.
-    """
     label_dir = os.path.join(DATA_DIR, "labels")
 
     # Build rulstm_uid -> video_id mapping
@@ -177,7 +146,6 @@ def generate_uid2future(oct_to_rulstm):
 
 
 def create_annotations():
-    """Create merged annotation CSVs for EGTEA."""
     os.makedirs(ANNOT_DIR, exist_ok=True)
 
     # Load actions.csv for action label lookup
@@ -224,7 +192,6 @@ def create_annotations():
 
 
 def verify_labels(oct_to_rulstm):
-    """Verify a few remapped labels match expected frame indices."""
     label_dir = os.path.join(DATA_DIR, "labels")
     verified = 0
     for oct_uid in [0, 6, 10]:

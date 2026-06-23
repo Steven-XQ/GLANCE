@@ -141,6 +141,8 @@ class TrainValLoop:
             gaze_detach_diffusion=False,
             gaze_heatmap_only=False,
             gaze_cfg_dropout=0.0,
+            dump_preds_path="",
+            dump_aff_path="",
     ):
         self.sf_encoder = DDP(
             sf_encoder.to(dist_util.dev()) ,
@@ -242,6 +244,10 @@ class TrainValLoop:
         self.gts_affordance_dict, self.preds_affordance_dict = {}, {}
         self.ade_list = []
         self.fde_list = []
+        self.dump_preds_path = dump_preds_path
+        self.dump_preds = {} if dump_preds_path else None
+        self.dump_aff_path = dump_aff_path
+        self.dump_aff = {} if dump_aff_path else None
 
         if resume is not None:
             # pre_encoder_state_dict to sf_encoder_state_dict for our pretrained model
@@ -578,6 +584,7 @@ class TrainValLoop:
                         right_feat_encoded = self.sf_encoder(right_feat)
                         left_feat_encoded = self.sf_encoder(left_feat)
 
+                    pred_traj_all_samples = [] if self.dump_preds is not None else None
                     for sample_idx in range(self.sample_times):
                         pseudo_future = torch.zeros((bsize, self.seq_len_unobs, self.feat_dim))
                         noise_r = torch.randn_like(pseudo_future).to(dist_util.dev())
@@ -622,7 +629,8 @@ class TrainValLoop:
                         pred_future_traj_r = pred_future_traj[:, :self.seq_len_unobs, :]
                         pred_future_traj_l = pred_future_traj[:, self.seq_len_unobs:, :]
 
-                        future_hands = sample['future_hands'][:, :, 1:, :].float().numpy()
+                        future_hands_full = sample['future_hands'].float().numpy()  # (B, 2_hands, T_unobs+1, 2_xy), index 0 = last-obs anchor
+                        future_hands = future_hands_full[:, :, 1:, :]
                         future_valid = sample['future_valid'].float().numpy()
 
                         pred_future_traj = torch.stack((pred_future_traj_r,pred_future_traj_l), dim=1).cpu().float().numpy()
@@ -636,6 +644,30 @@ class TrainValLoop:
 
                             self.logger.info(str(batch_idx) + "/" + str(len(self.loader)) +  " ade ours "+str(ade))
                             self.logger.info(str(batch_idx) + "/" + str(len(self.loader)) +  " fde ours "+str(fde))
+
+                        if pred_traj_all_samples is not None:
+                            pred_traj_all_samples.append(pred_future_traj)
+
+                    if self.dump_preds is not None and not 'eval' in self.loader.dataset.partition:
+                        # Accumulate per-uid predictions for offline picking + visualization.
+                        # pred_future_traj per sample: (B, 2, T_unobs, 2). Stack -> (B, S, 2, T_unobs, 2).
+                        preds_BST = np.stack(pred_traj_all_samples, axis=1)
+                        uids = sample['uid'].numpy()
+                        names = sample['name']  # list (T_obs) of tuple (B) after default_collate
+                        last_name_idx = self.seq_len_obs - 1
+                        last_obs_names = names[last_name_idx]
+                        frames_idxs_t = sample['frames_idxs']
+                        last_obs_idxs = frames_idxs_t[:, -1].cpu().numpy() if torch.is_tensor(frames_idxs_t) else np.asarray(frames_idxs_t)[:, -1]
+                        for b in range(preds_BST.shape[0]):
+                            uid_b = int(uids[b])
+                            self.dump_preds[uid_b] = {
+                                'preds': preds_BST[b].astype(np.float32),   # (S, 2, T_unobs, 2)
+                                'gt': future_hands[b].astype(np.float32),    # (2, T_unobs, 2)
+                                'last_obs_hand': future_hands_full[b, :, 0, :].astype(np.float32),  # (2, 2) anchor at last-obs frame
+                                'valid': future_valid[b].astype(np.float32), # (2,)
+                                'last_obs_name': str(last_obs_names[b]),
+                                'last_obs_frame_idx': int(last_obs_idxs[b]),
+                            }
 
                     if 'eval' in self.loader.dataset.partition:
 
@@ -679,9 +711,22 @@ class TrainValLoop:
                         contact_points = torch.stack(contact_points_list, dim=1)
                         uids = sample['uid'].numpy()
                         contact_points = contact_points.cpu().numpy()
+                        if self.dump_aff is not None:
+                            names = sample['name']
+                            last_name_idx = self.seq_len_obs - 1
+                            last_obs_names = names[last_name_idx]
+                            frames_idxs_t = sample['frames_idxs']
+                            last_obs_idxs = frames_idxs_t[:, -1].cpu().numpy() if torch.is_tensor(frames_idxs_t) else np.asarray(frames_idxs_t)[:, -1]
                         for idx, uid in enumerate(uids):
                             self.gts_affordance_dict[uid] = self.loader.dataset.eval_labels[uid]['norm_contacts']
                             self.preds_affordance_dict[uid] = contact_points[idx]
+                            if self.dump_aff is not None:
+                                self.dump_aff[int(uid)] = {
+                                    'pred_contacts': contact_points[idx].astype(np.float32),  # (S, 2)
+                                    'gt_contacts': np.asarray(self.loader.dataset.eval_labels[uid]['norm_contacts'], dtype=np.float32),  # (N_gt, 2)
+                                    'last_obs_name': str(last_obs_names[idx]),
+                                    'last_obs_frame_idx': int(last_obs_idxs[idx]),
+                                }
 
                   
         if train:
@@ -717,7 +762,7 @@ class TrainValLoop:
                 return loss_meters
         else:
 
-            num_gpus = torch.cuda.device_count()
+            num_gpus = int(os.environ.get('WORLD_SIZE', torch.cuda.device_count()))
             if int(os.environ['LOCAL_RANK']) == 0:
                 print("we are using "+ str(num_gpus) + " GPUs for evaluation!")
             device_id_for_save = int(os.environ['LOCAL_RANK'])
@@ -733,6 +778,14 @@ class TrainValLoop:
                 current_save_path = os.path.join(self.collection_path_traj, "ours_fde"+str(device_id_for_save))
                 np.save(current_save_path, np.array(self.fde_list))
 
+                if self.dump_preds is not None:
+                    import pickle
+                    dump_path_rank = f"{self.dump_preds_path}.rank{device_id_for_save}.pkl"
+                    os.makedirs(os.path.dirname(dump_path_rank) or ".", exist_ok=True)
+                    with open(dump_path_rank, "wb") as f:
+                        pickle.dump(self.dump_preds, f)
+                    self.logger.info(f"dumped {len(self.dump_preds)} per-sample preds to {dump_path_rank}")
+
                 if int(os.environ['LOCAL_RANK']) == 0:
                     while 1:
                         if len(os.listdir(self.collection_path_traj))==num_gpus*2:
@@ -747,6 +800,13 @@ class TrainValLoop:
                     self.logger.info("ours fde ---> "+str(np.array(fde_mean).mean()))
 
             else:
+                if self.dump_aff is not None:
+                    import pickle
+                    dump_path_rank = f"{self.dump_aff_path}.rank{device_id_for_save}.pkl"
+                    os.makedirs(os.path.dirname(dump_path_rank) or ".", exist_ok=True)
+                    with open(dump_path_rank, "wb") as f:
+                        pickle.dump(self.dump_aff, f)
+                    self.logger.info(f"dumped {len(self.dump_aff)} per-sample aff preds to {dump_path_rank}")
                 ours_affordance_metrics = evaluate_affordance(self.preds_affordance_dict,
                                                          self.gts_affordance_dict,
                                                          n_pts=5,

@@ -1,6 +1,0 @@
-/var/spool/slurmd/job2680695/slurm_script: line 11: /home/u6x/sx2022.u6x/miniconda3/etc/profile.d/conda.sh: No such file or directory
-
-CondaError: Run 'conda init' before 'conda activate'
-
-/scratch/u6x/sx2022.u6x/miniconda3/bin/python: Error while finding module specification for 'torch.distributed.launch' (ModuleNotFoundError: No module named 'torch')
-/scratch/u6x/sx2022.u6x/miniconda3/bin/python: Error while finding module specification for 'torch.distributed.launch' (ModuleNotFoundError: No module named 'torch')

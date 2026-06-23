@@ -1,0 +1,36 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Datasets / model weights — re-downloadable from Google Drive per README §1.2
+base_models/
+common/
+data/
+CVPR2022-hoi-forecast-training-data/
+
+# Training artefacts (transient, machine-specific)
+diffip_weights/
+optimizer.pt
+collected_pred_aff/
+collected_pred_traj/
+log/
+logs/
+viz_data/
+
+# Sweep working state — keep results.csv + aggregated.md, ignore the rest
+seed_sweep/logs/
+seed_sweep/markers/
+seed_sweep/sweep.pid
+seed_sweep/orchestrator.out
+seed_sweep/*.bak
+seed_sweep/*.preshift
+seed_sweep/aggregated.csv
+
+# Editor / OS / runtime
+.DS_Store
+.idea/
+.vscode/
+*.swp
+.claude/

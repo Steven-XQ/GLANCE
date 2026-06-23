@@ -19,6 +19,8 @@ def add_exp_opts(parser):
     parser.add_argument("--use_schedule", default=False, type=bool, help="whether to specify optimizer schedule")
     parser.add_argument("--sample_times", default=10, type=int, help="how many samples for one prediction")
     parser.add_argument("--fast_test", default=True, type=bool, help="whether to use faster inference")
+    parser.add_argument("--dump_preds_path", default="", type=str, help="if set, during traj eval dump per-uid (preds, gt, valid, last_obs_name, last_obs_idx) to '<path>.rank<N>.pkl'")
+    parser.add_argument("--dump_aff_path", default="", type=str, help="if set, during affordance eval dump per-uid (pred_contacts, gt_contacts, last_obs_name, last_obs_idx) to '<path>.rank<N>.pkl'")
 
 def add_path_opts(parser):
     parser.add_argument("--base_model", default="./base_models/model.pth.tar", type=str, nargs="+", metavar="PATH", help="path to base model")

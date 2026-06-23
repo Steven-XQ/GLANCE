@@ -1,14 +1,3 @@
-"""
-Extract per-frame BNInception features for MECCANO and store in LMDB.
-
-Produces LMDB files compatible with FeaturesHOLoader in holoaders.py.
-Each entry: key = '{video_id}/{frame:05d}.jpg', value = dict with 'GLOBAL_FEAT' (1024-D).
-
-Usage:
-    python scripts/extract_meccano_features.py --split train   # train + val combined
-    python scripts/extract_meccano_features.py --split test
-"""
-
 import os
 import sys
 import argparse
@@ -59,11 +48,6 @@ def get_transform():
 
 
 def collect_frames(split):
-    """Return dict video_id -> set of frame indices for the given split.
-
-    split='train' combines MECCANO_train_split.csv + MECCANO_val_split.csv (used for feats_train).
-    split='test'  uses MECCANO_test_split.csv (used for feats_test).
-    """
     import pandas as pd
 
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

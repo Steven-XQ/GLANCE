@@ -572,8 +572,10 @@ class EpicHODataset(EpicDataset):
 def get_dataloaders(args, epic_ds=None, featuresloader=None):
     dss = get_datasets(args, epic_ds=epic_ds, featuresloader=featuresloader)
 
+    base_seed = getattr(args, "manual_seed", 1)
+
     def _worker_init_fn(worker_id):
-        np.random.seed(1 + worker_id)
+        np.random.seed(base_seed + worker_id)
 
     dl_args = {
         'batch_size': args.batch_size,

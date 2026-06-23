@@ -1,6 +1,0 @@
-True
-Starting homography generation and validation...
-python traineval.py  --ek_version=ek100
-training dataset size: 24148
-evaluation dataset size: 401
-Job finished!

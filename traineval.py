@@ -161,6 +161,8 @@ def main(args):
             gaze_detach_diffusion=getattr(args, 'gaze_detach_diffusion', False),
             gaze_heatmap_only=getattr(args, 'gaze_heatmap_only', False),
             gaze_cfg_dropout=getattr(args, 'gaze_cfg_dropout', 0.0),
+            dump_preds_path=getattr(args, 'dump_preds_path', ""),
+            dump_aff_path=getattr(args, 'dump_aff_path', ""),
     ).run_loop()
 
 
@@ -173,10 +175,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.use_cuda and torch.cuda.is_available():
-        num_gpus = torch.cuda.device_count()
-        args.batch_size = args.batch_size * num_gpus
+        world_size = int(os.environ.get('WORLD_SIZE', 1))
         if int(os.environ['LOCAL_RANK']) == 0:
-            logging.info("use batch size: %s", args.batch_size)
+            logging.info("per-rank batch size: %s | world_size: %s | global batch size: %s",
+                         args.batch_size, world_size, args.batch_size * world_size)
 
     if args.traj_only: assert args.evaluate, "evaluate trajectory on validation set must set --evaluate"
     main(args)
